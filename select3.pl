@@ -9,7 +9,7 @@
 
 use strict;
 use warnings;
-# use Device::SerialPort;
+
 
 $| = 0;
 
@@ -20,15 +20,49 @@ use IO::Select;
 use IO::Socket; use IO::File;
 use IO::Handle;
 
+my $needsHeader = 1 if ! -e "mainlog.csv";
 
 my $tty = IO::Handle->new();
-sysopen( TTY , "neep", O_RDWR) or die "Sysopen failed";
+
+if( 1 )
+{
+
+    use Device::SerialPort;
+
+    print "Setting serial port to desired baud rate..\n";
+    
+## Set up the serial port...
+    my $port = Device::SerialPort->new("/dev/ttyAMA0");
+    $port->baudrate(57600);
+    $port->databits(8);
+    $port->parity("none");
+    $port->stopbits(1);
+    $port->handshake("none");
+    $port->stty_icrnl(1);
+    $port->write_settings;
+    
+    print "Opening port\n";
+
+    open( $tty, "/dev/ttyAMA0" ) or die "Cannot open tty";
+}
+else
+{
+    sysopen( $tty , "neep", O_RDWR) or die "Sysopen failed";    
+}
+
+open( LOGFILE, ">>mainlog-test.csv" );
+
+if( $needsHeader )
+{
+	print LOGFILE "TS,Sequence,Node,Millis,Sensor,Reading,ReadingUnits,Memo,RSSI,OriginId\n";
+}
+
 
 my $lsn = IO::Socket::INET->new(Listen => 1, LocalPort => 8080) or die "Cannot bind";
 my $sel = IO::Select->new( $lsn );
-$sel->add( *TTY );
+$sel->add( $tty );
 
-my $needsHeader = 1 if ! -e "mainlog.csv";
+
 
 my $DB_user    = 'postgres';
 my $DB_name    = 'sensor';
@@ -79,12 +113,6 @@ sub runScheduledTasks
 
 }
 
-open( LOGFILE, ">>mainlog.csv" );
-
-if( $needsHeader )
-{
-	print LOGFILE "TS,Sequence,Node,Millis,Sensor,Reading,ReadingUnits,Memo,RSSI,OriginId\n";
-}
 
 my %runStats;
 
@@ -92,19 +120,19 @@ my %runStats;
 
 while(1)
 {
-	while(my @ready = $sel->can_read( $timeout )) 
+    while(my @ready = $sel->can_read( $timeout )) 
+    {
+	foreach my $fh (@ready) 
 	{
-		foreach my $fh (@ready) 
-		{
-			if($fh == $lsn) 
-			{
+	    if($fh == $lsn) 
+	    {
                 # Create a new socket
                 my $new = $lsn->accept;
                 $sel->add($new);
                 print STDOUT "Accepted new connection from XXX\n";
                 syswrite( $new, "Welcome to SensorMonitor");
             }
-            elsif( $fh == *TTY )
+            elsif( $fh == $tty )
             {	
             	my $in;		
             	my $b = sysread( $fh, $in, 1000);
@@ -131,7 +159,7 @@ while(1)
 
 my $ttyBuffer = "";
 
-use IO::Scalar;
+#use IO::Scalar;
 # $TTY_INTERNAL = new IO::Scalar \$ttyBuffer;
 
 sub handleTTYLine
@@ -158,18 +186,24 @@ sub handleTTYLine
 	my ( $sequence, $node,	$millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId ) = @a;
 
 	$runStats{"NODE_$(node)_MSG_CNT"} += 1; 
+
+	my $date = strftime("%Y-%m-%d %H:%M:%S", localtime(time));
+
+	print LOGFILE "$date,$line\n";
+
+	flush LOGFILE; 
 }
 
 sub  handleTTYDataPacket
 {
 	my $data = shift;
 
-	debug( "Adding to TTY buffer:[$data]");
+	# debug( "Adding to TTY buffer:[$data]");
 	$ttyBuffer .= $data;
 
 	while( (my $nextNL = index( $ttyBuffer, "\n",0 )) != -1 )
 	{
-		debug "Newine detected at position [$nextNL] in [$ttyBuffer]";
+		debug "Newine detected at position [$nextNL]"; # in [$ttyBuffer]";
 		my $nextline = substr( $ttyBuffer, 0, $nextNL + 1 );
 		substr( $ttyBuffer, 0, $nextNL + 1, "" );
 		chomp $nextline;
