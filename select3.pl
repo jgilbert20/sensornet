@@ -10,7 +10,6 @@
 use strict;
 use warnings;
 
-
 $| = 0;
 
 my $timeout = 1;
@@ -20,13 +19,16 @@ use IO::Select;
 use IO::Socket; use IO::File;
 use IO::Handle;
 
-my $needsHeader = 1 if ! -e "mainlog.csv";
+my $LOGFN = "mainlog.csv";
+
+my $needsHeader = 1 if ! -e $LOGFN;
 
 my $tty = IO::Handle->new();
 
-if( 1 )
-{
+my $RPI = 1;
 
+if( $RPI )
+{
     use Device::SerialPort;
 
     print "Setting serial port to desired baud rate..\n";
@@ -50,19 +52,17 @@ else
     sysopen( $tty , "neep", O_RDWR) or die "Sysopen failed";    
 }
 
-open( LOGFILE, ">>mainlog-test.csv" );
+open( LOGFILE, ">>$LOGFN" );
 
 if( $needsHeader )
 {
-	print LOGFILE "TS,Sequence,Node,Millis,Sensor,Reading,ReadingUnits,Memo,RSSI,OriginId\n";
+    print LOGFILE "TS,Sequence,Node,Millis,Sensor,Reading,ReadingUnits,Memo,RSSI,OriginId\n";
 }
 
 
 my $lsn = IO::Socket::INET->new(Listen => 1, LocalPort => 8080) or die "Cannot bind";
 my $sel = IO::Select->new( $lsn );
 $sel->add( $tty );
-
-
 
 my $DB_user    = 'postgres';
 my $DB_name    = 'sensor';
@@ -81,7 +81,31 @@ sub debug
 #$dbh = DBI->connect("dbi:Pg:dbname=$DB_name","$DB_user","$DB_pwd");
 
 
-registerTask( "dumpps", 50, sub { `mkdir -p pslog`; `ps > pslog/foo.txt` } );
+
+sub logUptime
+{
+    my $uptime = `cat /proc/uptime`;
+    my ($upsec, $idlesec) = split /\s+/, $uptime;
+
+    logLocalSensor( "Uptime", $upsec, "seconds", "" );
+    logLocalSensor( "Idletime", $idlesec, "seconds", "" );
+    
+    my $temp = `vcgencmd measure_temp`;
+
+    $temp =~ /temp=(\d+\.?\d?)/;
+
+    logLocalSensor( "MPU Temp", $1, "C", "" );
+}
+
+registerTask( "uptime", 10, sub { logUptime() } ); 
+
+registerTask( "dumpps", 50, sub { `mkdir -p pslog`; 
+				  `date >> uplog.txt`;
+				  `uptime >> uplog.txt`;
+				  `vcgencmd measure_temp >> uplog.txt`;
+	      } );
+
+
 
 sub registerTask
 {
@@ -94,23 +118,21 @@ sub registerTask
 
 sub runScheduledTasks
 {
-	debug "Housekeeping -- Event recv";	
-
-	foreach my $n (keys %taskRegistry)
-	{
-		my $t = $taskRegistry{$n};
+    debug "Housekeeping -- Event recv";	
+    
+    foreach my $n (keys %taskRegistry)
+    {
+	my $t = $taskRegistry{$n};
 	
-		debug( "Checking task $n -> @$t");
-		if( time() - $t->[1] >  $t->[0] )
-		{		
-			debug( "Task $t has come due..");
-
-			$t->[1] = time();
-		}
-
+	debug( "Checking task $n -> @$t");
+	if( time() - $t->[1] >  $t->[0] )
+	{		
+	    debug( "Task $t has come due..");
+	    
+	    $t->[1] = time();
+	    &{$t->[2]};
 	}
-
-
+    }
 }
 
 
@@ -164,34 +186,55 @@ my $ttyBuffer = "";
 
 sub handleTTYLine
 {
-	my $line = shift;
-
-	my $date = strftime("%Y-%m-%d %H:%M:%S", localtime(time));
-
-	$runStats{"TTY_MSG_READ"} += 1;  
-
-	debug( "Received LINE: [$line]");
+    my $line = shift;
+    
+    my $date = strftime("%Y-%m-%d %H:%M:%S", localtime(time));
+    
+    $runStats{"TTY_MSG_READ"} += 1;  
+    
+    debug( "Received LINE: [$line]");
     my @a = split( ',', $line);
-
-	my $fCount= 0 + @a;
+    
+    my $fCount= 0 + @a;
     if( $fCount != 9 	)
     {	
-		print "Error - [$fCount] wrong number of commas, skipping\n";
-		$runStats{"TTY_MSG_READ_ERROR"} += 1; 
-		next;	
+	print "Error - [$fCount] wrong number of commas, skipping\n";
+	$runStats{"TTY_MSG_READ_ERROR"} += 1; 
+	next;	
     }
 
     $runStats{"TTY_MSG_READ_GOOD"} += 1; 
 
-	my ( $sequence, $node,	$millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId ) = @a;
+    
+    my ( $sequence, $node,	$millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId ) = @a;
+    
+    logSensor( @a );
+    
+    $runStats{"NODE_$(node)_MSG_CNT"} += 1; 
+    
 
-	$runStats{"NODE_$(node)_MSG_CNT"} += 1; 
 
-	my $date = strftime("%Y-%m-%d %H:%M:%S", localtime(time));
+}
 
-	print LOGFILE "$date,$line\n";
+my $localSequence = 0;
+
+sub logLocalSensor
+{
+    my ($sensor, $reading, $readingUnits, $memo ) = @_;
+
+    logSensor( $localSequence++, "Gateway-Linux", 1, $sensor, $reading, $readingUnits, $memo, "","" );
+}
+
+sub logSensor
+{
+    my ( $sequence, $node, $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId ) = @_;
+    my $date = strftime("%Y-%m-%d %H:%M:%S", localtime(time));
+    my $line = join ",", ($date, $sequence, $node, $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId);
+	print LOGFILE "$line\n";
 
 	flush LOGFILE; 
+
+    
 }
 
 sub  handleTTYDataPacket
