@@ -45,6 +45,7 @@ if( $RPI )
     
     print "Opening port\n";
 
+
     open( $tty, "/dev/ttyAMA0" ) or die "Cannot open tty";
 }
 else
@@ -89,8 +90,12 @@ sub logUptime
 
     logLocalSensor( "Uptime", $upsec, "seconds", "" );
     logLocalSensor( "Idletime", $idlesec, "seconds", "" );
+
+    debug( "Query temp via vcgencmd - started" );
     
     my $temp = `vcgencmd measure_temp`;
+
+    debug( "Query temp via vcgencmd - completed" );
 
     $temp =~ /temp=(\d+\.?\d?)/;
 
@@ -212,6 +217,15 @@ sub handleTTYLine
     
     $runStats{"NODE_$(node)_MSG_CNT"} += 1; 
     
+
+    if( $readingUnits eq 'C' )
+    {
+	$sensor .= "-F";
+	$readingUnits = "F";
+	$reading =  9/5 *($reading) +32;
+
+	logSensor( $sequence, $node,      $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId );
+    }
 
 
 }
