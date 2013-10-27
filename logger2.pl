@@ -25,7 +25,7 @@ open( PORT, "/dev/ttyAMA0" );
 
 my $needsHeader = 1 if ! -e "mainlog.csv";
 
-open( LOGFILE, ">>mainlog.csv" );
+open( LOGFILE, ">>spare.csv" );
 
 if( $needsHeader )
 {

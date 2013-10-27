@@ -43,8 +43,15 @@ if( $RPI )
     $port->stty_icrnl(1);
     $port->write_settings;
     
+    $port->close();
+
+    undef $port;
+
+
+
     print "Opening port\n";
 
+    
 
     open( $tty, "/dev/ttyAMA0" ) or die "Cannot open tty";
 }
@@ -217,6 +224,7 @@ sub handleTTYLine
     
     $runStats{"NODE_$(node)_MSG_CNT"} += 1; 
     
+    # Automatically add extra lines converting a C reading to F 
 
     if( $readingUnits eq 'C' )
     {
