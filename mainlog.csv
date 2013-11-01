@@ -3942,3 +3942,2633 @@ TS,Sequence,Node,Millis,Sensor,Reading,ReadingUnits,Memo,RSSI,OriginId
 2013-11-01 11:40:30,435,Gateway-Linux,1,Uptime,4060.05,seconds,,,
 2013-11-01 11:40:30,436,Gateway-Linux,1,Idletime,3765.71,seconds,,,
 2013-11-01 11:40:30,437,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:40:42,438,Gateway-Linux,1,Uptime,4071.16,seconds,,,
+2013-11-01 11:40:42,439,Gateway-Linux,1,Idletime,3775.83,seconds,,,
+2013-11-01 11:40:42,440,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:40:52,441,Gateway-Linux,1,Uptime,4081.29,seconds,,,
+2013-11-01 11:40:52,442,Gateway-Linux,1,Idletime,3785.68,seconds,,,
+2013-11-01 11:40:52,443,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:41:03,444,Gateway-Linux,1,Uptime,4092.39,seconds,,,
+2013-11-01 11:41:03,445,Gateway-Linux,1,Idletime,3796.44,seconds,,,
+2013-11-01 11:41:03,446,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:41:14,447,Gateway-Linux,1,Uptime,4103.57,seconds,,,
+2013-11-01 11:41:14,448,Gateway-Linux,1,Idletime,3806.64,seconds,,,
+2013-11-01 11:41:14,449,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:41:25,450,Gateway-Linux,1,Uptime,4114.70,seconds,,,
+2013-11-01 11:41:25,451,Gateway-Linux,1,Idletime,3817.18,seconds,,,
+2013-11-01 11:41:25,452,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:41:36,453,Gateway-Linux,1,Uptime,4125.80,seconds,,,
+2013-11-01 11:41:36,454,Gateway-Linux,1,Idletime,3828.01,seconds,,,
+2013-11-01 11:41:36,455,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:41:47,456,Gateway-Linux,1,Uptime,4136.89,seconds,,,
+2013-11-01 11:41:47,457,Gateway-Linux,1,Idletime,3838.70,seconds,,,
+2013-11-01 11:41:47,458,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:41:58,459,Gateway-Linux,1,Uptime,4147.98,seconds,,,
+2013-11-01 11:41:58,460,Gateway-Linux,1,Idletime,3849.33,seconds,,,
+2013-11-01 11:41:58,461,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:42:10,462,Gateway-Linux,1,Uptime,4159.15,seconds,,,
+2013-11-01 11:42:10,463,Gateway-Linux,1,Idletime,3859.82,seconds,,,
+2013-11-01 11:42:10,464,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:42:20,465,Gateway-Linux,1,Uptime,4169.25,seconds,,,
+2013-11-01 11:42:20,466,Gateway-Linux,1,Idletime,3869.41,seconds,,,
+2013-11-01 11:42:20,467,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:42:31,468,Gateway-Linux,1,Uptime,4180.34,seconds,,,
+2013-11-01 11:42:31,469,Gateway-Linux,1,Idletime,3880.26,seconds,,,
+2013-11-01 11:42:31,470,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:42:42,471,Gateway-Linux,1,Uptime,4191.45,seconds,,,
+2013-11-01 11:42:42,472,Gateway-Linux,1,Idletime,3890.86,seconds,,,
+2013-11-01 11:42:42,473,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:42:53,474,Gateway-Linux,1,Uptime,4202.56,seconds,,,
+2013-11-01 11:42:53,475,Gateway-Linux,1,Idletime,3901.69,seconds,,,
+2013-11-01 11:42:53,476,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:43:04,477,Gateway-Linux,1,Uptime,4213.71,seconds,,,
+2013-11-01 11:43:04,478,Gateway-Linux,1,Idletime,3912.60,seconds,,,
+2013-11-01 11:43:04,479,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:43:15,480,Gateway-Linux,1,Uptime,4224.83,seconds,,,
+2013-11-01 11:43:15,481,Gateway-Linux,1,Idletime,3923.28,seconds,,,
+2013-11-01 11:43:15,482,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 11:43:26,483,Gateway-Linux,1,Uptime,4235.97,seconds,,,
+2013-11-01 11:43:26,484,Gateway-Linux,1,Idletime,3934.06,seconds,,,
+2013-11-01 11:43:26,485,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:43:37,486,Gateway-Linux,1,Uptime,4247.12,seconds,,,
+2013-11-01 11:43:37,487,Gateway-Linux,1,Idletime,3944.78,seconds,,,
+2013-11-01 11:43:37,488,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:43:48,489,Gateway-Linux,1,Uptime,4257.30,seconds,,,
+2013-11-01 11:43:48,490,Gateway-Linux,1,Idletime,3954.57,seconds,,,
+2013-11-01 11:43:48,491,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:43:59,492,Gateway-Linux,1,Uptime,4268.42,seconds,,,
+2013-11-01 11:43:59,493,Gateway-Linux,1,Idletime,3965.30,seconds,,,
+2013-11-01 11:43:59,494,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:44:10,495,Gateway-Linux,1,Uptime,4279.52,seconds,,,
+2013-11-01 11:44:10,496,Gateway-Linux,1,Idletime,3976.11,seconds,,,
+2013-11-01 11:44:10,497,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 11:44:21,498,Gateway-Linux,1,Uptime,4290.60,seconds,,,
+2013-11-01 11:44:21,499,Gateway-Linux,1,Idletime,3986.92,seconds,,,
+2013-11-01 11:44:21,500,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:44:32,501,Gateway-Linux,1,Uptime,4301.74,seconds,,,
+2013-11-01 11:44:32,502,Gateway-Linux,1,Idletime,3997.58,seconds,,,
+2013-11-01 11:44:32,503,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:44:43,504,Gateway-Linux,1,Uptime,4312.92,seconds,,,
+2013-11-01 11:44:43,505,Gateway-Linux,1,Idletime,4008.30,seconds,,,
+2013-11-01 11:44:43,506,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:44:54,507,Gateway-Linux,1,Uptime,4324.01,seconds,,,
+2013-11-01 11:44:54,508,Gateway-Linux,1,Idletime,4019.12,seconds,,,
+2013-11-01 11:44:54,509,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 11:45:05,510,Gateway-Linux,1,Uptime,4335.09,seconds,,,
+2013-11-01 11:45:05,511,Gateway-Linux,1,Idletime,4029.68,seconds,,,
+2013-11-01 11:45:05,512,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 11:45:16,513,Gateway-Linux,1,Uptime,4345.17,seconds,,,
+2013-11-01 11:45:16,514,Gateway-Linux,1,Idletime,4039.46,seconds,,,
+2013-11-01 11:45:16,515,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:45:27,516,Gateway-Linux,1,Uptime,4356.27,seconds,,,
+2013-11-01 11:45:27,517,Gateway-Linux,1,Idletime,4050.28,seconds,,,
+2013-11-01 11:45:27,518,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:45:38,519,Gateway-Linux,1,Uptime,4367.42,seconds,,,
+2013-11-01 11:45:38,520,Gateway-Linux,1,Idletime,4060.97,seconds,,,
+2013-11-01 11:45:38,521,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:45:49,522,Gateway-Linux,1,Uptime,4378.50,seconds,,,
+2013-11-01 11:45:49,523,Gateway-Linux,1,Idletime,4071.78,seconds,,,
+2013-11-01 11:45:49,524,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:46:00,525,Gateway-Linux,1,Uptime,4389.62,seconds,,,
+2013-11-01 11:46:00,526,Gateway-Linux,1,Idletime,4082.51,seconds,,,
+2013-11-01 11:46:00,527,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:46:11,528,Gateway-Linux,1,Uptime,4400.72,seconds,,,
+2013-11-01 11:46:11,529,Gateway-Linux,1,Idletime,4093.26,seconds,,,
+2013-11-01 11:46:11,530,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:46:22,531,Gateway-Linux,1,Uptime,4411.89,seconds,,,
+2013-11-01 11:46:22,532,Gateway-Linux,1,Idletime,4104.12,seconds,,,
+2013-11-01 11:46:22,533,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:46:33,534,Gateway-Linux,1,Uptime,4422.99,seconds,,,
+2013-11-01 11:46:33,535,Gateway-Linux,1,Idletime,4114.66,seconds,,,
+2013-11-01 11:46:33,536,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 11:46:44,537,Gateway-Linux,1,Uptime,4434.08,seconds,,,
+2013-11-01 11:46:44,538,Gateway-Linux,1,Idletime,4125.38,seconds,,,
+2013-11-01 11:46:44,539,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:46:55,540,Gateway-Linux,1,Uptime,4444.18,seconds,,,
+2013-11-01 11:46:55,541,Gateway-Linux,1,Idletime,4135.02,seconds,,,
+2013-11-01 11:46:55,542,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:47:06,543,Gateway-Linux,1,Uptime,4455.25,seconds,,,
+2013-11-01 11:47:06,544,Gateway-Linux,1,Idletime,4145.73,seconds,,,
+2013-11-01 11:47:06,545,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:47:17,546,Gateway-Linux,1,Uptime,4466.43,seconds,,,
+2013-11-01 11:47:17,547,Gateway-Linux,1,Idletime,4156.44,seconds,,,
+2013-11-01 11:47:17,548,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:47:28,549,Gateway-Linux,1,Uptime,4477.52,seconds,,,
+2013-11-01 11:47:28,550,Gateway-Linux,1,Idletime,4167.25,seconds,,,
+2013-11-01 11:47:28,551,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 11:47:39,552,Gateway-Linux,1,Uptime,4488.59,seconds,,,
+2013-11-01 11:47:39,553,Gateway-Linux,1,Idletime,4178.00,seconds,,,
+2013-11-01 11:47:39,554,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:47:50,555,Gateway-Linux,1,Uptime,4499.69,seconds,,,
+2013-11-01 11:47:50,556,Gateway-Linux,1,Idletime,4188.64,seconds,,,
+2013-11-01 11:47:50,557,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:48:01,558,Gateway-Linux,1,Uptime,4510.77,seconds,,,
+2013-11-01 11:48:01,559,Gateway-Linux,1,Idletime,4199.28,seconds,,,
+2013-11-01 11:48:01,560,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:48:12,561,Gateway-Linux,1,Uptime,4521.96,seconds,,,
+2013-11-01 11:48:12,562,Gateway-Linux,1,Idletime,4209.36,seconds,,,
+2013-11-01 11:48:12,563,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:48:23,564,Gateway-Linux,1,Uptime,4533.11,seconds,,,
+2013-11-01 11:48:23,565,Gateway-Linux,1,Idletime,4219.88,seconds,,,
+2013-11-01 11:48:24,566,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 11:48:34,567,Gateway-Linux,1,Uptime,4543.33,seconds,,,
+2013-11-01 11:48:34,568,Gateway-Linux,1,Idletime,4229.58,seconds,,,
+2013-11-01 11:48:34,569,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 11:48:45,570,Gateway-Linux,1,Uptime,4554.40,seconds,,,
+2013-11-01 11:48:45,571,Gateway-Linux,1,Idletime,4240.14,seconds,,,
+2013-11-01 11:48:45,572,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:48:56,573,Gateway-Linux,1,Uptime,4565.60,seconds,,,
+2013-11-01 11:48:56,574,Gateway-Linux,1,Idletime,4250.80,seconds,,,
+2013-11-01 11:48:56,575,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:49:07,576,Gateway-Linux,1,Uptime,4576.69,seconds,,,
+2013-11-01 11:49:07,577,Gateway-Linux,1,Idletime,4261.67,seconds,,,
+2013-11-01 11:49:07,578,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:49:18,579,Gateway-Linux,1,Uptime,4587.77,seconds,,,
+2013-11-01 11:49:18,580,Gateway-Linux,1,Idletime,4272.44,seconds,,,
+2013-11-01 11:49:18,581,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:49:29,582,Gateway-Linux,1,Uptime,4598.85,seconds,,,
+2013-11-01 11:49:29,583,Gateway-Linux,1,Idletime,4283.30,seconds,,,
+2013-11-01 11:49:29,584,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:49:40,585,Gateway-Linux,1,Uptime,4609.94,seconds,,,
+2013-11-01 11:49:40,586,Gateway-Linux,1,Idletime,4294.05,seconds,,,
+2013-11-01 11:49:40,587,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:49:51,588,Gateway-Linux,1,Uptime,4621.09,seconds,,,
+2013-11-01 11:49:51,589,Gateway-Linux,1,Idletime,4304.89,seconds,,,
+2013-11-01 11:49:51,590,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:50:03,591,Gateway-Linux,1,Uptime,4632.16,seconds,,,
+2013-11-01 11:50:03,592,Gateway-Linux,1,Idletime,4315.71,seconds,,,
+2013-11-01 11:50:03,593,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:50:14,594,Gateway-Linux,1,Uptime,4643.27,seconds,,,
+2013-11-01 11:50:14,595,Gateway-Linux,1,Idletime,4326.56,seconds,,,
+2013-11-01 11:50:14,596,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:50:25,597,Gateway-Linux,1,Uptime,4654.39,seconds,,,
+2013-11-01 11:50:25,598,Gateway-Linux,1,Idletime,4337.41,seconds,,,
+2013-11-01 11:50:25,599,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:50:36,600,Gateway-Linux,1,Uptime,4665.61,seconds,,,
+2013-11-01 11:50:36,601,Gateway-Linux,1,Idletime,4348.04,seconds,,,
+2013-11-01 11:50:36,602,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:50:47,603,Gateway-Linux,1,Uptime,4676.70,seconds,,,
+2013-11-01 11:50:47,604,Gateway-Linux,1,Idletime,4358.95,seconds,,,
+2013-11-01 11:50:47,605,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:50:58,606,Gateway-Linux,1,Uptime,4687.80,seconds,,,
+2013-11-01 11:50:58,607,Gateway-Linux,1,Idletime,4369.53,seconds,,,
+2013-11-01 11:50:58,608,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:51:09,609,Gateway-Linux,1,Uptime,4698.92,seconds,,,
+2013-11-01 11:51:09,610,Gateway-Linux,1,Idletime,4380.41,seconds,,,
+2013-11-01 11:51:09,611,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:51:20,612,Gateway-Linux,1,Uptime,4710.14,seconds,,,
+2013-11-01 11:51:20,613,Gateway-Linux,1,Idletime,4391.27,seconds,,,
+2013-11-01 11:51:21,614,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:51:31,615,Gateway-Linux,1,Uptime,4720.33,seconds,,,
+2013-11-01 11:51:31,616,Gateway-Linux,1,Idletime,4401.02,seconds,,,
+2013-11-01 11:51:31,617,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:51:42,618,Gateway-Linux,1,Uptime,4731.44,seconds,,,
+2013-11-01 11:51:42,619,Gateway-Linux,1,Idletime,4411.87,seconds,,,
+2013-11-01 11:51:42,620,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:51:53,621,Gateway-Linux,1,Uptime,4742.52,seconds,,,
+2013-11-01 11:51:53,622,Gateway-Linux,1,Idletime,4422.63,seconds,,,
+2013-11-01 11:51:53,623,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:52:04,624,Gateway-Linux,1,Uptime,4753.59,seconds,,,
+2013-11-01 11:52:04,625,Gateway-Linux,1,Idletime,4433.56,seconds,,,
+2013-11-01 11:52:04,626,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:52:15,627,Gateway-Linux,1,Uptime,4764.68,seconds,,,
+2013-11-01 11:52:15,628,Gateway-Linux,1,Idletime,4444.40,seconds,,,
+2013-11-01 11:52:15,629,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:52:26,630,Gateway-Linux,1,Uptime,4775.87,seconds,,,
+2013-11-01 11:52:26,631,Gateway-Linux,1,Idletime,4455.34,seconds,,,
+2013-11-01 11:52:26,632,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:52:37,633,Gateway-Linux,1,Uptime,4786.97,seconds,,,
+2013-11-01 11:52:37,634,Gateway-Linux,1,Idletime,4466.21,seconds,,,
+2013-11-01 11:52:37,635,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:52:48,636,Gateway-Linux,1,Uptime,4798.09,seconds,,,
+2013-11-01 11:52:48,637,Gateway-Linux,1,Idletime,4477.13,seconds,,,
+2013-11-01 11:52:48,638,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:52:59,639,Gateway-Linux,1,Uptime,4808.18,seconds,,,
+2013-11-01 11:52:59,640,Gateway-Linux,1,Idletime,4487.02,seconds,,,
+2013-11-01 11:52:59,641,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 11:53:10,642,Gateway-Linux,1,Uptime,4819.44,seconds,,,
+2013-11-01 11:53:10,643,Gateway-Linux,1,Idletime,4497.81,seconds,,,
+2013-11-01 11:53:10,644,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:53:21,645,Gateway-Linux,1,Uptime,4830.52,seconds,,,
+2013-11-01 11:53:21,646,Gateway-Linux,1,Idletime,4508.61,seconds,,,
+2013-11-01 11:53:21,647,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:53:32,648,Gateway-Linux,1,Uptime,4841.64,seconds,,,
+2013-11-01 11:53:32,649,Gateway-Linux,1,Idletime,4519.36,seconds,,,
+2013-11-01 11:53:32,650,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:53:43,651,Gateway-Linux,1,Uptime,4852.74,seconds,,,
+2013-11-01 11:53:43,652,Gateway-Linux,1,Idletime,4530.07,seconds,,,
+2013-11-01 11:53:43,653,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:53:54,654,Gateway-Linux,1,Uptime,4863.84,seconds,,,
+2013-11-01 11:53:54,655,Gateway-Linux,1,Idletime,4540.85,seconds,,,
+2013-11-01 11:53:54,656,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:54:05,657,Gateway-Linux,1,Uptime,4874.99,seconds,,,
+2013-11-01 11:54:05,658,Gateway-Linux,1,Idletime,4551.46,seconds,,,
+2013-11-01 11:54:05,659,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 11:54:16,660,Gateway-Linux,1,Uptime,4886.11,seconds,,,
+2013-11-01 11:54:16,661,Gateway-Linux,1,Idletime,4562.32,seconds,,,
+2013-11-01 11:54:16,662,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:54:27,663,Gateway-Linux,1,Uptime,4896.20,seconds,,,
+2013-11-01 11:54:27,664,Gateway-Linux,1,Idletime,4572.11,seconds,,,
+2013-11-01 11:54:27,665,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:54:38,666,Gateway-Linux,1,Uptime,4907.31,seconds,,,
+2013-11-01 11:54:38,667,Gateway-Linux,1,Idletime,4582.60,seconds,,,
+2013-11-01 11:54:38,668,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:54:49,669,Gateway-Linux,1,Uptime,4918.39,seconds,,,
+2013-11-01 11:54:49,670,Gateway-Linux,1,Idletime,4593.26,seconds,,,
+2013-11-01 11:54:49,671,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:55:00,672,Gateway-Linux,1,Uptime,4929.57,seconds,,,
+2013-11-01 11:55:00,673,Gateway-Linux,1,Idletime,4603.80,seconds,,,
+2013-11-01 11:55:00,674,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:55:11,675,Gateway-Linux,1,Uptime,4940.68,seconds,,,
+2013-11-01 11:55:11,676,Gateway-Linux,1,Idletime,4614.22,seconds,,,
+2013-11-01 11:55:11,677,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:55:22,678,Gateway-Linux,1,Uptime,4951.84,seconds,,,
+2013-11-01 11:55:22,679,Gateway-Linux,1,Idletime,4624.95,seconds,,,
+2013-11-01 11:55:22,680,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:55:33,681,Gateway-Linux,1,Uptime,4962.92,seconds,,,
+2013-11-01 11:55:33,682,Gateway-Linux,1,Idletime,4635.79,seconds,,,
+2013-11-01 11:55:33,683,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:55:44,684,Gateway-Linux,1,Uptime,4974.09,seconds,,,
+2013-11-01 11:55:44,685,Gateway-Linux,1,Idletime,4646.67,seconds,,,
+2013-11-01 11:55:44,686,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:55:55,687,Gateway-Linux,1,Uptime,4984.19,seconds,,,
+2013-11-01 11:55:55,688,Gateway-Linux,1,Idletime,4656.38,seconds,,,
+2013-11-01 11:55:55,689,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:56:06,690,Gateway-Linux,1,Uptime,4995.27,seconds,,,
+2013-11-01 11:56:06,691,Gateway-Linux,1,Idletime,4667.20,seconds,,,
+2013-11-01 11:56:06,692,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:56:17,693,Gateway-Linux,1,Uptime,5006.37,seconds,,,
+2013-11-01 11:56:17,694,Gateway-Linux,1,Idletime,4678.09,seconds,,,
+2013-11-01 11:56:17,695,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:56:28,696,Gateway-Linux,1,Uptime,5017.48,seconds,,,
+2013-11-01 11:56:28,697,Gateway-Linux,1,Idletime,4688.81,seconds,,,
+2013-11-01 11:56:28,698,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:56:39,699,Gateway-Linux,1,Uptime,5028.65,seconds,,,
+2013-11-01 11:56:39,700,Gateway-Linux,1,Idletime,4699.34,seconds,,,
+2013-11-01 11:56:39,701,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:56:50,702,Gateway-Linux,1,Uptime,5039.74,seconds,,,
+2013-11-01 11:56:50,703,Gateway-Linux,1,Idletime,4710.21,seconds,,,
+2013-11-01 11:56:50,704,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:57:01,705,Gateway-Linux,1,Uptime,5050.85,seconds,,,
+2013-11-01 11:57:01,706,Gateway-Linux,1,Idletime,4721.13,seconds,,,
+2013-11-01 11:57:01,707,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:57:12,708,Gateway-Linux,1,Uptime,5061.93,seconds,,,
+2013-11-01 11:57:12,709,Gateway-Linux,1,Idletime,4731.99,seconds,,,
+2013-11-01 11:57:12,710,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:57:23,711,Gateway-Linux,1,Uptime,5073.12,seconds,,,
+2013-11-01 11:57:23,712,Gateway-Linux,1,Idletime,4742.77,seconds,,,
+2013-11-01 11:57:24,713,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:57:34,714,Gateway-Linux,1,Uptime,5083.21,seconds,,,
+2013-11-01 11:57:34,715,Gateway-Linux,1,Idletime,4752.70,seconds,,,
+2013-11-01 11:57:34,716,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:57:45,717,Gateway-Linux,1,Uptime,5094.32,seconds,,,
+2013-11-01 11:57:45,718,Gateway-Linux,1,Idletime,4763.32,seconds,,,
+2013-11-01 11:57:45,719,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:57:56,720,Gateway-Linux,1,Uptime,5105.41,seconds,,,
+2013-11-01 11:57:56,721,Gateway-Linux,1,Idletime,4774.19,seconds,,,
+2013-11-01 11:57:56,722,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:58:07,723,Gateway-Linux,1,Uptime,5116.48,seconds,,,
+2013-11-01 11:58:07,724,Gateway-Linux,1,Idletime,4785.02,seconds,,,
+2013-11-01 11:58:07,725,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:58:18,726,Gateway-Linux,1,Uptime,5127.63,seconds,,,
+2013-11-01 11:58:18,727,Gateway-Linux,1,Idletime,4795.82,seconds,,,
+2013-11-01 11:58:18,728,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 11:58:29,729,Gateway-Linux,1,Uptime,5138.75,seconds,,,
+2013-11-01 11:58:29,730,Gateway-Linux,1,Idletime,4806.73,seconds,,,
+2013-11-01 11:58:29,731,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:58:40,732,Gateway-Linux,1,Uptime,5149.86,seconds,,,
+2013-11-01 11:58:40,733,Gateway-Linux,1,Idletime,4817.63,seconds,,,
+2013-11-01 11:58:40,734,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:58:51,735,Gateway-Linux,1,Uptime,5160.96,seconds,,,
+2013-11-01 11:58:51,736,Gateway-Linux,1,Idletime,4828.47,seconds,,,
+2013-11-01 11:58:51,737,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:59:02,738,Gateway-Linux,1,Uptime,5172.05,seconds,,,
+2013-11-01 11:59:02,739,Gateway-Linux,1,Idletime,4839.28,seconds,,,
+2013-11-01 11:59:02,740,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:59:13,741,Gateway-Linux,1,Uptime,5182.23,seconds,,,
+2013-11-01 11:59:13,742,Gateway-Linux,1,Idletime,4849.10,seconds,,,
+2013-11-01 11:59:13,743,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 11:59:24,744,Gateway-Linux,1,Uptime,5193.36,seconds,,,
+2013-11-01 11:59:24,745,Gateway-Linux,1,Idletime,4859.93,seconds,,,
+2013-11-01 11:59:24,746,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:59:35,747,Gateway-Linux,1,Uptime,5204.44,seconds,,,
+2013-11-01 11:59:35,748,Gateway-Linux,1,Idletime,4870.77,seconds,,,
+2013-11-01 11:59:35,749,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 11:59:46,750,Gateway-Linux,1,Uptime,5215.51,seconds,,,
+2013-11-01 11:59:46,751,Gateway-Linux,1,Idletime,4881.42,seconds,,,
+2013-11-01 11:59:46,752,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 11:59:57,753,Gateway-Linux,1,Uptime,5226.67,seconds,,,
+2013-11-01 11:59:57,754,Gateway-Linux,1,Idletime,4892.21,seconds,,,
+2013-11-01 11:59:57,755,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:00:08,756,Gateway-Linux,1,Uptime,5237.79,seconds,,,
+2013-11-01 12:00:08,757,Gateway-Linux,1,Idletime,4903.08,seconds,,,
+2013-11-01 12:00:08,758,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:00:19,759,Gateway-Linux,1,Uptime,5248.87,seconds,,,
+2013-11-01 12:00:19,760,Gateway-Linux,1,Idletime,4913.81,seconds,,,
+2013-11-01 12:00:19,761,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:00:30,762,Gateway-Linux,1,Uptime,5259.96,seconds,,,
+2013-11-01 12:00:30,763,Gateway-Linux,1,Idletime,4924.11,seconds,,,
+2013-11-01 12:00:30,764,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:00:41,765,Gateway-Linux,1,Uptime,5271.07,seconds,,,
+2013-11-01 12:00:41,766,Gateway-Linux,1,Idletime,4934.59,seconds,,,
+2013-11-01 12:00:41,767,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:00:52,768,Gateway-Linux,1,Uptime,5281.25,seconds,,,
+2013-11-01 12:00:52,769,Gateway-Linux,1,Idletime,4944.36,seconds,,,
+2013-11-01 12:00:52,770,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:01:03,771,Gateway-Linux,1,Uptime,5292.33,seconds,,,
+2013-11-01 12:01:03,772,Gateway-Linux,1,Idletime,4955.10,seconds,,,
+2013-11-01 12:01:03,773,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:01:14,774,Gateway-Linux,1,Uptime,5303.46,seconds,,,
+2013-11-01 12:01:14,775,Gateway-Linux,1,Idletime,4965.77,seconds,,,
+2013-11-01 12:01:14,776,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:01:25,777,Gateway-Linux,1,Uptime,5314.56,seconds,,,
+2013-11-01 12:01:25,778,Gateway-Linux,1,Idletime,4976.53,seconds,,,
+2013-11-01 12:01:25,779,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:01:36,780,Gateway-Linux,1,Uptime,5325.64,seconds,,,
+2013-11-01 12:01:36,781,Gateway-Linux,1,Idletime,4987.33,seconds,,,
+2013-11-01 12:01:36,782,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:01:47,783,Gateway-Linux,1,Uptime,5336.87,seconds,,,
+2013-11-01 12:01:47,784,Gateway-Linux,1,Idletime,4997.93,seconds,,,
+2013-11-01 12:01:47,785,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:01:58,786,Gateway-Linux,1,Uptime,5348.01,seconds,,,
+2013-11-01 12:01:58,787,Gateway-Linux,1,Idletime,5008.89,seconds,,,
+2013-11-01 12:01:58,788,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:02:09,789,Gateway-Linux,1,Uptime,5359.13,seconds,,,
+2013-11-01 12:02:09,790,Gateway-Linux,1,Idletime,5019.68,seconds,,,
+2013-11-01 12:02:10,791,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:02:20,792,Gateway-Linux,1,Uptime,5369.24,seconds,,,
+2013-11-01 12:02:20,793,Gateway-Linux,1,Idletime,5029.62,seconds,,,
+2013-11-01 12:02:20,794,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:02:31,795,Gateway-Linux,1,Uptime,5380.44,seconds,,,
+2013-11-01 12:02:31,796,Gateway-Linux,1,Idletime,5040.39,seconds,,,
+2013-11-01 12:02:31,797,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:02:42,798,Gateway-Linux,1,Uptime,5391.56,seconds,,,
+2013-11-01 12:02:42,799,Gateway-Linux,1,Idletime,5051.11,seconds,,,
+2013-11-01 12:02:42,800,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:02:53,801,Gateway-Linux,1,Uptime,5402.65,seconds,,,
+2013-11-01 12:02:53,802,Gateway-Linux,1,Idletime,5061.94,seconds,,,
+2013-11-01 12:02:53,803,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:03:04,804,Gateway-Linux,1,Uptime,5413.74,seconds,,,
+2013-11-01 12:03:04,805,Gateway-Linux,1,Idletime,5072.49,seconds,,,
+2013-11-01 12:03:04,806,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:03:15,807,Gateway-Linux,1,Uptime,5424.82,seconds,,,
+2013-11-01 12:03:15,808,Gateway-Linux,1,Idletime,5083.09,seconds,,,
+2013-11-01 12:03:15,809,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:03:26,810,Gateway-Linux,1,Uptime,5436.02,seconds,,,
+2013-11-01 12:03:26,811,Gateway-Linux,1,Idletime,5093.91,seconds,,,
+2013-11-01 12:03:26,812,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:03:37,813,Gateway-Linux,1,Uptime,5447.13,seconds,,,
+2013-11-01 12:03:37,814,Gateway-Linux,1,Idletime,5104.53,seconds,,,
+2013-11-01 12:03:38,815,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:03:48,816,Gateway-Linux,1,Uptime,5457.23,seconds,,,
+2013-11-01 12:03:48,817,Gateway-Linux,1,Idletime,5114.39,seconds,,,
+2013-11-01 12:03:48,818,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:03:59,819,Gateway-Linux,1,Uptime,5468.34,seconds,,,
+2013-11-01 12:03:59,820,Gateway-Linux,1,Idletime,5125.19,seconds,,,
+2013-11-01 12:03:59,821,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:04:10,822,Gateway-Linux,1,Uptime,5479.46,seconds,,,
+2013-11-01 12:04:10,823,Gateway-Linux,1,Idletime,5136.12,seconds,,,
+2013-11-01 12:04:10,824,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:04:21,825,Gateway-Linux,1,Uptime,5490.66,seconds,,,
+2013-11-01 12:04:21,826,Gateway-Linux,1,Idletime,5146.92,seconds,,,
+2013-11-01 12:04:21,827,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:04:32,828,Gateway-Linux,1,Uptime,5501.75,seconds,,,
+2013-11-01 12:04:32,829,Gateway-Linux,1,Idletime,5157.66,seconds,,,
+2013-11-01 12:04:32,830,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:04:43,831,Gateway-Linux,1,Uptime,5512.85,seconds,,,
+2013-11-01 12:04:43,832,Gateway-Linux,1,Idletime,5168.37,seconds,,,
+2013-11-01 12:04:43,833,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:04:54,834,Gateway-Linux,1,Uptime,5523.99,seconds,,,
+2013-11-01 12:04:54,835,Gateway-Linux,1,Idletime,5179.03,seconds,,,
+2013-11-01 12:04:54,836,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:05:06,837,Gateway-Linux,1,Uptime,5535.15,seconds,,,
+2013-11-01 12:05:06,838,Gateway-Linux,1,Idletime,5189.87,seconds,,,
+2013-11-01 12:05:06,839,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:05:16,840,Gateway-Linux,1,Uptime,5545.25,seconds,,,
+2013-11-01 12:05:16,841,Gateway-Linux,1,Idletime,5199.69,seconds,,,
+2013-11-01 12:05:16,842,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:05:27,843,Gateway-Linux,1,Uptime,5556.34,seconds,,,
+2013-11-01 12:05:27,844,Gateway-Linux,1,Idletime,5210.45,seconds,,,
+2013-11-01 12:05:27,845,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:05:38,846,Gateway-Linux,1,Uptime,5567.45,seconds,,,
+2013-11-01 12:05:38,847,Gateway-Linux,1,Idletime,5221.24,seconds,,,
+2013-11-01 12:05:38,848,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:05:49,849,Gateway-Linux,1,Uptime,5578.52,seconds,,,
+2013-11-01 12:05:49,850,Gateway-Linux,1,Idletime,5232.02,seconds,,,
+2013-11-01 12:05:49,851,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:06:00,852,Gateway-Linux,1,Uptime,5589.71,seconds,,,
+2013-11-01 12:06:00,853,Gateway-Linux,1,Idletime,5242.92,seconds,,,
+2013-11-01 12:06:00,854,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:06:11,855,Gateway-Linux,1,Uptime,5600.83,seconds,,,
+2013-11-01 12:06:11,856,Gateway-Linux,1,Idletime,5253.74,seconds,,,
+2013-11-01 12:06:11,857,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:06:22,858,Gateway-Linux,1,Uptime,5611.95,seconds,,,
+2013-11-01 12:06:22,859,Gateway-Linux,1,Idletime,5264.58,seconds,,,
+2013-11-01 12:06:22,860,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:06:33,861,Gateway-Linux,1,Uptime,5623.04,seconds,,,
+2013-11-01 12:06:33,862,Gateway-Linux,1,Idletime,5275.43,seconds,,,
+2013-11-01 12:06:33,863,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:06:45,864,Gateway-Linux,1,Uptime,5634.24,seconds,,,
+2013-11-01 12:06:45,865,Gateway-Linux,1,Idletime,5286.29,seconds,,,
+2013-11-01 12:06:45,866,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:06:56,867,Gateway-Linux,1,Uptime,5645.35,seconds,,,
+2013-11-01 12:06:56,868,Gateway-Linux,1,Idletime,5297.07,seconds,,,
+2013-11-01 12:06:56,869,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:07:07,870,Gateway-Linux,1,Uptime,5656.44,seconds,,,
+2013-11-01 12:07:07,871,Gateway-Linux,1,Idletime,5307.53,seconds,,,
+2013-11-01 12:07:07,872,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:07:18,873,Gateway-Linux,1,Uptime,5667.55,seconds,,,
+2013-11-01 12:07:18,874,Gateway-Linux,1,Idletime,5317.93,seconds,,,
+2013-11-01 12:07:18,875,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:07:29,876,Gateway-Linux,1,Uptime,5678.65,seconds,,,
+2013-11-01 12:07:29,877,Gateway-Linux,1,Idletime,5328.58,seconds,,,
+2013-11-01 12:07:29,878,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:07:40,879,Gateway-Linux,1,Uptime,5689.83,seconds,,,
+2013-11-01 12:07:40,880,Gateway-Linux,1,Idletime,5339.18,seconds,,,
+2013-11-01 12:07:40,881,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:07:51,882,Gateway-Linux,1,Uptime,5700.94,seconds,,,
+2013-11-01 12:07:51,883,Gateway-Linux,1,Idletime,5349.99,seconds,,,
+2013-11-01 12:07:51,884,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:08:02,885,Gateway-Linux,1,Uptime,5712.07,seconds,,,
+2013-11-01 12:08:02,886,Gateway-Linux,1,Idletime,5360.88,seconds,,,
+2013-11-01 12:08:02,887,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:08:13,888,Gateway-Linux,1,Uptime,5722.17,seconds,,,
+2013-11-01 12:08:13,889,Gateway-Linux,1,Idletime,5370.51,seconds,,,
+2013-11-01 12:08:13,890,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:08:24,891,Gateway-Linux,1,Uptime,5733.26,seconds,,,
+2013-11-01 12:08:24,892,Gateway-Linux,1,Idletime,5381.29,seconds,,,
+2013-11-01 12:08:24,893,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:08:35,894,Gateway-Linux,1,Uptime,5744.45,seconds,,,
+2013-11-01 12:08:35,895,Gateway-Linux,1,Idletime,5392.01,seconds,,,
+2013-11-01 12:08:35,896,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:08:46,897,Gateway-Linux,1,Uptime,5755.57,seconds,,,
+2013-11-01 12:08:46,898,Gateway-Linux,1,Idletime,5402.83,seconds,,,
+2013-11-01 12:08:46,899,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 12:08:57,900,Gateway-Linux,1,Uptime,5766.79,seconds,,,
+2013-11-01 12:08:57,901,Gateway-Linux,1,Idletime,5413.70,seconds,,,
+2013-11-01 12:08:57,902,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:09:08,903,Gateway-Linux,1,Uptime,5777.89,seconds,,,
+2013-11-01 12:09:08,904,Gateway-Linux,1,Idletime,5424.50,seconds,,,
+2013-11-01 12:09:08,905,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:09:19,906,Gateway-Linux,1,Uptime,5789.07,seconds,,,
+2013-11-01 12:09:19,907,Gateway-Linux,1,Idletime,5435.36,seconds,,,
+2013-11-01 12:09:19,908,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:09:30,909,Gateway-Linux,1,Uptime,5799.19,seconds,,,
+2013-11-01 12:09:30,910,Gateway-Linux,1,Idletime,5445.06,seconds,,,
+2013-11-01 12:09:30,911,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:09:41,912,Gateway-Linux,1,Uptime,5810.30,seconds,,,
+2013-11-01 12:09:41,913,Gateway-Linux,1,Idletime,5455.76,seconds,,,
+2013-11-01 12:09:41,914,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:09:52,915,Gateway-Linux,1,Uptime,5821.39,seconds,,,
+2013-11-01 12:09:52,916,Gateway-Linux,1,Idletime,5466.41,seconds,,,
+2013-11-01 12:09:52,917,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:10:03,918,Gateway-Linux,1,Uptime,5832.50,seconds,,,
+2013-11-01 12:10:03,919,Gateway-Linux,1,Idletime,5477.22,seconds,,,
+2013-11-01 12:10:03,920,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 12:10:14,921,Gateway-Linux,1,Uptime,5843.69,seconds,,,
+2013-11-01 12:10:14,922,Gateway-Linux,1,Idletime,5488.10,seconds,,,
+2013-11-01 12:10:14,923,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:10:25,924,Gateway-Linux,1,Uptime,5854.79,seconds,,,
+2013-11-01 12:10:25,925,Gateway-Linux,1,Idletime,5498.67,seconds,,,
+2013-11-01 12:10:25,926,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:10:36,927,Gateway-Linux,1,Uptime,5865.95,seconds,,,
+2013-11-01 12:10:36,928,Gateway-Linux,1,Idletime,5509.50,seconds,,,
+2013-11-01 12:10:36,929,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 12:10:47,930,Gateway-Linux,1,Uptime,5876.16,seconds,,,
+2013-11-01 12:10:47,931,Gateway-Linux,1,Idletime,5519.39,seconds,,,
+2013-11-01 12:10:47,932,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:10:58,933,Gateway-Linux,1,Uptime,5887.27,seconds,,,
+2013-11-01 12:10:58,934,Gateway-Linux,1,Idletime,5530.28,seconds,,,
+2013-11-01 12:10:58,935,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:11:09,936,Gateway-Linux,1,Uptime,5898.47,seconds,,,
+2013-11-01 12:11:09,937,Gateway-Linux,1,Idletime,5541.12,seconds,,,
+2013-11-01 12:11:09,938,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:11:20,939,Gateway-Linux,1,Uptime,5909.58,seconds,,,
+2013-11-01 12:11:20,940,Gateway-Linux,1,Idletime,5551.73,seconds,,,
+2013-11-01 12:11:20,941,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:11:31,942,Gateway-Linux,1,Uptime,5920.69,seconds,,,
+2013-11-01 12:11:31,943,Gateway-Linux,1,Idletime,5562.61,seconds,,,
+2013-11-01 12:11:31,944,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:11:42,945,Gateway-Linux,1,Uptime,5931.81,seconds,,,
+2013-11-01 12:11:42,946,Gateway-Linux,1,Idletime,5573.32,seconds,,,
+2013-11-01 12:11:42,947,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:11:53,948,Gateway-Linux,1,Uptime,5942.99,seconds,,,
+2013-11-01 12:11:53,949,Gateway-Linux,1,Idletime,5584.08,seconds,,,
+2013-11-01 12:11:53,950,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:12:04,951,Gateway-Linux,1,Uptime,5954.09,seconds,,,
+2013-11-01 12:12:04,952,Gateway-Linux,1,Idletime,5595.02,seconds,,,
+2013-11-01 12:12:04,953,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:12:15,954,Gateway-Linux,1,Uptime,5964.21,seconds,,,
+2013-11-01 12:12:15,955,Gateway-Linux,1,Idletime,5604.73,seconds,,,
+2013-11-01 12:12:15,956,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:12:26,957,Gateway-Linux,1,Uptime,5975.32,seconds,,,
+2013-11-01 12:12:26,958,Gateway-Linux,1,Idletime,5615.43,seconds,,,
+2013-11-01 12:12:26,959,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:12:37,960,Gateway-Linux,1,Uptime,5986.43,seconds,,,
+2013-11-01 12:12:37,961,Gateway-Linux,1,Idletime,5626.14,seconds,,,
+2013-11-01 12:12:37,962,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:12:48,963,Gateway-Linux,1,Uptime,5997.60,seconds,,,
+2013-11-01 12:12:48,964,Gateway-Linux,1,Idletime,5636.96,seconds,,,
+2013-11-01 12:12:48,965,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:12:59,966,Gateway-Linux,1,Uptime,6008.69,seconds,,,
+2013-11-01 12:12:59,967,Gateway-Linux,1,Idletime,5647.69,seconds,,,
+2013-11-01 12:12:59,968,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 12:13:10,969,Gateway-Linux,1,Uptime,6019.81,seconds,,,
+2013-11-01 12:13:10,970,Gateway-Linux,1,Idletime,5658.56,seconds,,,
+2013-11-01 12:13:10,971,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:13:21,972,Gateway-Linux,1,Uptime,6030.90,seconds,,,
+2013-11-01 12:13:21,973,Gateway-Linux,1,Idletime,5669.45,seconds,,,
+2013-11-01 12:13:21,974,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:13:32,975,Gateway-Linux,1,Uptime,6042.01,seconds,,,
+2013-11-01 12:13:32,976,Gateway-Linux,1,Idletime,5680.30,seconds,,,
+2013-11-01 12:13:32,977,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:13:43,978,Gateway-Linux,1,Uptime,6052.19,seconds,,,
+2013-11-01 12:13:43,979,Gateway-Linux,1,Idletime,5690.17,seconds,,,
+2013-11-01 12:13:43,980,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:13:54,981,Gateway-Linux,1,Uptime,6063.30,seconds,,,
+2013-11-01 12:13:54,982,Gateway-Linux,1,Idletime,5701.00,seconds,,,
+2013-11-01 12:13:54,983,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:14:05,984,Gateway-Linux,1,Uptime,6074.40,seconds,,,
+2013-11-01 12:14:05,985,Gateway-Linux,1,Idletime,5711.73,seconds,,,
+2013-11-01 12:14:05,986,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:14:16,987,Gateway-Linux,1,Uptime,6085.53,seconds,,,
+2013-11-01 12:14:16,988,Gateway-Linux,1,Idletime,5722.25,seconds,,,
+2013-11-01 12:14:16,989,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:14:27,990,Gateway-Linux,1,Uptime,6096.71,seconds,,,
+2013-11-01 12:14:27,991,Gateway-Linux,1,Idletime,5732.74,seconds,,,
+2013-11-01 12:14:27,992,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:14:38,993,Gateway-Linux,1,Uptime,6107.84,seconds,,,
+2013-11-01 12:14:38,994,Gateway-Linux,1,Idletime,5743.30,seconds,,,
+2013-11-01 12:14:38,995,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:14:49,996,Gateway-Linux,1,Uptime,6119.05,seconds,,,
+2013-11-01 12:14:49,997,Gateway-Linux,1,Idletime,5753.91,seconds,,,
+2013-11-01 12:14:49,998,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 12:15:01,999,Gateway-Linux,1,Uptime,6130.16,seconds,,,
+2013-11-01 12:15:01,1000,Gateway-Linux,1,Idletime,5764.49,seconds,,,
+2013-11-01 12:15:01,1001,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:15:11,1002,Gateway-Linux,1,Uptime,6140.26,seconds,,,
+2013-11-01 12:15:11,1003,Gateway-Linux,1,Idletime,5774.10,seconds,,,
+2013-11-01 12:15:11,1004,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:15:22,1005,Gateway-Linux,1,Uptime,6151.41,seconds,,,
+2013-11-01 12:15:22,1006,Gateway-Linux,1,Idletime,5784.69,seconds,,,
+2013-11-01 12:15:22,1007,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:15:33,1008,Gateway-Linux,1,Uptime,6162.50,seconds,,,
+2013-11-01 12:15:33,1009,Gateway-Linux,1,Idletime,5795.43,seconds,,,
+2013-11-01 12:15:33,1010,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:15:44,1011,Gateway-Linux,1,Uptime,6173.63,seconds,,,
+2013-11-01 12:15:44,1012,Gateway-Linux,1,Idletime,5806.11,seconds,,,
+2013-11-01 12:15:44,1013,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:15:55,1014,Gateway-Linux,1,Uptime,6184.73,seconds,,,
+2013-11-01 12:15:55,1015,Gateway-Linux,1,Idletime,5816.93,seconds,,,
+2013-11-01 12:15:55,1016,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:16:06,1017,Gateway-Linux,1,Uptime,6195.89,seconds,,,
+2013-11-01 12:16:06,1018,Gateway-Linux,1,Idletime,5827.85,seconds,,,
+2013-11-01 12:16:06,1019,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:16:17,1020,Gateway-Linux,1,Uptime,6207.00,seconds,,,
+2013-11-01 12:16:17,1021,Gateway-Linux,1,Idletime,5838.52,seconds,,,
+2013-11-01 12:16:17,1022,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:16:28,1023,Gateway-Linux,1,Uptime,6218.09,seconds,,,
+2013-11-01 12:16:28,1024,Gateway-Linux,1,Idletime,5849.41,seconds,,,
+2013-11-01 12:16:28,1025,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:16:39,1026,Gateway-Linux,1,Uptime,6228.17,seconds,,,
+2013-11-01 12:16:39,1027,Gateway-Linux,1,Idletime,5859.10,seconds,,,
+2013-11-01 12:16:39,1028,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:16:50,1029,Gateway-Linux,1,Uptime,6239.28,seconds,,,
+2013-11-01 12:16:50,1030,Gateway-Linux,1,Idletime,5869.89,seconds,,,
+2013-11-01 12:16:50,1031,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:17:01,1032,Gateway-Linux,1,Uptime,6250.43,seconds,,,
+2013-11-01 12:17:01,1033,Gateway-Linux,1,Idletime,5880.70,seconds,,,
+2013-11-01 12:17:01,1034,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:17:12,1035,Gateway-Linux,1,Uptime,6261.52,seconds,,,
+2013-11-01 12:17:12,1036,Gateway-Linux,1,Idletime,5891.56,seconds,,,
+2013-11-01 12:17:12,1037,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:17:23,1038,Gateway-Linux,1,Uptime,6272.62,seconds,,,
+2013-11-01 12:17:23,1039,Gateway-Linux,1,Idletime,5902.45,seconds,,,
+2013-11-01 12:17:23,1040,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:17:34,1041,Gateway-Linux,1,Uptime,6283.73,seconds,,,
+2013-11-01 12:17:34,1042,Gateway-Linux,1,Idletime,5913.11,seconds,,,
+2013-11-01 12:17:34,1043,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:17:45,1044,Gateway-Linux,1,Uptime,6294.80,seconds,,,
+2013-11-01 12:17:45,1045,Gateway-Linux,1,Idletime,5923.87,seconds,,,
+2013-11-01 12:17:45,1046,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:17:56,1047,Gateway-Linux,1,Uptime,6305.95,seconds,,,
+2013-11-01 12:17:56,1048,Gateway-Linux,1,Idletime,5934.80,seconds,,,
+2013-11-01 12:17:56,1049,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:18:07,1050,Gateway-Linux,1,Uptime,6317.06,seconds,,,
+2013-11-01 12:18:07,1051,Gateway-Linux,1,Idletime,5945.59,seconds,,,
+2013-11-01 12:18:07,1052,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:18:19,1053,Gateway-Linux,1,Uptime,6328.14,seconds,,,
+2013-11-01 12:18:19,1054,Gateway-Linux,1,Idletime,5956.48,seconds,,,
+2013-11-01 12:18:19,1055,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:18:29,1056,Gateway-Linux,1,Uptime,6338.26,seconds,,,
+2013-11-01 12:18:29,1057,Gateway-Linux,1,Idletime,5966.11,seconds,,,
+2013-11-01 12:18:29,1058,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:18:40,1059,Gateway-Linux,1,Uptime,6349.43,seconds,,,
+2013-11-01 12:18:40,1060,Gateway-Linux,1,Idletime,5976.87,seconds,,,
+2013-11-01 12:18:40,1061,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:18:51,1062,Gateway-Linux,1,Uptime,6360.51,seconds,,,
+2013-11-01 12:18:51,1063,Gateway-Linux,1,Idletime,5987.56,seconds,,,
+2013-11-01 12:18:51,1064,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:19:02,1065,Gateway-Linux,1,Uptime,6371.62,seconds,,,
+2013-11-01 12:19:02,1066,Gateway-Linux,1,Idletime,5998.43,seconds,,,
+2013-11-01 12:19:02,1067,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:19:13,1068,Gateway-Linux,1,Uptime,6382.69,seconds,,,
+2013-11-01 12:19:13,1069,Gateway-Linux,1,Idletime,6009.35,seconds,,,
+2013-11-01 12:19:13,1070,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:19:24,1071,Gateway-Linux,1,Uptime,6393.79,seconds,,,
+2013-11-01 12:19:24,1072,Gateway-Linux,1,Idletime,6020.15,seconds,,,
+2013-11-01 12:19:24,1073,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:19:35,1074,Gateway-Linux,1,Uptime,6404.98,seconds,,,
+2013-11-01 12:19:35,1075,Gateway-Linux,1,Idletime,6030.98,seconds,,,
+2013-11-01 12:19:35,1076,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:19:46,1077,Gateway-Linux,1,Uptime,6416.13,seconds,,,
+2013-11-01 12:19:46,1078,Gateway-Linux,1,Idletime,6041.81,seconds,,,
+2013-11-01 12:19:47,1079,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:19:57,1080,Gateway-Linux,1,Uptime,6426.24,seconds,,,
+2013-11-01 12:19:57,1081,Gateway-Linux,1,Idletime,6051.59,seconds,,,
+2013-11-01 12:19:57,1082,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:20:08,1083,Gateway-Linux,1,Uptime,6437.34,seconds,,,
+2013-11-01 12:20:08,1084,Gateway-Linux,1,Idletime,6062.40,seconds,,,
+2013-11-01 12:20:08,1085,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:20:19,1086,Gateway-Linux,1,Uptime,6448.44,seconds,,,
+2013-11-01 12:20:19,1087,Gateway-Linux,1,Idletime,6073.23,seconds,,,
+2013-11-01 12:20:19,1088,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:20:30,1089,Gateway-Linux,1,Uptime,6459.61,seconds,,,
+2013-11-01 12:20:30,1090,Gateway-Linux,1,Idletime,6084.01,seconds,,,
+2013-11-01 12:20:30,1091,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:20:41,1092,Gateway-Linux,1,Uptime,6470.71,seconds,,,
+2013-11-01 12:20:41,1093,Gateway-Linux,1,Idletime,6094.81,seconds,,,
+2013-11-01 12:20:41,1094,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:20:52,1095,Gateway-Linux,1,Uptime,6481.83,seconds,,,
+2013-11-01 12:20:52,1096,Gateway-Linux,1,Idletime,6105.59,seconds,,,
+2013-11-01 12:20:52,1097,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:21:03,1098,Gateway-Linux,1,Uptime,6492.91,seconds,,,
+2013-11-01 12:21:03,1099,Gateway-Linux,1,Idletime,6116.44,seconds,,,
+2013-11-01 12:21:03,1100,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:21:14,1101,Gateway-Linux,1,Uptime,6504.11,seconds,,,
+2013-11-01 12:21:14,1102,Gateway-Linux,1,Idletime,6126.94,seconds,,,
+2013-11-01 12:21:14,1103,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:21:25,1104,Gateway-Linux,1,Uptime,6514.19,seconds,,,
+2013-11-01 12:21:25,1105,Gateway-Linux,1,Idletime,6136.40,seconds,,,
+2013-11-01 12:21:25,1106,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:21:36,1107,Gateway-Linux,1,Uptime,6525.27,seconds,,,
+2013-11-01 12:21:36,1108,Gateway-Linux,1,Idletime,6146.98,seconds,,,
+2013-11-01 12:21:36,1109,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:21:47,1110,Gateway-Linux,1,Uptime,6536.37,seconds,,,
+2013-11-01 12:21:47,1111,Gateway-Linux,1,Idletime,6157.70,seconds,,,
+2013-11-01 12:21:47,1112,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:21:58,1113,Gateway-Linux,1,Uptime,6547.45,seconds,,,
+2013-11-01 12:21:58,1114,Gateway-Linux,1,Idletime,6168.47,seconds,,,
+2013-11-01 12:21:58,1115,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:22:09,1116,Gateway-Linux,1,Uptime,6558.63,seconds,,,
+2013-11-01 12:22:09,1117,Gateway-Linux,1,Idletime,6179.09,seconds,,,
+2013-11-01 12:22:09,1118,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:22:20,1119,Gateway-Linux,1,Uptime,6569.70,seconds,,,
+2013-11-01 12:22:20,1120,Gateway-Linux,1,Idletime,6190.01,seconds,,,
+2013-11-01 12:22:20,1121,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:22:31,1122,Gateway-Linux,1,Uptime,6580.82,seconds,,,
+2013-11-01 12:22:31,1123,Gateway-Linux,1,Idletime,6200.85,seconds,,,
+2013-11-01 12:22:31,1124,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:22:42,1125,Gateway-Linux,1,Uptime,6591.92,seconds,,,
+2013-11-01 12:22:42,1126,Gateway-Linux,1,Idletime,6211.62,seconds,,,
+2013-11-01 12:22:42,1127,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:22:53,1128,Gateway-Linux,1,Uptime,6603.03,seconds,,,
+2013-11-01 12:22:53,1129,Gateway-Linux,1,Idletime,6222.50,seconds,,,
+2013-11-01 12:22:53,1130,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:23:04,1131,Gateway-Linux,1,Uptime,6613.21,seconds,,,
+2013-11-01 12:23:04,1132,Gateway-Linux,1,Idletime,6232.35,seconds,,,
+2013-11-01 12:23:04,1133,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:23:15,1134,Gateway-Linux,1,Uptime,6624.31,seconds,,,
+2013-11-01 12:23:15,1135,Gateway-Linux,1,Idletime,6243.12,seconds,,,
+2013-11-01 12:23:15,1136,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:23:26,1137,Gateway-Linux,1,Uptime,6635.39,seconds,,,
+2013-11-01 12:23:26,1138,Gateway-Linux,1,Idletime,6253.77,seconds,,,
+2013-11-01 12:23:26,1139,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:23:37,1140,Gateway-Linux,1,Uptime,6646.51,seconds,,,
+2013-11-01 12:23:37,1141,Gateway-Linux,1,Idletime,6264.66,seconds,,,
+2013-11-01 12:23:37,1142,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:23:48,1143,Gateway-Linux,1,Uptime,6657.72,seconds,,,
+2013-11-01 12:23:48,1144,Gateway-Linux,1,Idletime,6275.46,seconds,,,
+2013-11-01 12:23:48,1145,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:23:59,1146,Gateway-Linux,1,Uptime,6668.82,seconds,,,
+2013-11-01 12:23:59,1147,Gateway-Linux,1,Idletime,6286.28,seconds,,,
+2013-11-01 12:23:59,1148,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:24:10,1149,Gateway-Linux,1,Uptime,6679.98,seconds,,,
+2013-11-01 12:24:10,1150,Gateway-Linux,1,Idletime,6297.14,seconds,,,
+2013-11-01 12:24:10,1151,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:24:21,1152,Gateway-Linux,1,Uptime,6691.06,seconds,,,
+2013-11-01 12:24:21,1153,Gateway-Linux,1,Idletime,6307.92,seconds,,,
+2013-11-01 12:24:21,1154,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:24:32,1155,Gateway-Linux,1,Uptime,6701.16,seconds,,,
+2013-11-01 12:24:32,1156,Gateway-Linux,1,Idletime,6317.51,seconds,,,
+2013-11-01 12:24:32,1157,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:24:43,1158,Gateway-Linux,1,Uptime,6712.35,seconds,,,
+2013-11-01 12:24:43,1159,Gateway-Linux,1,Idletime,6328.14,seconds,,,
+2013-11-01 12:24:43,1160,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:24:54,1161,Gateway-Linux,1,Uptime,6723.45,seconds,,,
+2013-11-01 12:24:54,1162,Gateway-Linux,1,Idletime,6339.01,seconds,,,
+2013-11-01 12:24:54,1163,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:25:05,1164,Gateway-Linux,1,Uptime,6734.52,seconds,,,
+2013-11-01 12:25:05,1165,Gateway-Linux,1,Idletime,6349.78,seconds,,,
+2013-11-01 12:25:05,1166,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:25:16,1167,Gateway-Linux,1,Uptime,6745.61,seconds,,,
+2013-11-01 12:25:16,1168,Gateway-Linux,1,Idletime,6360.29,seconds,,,
+2013-11-01 12:25:16,1169,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:25:27,1170,Gateway-Linux,1,Uptime,6756.79,seconds,,,
+2013-11-01 12:25:27,1171,Gateway-Linux,1,Idletime,6371.01,seconds,,,
+2013-11-01 12:25:27,1172,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:25:38,1173,Gateway-Linux,1,Uptime,6767.86,seconds,,,
+2013-11-01 12:25:38,1174,Gateway-Linux,1,Idletime,6381.87,seconds,,,
+2013-11-01 12:25:38,1175,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:25:49,1176,Gateway-Linux,1,Uptime,6778.94,seconds,,,
+2013-11-01 12:25:49,1177,Gateway-Linux,1,Idletime,6392.63,seconds,,,
+2013-11-01 12:25:49,1178,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:26:00,1179,Gateway-Linux,1,Uptime,6790.02,seconds,,,
+2013-11-01 12:26:00,1180,Gateway-Linux,1,Idletime,6403.49,seconds,,,
+2013-11-01 12:26:00,1181,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:26:11,1182,Gateway-Linux,1,Uptime,6801.13,seconds,,,
+2013-11-01 12:26:11,1183,Gateway-Linux,1,Idletime,6414.27,seconds,,,
+2013-11-01 12:26:12,1184,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:26:22,1185,Gateway-Linux,1,Uptime,6811.32,seconds,,,
+2013-11-01 12:26:22,1186,Gateway-Linux,1,Idletime,6424.02,seconds,,,
+2013-11-01 12:26:22,1187,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:26:33,1188,Gateway-Linux,1,Uptime,6822.42,seconds,,,
+2013-11-01 12:26:33,1189,Gateway-Linux,1,Idletime,6434.76,seconds,,,
+2013-11-01 12:26:33,1190,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:26:44,1191,Gateway-Linux,1,Uptime,6833.52,seconds,,,
+2013-11-01 12:26:44,1192,Gateway-Linux,1,Idletime,6445.63,seconds,,,
+2013-11-01 12:26:44,1193,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:26:55,1194,Gateway-Linux,1,Uptime,6844.63,seconds,,,
+2013-11-01 12:26:55,1195,Gateway-Linux,1,Idletime,6456.51,seconds,,,
+2013-11-01 12:26:55,1196,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:27:06,1197,Gateway-Linux,1,Uptime,6855.74,seconds,,,
+2013-11-01 12:27:06,1198,Gateway-Linux,1,Idletime,6467.35,seconds,,,
+2013-11-01 12:27:06,1199,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:27:17,1200,Gateway-Linux,1,Uptime,6866.90,seconds,,,
+2013-11-01 12:27:17,1201,Gateway-Linux,1,Idletime,6478.28,seconds,,,
+2013-11-01 12:27:17,1202,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:27:28,1203,Gateway-Linux,1,Uptime,6878.00,seconds,,,
+2013-11-01 12:27:28,1204,Gateway-Linux,1,Idletime,6489.06,seconds,,,
+2013-11-01 12:27:28,1205,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:27:39,1206,Gateway-Linux,1,Uptime,6889.12,seconds,,,
+2013-11-01 12:27:39,1207,Gateway-Linux,1,Idletime,6499.70,seconds,,,
+2013-11-01 12:27:39,1208,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:27:50,1209,Gateway-Linux,1,Uptime,6899.22,seconds,,,
+2013-11-01 12:27:50,1210,Gateway-Linux,1,Idletime,6509.57,seconds,,,
+2013-11-01 12:27:50,1211,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:28:01,1212,Gateway-Linux,1,Uptime,6910.41,seconds,,,
+2013-11-01 12:28:01,1213,Gateway-Linux,1,Idletime,6520.36,seconds,,,
+2013-11-01 12:28:01,1214,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:28:12,1215,Gateway-Linux,1,Uptime,6921.49,seconds,,,
+2013-11-01 12:28:12,1216,Gateway-Linux,1,Idletime,6530.93,seconds,,,
+2013-11-01 12:28:12,1217,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:28:23,1218,Gateway-Linux,1,Uptime,6932.57,seconds,,,
+2013-11-01 12:28:23,1219,Gateway-Linux,1,Idletime,6541.34,seconds,,,
+2013-11-01 12:28:23,1220,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:28:34,1221,Gateway-Linux,1,Uptime,6943.70,seconds,,,
+2013-11-01 12:28:34,1222,Gateway-Linux,1,Idletime,6551.90,seconds,,,
+2013-11-01 12:28:34,1223,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:28:45,1224,Gateway-Linux,1,Uptime,6954.78,seconds,,,
+2013-11-01 12:28:45,1225,Gateway-Linux,1,Idletime,6562.60,seconds,,,
+2013-11-01 12:28:45,1226,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:28:56,1227,Gateway-Linux,1,Uptime,6965.95,seconds,,,
+2013-11-01 12:28:56,1228,Gateway-Linux,1,Idletime,6573.31,seconds,,,
+2013-11-01 12:28:56,1229,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:29:07,1230,Gateway-Linux,1,Uptime,6977.04,seconds,,,
+2013-11-01 12:29:07,1231,Gateway-Linux,1,Idletime,6584.11,seconds,,,
+2013-11-01 12:29:07,1232,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:29:19,1233,Gateway-Linux,1,Uptime,6988.15,seconds,,,
+2013-11-01 12:29:19,1234,Gateway-Linux,1,Idletime,6594.81,seconds,,,
+2013-11-01 12:29:19,1235,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:29:29,1236,Gateway-Linux,1,Uptime,6998.24,seconds,,,
+2013-11-01 12:29:29,1237,Gateway-Linux,1,Idletime,6604.66,seconds,,,
+2013-11-01 12:29:29,1238,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:29:40,1239,Gateway-Linux,1,Uptime,7009.35,seconds,,,
+2013-11-01 12:29:40,1240,Gateway-Linux,1,Idletime,6615.22,seconds,,,
+2013-11-01 12:29:40,1241,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:29:51,1242,Gateway-Linux,1,Uptime,7020.54,seconds,,,
+2013-11-01 12:29:51,1243,Gateway-Linux,1,Idletime,6626.07,seconds,,,
+2013-11-01 12:29:51,1244,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:30:02,1245,Gateway-Linux,1,Uptime,7031.62,seconds,,,
+2013-11-01 12:30:02,1246,Gateway-Linux,1,Idletime,6636.94,seconds,,,
+2013-11-01 12:30:02,1247,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:30:13,1248,Gateway-Linux,1,Uptime,7042.74,seconds,,,
+2013-11-01 12:30:13,1249,Gateway-Linux,1,Idletime,6647.67,seconds,,,
+2013-11-01 12:30:13,1250,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:30:24,1251,Gateway-Linux,1,Uptime,7053.84,seconds,,,
+2013-11-01 12:30:24,1252,Gateway-Linux,1,Idletime,6658.58,seconds,,,
+2013-11-01 12:30:24,1253,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:30:35,1254,Gateway-Linux,1,Uptime,7065.00,seconds,,,
+2013-11-01 12:30:35,1255,Gateway-Linux,1,Idletime,6669.41,seconds,,,
+2013-11-01 12:30:35,1256,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:30:46,1257,Gateway-Linux,1,Uptime,7076.07,seconds,,,
+2013-11-01 12:30:46,1258,Gateway-Linux,1,Idletime,6680.06,seconds,,,
+2013-11-01 12:30:46,1259,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:30:58,1260,Gateway-Linux,1,Uptime,7087.16,seconds,,,
+2013-11-01 12:30:58,1261,Gateway-Linux,1,Idletime,6690.96,seconds,,,
+2013-11-01 12:30:58,1262,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:31:09,1263,Gateway-Linux,1,Uptime,7098.27,seconds,,,
+2013-11-01 12:31:09,1264,Gateway-Linux,1,Idletime,6701.79,seconds,,,
+2013-11-01 12:31:09,1265,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:31:20,1266,Gateway-Linux,1,Uptime,7109.36,seconds,,,
+2013-11-01 12:31:20,1267,Gateway-Linux,1,Idletime,6712.64,seconds,,,
+2013-11-01 12:31:20,1268,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:31:31,1269,Gateway-Linux,1,Uptime,7120.58,seconds,,,
+2013-11-01 12:31:31,1270,Gateway-Linux,1,Idletime,6723.33,seconds,,,
+2013-11-01 12:31:31,1271,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:31:42,1272,Gateway-Linux,1,Uptime,7131.66,seconds,,,
+2013-11-01 12:31:42,1273,Gateway-Linux,1,Idletime,6733.94,seconds,,,
+2013-11-01 12:31:42,1274,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:31:53,1275,Gateway-Linux,1,Uptime,7142.79,seconds,,,
+2013-11-01 12:31:53,1276,Gateway-Linux,1,Idletime,6744.85,seconds,,,
+2013-11-01 12:31:53,1277,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:32:04,1278,Gateway-Linux,1,Uptime,7153.87,seconds,,,
+2013-11-01 12:32:04,1279,Gateway-Linux,1,Idletime,6755.75,seconds,,,
+2013-11-01 12:32:04,1280,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:32:15,1281,Gateway-Linux,1,Uptime,7165.10,seconds,,,
+2013-11-01 12:32:15,1282,Gateway-Linux,1,Idletime,6766.49,seconds,,,
+2013-11-01 12:32:15,1283,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:32:26,1284,Gateway-Linux,1,Uptime,7175.18,seconds,,,
+2013-11-01 12:32:26,1285,Gateway-Linux,1,Idletime,6776.30,seconds,,,
+2013-11-01 12:32:26,1286,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:32:37,1287,Gateway-Linux,1,Uptime,7186.28,seconds,,,
+2013-11-01 12:32:37,1288,Gateway-Linux,1,Idletime,6787.05,seconds,,,
+2013-11-01 12:32:37,1289,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:32:48,1290,Gateway-Linux,1,Uptime,7197.36,seconds,,,
+2013-11-01 12:32:48,1291,Gateway-Linux,1,Idletime,6797.82,seconds,,,
+2013-11-01 12:32:48,1292,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:32:59,1293,Gateway-Linux,1,Uptime,7208.47,seconds,,,
+2013-11-01 12:32:59,1294,Gateway-Linux,1,Idletime,6808.65,seconds,,,
+2013-11-01 12:32:59,1295,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:33:10,1296,Gateway-Linux,1,Uptime,7219.66,seconds,,,
+2013-11-01 12:33:10,1297,Gateway-Linux,1,Idletime,6819.39,seconds,,,
+2013-11-01 12:33:10,1298,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:33:21,1299,Gateway-Linux,1,Uptime,7230.81,seconds,,,
+2013-11-01 12:33:21,1300,Gateway-Linux,1,Idletime,6830.06,seconds,,,
+2013-11-01 12:33:21,1301,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:33:32,1302,Gateway-Linux,1,Uptime,7241.91,seconds,,,
+2013-11-01 12:33:32,1303,Gateway-Linux,1,Idletime,6840.88,seconds,,,
+2013-11-01 12:33:32,1304,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:33:43,1305,Gateway-Linux,1,Uptime,7253.00,seconds,,,
+2013-11-01 12:33:43,1306,Gateway-Linux,1,Idletime,6851.72,seconds,,,
+2013-11-01 12:33:43,1307,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:33:54,1308,Gateway-Linux,1,Uptime,7264.09,seconds,,,
+2013-11-01 12:33:54,1309,Gateway-Linux,1,Idletime,6862.36,seconds,,,
+2013-11-01 12:33:54,1310,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:34:05,1311,Gateway-Linux,1,Uptime,7274.25,seconds,,,
+2013-11-01 12:34:05,1312,Gateway-Linux,1,Idletime,6872.31,seconds,,,
+2013-11-01 12:34:05,1313,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:34:16,1314,Gateway-Linux,1,Uptime,7285.34,seconds,,,
+2013-11-01 12:34:16,1315,Gateway-Linux,1,Idletime,6883.17,seconds,,,
+2013-11-01 12:34:16,1316,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:34:27,1317,Gateway-Linux,1,Uptime,7296.45,seconds,,,
+2013-11-01 12:34:27,1318,Gateway-Linux,1,Idletime,6893.93,seconds,,,
+2013-11-01 12:34:27,1319,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:34:38,1320,Gateway-Linux,1,Uptime,7307.56,seconds,,,
+2013-11-01 12:34:38,1321,Gateway-Linux,1,Idletime,6904.70,seconds,,,
+2013-11-01 12:34:38,1322,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:34:49,1323,Gateway-Linux,1,Uptime,7318.77,seconds,,,
+2013-11-01 12:34:49,1324,Gateway-Linux,1,Idletime,6915.34,seconds,,,
+2013-11-01 12:34:49,1325,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:35:00,1326,Gateway-Linux,1,Uptime,7329.88,seconds,,,
+2013-11-01 12:35:00,1327,Gateway-Linux,1,Idletime,6926.05,seconds,,,
+2013-11-01 12:35:00,1328,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:35:11,1329,Gateway-Linux,1,Uptime,7340.96,seconds,,,
+2013-11-01 12:35:11,1330,Gateway-Linux,1,Idletime,6936.44,seconds,,,
+2013-11-01 12:35:11,1331,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:35:22,1332,Gateway-Linux,1,Uptime,7352.04,seconds,,,
+2013-11-01 12:35:22,1333,Gateway-Linux,1,Idletime,6947.01,seconds,,,
+2013-11-01 12:35:22,1334,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:35:33,1335,Gateway-Linux,1,Uptime,7363.13,seconds,,,
+2013-11-01 12:35:33,1336,Gateway-Linux,1,Idletime,6957.74,seconds,,,
+2013-11-01 12:35:34,1337,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:35:44,1338,Gateway-Linux,1,Uptime,7373.32,seconds,,,
+2013-11-01 12:35:44,1339,Gateway-Linux,1,Idletime,6967.31,seconds,,,
+2013-11-01 12:35:44,1340,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:35:55,1341,Gateway-Linux,1,Uptime,7384.49,seconds,,,
+2013-11-01 12:35:55,1342,Gateway-Linux,1,Idletime,6978.17,seconds,,,
+2013-11-01 12:35:55,1343,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:36:06,1344,Gateway-Linux,1,Uptime,7395.63,seconds,,,
+2013-11-01 12:36:06,1345,Gateway-Linux,1,Idletime,6989.01,seconds,,,
+2013-11-01 12:36:06,1346,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:36:17,1347,Gateway-Linux,1,Uptime,7406.73,seconds,,,
+2013-11-01 12:36:17,1348,Gateway-Linux,1,Idletime,6999.84,seconds,,,
+2013-11-01 12:36:17,1349,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:36:28,1350,Gateway-Linux,1,Uptime,7417.83,seconds,,,
+2013-11-01 12:36:28,1351,Gateway-Linux,1,Idletime,7010.58,seconds,,,
+2013-11-01 12:36:28,1352,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:36:39,1353,Gateway-Linux,1,Uptime,7429.02,seconds,,,
+2013-11-01 12:36:39,1354,Gateway-Linux,1,Idletime,7021.14,seconds,,,
+2013-11-01 12:36:39,1355,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:36:50,1356,Gateway-Linux,1,Uptime,7440.09,seconds,,,
+2013-11-01 12:36:50,1357,Gateway-Linux,1,Idletime,7031.96,seconds,,,
+2013-11-01 12:36:50,1358,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:37:01,1359,Gateway-Linux,1,Uptime,7450.17,seconds,,,
+2013-11-01 12:37:01,1360,Gateway-Linux,1,Idletime,7041.74,seconds,,,
+2013-11-01 12:37:01,1361,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:37:12,1362,Gateway-Linux,1,Uptime,7461.24,seconds,,,
+2013-11-01 12:37:12,1363,Gateway-Linux,1,Idletime,7052.60,seconds,,,
+2013-11-01 12:37:12,1364,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:37:23,1365,Gateway-Linux,1,Uptime,7472.39,seconds,,,
+2013-11-01 12:37:23,1366,Gateway-Linux,1,Idletime,7063.26,seconds,,,
+2013-11-01 12:37:23,1367,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:37:34,1368,Gateway-Linux,1,Uptime,7483.50,seconds,,,
+2013-11-01 12:37:34,1369,Gateway-Linux,1,Idletime,7073.99,seconds,,,
+2013-11-01 12:37:34,1370,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:37:45,1371,Gateway-Linux,1,Uptime,7494.60,seconds,,,
+2013-11-01 12:37:45,1372,Gateway-Linux,1,Idletime,7084.88,seconds,,,
+2013-11-01 12:37:45,1373,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:37:56,1374,Gateway-Linux,1,Uptime,7505.72,seconds,,,
+2013-11-01 12:37:56,1375,Gateway-Linux,1,Idletime,7095.64,seconds,,,
+2013-11-01 12:37:56,1376,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:38:07,1377,Gateway-Linux,1,Uptime,7516.84,seconds,,,
+2013-11-01 12:38:07,1378,Gateway-Linux,1,Idletime,7106.52,seconds,,,
+2013-11-01 12:38:07,1379,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:38:18,1380,Gateway-Linux,1,Uptime,7528.04,seconds,,,
+2013-11-01 12:38:18,1381,Gateway-Linux,1,Idletime,7117.45,seconds,,,
+2013-11-01 12:38:18,1382,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:38:29,1383,Gateway-Linux,1,Uptime,7539.14,seconds,,,
+2013-11-01 12:38:29,1384,Gateway-Linux,1,Idletime,7128.21,seconds,,,
+2013-11-01 12:38:30,1385,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:38:40,1386,Gateway-Linux,1,Uptime,7549.24,seconds,,,
+2013-11-01 12:38:40,1387,Gateway-Linux,1,Idletime,7138.07,seconds,,,
+2013-11-01 12:38:40,1388,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:38:51,1389,Gateway-Linux,1,Uptime,7560.34,seconds,,,
+2013-11-01 12:38:51,1390,Gateway-Linux,1,Idletime,7148.73,seconds,,,
+2013-11-01 12:38:51,1391,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:39:02,1392,Gateway-Linux,1,Uptime,7571.42,seconds,,,
+2013-11-01 12:39:02,1393,Gateway-Linux,1,Idletime,7159.66,seconds,,,
+2013-11-01 12:39:02,1394,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:39:13,1395,Gateway-Linux,1,Uptime,7582.64,seconds,,,
+2013-11-01 12:39:13,1396,Gateway-Linux,1,Idletime,7170.41,seconds,,,
+2013-11-01 12:39:13,1397,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:39:24,1398,Gateway-Linux,1,Uptime,7593.75,seconds,,,
+2013-11-01 12:39:24,1399,Gateway-Linux,1,Idletime,7181.09,seconds,,,
+2013-11-01 12:39:24,1400,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:39:35,1401,Gateway-Linux,1,Uptime,7604.83,seconds,,,
+2013-11-01 12:39:35,1402,Gateway-Linux,1,Idletime,7191.84,seconds,,,
+2013-11-01 12:39:35,1403,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:39:46,1404,Gateway-Linux,1,Uptime,7615.92,seconds,,,
+2013-11-01 12:39:46,1405,Gateway-Linux,1,Idletime,7202.61,seconds,,,
+2013-11-01 12:39:46,1406,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:39:57,1407,Gateway-Linux,1,Uptime,7627.07,seconds,,,
+2013-11-01 12:39:57,1408,Gateway-Linux,1,Idletime,7213.44,seconds,,,
+2013-11-01 12:39:57,1409,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:40:09,1410,Gateway-Linux,1,Uptime,7638.16,seconds,,,
+2013-11-01 12:40:09,1411,Gateway-Linux,1,Idletime,7224.31,seconds,,,
+2013-11-01 12:40:09,1412,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:40:20,1413,Gateway-Linux,1,Uptime,7649.28,seconds,,,
+2013-11-01 12:40:20,1414,Gateway-Linux,1,Idletime,7235.05,seconds,,,
+2013-11-01 12:40:20,1415,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:40:31,1416,Gateway-Linux,1,Uptime,7660.37,seconds,,,
+2013-11-01 12:40:31,1417,Gateway-Linux,1,Idletime,7245.01,seconds,,,
+2013-11-01 12:40:31,1418,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:40:42,1419,Gateway-Linux,1,Uptime,7671.48,seconds,,,
+2013-11-01 12:40:42,1420,Gateway-Linux,1,Idletime,7255.68,seconds,,,
+2013-11-01 12:40:42,1421,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:40:53,1422,Gateway-Linux,1,Uptime,7682.72,seconds,,,
+2013-11-01 12:40:53,1423,Gateway-Linux,1,Idletime,7266.52,seconds,,,
+2013-11-01 12:40:53,1424,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:41:04,1425,Gateway-Linux,1,Uptime,7693.92,seconds,,,
+2013-11-01 12:41:04,1426,Gateway-Linux,1,Idletime,7277.43,seconds,,,
+2013-11-01 12:41:04,1427,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:41:15,1428,Gateway-Linux,1,Uptime,7705.05,seconds,,,
+2013-11-01 12:41:15,1429,Gateway-Linux,1,Idletime,7288.31,seconds,,,
+2013-11-01 12:41:15,1430,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:41:26,1431,Gateway-Linux,1,Uptime,7715.17,seconds,,,
+2013-11-01 12:41:26,1432,Gateway-Linux,1,Idletime,7297.99,seconds,,,
+2013-11-01 12:41:26,1433,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:41:37,1434,Gateway-Linux,1,Uptime,7726.37,seconds,,,
+2013-11-01 12:41:37,1435,Gateway-Linux,1,Idletime,7308.89,seconds,,,
+2013-11-01 12:41:37,1436,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:41:48,1437,Gateway-Linux,1,Uptime,7737.50,seconds,,,
+2013-11-01 12:41:48,1438,Gateway-Linux,1,Idletime,7319.49,seconds,,,
+2013-11-01 12:41:48,1439,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:41:59,1440,Gateway-Linux,1,Uptime,7748.61,seconds,,,
+2013-11-01 12:41:59,1441,Gateway-Linux,1,Idletime,7330.05,seconds,,,
+2013-11-01 12:41:59,1442,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:42:10,1443,Gateway-Linux,1,Uptime,7759.73,seconds,,,
+2013-11-01 12:42:10,1444,Gateway-Linux,1,Idletime,7340.52,seconds,,,
+2013-11-01 12:42:10,1445,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:42:21,1446,Gateway-Linux,1,Uptime,7770.85,seconds,,,
+2013-11-01 12:42:21,1447,Gateway-Linux,1,Idletime,7351.30,seconds,,,
+2013-11-01 12:42:21,1448,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:42:32,1449,Gateway-Linux,1,Uptime,7782.06,seconds,,,
+2013-11-01 12:42:32,1450,Gateway-Linux,1,Idletime,7361.92,seconds,,,
+2013-11-01 12:42:32,1451,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:42:43,1452,Gateway-Linux,1,Uptime,7792.19,seconds,,,
+2013-11-01 12:42:43,1453,Gateway-Linux,1,Idletime,7371.66,seconds,,,
+2013-11-01 12:42:43,1454,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:42:54,1455,Gateway-Linux,1,Uptime,7803.31,seconds,,,
+2013-11-01 12:42:54,1456,Gateway-Linux,1,Idletime,7382.57,seconds,,,
+2013-11-01 12:42:54,1457,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:43:05,1458,Gateway-Linux,1,Uptime,7814.42,seconds,,,
+2013-11-01 12:43:05,1459,Gateway-Linux,1,Idletime,7393.43,seconds,,,
+2013-11-01 12:43:05,1460,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:43:16,1461,Gateway-Linux,1,Uptime,7825.52,seconds,,,
+2013-11-01 12:43:16,1462,Gateway-Linux,1,Idletime,7404.31,seconds,,,
+2013-11-01 12:43:16,1463,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 12:43:27,1464,Gateway-Linux,1,Uptime,7836.83,seconds,,,
+2013-11-01 12:43:27,1465,Gateway-Linux,1,Idletime,7414.93,seconds,,,
+2013-11-01 12:43:27,1466,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:43:38,1467,Gateway-Linux,1,Uptime,7847.95,seconds,,,
+2013-11-01 12:43:38,1468,Gateway-Linux,1,Idletime,7425.74,seconds,,,
+2013-11-01 12:43:38,1469,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:43:49,1470,Gateway-Linux,1,Uptime,7859.04,seconds,,,
+2013-11-01 12:43:49,1471,Gateway-Linux,1,Idletime,7436.48,seconds,,,
+2013-11-01 12:43:49,1472,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:44:01,1473,Gateway-Linux,1,Uptime,7870.15,seconds,,,
+2013-11-01 12:44:01,1474,Gateway-Linux,1,Idletime,7446.97,seconds,,,
+2013-11-01 12:44:01,1475,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:44:11,1476,Gateway-Linux,1,Uptime,7880.34,seconds,,,
+2013-11-01 12:44:11,1477,Gateway-Linux,1,Idletime,7456.67,seconds,,,
+2013-11-01 12:44:11,1478,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:44:22,1479,Gateway-Linux,1,Uptime,7891.44,seconds,,,
+2013-11-01 12:44:22,1480,Gateway-Linux,1,Idletime,7467.46,seconds,,,
+2013-11-01 12:44:22,1481,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:44:33,1482,Gateway-Linux,1,Uptime,7902.51,seconds,,,
+2013-11-01 12:44:33,1483,Gateway-Linux,1,Idletime,7478.27,seconds,,,
+2013-11-01 12:44:33,1484,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:44:44,1485,Gateway-Linux,1,Uptime,7913.61,seconds,,,
+2013-11-01 12:44:44,1486,Gateway-Linux,1,Idletime,7489.03,seconds,,,
+2013-11-01 12:44:44,1487,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:44:55,1488,Gateway-Linux,1,Uptime,7924.70,seconds,,,
+2013-11-01 12:44:55,1489,Gateway-Linux,1,Idletime,7499.92,seconds,,,
+2013-11-01 12:44:55,1490,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:45:06,1491,Gateway-Linux,1,Uptime,7935.87,seconds,,,
+2013-11-01 12:45:06,1492,Gateway-Linux,1,Idletime,7510.77,seconds,,,
+2013-11-01 12:45:06,1493,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:45:17,1494,Gateway-Linux,1,Uptime,7946.97,seconds,,,
+2013-11-01 12:45:17,1495,Gateway-Linux,1,Idletime,7521.53,seconds,,,
+2013-11-01 12:45:17,1496,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:45:28,1497,Gateway-Linux,1,Uptime,7958.05,seconds,,,
+2013-11-01 12:45:28,1498,Gateway-Linux,1,Idletime,7532.37,seconds,,,
+2013-11-01 12:45:28,1499,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:45:39,1500,Gateway-Linux,1,Uptime,7968.16,seconds,,,
+2013-11-01 12:45:39,1501,Gateway-Linux,1,Idletime,7542.15,seconds,,,
+2013-11-01 12:45:39,1502,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:45:50,1503,Gateway-Linux,1,Uptime,7979.23,seconds,,,
+2013-11-01 12:45:50,1504,Gateway-Linux,1,Idletime,7553.04,seconds,,,
+2013-11-01 12:45:50,1505,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:46:01,1506,Gateway-Linux,1,Uptime,7990.41,seconds,,,
+2013-11-01 12:46:01,1507,Gateway-Linux,1,Idletime,7563.84,seconds,,,
+2013-11-01 12:46:01,1508,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 12:46:12,1509,Gateway-Linux,1,Uptime,8001.49,seconds,,,
+2013-11-01 12:46:12,1510,Gateway-Linux,1,Idletime,7574.62,seconds,,,
+2013-11-01 12:46:12,1511,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:46:23,1512,Gateway-Linux,1,Uptime,8012.57,seconds,,,
+2013-11-01 12:46:23,1513,Gateway-Linux,1,Idletime,7585.49,seconds,,,
+2013-11-01 12:46:23,1514,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:46:34,1515,Gateway-Linux,1,Uptime,8023.66,seconds,,,
+2013-11-01 12:46:34,1516,Gateway-Linux,1,Idletime,7596.34,seconds,,,
+2013-11-01 12:46:34,1517,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:46:45,1518,Gateway-Linux,1,Uptime,8034.81,seconds,,,
+2013-11-01 12:46:45,1519,Gateway-Linux,1,Idletime,7606.89,seconds,,,
+2013-11-01 12:46:45,1520,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:46:56,1521,Gateway-Linux,1,Uptime,8045.89,seconds,,,
+2013-11-01 12:46:56,1522,Gateway-Linux,1,Idletime,7617.69,seconds,,,
+2013-11-01 12:46:56,1523,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:47:07,1524,Gateway-Linux,1,Uptime,8056.98,seconds,,,
+2013-11-01 12:47:07,1525,Gateway-Linux,1,Idletime,7628.52,seconds,,,
+2013-11-01 12:47:07,1526,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:47:18,1527,Gateway-Linux,1,Uptime,8068.05,seconds,,,
+2013-11-01 12:47:18,1528,Gateway-Linux,1,Idletime,7639.22,seconds,,,
+2013-11-01 12:47:18,1529,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:47:29,1530,Gateway-Linux,1,Uptime,8079.13,seconds,,,
+2013-11-01 12:47:29,1531,Gateway-Linux,1,Idletime,7649.73,seconds,,,
+2013-11-01 12:47:30,1532,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:47:40,1533,Gateway-Linux,1,Uptime,8089.28,seconds,,,
+2013-11-01 12:47:40,1534,Gateway-Linux,1,Idletime,7659.60,seconds,,,
+2013-11-01 12:47:40,1535,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:47:51,1536,Gateway-Linux,1,Uptime,8100.39,seconds,,,
+2013-11-01 12:47:51,1537,Gateway-Linux,1,Idletime,7670.31,seconds,,,
+2013-11-01 12:47:51,1538,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:48:02,1539,Gateway-Linux,1,Uptime,8111.47,seconds,,,
+2013-11-01 12:48:02,1540,Gateway-Linux,1,Idletime,7681.17,seconds,,,
+2013-11-01 12:48:02,1541,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:48:13,1542,Gateway-Linux,1,Uptime,8122.57,seconds,,,
+2013-11-01 12:48:13,1543,Gateway-Linux,1,Idletime,7691.98,seconds,,,
+2013-11-01 12:48:13,1544,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:48:24,1545,Gateway-Linux,1,Uptime,8133.73,seconds,,,
+2013-11-01 12:48:24,1546,Gateway-Linux,1,Idletime,7702.65,seconds,,,
+2013-11-01 12:48:24,1547,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:48:35,1548,Gateway-Linux,1,Uptime,8144.81,seconds,,,
+2013-11-01 12:48:35,1549,Gateway-Linux,1,Idletime,7713.49,seconds,,,
+2013-11-01 12:48:35,1550,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:48:46,1551,Gateway-Linux,1,Uptime,8155.88,seconds,,,
+2013-11-01 12:48:46,1552,Gateway-Linux,1,Idletime,7724.13,seconds,,,
+2013-11-01 12:48:46,1553,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:48:57,1554,Gateway-Linux,1,Uptime,8166.99,seconds,,,
+2013-11-01 12:48:57,1555,Gateway-Linux,1,Idletime,7734.50,seconds,,,
+2013-11-01 12:48:57,1556,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:49:08,1557,Gateway-Linux,1,Uptime,8178.09,seconds,,,
+2013-11-01 12:49:08,1558,Gateway-Linux,1,Idletime,7744.97,seconds,,,
+2013-11-01 12:49:08,1559,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:49:19,1560,Gateway-Linux,1,Uptime,8188.26,seconds,,,
+2013-11-01 12:49:19,1561,Gateway-Linux,1,Idletime,7754.55,seconds,,,
+2013-11-01 12:49:19,1562,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:49:30,1563,Gateway-Linux,1,Uptime,8199.34,seconds,,,
+2013-11-01 12:49:30,1564,Gateway-Linux,1,Idletime,7765.29,seconds,,,
+2013-11-01 12:49:30,1565,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:49:41,1566,Gateway-Linux,1,Uptime,8210.44,seconds,,,
+2013-11-01 12:49:41,1567,Gateway-Linux,1,Idletime,7776.03,seconds,,,
+2013-11-01 12:49:41,1568,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:49:52,1569,Gateway-Linux,1,Uptime,8221.54,seconds,,,
+2013-11-01 12:49:52,1570,Gateway-Linux,1,Idletime,7786.80,seconds,,,
+2013-11-01 12:49:52,1571,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:50:03,1572,Gateway-Linux,1,Uptime,8232.66,seconds,,,
+2013-11-01 12:50:03,1573,Gateway-Linux,1,Idletime,7797.73,seconds,,,
+2013-11-01 12:50:03,1574,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:50:14,1575,Gateway-Linux,1,Uptime,8243.85,seconds,,,
+2013-11-01 12:50:14,1576,Gateway-Linux,1,Idletime,7808.44,seconds,,,
+2013-11-01 12:50:14,1577,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:50:25,1578,Gateway-Linux,1,Uptime,8254.95,seconds,,,
+2013-11-01 12:50:25,1579,Gateway-Linux,1,Idletime,7819.28,seconds,,,
+2013-11-01 12:50:25,1580,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:50:36,1581,Gateway-Linux,1,Uptime,8266.09,seconds,,,
+2013-11-01 12:50:36,1582,Gateway-Linux,1,Idletime,7830.05,seconds,,,
+2013-11-01 12:50:36,1583,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:50:47,1584,Gateway-Linux,1,Uptime,8276.19,seconds,,,
+2013-11-01 12:50:47,1585,Gateway-Linux,1,Idletime,7839.90,seconds,,,
+2013-11-01 12:50:47,1586,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:50:58,1587,Gateway-Linux,1,Uptime,8287.39,seconds,,,
+2013-11-01 12:50:58,1588,Gateway-Linux,1,Idletime,7850.76,seconds,,,
+2013-11-01 12:50:58,1589,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:51:09,1590,Gateway-Linux,1,Uptime,8298.49,seconds,,,
+2013-11-01 12:51:09,1591,Gateway-Linux,1,Idletime,7861.49,seconds,,,
+2013-11-01 12:51:09,1592,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:51:20,1593,Gateway-Linux,1,Uptime,8309.59,seconds,,,
+2013-11-01 12:51:20,1594,Gateway-Linux,1,Idletime,7872.37,seconds,,,
+2013-11-01 12:51:20,1595,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:51:31,1596,Gateway-Linux,1,Uptime,8320.69,seconds,,,
+2013-11-01 12:51:31,1597,Gateway-Linux,1,Idletime,7883.15,seconds,,,
+2013-11-01 12:51:31,1598,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:51:42,1599,Gateway-Linux,1,Uptime,8331.79,seconds,,,
+2013-11-01 12:51:42,1600,Gateway-Linux,1,Idletime,7894.02,seconds,,,
+2013-11-01 12:51:42,1601,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:51:53,1602,Gateway-Linux,1,Uptime,8342.96,seconds,,,
+2013-11-01 12:51:53,1603,Gateway-Linux,1,Idletime,7904.85,seconds,,,
+2013-11-01 12:51:53,1604,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:52:04,1605,Gateway-Linux,1,Uptime,8354.08,seconds,,,
+2013-11-01 12:52:04,1606,Gateway-Linux,1,Idletime,7915.57,seconds,,,
+2013-11-01 12:52:04,1607,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:52:15,1608,Gateway-Linux,1,Uptime,8364.16,seconds,,,
+2013-11-01 12:52:15,1609,Gateway-Linux,1,Idletime,7925.24,seconds,,,
+2013-11-01 12:52:15,1610,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:52:26,1611,Gateway-Linux,1,Uptime,8375.27,seconds,,,
+2013-11-01 12:52:26,1612,Gateway-Linux,1,Idletime,7935.85,seconds,,,
+2013-11-01 12:52:26,1613,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:52:37,1614,Gateway-Linux,1,Uptime,8386.36,seconds,,,
+2013-11-01 12:52:37,1615,Gateway-Linux,1,Idletime,7946.53,seconds,,,
+2013-11-01 12:52:37,1616,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:52:48,1617,Gateway-Linux,1,Uptime,8397.55,seconds,,,
+2013-11-01 12:52:48,1618,Gateway-Linux,1,Idletime,7957.08,seconds,,,
+2013-11-01 12:52:48,1619,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:52:59,1620,Gateway-Linux,1,Uptime,8408.66,seconds,,,
+2013-11-01 12:52:59,1621,Gateway-Linux,1,Idletime,7967.89,seconds,,,
+2013-11-01 12:52:59,1622,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:53:10,1623,Gateway-Linux,1,Uptime,8419.79,seconds,,,
+2013-11-01 12:53:10,1624,Gateway-Linux,1,Idletime,7978.80,seconds,,,
+2013-11-01 12:53:10,1625,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:53:21,1626,Gateway-Linux,1,Uptime,8430.89,seconds,,,
+2013-11-01 12:53:21,1627,Gateway-Linux,1,Idletime,7989.51,seconds,,,
+2013-11-01 12:53:21,1628,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:53:32,1629,Gateway-Linux,1,Uptime,8442.07,seconds,,,
+2013-11-01 12:53:32,1630,Gateway-Linux,1,Idletime,8000.35,seconds,,,
+2013-11-01 12:53:32,1631,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:53:43,1632,Gateway-Linux,1,Uptime,8452.17,seconds,,,
+2013-11-01 12:53:43,1633,Gateway-Linux,1,Idletime,8010.07,seconds,,,
+2013-11-01 12:53:43,1634,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:53:54,1635,Gateway-Linux,1,Uptime,8463.30,seconds,,,
+2013-11-01 12:53:54,1636,Gateway-Linux,1,Idletime,8020.87,seconds,,,
+2013-11-01 12:53:54,1637,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:54:05,1638,Gateway-Linux,1,Uptime,8474.44,seconds,,,
+2013-11-01 12:54:05,1639,Gateway-Linux,1,Idletime,8031.72,seconds,,,
+2013-11-01 12:54:05,1640,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:54:16,1641,Gateway-Linux,1,Uptime,8485.54,seconds,,,
+2013-11-01 12:54:16,1642,Gateway-Linux,1,Idletime,8042.40,seconds,,,
+2013-11-01 12:54:16,1643,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:54:27,1644,Gateway-Linux,1,Uptime,8496.83,seconds,,,
+2013-11-01 12:54:27,1645,Gateway-Linux,1,Idletime,8053.11,seconds,,,
+2013-11-01 12:54:27,1646,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:54:38,1647,Gateway-Linux,1,Uptime,8507.96,seconds,,,
+2013-11-01 12:54:38,1648,Gateway-Linux,1,Idletime,8063.95,seconds,,,
+2013-11-01 12:54:38,1649,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:54:49,1650,Gateway-Linux,1,Uptime,8519.07,seconds,,,
+2013-11-01 12:54:49,1651,Gateway-Linux,1,Idletime,8074.71,seconds,,,
+2013-11-01 12:54:49,1652,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:55:00,1653,Gateway-Linux,1,Uptime,8529.19,seconds,,,
+2013-11-01 12:55:00,1654,Gateway-Linux,1,Idletime,8084.30,seconds,,,
+2013-11-01 12:55:00,1655,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:55:11,1656,Gateway-Linux,1,Uptime,8540.32,seconds,,,
+2013-11-01 12:55:11,1657,Gateway-Linux,1,Idletime,8095.09,seconds,,,
+2013-11-01 12:55:11,1658,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:55:22,1659,Gateway-Linux,1,Uptime,8551.51,seconds,,,
+2013-11-01 12:55:22,1660,Gateway-Linux,1,Idletime,8105.93,seconds,,,
+2013-11-01 12:55:22,1661,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:55:33,1662,Gateway-Linux,1,Uptime,8562.60,seconds,,,
+2013-11-01 12:55:33,1663,Gateway-Linux,1,Idletime,8116.65,seconds,,,
+2013-11-01 12:55:33,1664,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:55:41,R0,Proto,76,BATT-R,136.00,raw,,-75,0
+2013-11-01 12:55:41,R3,Proto,331,LUX,110.00,lux,,-81,0
+2013-11-01 12:55:42,R6,Proto,512,BMP-Temp,23.14,C,,-75,0
+2013-11-01 12:55:42,R6,Proto,512,BMP-Temp-F,73.652,F,,-75,0
+2013-11-01 12:55:43,R9,Proto,1571,Dallas,23.13,C,,-75,0
+2013-11-01 12:55:43,R9,Proto,1571,Dallas-F,73.634,F,,-75,0
+2013-11-01 12:55:44,R19,Proto,3186,Dallas,23.13,C,,-80,0
+2013-11-01 12:55:44,R19,Proto,3186,Dallas-F,73.634,F,,-80,0
+2013-11-01 12:55:45,R25,Proto,3636,LUX-Infra,91.00,rawi,,-78,0
+2013-11-01 12:55:45,R28,Proto,3883,MDWIND,229.00,raw,,-73,0
+2013-11-01 12:55:46,R29,Proto,4764,Dallas,23.13,C,,-85,0
+2013-11-01 12:55:46,R29,Proto,4764,Dallas-F,73.634,F,,-85,0
+2013-11-01 12:55:47,1665,Gateway-Linux,1,Uptime,8576.51,seconds,,,
+2013-11-01 12:55:47,1666,Gateway-Linux,1,Idletime,8129.97,seconds,,,
+2013-11-01 12:55:47,1667,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:55:47,R33,Proto,5053,LUX,131.00,lux,,-79,0
+2013-11-01 12:55:50,R39,Proto,6344,Dallas,23.19,C,,-75,0
+2013-11-01 12:55:50,R39,Proto,6344,Dallas-F,73.742,F,,-75,0
+2013-11-01 12:55:58,1668,Gateway-Linux,1,Uptime,8587.52,seconds,,,
+2013-11-01 12:55:58,1669,Gateway-Linux,1,Idletime,8140.57,seconds,,,
+2013-11-01 12:55:58,1670,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:56:09,1671,Gateway-Linux,1,Uptime,8598.81,seconds,,,
+2013-11-01 12:56:09,1672,Gateway-Linux,1,Idletime,8151.17,seconds,,,
+2013-11-01 12:56:09,1673,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:56:20,1674,Gateway-Linux,1,Uptime,8609.92,seconds,,,
+2013-11-01 12:56:20,1675,Gateway-Linux,1,Idletime,8161.85,seconds,,,
+2013-11-01 12:56:20,1676,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:56:31,1677,Gateway-Linux,1,Uptime,8621.04,seconds,,,
+2013-11-01 12:56:31,1678,Gateway-Linux,1,Idletime,8172.66,seconds,,,
+2013-11-01 12:56:31,1679,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:56:43,1680,Gateway-Linux,1,Uptime,8632.15,seconds,,,
+2013-11-01 12:56:43,1681,Gateway-Linux,1,Idletime,8183.24,seconds,,,
+2013-11-01 12:56:43,1682,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:56:53,1683,Gateway-Linux,1,Uptime,8642.24,seconds,,,
+2013-11-01 12:56:53,1684,Gateway-Linux,1,Idletime,8193.06,seconds,,,
+2013-11-01 12:56:53,1685,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:57:04,1686,Gateway-Linux,1,Uptime,8653.46,seconds,,,
+2013-11-01 12:57:04,1687,Gateway-Linux,1,Idletime,8203.90,seconds,,,
+2013-11-01 12:57:04,1688,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:57:15,1689,Gateway-Linux,1,Uptime,8664.57,seconds,,,
+2013-11-01 12:57:15,1690,Gateway-Linux,1,Idletime,8214.60,seconds,,,
+2013-11-01 12:57:15,1691,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:57:26,1692,Gateway-Linux,1,Uptime,8675.66,seconds,,,
+2013-11-01 12:57:26,1693,Gateway-Linux,1,Idletime,8225.46,seconds,,,
+2013-11-01 12:57:26,1694,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:57:37,1695,Gateway-Linux,1,Uptime,8686.76,seconds,,,
+2013-11-01 12:57:37,1696,Gateway-Linux,1,Idletime,8236.22,seconds,,,
+2013-11-01 12:57:37,1697,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:57:48,1698,Gateway-Linux,1,Uptime,8697.95,seconds,,,
+2013-11-01 12:57:48,1699,Gateway-Linux,1,Idletime,8246.99,seconds,,,
+2013-11-01 12:57:48,1700,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:57:59,1701,Gateway-Linux,1,Uptime,8709.07,seconds,,,
+2013-11-01 12:57:59,1702,Gateway-Linux,1,Idletime,8257.72,seconds,,,
+2013-11-01 12:57:59,1703,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:58:10,1704,Gateway-Linux,1,Uptime,8719.16,seconds,,,
+2013-11-01 12:58:10,1705,Gateway-Linux,1,Idletime,8267.48,seconds,,,
+2013-11-01 12:58:10,1706,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:58:21,1707,Gateway-Linux,1,Uptime,8730.25,seconds,,,
+2013-11-01 12:58:21,1708,Gateway-Linux,1,Idletime,8278.40,seconds,,,
+2013-11-01 12:58:21,1709,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:58:32,1710,Gateway-Linux,1,Uptime,8741.36,seconds,,,
+2013-11-01 12:58:32,1711,Gateway-Linux,1,Idletime,8289.31,seconds,,,
+2013-11-01 12:58:32,1712,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:58:43,1713,Gateway-Linux,1,Uptime,8752.54,seconds,,,
+2013-11-01 12:58:43,1714,Gateway-Linux,1,Idletime,8300.18,seconds,,,
+2013-11-01 12:58:43,1715,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:58:54,1716,Gateway-Linux,1,Uptime,8763.63,seconds,,,
+2013-11-01 12:58:54,1717,Gateway-Linux,1,Idletime,8310.82,seconds,,,
+2013-11-01 12:58:54,1718,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 12:59:05,1719,Gateway-Linux,1,Uptime,8774.73,seconds,,,
+2013-11-01 12:59:05,1720,Gateway-Linux,1,Idletime,8321.75,seconds,,,
+2013-11-01 12:59:05,1721,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:59:16,1722,Gateway-Linux,1,Uptime,8785.83,seconds,,,
+2013-11-01 12:59:16,1723,Gateway-Linux,1,Idletime,8332.59,seconds,,,
+2013-11-01 12:59:16,1724,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:59:27,1725,Gateway-Linux,1,Uptime,8796.98,seconds,,,
+2013-11-01 12:59:27,1726,Gateway-Linux,1,Idletime,8343.43,seconds,,,
+2013-11-01 12:59:27,1727,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 12:59:38,1728,Gateway-Linux,1,Uptime,8808.07,seconds,,,
+2013-11-01 12:59:38,1729,Gateway-Linux,1,Idletime,8354.09,seconds,,,
+2013-11-01 12:59:38,1730,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 12:59:49,1731,Gateway-Linux,1,Uptime,8818.17,seconds,,,
+2013-11-01 12:59:49,1732,Gateway-Linux,1,Idletime,8363.87,seconds,,,
+2013-11-01 12:59:49,1733,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:00:00,1734,Gateway-Linux,1,Uptime,8829.30,seconds,,,
+2013-11-01 13:00:00,1735,Gateway-Linux,1,Idletime,8374.66,seconds,,,
+2013-11-01 13:00:00,1736,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:00:11,1737,Gateway-Linux,1,Uptime,8840.44,seconds,,,
+2013-11-01 13:00:11,1738,Gateway-Linux,1,Idletime,8385.44,seconds,,,
+2013-11-01 13:00:11,1739,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:00:22,1740,Gateway-Linux,1,Uptime,8851.62,seconds,,,
+2013-11-01 13:00:22,1741,Gateway-Linux,1,Idletime,8396.13,seconds,,,
+2013-11-01 13:00:22,1742,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:00:33,1743,Gateway-Linux,1,Uptime,8862.72,seconds,,,
+2013-11-01 13:00:33,1744,Gateway-Linux,1,Idletime,8406.99,seconds,,,
+2013-11-01 13:00:33,1745,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:00:44,1746,Gateway-Linux,1,Uptime,8873.87,seconds,,,
+2013-11-01 13:00:44,1747,Gateway-Linux,1,Idletime,8417.64,seconds,,,
+2013-11-01 13:00:44,1748,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:00:55,1749,Gateway-Linux,1,Uptime,8884.95,seconds,,,
+2013-11-01 13:00:55,1750,Gateway-Linux,1,Idletime,8428.23,seconds,,,
+2013-11-01 13:00:55,1751,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 13:01:06,1752,Gateway-Linux,1,Uptime,8896.03,seconds,,,
+2013-11-01 13:01:06,1753,Gateway-Linux,1,Idletime,8439.08,seconds,,,
+2013-11-01 13:01:06,1754,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:01:17,1755,Gateway-Linux,1,Uptime,8906.19,seconds,,,
+2013-11-01 13:01:17,1756,Gateway-Linux,1,Idletime,8448.74,seconds,,,
+2013-11-01 13:01:17,1757,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 13:01:28,1758,Gateway-Linux,1,Uptime,8917.28,seconds,,,
+2013-11-01 13:01:28,1759,Gateway-Linux,1,Idletime,8459.42,seconds,,,
+2013-11-01 13:01:28,1760,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:01:39,1761,Gateway-Linux,1,Uptime,8928.38,seconds,,,
+2013-11-01 13:01:39,1762,Gateway-Linux,1,Idletime,8470.34,seconds,,,
+2013-11-01 13:01:39,1763,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:01:50,1764,Gateway-Linux,1,Uptime,8939.48,seconds,,,
+2013-11-01 13:01:50,1765,Gateway-Linux,1,Idletime,8481.20,seconds,,,
+2013-11-01 13:01:50,1766,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:02:01,1767,Gateway-Linux,1,Uptime,8950.63,seconds,,,
+2013-11-01 13:02:01,1768,Gateway-Linux,1,Idletime,8491.84,seconds,,,
+2013-11-01 13:02:01,1769,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:02:12,1770,Gateway-Linux,1,Uptime,8961.72,seconds,,,
+2013-11-01 13:02:12,1771,Gateway-Linux,1,Idletime,8502.76,seconds,,,
+2013-11-01 13:02:12,1772,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:02:23,1773,Gateway-Linux,1,Uptime,8972.82,seconds,,,
+2013-11-01 13:02:23,1774,Gateway-Linux,1,Idletime,8513.73,seconds,,,
+2013-11-01 13:02:23,1775,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:02:34,1776,Gateway-Linux,1,Uptime,8983.92,seconds,,,
+2013-11-01 13:02:34,1777,Gateway-Linux,1,Idletime,8524.58,seconds,,,
+2013-11-01 13:02:34,1778,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:02:45,1779,Gateway-Linux,1,Uptime,8995.03,seconds,,,
+2013-11-01 13:02:45,1780,Gateway-Linux,1,Idletime,8535.15,seconds,,,
+2013-11-01 13:02:45,1781,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 13:02:56,1782,Gateway-Linux,1,Uptime,9005.24,seconds,,,
+2013-11-01 13:02:56,1783,Gateway-Linux,1,Idletime,8544.81,seconds,,,
+2013-11-01 13:02:56,1784,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:03:07,1785,Gateway-Linux,1,Uptime,9016.34,seconds,,,
+2013-11-01 13:03:07,1786,Gateway-Linux,1,Idletime,8555.33,seconds,,,
+2013-11-01 13:03:07,1787,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:03:18,1788,Gateway-Linux,1,Uptime,9027.43,seconds,,,
+2013-11-01 13:03:18,1789,Gateway-Linux,1,Idletime,8566.04,seconds,,,
+2013-11-01 13:03:18,1790,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:03:29,1791,Gateway-Linux,1,Uptime,9038.53,seconds,,,
+2013-11-01 13:03:29,1792,Gateway-Linux,1,Idletime,8576.77,seconds,,,
+2013-11-01 13:03:29,1793,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:03:40,1794,Gateway-Linux,1,Uptime,9049.62,seconds,,,
+2013-11-01 13:03:40,1795,Gateway-Linux,1,Idletime,8587.43,seconds,,,
+2013-11-01 13:03:40,1796,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:03:51,1797,Gateway-Linux,1,Uptime,9060.79,seconds,,,
+2013-11-01 13:03:51,1798,Gateway-Linux,1,Idletime,8598.08,seconds,,,
+2013-11-01 13:03:51,1799,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:04:02,1800,Gateway-Linux,1,Uptime,9071.89,seconds,,,
+2013-11-01 13:04:02,1801,Gateway-Linux,1,Idletime,8609.00,seconds,,,
+2013-11-01 13:04:02,1802,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:04:13,1803,Gateway-Linux,1,Uptime,9082.99,seconds,,,
+2013-11-01 13:04:13,1804,Gateway-Linux,1,Idletime,8619.84,seconds,,,
+2013-11-01 13:04:13,1805,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:04:24,1806,Gateway-Linux,1,Uptime,9094.09,seconds,,,
+2013-11-01 13:04:24,1807,Gateway-Linux,1,Idletime,8630.51,seconds,,,
+2013-11-01 13:04:24,1808,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:04:35,1809,Gateway-Linux,1,Uptime,9104.24,seconds,,,
+2013-11-01 13:04:35,1810,Gateway-Linux,1,Idletime,8640.38,seconds,,,
+2013-11-01 13:04:35,1811,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:04:46,1812,Gateway-Linux,1,Uptime,9115.34,seconds,,,
+2013-11-01 13:04:46,1813,Gateway-Linux,1,Idletime,8651.16,seconds,,,
+2013-11-01 13:04:46,1814,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:04:57,1815,Gateway-Linux,1,Uptime,9126.47,seconds,,,
+2013-11-01 13:04:57,1816,Gateway-Linux,1,Idletime,8662.05,seconds,,,
+2013-11-01 13:04:57,1817,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:05:08,1818,Gateway-Linux,1,Uptime,9137.55,seconds,,,
+2013-11-01 13:05:08,1819,Gateway-Linux,1,Idletime,8672.89,seconds,,,
+2013-11-01 13:05:08,1820,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:05:19,1821,Gateway-Linux,1,Uptime,9148.65,seconds,,,
+2013-11-01 13:05:19,1822,Gateway-Linux,1,Idletime,8683.66,seconds,,,
+2013-11-01 13:05:19,1823,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:05:30,1824,Gateway-Linux,1,Uptime,9159.81,seconds,,,
+2013-11-01 13:05:30,1825,Gateway-Linux,1,Idletime,8694.35,seconds,,,
+2013-11-01 13:05:30,1826,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:05:41,1827,Gateway-Linux,1,Uptime,9170.93,seconds,,,
+2013-11-01 13:05:41,1828,Gateway-Linux,1,Idletime,8705.15,seconds,,,
+2013-11-01 13:05:41,1829,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:05:52,1830,Gateway-Linux,1,Uptime,9182.04,seconds,,,
+2013-11-01 13:05:52,1831,Gateway-Linux,1,Idletime,8716.02,seconds,,,
+2013-11-01 13:05:52,1832,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:06:03,1833,Gateway-Linux,1,Uptime,9193.11,seconds,,,
+2013-11-01 13:06:03,1834,Gateway-Linux,1,Idletime,8726.79,seconds,,,
+2013-11-01 13:06:03,1835,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:06:14,1836,Gateway-Linux,1,Uptime,9203.18,seconds,,,
+2013-11-01 13:06:14,1837,Gateway-Linux,1,Idletime,8736.55,seconds,,,
+2013-11-01 13:06:14,1838,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:06:25,1839,Gateway-Linux,1,Uptime,9214.35,seconds,,,
+2013-11-01 13:06:25,1840,Gateway-Linux,1,Idletime,8747.47,seconds,,,
+2013-11-01 13:06:25,1841,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:06:36,1842,Gateway-Linux,1,Uptime,9225.46,seconds,,,
+2013-11-01 13:06:36,1843,Gateway-Linux,1,Idletime,8758.35,seconds,,,
+2013-11-01 13:06:36,1844,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:06:47,1845,Gateway-Linux,1,Uptime,9236.54,seconds,,,
+2013-11-01 13:06:47,1846,Gateway-Linux,1,Idletime,8769.20,seconds,,,
+2013-11-01 13:06:47,1847,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 13:06:58,1848,Gateway-Linux,1,Uptime,9247.63,seconds,,,
+2013-11-01 13:06:58,1849,Gateway-Linux,1,Idletime,8780.03,seconds,,,
+2013-11-01 13:06:58,1850,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:07:09,1851,Gateway-Linux,1,Uptime,9258.81,seconds,,,
+2013-11-01 13:07:09,1852,Gateway-Linux,1,Idletime,8790.83,seconds,,,
+2013-11-01 13:07:09,1853,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:07:20,1854,Gateway-Linux,1,Uptime,9269.90,seconds,,,
+2013-11-01 13:07:20,1855,Gateway-Linux,1,Idletime,8801.79,seconds,,,
+2013-11-01 13:07:20,1856,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:07:31,1857,Gateway-Linux,1,Uptime,9281.00,seconds,,,
+2013-11-01 13:07:31,1858,Gateway-Linux,1,Idletime,8812.72,seconds,,,
+2013-11-01 13:07:31,1859,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:07:42,1860,Gateway-Linux,1,Uptime,9292.12,seconds,,,
+2013-11-01 13:07:42,1861,Gateway-Linux,1,Idletime,8823.59,seconds,,,
+2013-11-01 13:07:43,1862,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:07:53,1863,Gateway-Linux,1,Uptime,9302.28,seconds,,,
+2013-11-01 13:07:53,1864,Gateway-Linux,1,Idletime,8833.31,seconds,,,
+2013-11-01 13:07:53,1865,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:08:04,1866,Gateway-Linux,1,Uptime,9313.47,seconds,,,
+2013-11-01 13:08:04,1867,Gateway-Linux,1,Idletime,8844.22,seconds,,,
+2013-11-01 13:08:04,1868,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:08:15,1869,Gateway-Linux,1,Uptime,9324.55,seconds,,,
+2013-11-01 13:08:15,1870,Gateway-Linux,1,Idletime,8855.07,seconds,,,
+2013-11-01 13:08:15,1871,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:08:26,1872,Gateway-Linux,1,Uptime,9335.66,seconds,,,
+2013-11-01 13:08:26,1873,Gateway-Linux,1,Idletime,8865.90,seconds,,,
+2013-11-01 13:08:26,1874,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:08:37,1875,Gateway-Linux,1,Uptime,9346.74,seconds,,,
+2013-11-01 13:08:37,1876,Gateway-Linux,1,Idletime,8876.74,seconds,,,
+2013-11-01 13:08:37,1877,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:08:48,1878,Gateway-Linux,1,Uptime,9357.81,seconds,,,
+2013-11-01 13:08:48,1879,Gateway-Linux,1,Idletime,8887.56,seconds,,,
+2013-11-01 13:08:48,1880,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:08:59,1881,Gateway-Linux,1,Uptime,9368.99,seconds,,,
+2013-11-01 13:08:59,1882,Gateway-Linux,1,Idletime,8898.31,seconds,,,
+2013-11-01 13:08:59,1883,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:09:10,1884,Gateway-Linux,1,Uptime,9380.07,seconds,,,
+2013-11-01 13:09:10,1885,Gateway-Linux,1,Idletime,8909.18,seconds,,,
+2013-11-01 13:09:10,1886,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:09:21,1887,Gateway-Linux,1,Uptime,9390.17,seconds,,,
+2013-11-01 13:09:21,1888,Gateway-Linux,1,Idletime,8918.86,seconds,,,
+2013-11-01 13:09:21,1889,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:09:32,1890,Gateway-Linux,1,Uptime,9401.29,seconds,,,
+2013-11-01 13:09:32,1891,Gateway-Linux,1,Idletime,8929.70,seconds,,,
+2013-11-01 13:09:32,1892,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:09:43,1893,Gateway-Linux,1,Uptime,9412.63,seconds,,,
+2013-11-01 13:09:43,1894,Gateway-Linux,1,Idletime,8940.42,seconds,,,
+2013-11-01 13:09:43,1895,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:09:54,1896,Gateway-Linux,1,Uptime,9423.73,seconds,,,
+2013-11-01 13:09:54,1897,Gateway-Linux,1,Idletime,8951.00,seconds,,,
+2013-11-01 13:09:54,1898,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 13:10:05,1899,Gateway-Linux,1,Uptime,9434.81,seconds,,,
+2013-11-01 13:10:05,1900,Gateway-Linux,1,Idletime,8961.65,seconds,,,
+2013-11-01 13:10:05,1901,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:10:16,1902,Gateway-Linux,1,Uptime,9445.90,seconds,,,
+2013-11-01 13:10:16,1903,Gateway-Linux,1,Idletime,8972.37,seconds,,,
+2013-11-01 13:10:16,1904,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:10:27,1905,Gateway-Linux,1,Uptime,9456.99,seconds,,,
+2013-11-01 13:10:27,1906,Gateway-Linux,1,Idletime,8983.22,seconds,,,
+2013-11-01 13:10:27,1907,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:10:39,1908,Gateway-Linux,1,Uptime,9468.15,seconds,,,
+2013-11-01 13:10:39,1909,Gateway-Linux,1,Idletime,8993.68,seconds,,,
+2013-11-01 13:10:39,1910,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:10:49,1911,Gateway-Linux,1,Uptime,9478.24,seconds,,,
+2013-11-01 13:10:49,1912,Gateway-Linux,1,Idletime,9003.40,seconds,,,
+2013-11-01 13:10:49,1913,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 13:11:00,1914,Gateway-Linux,1,Uptime,9489.32,seconds,,,
+2013-11-01 13:11:00,1915,Gateway-Linux,1,Idletime,9014.28,seconds,,,
+2013-11-01 13:11:00,1916,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:11:11,1917,Gateway-Linux,1,Uptime,9500.41,seconds,,,
+2013-11-01 13:11:11,1918,Gateway-Linux,1,Idletime,9025.12,seconds,,,
+2013-11-01 13:11:11,1919,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:11:22,1920,Gateway-Linux,1,Uptime,9511.57,seconds,,,
+2013-11-01 13:11:22,1921,Gateway-Linux,1,Idletime,9036.03,seconds,,,
+2013-11-01 13:11:22,1922,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:11:33,1923,Gateway-Linux,1,Uptime,9522.67,seconds,,,
+2013-11-01 13:11:33,1924,Gateway-Linux,1,Idletime,9046.73,seconds,,,
+2013-11-01 13:11:33,1925,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 13:11:44,1926,Gateway-Linux,1,Uptime,9533.79,seconds,,,
+2013-11-01 13:11:44,1927,Gateway-Linux,1,Idletime,9057.61,seconds,,,
+2013-11-01 13:11:44,1928,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:11:55,1929,Gateway-Linux,1,Uptime,9544.90,seconds,,,
+2013-11-01 13:11:55,1930,Gateway-Linux,1,Idletime,9068.40,seconds,,,
+2013-11-01 13:11:55,1931,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 13:12:06,1932,Gateway-Linux,1,Uptime,9556.00,seconds,,,
+2013-11-01 13:12:06,1933,Gateway-Linux,1,Idletime,9079.14,seconds,,,
+2013-11-01 13:12:06,1934,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:12:17,1935,Gateway-Linux,1,Uptime,9566.18,seconds,,,
+2013-11-01 13:12:17,1936,Gateway-Linux,1,Idletime,9089.07,seconds,,,
+2013-11-01 13:12:17,1937,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:12:28,1938,Gateway-Linux,1,Uptime,9577.27,seconds,,,
+2013-11-01 13:12:28,1939,Gateway-Linux,1,Idletime,9099.81,seconds,,,
+2013-11-01 13:12:28,1940,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:12:39,1941,Gateway-Linux,1,Uptime,9588.38,seconds,,,
+2013-11-01 13:12:39,1942,Gateway-Linux,1,Idletime,9110.69,seconds,,,
+2013-11-01 13:12:39,1943,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 13:12:50,1944,Gateway-Linux,1,Uptime,9599.51,seconds,,,
+2013-11-01 13:12:50,1945,Gateway-Linux,1,Idletime,9121.58,seconds,,,
+2013-11-01 13:12:50,1946,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 13:13:01,1947,Gateway-Linux,1,Uptime,9610.62,seconds,,,
+2013-11-01 13:13:01,1948,Gateway-Linux,1,Idletime,9132.36,seconds,,,
+2013-11-01 13:13:01,1949,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:13:12,1950,Gateway-Linux,1,Uptime,9621.78,seconds,,,
+2013-11-01 13:13:12,1951,Gateway-Linux,1,Idletime,9143.07,seconds,,,
+2013-11-01 13:13:12,1952,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:13:23,1953,Gateway-Linux,1,Uptime,9632.86,seconds,,,
+2013-11-01 13:13:23,1954,Gateway-Linux,1,Idletime,9153.88,seconds,,,
+2013-11-01 13:13:23,1955,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:13:34,1956,Gateway-Linux,1,Uptime,9643.95,seconds,,,
+2013-11-01 13:13:34,1957,Gateway-Linux,1,Idletime,9164.72,seconds,,,
+2013-11-01 13:13:34,1958,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:13:45,1959,Gateway-Linux,1,Uptime,9655.04,seconds,,,
+2013-11-01 13:13:45,1960,Gateway-Linux,1,Idletime,9175.37,seconds,,,
+2013-11-01 13:13:45,1961,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:13:56,1962,Gateway-Linux,1,Uptime,9665.24,seconds,,,
+2013-11-01 13:13:56,1963,Gateway-Linux,1,Idletime,9185.18,seconds,,,
+2013-11-01 13:13:56,1964,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:14:07,1965,Gateway-Linux,1,Uptime,9676.32,seconds,,,
+2013-11-01 13:14:07,1966,Gateway-Linux,1,Idletime,9196.07,seconds,,,
+2013-11-01 13:14:07,1967,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:14:18,1968,Gateway-Linux,1,Uptime,9687.42,seconds,,,
+2013-11-01 13:14:18,1969,Gateway-Linux,1,Idletime,9206.69,seconds,,,
+2013-11-01 13:14:18,1970,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:14:29,1971,Gateway-Linux,1,Uptime,9698.52,seconds,,,
+2013-11-01 13:14:29,1972,Gateway-Linux,1,Idletime,9217.59,seconds,,,
+2013-11-01 13:14:29,1973,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:14:40,1974,Gateway-Linux,1,Uptime,9709.65,seconds,,,
+2013-11-01 13:14:40,1975,Gateway-Linux,1,Idletime,9228.46,seconds,,,
+2013-11-01 13:14:40,1976,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:14:51,1977,Gateway-Linux,1,Uptime,9720.79,seconds,,,
+2013-11-01 13:14:51,1978,Gateway-Linux,1,Idletime,9239.17,seconds,,,
+2013-11-01 13:14:51,1979,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:15:02,1980,Gateway-Linux,1,Uptime,9731.92,seconds,,,
+2013-11-01 13:15:02,1981,Gateway-Linux,1,Idletime,9249.83,seconds,,,
+2013-11-01 13:15:02,1982,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:15:13,1983,Gateway-Linux,1,Uptime,9743.01,seconds,,,
+2013-11-01 13:15:13,1984,Gateway-Linux,1,Idletime,9260.65,seconds,,,
+2013-11-01 13:15:13,1985,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:15:24,1986,Gateway-Linux,1,Uptime,9754.09,seconds,,,
+2013-11-01 13:15:24,1987,Gateway-Linux,1,Idletime,9271.30,seconds,,,
+2013-11-01 13:15:24,1988,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:15:35,1989,Gateway-Linux,1,Uptime,9764.17,seconds,,,
+2013-11-01 13:15:35,1990,Gateway-Linux,1,Idletime,9281.11,seconds,,,
+2013-11-01 13:15:35,1991,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:15:46,1992,Gateway-Linux,1,Uptime,9775.34,seconds,,,
+2013-11-01 13:15:46,1993,Gateway-Linux,1,Idletime,9291.90,seconds,,,
+2013-11-01 13:15:46,1994,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:15:57,1995,Gateway-Linux,1,Uptime,9786.47,seconds,,,
+2013-11-01 13:15:57,1996,Gateway-Linux,1,Idletime,9302.76,seconds,,,
+2013-11-01 13:15:57,1997,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:16:08,1998,Gateway-Linux,1,Uptime,9797.55,seconds,,,
+2013-11-01 13:16:08,1999,Gateway-Linux,1,Idletime,9313.38,seconds,,,
+2013-11-01 13:16:08,2000,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:16:19,2001,Gateway-Linux,1,Uptime,9808.64,seconds,,,
+2013-11-01 13:16:19,2002,Gateway-Linux,1,Idletime,9324.25,seconds,,,
+2013-11-01 13:16:19,2003,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:16:30,2004,Gateway-Linux,1,Uptime,9819.82,seconds,,,
+2013-11-01 13:16:30,2005,Gateway-Linux,1,Idletime,9335.12,seconds,,,
+2013-11-01 13:16:30,2006,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:16:41,2007,Gateway-Linux,1,Uptime,9830.91,seconds,,,
+2013-11-01 13:16:41,2008,Gateway-Linux,1,Idletime,9345.96,seconds,,,
+2013-11-01 13:16:41,2009,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:16:52,2010,Gateway-Linux,1,Uptime,9842.00,seconds,,,
+2013-11-01 13:16:52,2011,Gateway-Linux,1,Idletime,9356.57,seconds,,,
+2013-11-01 13:16:52,2012,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:17:03,2013,Gateway-Linux,1,Uptime,9853.09,seconds,,,
+2013-11-01 13:17:03,2014,Gateway-Linux,1,Idletime,9367.10,seconds,,,
+2013-11-01 13:17:03,2015,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:17:14,2016,Gateway-Linux,1,Uptime,9863.20,seconds,,,
+2013-11-01 13:17:14,2017,Gateway-Linux,1,Idletime,9376.91,seconds,,,
+2013-11-01 13:17:14,2018,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:17:25,2019,Gateway-Linux,1,Uptime,9874.39,seconds,,,
+2013-11-01 13:17:25,2020,Gateway-Linux,1,Idletime,9387.65,seconds,,,
+2013-11-01 13:17:25,2021,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:17:36,2022,Gateway-Linux,1,Uptime,9885.46,seconds,,,
+2013-11-01 13:17:36,2023,Gateway-Linux,1,Idletime,9398.47,seconds,,,
+2013-11-01 13:17:36,2024,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:17:47,2025,Gateway-Linux,1,Uptime,9896.57,seconds,,,
+2013-11-01 13:17:47,2026,Gateway-Linux,1,Idletime,9409.24,seconds,,,
+2013-11-01 13:17:47,2027,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:17:58,2028,Gateway-Linux,1,Uptime,9907.69,seconds,,,
+2013-11-01 13:17:58,2029,Gateway-Linux,1,Idletime,9419.95,seconds,,,
+2013-11-01 13:17:58,2030,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:18:09,2031,Gateway-Linux,1,Uptime,9918.77,seconds,,,
+2013-11-01 13:18:09,2032,Gateway-Linux,1,Idletime,9430.79,seconds,,,
+2013-11-01 13:18:09,2033,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:18:20,2034,Gateway-Linux,1,Uptime,9929.97,seconds,,,
+2013-11-01 13:18:20,2035,Gateway-Linux,1,Idletime,9441.48,seconds,,,
+2013-11-01 13:18:20,2036,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:18:31,2037,Gateway-Linux,1,Uptime,9941.12,seconds,,,
+2013-11-01 13:18:31,2038,Gateway-Linux,1,Idletime,9452.46,seconds,,,
+2013-11-01 13:18:32,2039,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:18:42,2040,Gateway-Linux,1,Uptime,9951.33,seconds,,,
+2013-11-01 13:18:42,2041,Gateway-Linux,1,Idletime,9462.05,seconds,,,
+2013-11-01 13:18:42,2042,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:18:53,2043,Gateway-Linux,1,Uptime,9962.41,seconds,,,
+2013-11-01 13:18:53,2044,Gateway-Linux,1,Idletime,9472.84,seconds,,,
+2013-11-01 13:18:53,2045,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 13:19:04,2046,Gateway-Linux,1,Uptime,9973.60,seconds,,,
+2013-11-01 13:19:04,2047,Gateway-Linux,1,Idletime,9483.49,seconds,,,
+2013-11-01 13:19:04,2048,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:19:15,2049,Gateway-Linux,1,Uptime,9984.70,seconds,,,
+2013-11-01 13:19:15,2050,Gateway-Linux,1,Idletime,9494.40,seconds,,,
+2013-11-01 13:19:15,2051,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:19:26,2052,Gateway-Linux,1,Uptime,9995.78,seconds,,,
+2013-11-01 13:19:26,2053,Gateway-Linux,1,Idletime,9505.18,seconds,,,
+2013-11-01 13:19:26,2054,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:19:37,2055,Gateway-Linux,1,Uptime,10006.87,seconds,,,
+2013-11-01 13:19:37,2056,Gateway-Linux,1,Idletime,9516.01,seconds,,,
+2013-11-01 13:19:37,2057,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:19:48,2058,Gateway-Linux,1,Uptime,10017.97,seconds,,,
+2013-11-01 13:19:48,2059,Gateway-Linux,1,Idletime,9526.69,seconds,,,
+2013-11-01 13:19:48,2060,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:19:59,2061,Gateway-Linux,1,Uptime,10029.11,seconds,,,
+2013-11-01 13:19:59,2062,Gateway-Linux,1,Idletime,9537.52,seconds,,,
+2013-11-01 13:19:59,2063,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:20:10,2064,Gateway-Linux,1,Uptime,10039.22,seconds,,,
+2013-11-01 13:20:10,2065,Gateway-Linux,1,Idletime,9547.21,seconds,,,
+2013-11-01 13:20:10,2066,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:20:21,2067,Gateway-Linux,1,Uptime,10050.31,seconds,,,
+2013-11-01 13:20:21,2068,Gateway-Linux,1,Idletime,9558.07,seconds,,,
+2013-11-01 13:20:21,2069,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:20:32,2070,Gateway-Linux,1,Uptime,10061.40,seconds,,,
+2013-11-01 13:20:32,2071,Gateway-Linux,1,Idletime,9568.79,seconds,,,
+2013-11-01 13:20:32,2072,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:20:43,2073,Gateway-Linux,1,Uptime,10072.60,seconds,,,
+2013-11-01 13:20:43,2074,Gateway-Linux,1,Idletime,9579.63,seconds,,,
+2013-11-01 13:20:43,2075,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:20:54,2076,Gateway-Linux,1,Uptime,10083.70,seconds,,,
+2013-11-01 13:20:54,2077,Gateway-Linux,1,Idletime,9590.28,seconds,,,
+2013-11-01 13:20:54,2078,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:21:05,2079,Gateway-Linux,1,Uptime,10094.80,seconds,,,
+2013-11-01 13:21:05,2080,Gateway-Linux,1,Idletime,9601.05,seconds,,,
+2013-11-01 13:21:05,2081,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:21:16,2082,Gateway-Linux,1,Uptime,10105.87,seconds,,,
+2013-11-01 13:21:16,2083,Gateway-Linux,1,Idletime,9611.55,seconds,,,
+2013-11-01 13:21:16,2084,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:21:27,2085,Gateway-Linux,1,Uptime,10116.94,seconds,,,
+2013-11-01 13:21:27,2086,Gateway-Linux,1,Idletime,9622.33,seconds,,,
+2013-11-01 13:21:27,2087,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:21:38,2088,Gateway-Linux,1,Uptime,10128.10,seconds,,,
+2013-11-01 13:21:38,2089,Gateway-Linux,1,Idletime,9632.92,seconds,,,
+2013-11-01 13:21:38,2090,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:21:49,2091,Gateway-Linux,1,Uptime,10138.18,seconds,,,
+2013-11-01 13:21:49,2092,Gateway-Linux,1,Idletime,9642.50,seconds,,,
+2013-11-01 13:21:49,2093,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:22:00,2094,Gateway-Linux,1,Uptime,10149.27,seconds,,,
+2013-11-01 13:22:00,2095,Gateway-Linux,1,Idletime,9653.16,seconds,,,
+2013-11-01 13:22:00,2096,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:22:11,2097,Gateway-Linux,1,Uptime,10160.36,seconds,,,
+2013-11-01 13:22:11,2098,Gateway-Linux,1,Idletime,9663.80,seconds,,,
+2013-11-01 13:22:11,2099,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:22:22,2100,Gateway-Linux,1,Uptime,10171.45,seconds,,,
+2013-11-01 13:22:22,2101,Gateway-Linux,1,Idletime,9674.39,seconds,,,
+2013-11-01 13:22:22,2102,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:22:33,2103,Gateway-Linux,1,Uptime,10182.61,seconds,,,
+2013-11-01 13:22:33,2104,Gateway-Linux,1,Idletime,9685.18,seconds,,,
+2013-11-01 13:22:33,2105,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:22:44,2106,Gateway-Linux,1,Uptime,10193.72,seconds,,,
+2013-11-01 13:22:44,2107,Gateway-Linux,1,Idletime,9695.52,seconds,,,
+2013-11-01 13:22:44,2108,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:22:55,2109,Gateway-Linux,1,Uptime,10204.81,seconds,,,
+2013-11-01 13:22:55,2110,Gateway-Linux,1,Idletime,9706.25,seconds,,,
+2013-11-01 13:22:55,2111,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:23:06,2112,Gateway-Linux,1,Uptime,10215.89,seconds,,,
+2013-11-01 13:23:06,2113,Gateway-Linux,1,Idletime,9717.04,seconds,,,
+2013-11-01 13:23:06,2114,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:23:17,2115,Gateway-Linux,1,Uptime,10227.06,seconds,,,
+2013-11-01 13:23:17,2116,Gateway-Linux,1,Idletime,9727.54,seconds,,,
+2013-11-01 13:23:17,2117,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:23:29,2118,Gateway-Linux,1,Uptime,10238.17,seconds,,,
+2013-11-01 13:23:29,2119,Gateway-Linux,1,Idletime,9738.37,seconds,,,
+2013-11-01 13:23:29,2120,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:23:40,2121,Gateway-Linux,1,Uptime,10249.39,seconds,,,
+2013-11-01 13:23:40,2122,Gateway-Linux,1,Idletime,9748.78,seconds,,,
+2013-11-01 13:23:40,2123,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:23:51,2124,Gateway-Linux,1,Uptime,10260.50,seconds,,,
+2013-11-01 13:23:51,2125,Gateway-Linux,1,Idletime,9759.49,seconds,,,
+2013-11-01 13:23:51,2126,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:24:02,2127,Gateway-Linux,1,Uptime,10271.60,seconds,,,
+2013-11-01 13:24:02,2128,Gateway-Linux,1,Idletime,9770.10,seconds,,,
+2013-11-01 13:24:02,2129,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:24:13,2130,Gateway-Linux,1,Uptime,10282.78,seconds,,,
+2013-11-01 13:24:13,2131,Gateway-Linux,1,Idletime,9780.90,seconds,,,
+2013-11-01 13:24:13,2132,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:24:24,2133,Gateway-Linux,1,Uptime,10293.88,seconds,,,
+2013-11-01 13:24:24,2134,Gateway-Linux,1,Idletime,9791.56,seconds,,,
+2013-11-01 13:24:24,2135,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:24:35,2136,Gateway-Linux,1,Uptime,10304.97,seconds,,,
+2013-11-01 13:24:35,2137,Gateway-Linux,1,Idletime,9802.34,seconds,,,
+2013-11-01 13:24:35,2138,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:24:46,2139,Gateway-Linux,1,Uptime,10316.06,seconds,,,
+2013-11-01 13:24:46,2140,Gateway-Linux,1,Idletime,9813.06,seconds,,,
+2013-11-01 13:24:46,2141,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:24:57,2142,Gateway-Linux,1,Uptime,10326.18,seconds,,,
+2013-11-01 13:24:57,2143,Gateway-Linux,1,Idletime,9822.92,seconds,,,
+2013-11-01 13:24:57,2144,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:25:08,2145,Gateway-Linux,1,Uptime,10337.38,seconds,,,
+2013-11-01 13:25:08,2146,Gateway-Linux,1,Idletime,9833.43,seconds,,,
+2013-11-01 13:25:08,2147,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:25:19,2148,Gateway-Linux,1,Uptime,10348.49,seconds,,,
+2013-11-01 13:25:19,2149,Gateway-Linux,1,Idletime,9844.29,seconds,,,
+2013-11-01 13:25:19,2150,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:25:30,2151,Gateway-Linux,1,Uptime,10359.59,seconds,,,
+2013-11-01 13:25:30,2152,Gateway-Linux,1,Idletime,9855.13,seconds,,,
+2013-11-01 13:25:30,2153,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:25:41,2154,Gateway-Linux,1,Uptime,10370.71,seconds,,,
+2013-11-01 13:25:41,2155,Gateway-Linux,1,Idletime,9865.80,seconds,,,
+2013-11-01 13:25:41,2156,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:25:52,2157,Gateway-Linux,1,Uptime,10381.87,seconds,,,
+2013-11-01 13:25:52,2158,Gateway-Linux,1,Idletime,9876.58,seconds,,,
+2013-11-01 13:25:52,2159,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:26:03,2160,Gateway-Linux,1,Uptime,10392.98,seconds,,,
+2013-11-01 13:26:03,2161,Gateway-Linux,1,Idletime,9887.40,seconds,,,
+2013-11-01 13:26:03,2162,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:26:14,2163,Gateway-Linux,1,Uptime,10404.10,seconds,,,
+2013-11-01 13:26:14,2164,Gateway-Linux,1,Idletime,9898.30,seconds,,,
+2013-11-01 13:26:15,2165,Gateway-Linux,1,MPU Temp,48.7,C,,,
+2013-11-01 13:26:25,2166,Gateway-Linux,1,Uptime,10414.26,seconds,,,
+2013-11-01 13:26:25,2167,Gateway-Linux,1,Idletime,9908.01,seconds,,,
+2013-11-01 13:26:25,2168,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:26:36,2169,Gateway-Linux,1,Uptime,10425.33,seconds,,,
+2013-11-01 13:26:36,2170,Gateway-Linux,1,Idletime,9918.78,seconds,,,
+2013-11-01 13:26:36,2171,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:26:47,2172,Gateway-Linux,1,Uptime,10436.51,seconds,,,
+2013-11-01 13:26:47,2173,Gateway-Linux,1,Idletime,9929.50,seconds,,,
+2013-11-01 13:26:47,2174,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:26:58,2175,Gateway-Linux,1,Uptime,10447.60,seconds,,,
+2013-11-01 13:26:58,2176,Gateway-Linux,1,Idletime,9940.34,seconds,,,
+2013-11-01 13:26:58,2177,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:27:09,2178,Gateway-Linux,1,Uptime,10458.68,seconds,,,
+2013-11-01 13:27:09,2179,Gateway-Linux,1,Idletime,9951.13,seconds,,,
+2013-11-01 13:27:09,2180,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 13:27:15,R0,Proto,76,BATT-R,136.00,raw,,-76,0
+2013-11-01 13:27:16,R0,Proto,76,BATT-R,136.00,raw,,-81,0
+2013-11-01 13:27:16,R2,Proto,535,DUM,3.14,na,,-80,0
+2013-11-01 13:27:16,R3,Proto,647,LUX,157.00,lux,,-80,0
+2013-11-01 13:27:17,R7,Proto,928,BMP-Pressure,99563.00,Pa,,-78,0
+2013-11-01 13:27:17,R9,Proto,1881,Dallas,23.50,C,,-74,0
+2013-11-01 13:27:17,R9,Proto,1881,Dallas-F,74.3,F,,-74,0
+2013-11-01 13:27:19,R11,Proto,2019,BATT-V,4.79,volts,,-75,0
+2013-11-01 13:27:19,R19,Proto,3463,Dallas,23.50,C,,-81,0
+2013-11-01 13:27:19,R19,Proto,3463,Dallas-F,74.3,F,,-81,0
+2013-11-01 13:27:20,R27,Proto,4091,BMP-Pressure,99568.00,Pa,,-79,0
+2013-11-01 13:27:20,R29,Proto,5040,Dallas,23.50,C,,-76,0
+2013-11-01 13:27:20,R29,Proto,5040,Dallas-F,74.3,F,,-76,0
+2013-11-01 13:27:21,R31,Proto,5186,BATT-V,4.79,volts,,-75,0
+2013-11-01 13:27:22,R39,Proto,6630,Dallas,23.56,C,,-73,0
+2013-11-01 13:27:22,R39,Proto,6630,Dallas-F,74.408,F,,-73,0
+2013-11-01 13:27:23,R47,Proto,7256,BMP-Pressure,99566.00,Pa,,-84,0
+2013-11-01 13:27:24,R49,Proto,8211,Dallas,23.56,C,,-76,0
+2013-11-01 13:27:24,R49,Proto,8211,Dallas-F,74.408,F,,-76,0
+2013-11-01 13:27:24,R53,Proto,8506,LUX,182.00,lux,,-68,0
+2013-11-01 13:27:24,R58,Proto,8873,MDWIND,186.00,raw,,-77,0
+2013-11-01 13:27:26,2181,Gateway-Linux,1,Uptime,10475.54,seconds,,,
+2013-11-01 13:27:26,2182,Gateway-Linux,1,Idletime,9966.89,seconds,,,
+2013-11-01 13:27:26,2183,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 13:27:26,R59,Proto,9754,Dallas,23.56,C,,-80,0
+2013-11-01 13:27:26,R59,Proto,9754,Dallas-F,74.408,F,,-80,0
+2013-11-01 13:27:27,R69,Proto,11344,Dallas,23.56,C,,-78,0
+2013-11-01 13:27:27,R69,Proto,11344,Dallas-F,74.408,F,,-78,0
+2013-11-01 13:27:27,R76,Proto,11830,BMP-Temp,23.52,C,,-76,0
+2013-11-01 13:27:27,R76,Proto,11830,BMP-Temp-F,74.336,F,,-76,0
+2013-11-01 13:27:28,R79,Proto,12889,Dallas,23.56,C,,-81,0
+2013-11-01 13:27:28,R79,Proto,12889,Dallas-F,74.408,F,,-81,0
+2013-11-01 13:27:29,R83,Proto,13185,LUX,181.00,lux,,-75,0
+2013-11-01 13:27:30,R89,Proto,14477,Dallas,23.56,C,,-78,0
+2013-11-01 13:27:30,R89,Proto,14477,Dallas-F,74.408,F,,-78,0
+2013-11-01 13:27:32,R99,Proto,16078,Dallas,23.56,C,,-79,0
+2013-11-01 13:27:32,R99,Proto,16078,Dallas-F,74.408,F,,-79,0
+2013-11-01 13:27:34,R106,Proto,16616,BMP-Temp,23.52,C,,-73,0
+2013-11-01 13:27:34,R106,Proto,16616,BMP-Temp-F,74.336,F,,-73,0
+2013-11-01 13:27:37,2184,Gateway-Linux,1,Uptime,10486.95,seconds,,,
+2013-11-01 13:27:37,2185,Gateway-Linux,1,Idletime,9977.54,seconds,,,
+2013-11-01 13:27:37,2186,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:27:38,R112,Proto,18772,DUM,3.14,na,,-76,0
+2013-11-01 13:27:38,R126,Proto,23034,BMP-Temp,23.52,C,,-75,0
+2013-11-01 13:27:38,R126,Proto,23034,BMP-Temp-F,74.336,F,,-75,0
+2013-11-01 13:27:40,R128,Proto,23164,MDWIND,186.00,raw,,-73,0
+2013-11-01 13:27:41,R139,Proto,25654,Dallas,23.56,C,,-21,0
+2013-11-01 13:27:41,R139,Proto,25654,Dallas-F,74.408,F,,-21,0
+2013-11-01 13:27:42,R147,Proto,26298,BMP-Pressure,99577.00,Pa,,-74,0
+2013-11-01 13:27:43,R149,Proto,27251,Dallas,23.56,C,,-73,0
+2013-11-01 13:27:43,R149,Proto,27251,Dallas-F,74.408,F,,-73,0
+2013-11-01 13:27:43,R155,Proto,27712,LUX-Infra,82.00,rawi,,-77,0
+2013-11-01 13:27:44,R157,Proto,27895,BMP-Pressure,99576.00,Pa,,-82,0
+2013-11-01 13:27:45,R159,Proto,28852,Dallas,23.56,C,,-70,0
+2013-11-01 13:27:45,R159,Proto,28852,Dallas-F,74.408,F,,-70,0
+2013-11-01 13:27:47,R169,Proto,30452,Dallas,23.56,C,,-77,0
+2013-11-01 13:27:47,R169,Proto,30452,Dallas-F,74.408,F,,-77,0
+2013-11-01 13:27:47,R179,Proto,32049,Dallas,23.56,C,,-80,0
+2013-11-01 13:27:47,R179,Proto,32049,Dallas-F,74.408,F,,-80,0
+2013-11-01 13:27:48,R181,Proto,32168,BATT-V,4.79,volts,,-75,0
+2013-11-01 13:27:50,2187,Gateway-Linux,1,Uptime,10499.39,seconds,,,
+2013-11-01 13:27:50,2188,Gateway-Linux,1,Idletime,9985.53,seconds,,,
+2013-11-01 13:27:50,2189,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:27:51,R189,Proto,33619,Dallas,23.56,C,,-79,0
+2013-11-01 13:27:51,R189,Proto,33619,Dallas-F,74.408,F,,-79,0
+2013-11-01 13:27:52,R209,Proto,36809,Dallas,23.56,C,,-80,0
+2013-11-01 13:27:52,R209,Proto,36809,Dallas-F,74.408,F,,-80,0
+2013-11-01 13:27:56,R210,Proto,36883,BATT-R,135.00,raw,,-71,0
+2013-11-01 13:27:59,R219,Proto,41033,Dallas,23.56,C,,-76,0
+2013-11-01 13:27:59,R219,Proto,41033,Dallas-F,74.408,F,,-76,0
+2013-11-01 13:28:01,2190,Gateway-Linux,1,Uptime,10511.00,seconds,,,
+2013-11-01 13:28:01,2191,Gateway-Linux,1,Idletime,9996.40,seconds,,,
+2013-11-01 13:28:01,2192,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:28:02,R239,Proto,44232,Dallas,23.56,C,,-77,0
+2013-11-01 13:28:02,R239,Proto,44232,Dallas-F,74.408,F,,-77,0
+2013-11-01 13:28:03,R259,Proto,47418,Dallas,23.56,C,,-75,0
+2013-11-01 13:28:03,R259,Proto,47418,Dallas-F,74.408,F,,-75,0
+2013-11-01 13:28:04,R265,Proto,47830,LUX-Infra,84.00,rawi,,-76,0
+2013-11-01 13:28:05,R269,Proto,49420,Dallas,23.56,C,,-79,0
+2013-11-01 13:28:05,R269,Proto,49420,Dallas-F,74.408,F,,-79,0
+2013-11-01 13:28:06,R276,Proto,49949,BMP-Temp,23.51,C,,-76,0
+2013-11-01 13:28:06,R276,Proto,49949,BMP-Temp-F,74.318,F,,-76,0
+2013-11-01 13:28:07,R279,Proto,50955,Dallas,23.56,C,,-20,0
+2013-11-01 13:28:07,R279,Proto,50955,Dallas-F,74.408,F,,-20,0
+2013-11-01 13:28:07,R286,Proto,51493,BMP-Temp,23.52,C,,-79,0
+2013-11-01 13:28:07,R286,Proto,51493,BMP-Temp-F,74.336,F,,-79,0
+2013-11-01 13:28:07,R287,Proto,51599,BMP-Pressure,99579.00,Pa,,-75,0
+2013-11-01 13:28:09,R289,Proto,52552,Dallas,23.56,C,,-81,0
+2013-11-01 13:28:09,R289,Proto,52552,Dallas-F,74.408,F,,-81,0
+2013-11-01 13:28:10,R301,Proto,54283,BATT-V,4.79,volts,,-82,0
+2013-11-01 13:28:12,R309,Proto,55730,Dallas,23.56,C,,-73,0
+2013-11-01 13:28:12,R309,Proto,55730,Dallas-F,74.408,F,,-73,0
+2013-11-01 13:28:13,2193,Gateway-Linux,1,Uptime,10523.10,seconds,,,
+2013-11-01 13:28:13,2194,Gateway-Linux,1,Idletime,10007.82,seconds,,,
+2013-11-01 13:28:13,2195,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 13:28:14,R319,Proto,57325,Dallas,23.63,C,,-79,0
+2013-11-01 13:28:14,R319,Proto,57325,Dallas-F,74.534,F,,-79,0
+2013-11-01 13:28:14,R329,Proto,58921,Dallas,23.63,C,,-78,0
+2013-11-01 13:28:14,R329,Proto,58921,Dallas-F,74.534,F,,-78,0
+2013-11-01 13:28:15,R331,Proto,59014,BATT-V,4.79,volts,,-74,0
+2013-11-01 13:28:16,R339,Proto,60462,Dallas,23.63,C,,-77,0
+2013-11-01 13:28:16,R339,Proto,60462,Dallas-F,74.534,F,,-77,0
+2013-11-01 13:28:16,R344,Proto,60847,LUX-Broad,307.00,rawb,,-76,0
+2013-11-01 13:28:18,R349,Proto,62024,Dallas,23.63,C,,-75,0
+2013-11-01 13:28:18,R349,Proto,62024,Dallas-F,74.534,F,,-75,0
+2013-11-01 13:28:19,R359,Proto,63605,Dallas,23.56,C,,-77,0
+2013-11-01 13:28:19,R359,Proto,63605,Dallas-F,74.408,F,,-77,0
+2013-11-01 13:28:24,R367,Proto,64250,BMP-Pressure,99567.00,Pa,,-74,0
+2013-11-01 13:28:25,R369,Proto,69564,Dallas,23.56,C,,-73,0
+2013-11-01 13:28:25,R369,Proto,69564,Dallas-F,74.408,F,,-73,0
+2013-11-01 13:28:25,R374,Proto,69949,LUX-Broad,311.00,rawb,,-77,0
+2013-11-01 13:28:26,R376,Proto,70346,BMP-Temp,23.53,C,,-77,0
+2013-11-01 13:28:26,R376,Proto,70346,BMP-Temp-F,74.354,F,,-77,0
+2013-11-01 13:28:27,R377,Proto,70449,BMP-Pressure,99556.00,Pa,,-66,0
+2013-11-01 13:28:28,2196,Gateway-Linux,1,Uptime,10537.57,seconds,,,
+2013-11-01 13:28:28,2197,Gateway-Linux,1,Idletime,10021.37,seconds,,,
+2013-11-01 13:28:28,2198,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:28:28,R383,Proto,71702,LUX,175.00,lux,,-75,0
+2013-11-01 13:28:28,R389,Proto,72993,Dallas,23.56,C,,-77,0
+2013-11-01 13:28:28,R389,Proto,72993,Dallas-F,74.408,F,,-77,0
+2013-11-01 13:28:29,R389,Proto,72993,Dallas,23.56,C,,-74,0
+2013-11-01 13:28:29,R389,Proto,72993,Dallas-F,74.408,F,,-74,0
+2013-11-01 13:28:31,R399,Proto,74584,Dallas,23.56,C,,-79,0
+2013-11-01 13:28:31,R399,Proto,74584,Dallas-F,74.408,F,,-79,0
+2013-11-01 13:28:32,R409,Proto,76173,Dallas,23.56,C,,-21,0
+2013-11-01 13:28:32,R409,Proto,76173,Dallas-F,74.408,F,,-21,0
+2013-11-01 13:28:33,R413,Proto,76473,LUX,186.00,lux,,-76,0
+2013-11-01 13:28:33,R419,Proto,77772,Dallas,23.56,C,,-82,0
+2013-11-01 13:28:33,R419,Proto,77772,Dallas-F,74.408,F,,-82,0
+2013-11-01 13:28:34,R426,Proto,78308,BMP-Temp,23.51,C,,-75,0
+2013-11-01 13:28:34,R426,Proto,78308,BMP-Temp-F,74.318,F,,-75,0
+2013-11-01 13:28:35,R429,Proto,79366,Dallas,23.56,C,,-81,0
+2013-11-01 13:28:35,R429,Proto,79366,Dallas-F,74.408,F,,-81,0
+2013-11-01 13:28:37,R439,Proto,80911,Dallas,23.63,C,,-75,0
+2013-11-01 13:28:37,R439,Proto,80911,Dallas-F,74.534,F,,-75,0
+2013-11-01 13:28:38,R449,Proto,82505,Dallas,23.63,C,,-78,0
+2013-11-01 13:28:38,R449,Proto,82505,Dallas-F,74.534,F,,-78,0
+2013-11-01 13:28:39,R457,Proto,83142,BMP-Pressure,99570.00,Pa,,-75,0
+2013-11-01 13:28:40,R459,Proto,84070,Dallas,23.63,C,,-80,0
+2013-11-01 13:28:40,R459,Proto,84070,Dallas-F,74.534,F,,-80,0
+2013-11-01 13:28:40,R465,Proto,84472,LUX-Infra,85.00,rawi,,-75,0
+2013-11-01 13:28:42,R469,Proto,85608,Dallas,23.56,C,,-74,0
+2013-11-01 13:28:42,R469,Proto,85608,Dallas-F,74.408,F,,-74,0
+2013-11-01 13:28:43,R479,Proto,87199,Dallas,23.63,C,,-80,0
+2013-11-01 13:28:43,R479,Proto,87199,Dallas-F,74.534,F,,-80,0
+2013-11-01 13:28:44,R489,Proto,88792,Dallas,23.63,C,,-78,0
+2013-11-01 13:28:44,R489,Proto,88792,Dallas-F,74.534,F,,-78,0
+2013-11-01 13:28:45,2199,Gateway-Linux,1,Uptime,10554.75,seconds,,,
+2013-11-01 13:28:45,2200,Gateway-Linux,1,Idletime,10037.39,seconds,,,
+2013-11-01 13:28:45,2201,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 13:28:49,R491,Proto,88938,BATT-V,4.79,volts,,-71,0
+2013-11-01 13:28:50,R499,Proto,94580,Dallas,23.63,C,,-81,0
+2013-11-01 13:28:50,R499,Proto,94580,Dallas-F,74.534,F,,-81,0
+2013-11-01 13:28:51,R500,Proto,94654,BATT-R,135.00,raw,,-78,0
+2013-11-01 13:28:51,R504,Proto,95570,LUX-Broad,307.00,rawb,,-74,0
+2013-11-01 13:28:51,R507,Proto,95823,BMP-Pressure,99557.00,Pa,,-79,0
+2013-11-01 13:28:53,R509,Proto,96746,Dallas,23.56,C,,-25,0
+2013-11-01 13:28:53,R509,Proto,96746,Dallas-F,74.408,F,,-25,0
+2013-11-01 13:28:55,R519,Proto,98337,Dallas,23.56,C,,-71,0
+2013-11-01 13:28:55,R519,Proto,98337,Dallas-F,74.408,F,,-71,0
+2013-11-01 13:28:56,R529,Proto,99931,Dallas,23.63,C,,-81,0
+2013-11-01 13:28:56,R529,Proto,99931,Dallas-F,74.534,F,,-81,0
+2013-11-01 13:28:58,2202,Gateway-Linux,1,Uptime,10567.32,seconds,,,
+2013-11-01 13:28:58,2203,Gateway-Linux,1,Idletime,10049.32,seconds,,,
+2013-11-01 13:28:58,2204,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 13:28:58,R539,Proto,101533,Dallas,23.56,C,,-78,0
+2013-11-01 13:28:58,R539,Proto,101533,Dallas-F,74.408,F,,-78,0
+2013-11-01 13:28:59,R549,Proto,103133,Dallas,23.56,C,,-73,0
+2013-11-01 13:28:59,R549,Proto,103133,Dallas-F,74.408,F,,-73,0
+2013-11-01 13:29:00,R559,Proto,104734,Dallas,23.56,C,,-76,0
+2013-11-01 13:29:00,R559,Proto,104734,Dallas-F,74.408,F,,-76,0
+2013-11-01 13:29:01,R561,Proto,104879,BATT-V,4.79,volts,,-80,0
+2013-11-01 13:29:02,R569,Proto,106332,Dallas,23.63,C,,-75,0
+2013-11-01 13:29:02,R569,Proto,106332,Dallas-F,74.534,F,,-75,0
+2013-11-01 13:29:03,R577,Proto,106981,BMP-Pressure,99569.00,Pa,,-80,0
+2013-11-01 13:29:03,R579,Proto,107997,Dallas,23.56,C,,-78,0
+2013-11-01 13:29:03,R579,Proto,107997,Dallas-F,74.408,F,,-78,0
+2013-11-01 13:29:06,R584,Proto,108389,LUX-Broad,337.00,rawb,,-74,0
+2013-11-01 13:29:08,R599,Proto,111202,Dallas,23.63,C,,-21,0
+2013-11-01 13:29:08,R599,Proto,111202,Dallas-F,74.534,F,,-21,0
+2013-11-01 13:29:08,R611,Proto,112949,BATT-V,4.79,volts,,-80,0
+2013-11-01 13:29:09,R616,Proto,113292,BMP-Temp,23.51,C,,-74,0
+2013-11-01 13:29:09,R616,Proto,113292,BMP-Temp-F,74.318,F,,-74,0
+2013-11-01 13:29:10,R619,Proto,114352,Dallas,23.56,C,,-80,0
+2013-11-01 13:29:10,R619,Proto,114352,Dallas-F,74.408,F,,-80,0
+2013-11-01 13:29:11,R627,Proto,114999,BMP-Pressure,99574.00,Pa,,-81,0
+2013-11-01 13:29:12,R629,Proto,115952,Dallas,23.56,C,,-74,0
+2013-11-01 13:29:12,R629,Proto,115952,Dallas-F,74.408,F,,-74,0
+2013-11-01 13:29:13,R639,Proto,117555,Dallas,23.56,C,,-83,0
+2013-11-01 13:29:13,R639,Proto,117555,Dallas-F,74.408,F,,-83,0
+2013-11-01 13:29:15,R648,Proto,118272,MDWIND,182.00,raw,,-73,0
+2013-11-01 13:29:16,2205,Gateway-Linux,1,Uptime,10585.89,seconds,,,
+2013-11-01 13:29:16,2206,Gateway-Linux,1,Idletime,10066.54,seconds,,,
+2013-11-01 13:29:16,2207,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 13:29:17,R649,Proto,119723,Dallas,23.56,C,,-73,0
+2013-11-01 13:29:17,R649,Proto,119723,Dallas-F,74.408,F,,-73,0
+2013-11-01 13:29:17,R662,Proto,121540,DUM,3.14,na,,-81,0
+2013-11-01 13:29:18,R669,Proto,122921,Dallas,23.56,C,,-79,0
+2013-11-01 13:29:18,R669,Proto,122921,Dallas-F,74.408,F,,-79,0
+2013-11-01 13:29:20,R671,Proto,123020,BATT-V,4.79,volts,,-74,0
+2013-11-01 13:29:20,R683,Proto,124774,LUX,194.00,lux,,-76,0
+2013-11-01 13:29:22,R685,Proto,124925,LUX-Infra,92.00,rawi,,-75,0
+2013-11-01 13:29:23,R699,Proto,127664,Dallas,23.56,C,,-73,0
+2013-11-01 13:29:23,R699,Proto,127664,Dallas-F,74.408,F,,-73,0
+2013-11-01 13:29:24,R703,Proto,127939,LUX,198.00,lux,,-84,0
+2013-11-01 13:29:24,R709,Proto,129232,Dallas,23.56,C,,-80,0
+2013-11-01 13:29:24,R709,Proto,129232,Dallas-F,74.408,F,,-80,0
+2013-11-01 13:29:25,R711,Proto,129347,BATT-V,4.79,volts,,-74,0
+2013-11-01 13:29:26,R715,Proto,129665,LUX-Infra,91.00,rawi,,-76,0
+2013-11-01 13:29:27,R719,Proto,131522,Dallas,23.56,C,,-81,0
+2013-11-01 13:29:27,R719,Proto,131522,Dallas-F,74.408,F,,-81,0
+2013-11-01 13:29:28,R726,Proto,132059,BMP-Temp,23.51,C,,-75,0
+2013-11-01 13:29:28,R726,Proto,132059,BMP-Temp-F,74.318,F,,-75,0
+2013-11-01 13:29:29,R729,Proto,133115,Dallas,23.56,C,,-77,0
+2013-11-01 13:29:29,R729,Proto,133115,Dallas-F,74.408,F,,-77,0
+2013-11-01 13:29:29,R738,Proto,133834,MDWIND,182.00,raw,,-76,0
+2013-11-01 13:29:31,2208,Gateway-Linux,1,Uptime,10600.52,seconds,,,
+2013-11-01 13:29:31,2209,Gateway-Linux,1,Idletime,10080.20,seconds,,,
+2013-11-01 13:29:31,2210,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:29:33,R739,Proto,134715,Dallas,23.56,C,,-74,0
+2013-11-01 13:29:33,R739,Proto,134715,Dallas-F,74.408,F,,-74,0
+2013-11-01 13:29:33,R759,Proto,137918,Dallas,23.56,C,,-79,0
+2013-11-01 13:29:33,R759,Proto,137918,Dallas-F,74.408,F,,-79,0
+2013-11-01 13:29:36,R760,Proto,137991,BATT-R,135.00,raw,,-77,0
+2013-11-01 13:29:38,R763,Proto,140868,LUX,200.00,lux,,-77,0
+2013-11-01 13:29:39,R779,Proto,143773,Dallas,23.56,C,,-81,0
+2013-11-01 13:29:39,R779,Proto,143773,Dallas-F,74.408,F,,-81,0
+2013-11-01 13:29:40,R780,Proto,143795,BATT-R,137.00,raw,,-77,0
+2013-11-01 13:29:41,R789,Proto,145315,Dallas,23.56,C,,-74,0
+2013-11-01 13:29:41,R789,Proto,145315,Dallas-F,74.408,F,,-74,0
+2013-11-01 13:29:41,R792,Proto,145529,DUM,3.14,na,,-81,0
+2013-11-01 13:29:41,R797,Proto,145957,BMP-Pressure,99570.00,Pa,,-80,0
+2013-11-01 13:29:43,R799,Proto,146910,Dallas,23.56,C,,-76,0
+2013-11-01 13:29:43,R799,Proto,146910,Dallas-F,74.408,F,,-76,0
+2013-11-01 13:29:44,2211,Gateway-Linux,1,Uptime,10613.33,seconds,,,
+2013-11-01 13:29:44,2212,Gateway-Linux,1,Idletime,10092.03,seconds,,,
+2013-11-01 13:29:44,2213,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 13:29:44,R807,Proto,147531,BMP-Pressure,99571.00,Pa,,-79,0
+2013-11-01 13:29:45,R811,Proto,148601,BATT-V,4.79,volts,,-75,0
+2013-11-01 13:29:46,R819,Proto,150048,Dallas,23.56,C,,-75,0
+2013-11-01 13:29:46,R819,Proto,150048,Dallas-F,74.408,F,,-75,0
+2013-11-01 13:29:47,R829,Proto,151623,Dallas,23.56,C,,-77,0
+2013-11-01 13:29:47,R829,Proto,151623,Dallas-F,74.408,F,,-77,0
+2013-11-01 13:29:48,R835,Proto,152095,LUX-Infra,91.00,rawi,,-77,0
+2013-11-01 13:29:50,R839,Proto,153231,Dallas,23.56,C,,-74,0
+2013-11-01 13:29:50,R839,Proto,153231,Dallas-F,74.408,F,,-74,0
+2013-11-01 13:29:50,R849,Proto,154846,Dallas,23.56,C,,-81,0
+2013-11-01 13:29:50,R849,Proto,154846,Dallas-F,74.408,F,,-81,0
+2013-11-01 13:29:50,R852,Proto,155036,DUM,3.14,na,,-80,0
+2013-11-01 13:29:51,R853,Proto,155094,LUX,178.00,lux,,-22,0
+2013-11-01 13:29:51,R856,Proto,156059,BMP-Temp,23.52,C,,-79,0
+2013-11-01 13:29:51,R856,Proto,156059,BMP-Temp-F,74.336,F,,-79,0
+2013-11-01 13:29:52,R858,Proto,156231,MDWIND,179.00,raw,,-74,0
+2013-11-01 13:29:54,R859,Proto,157114,Dallas,23.56,C,,-74,0
+2013-11-01 13:29:54,R859,Proto,157114,Dallas-F,74.408,F,,-74,0
+2013-11-01 13:29:54,R869,Proto,158682,Dallas,23.56,C,,-76,0
+2013-11-01 13:29:54,R869,Proto,158682,Dallas-F,74.408,F,,-76,0
+2013-11-01 13:29:54,R873,Proto,158965,LUX,164.00,lux,,-74,0
+2013-11-01 13:29:55,R878,Proto,159329,MDWIND,179.00,raw,,-74,0
+2013-11-01 13:29:56,R879,Proto,160211,Dallas,23.56,C,,-80,0
+2013-11-01 13:29:56,R879,Proto,160211,Dallas-F,74.408,F,,-80,0
+2013-11-01 13:29:57,R889,Proto,161758,Dallas,23.56,C,,-81,0
+2013-11-01 13:29:57,R889,Proto,161758,Dallas-F,74.408,F,,-81,0
+2013-11-01 13:29:58,2214,Gateway-Linux,1,Uptime,10627.68,seconds,,,
+2013-11-01 13:29:58,2215,Gateway-Linux,1,Idletime,10105.17,seconds,,,
+2013-11-01 13:29:58,2216,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 13:29:59,R891,Proto,161857,BATT-V,4.79,volts,,-22,0
+2013-11-01 13:29:59,R905,Proto,163770,LUX-Infra,98.00,rawi,,-74,0
+2013-11-01 13:30:00,R909,Proto,164910,Dallas,23.56,C,,-80,0
+2013-11-01 13:30:00,R909,Proto,164910,Dallas-F,74.408,F,,-80,0
+2013-11-01 13:30:01,R914,Proto,165274,LUX-Broad,316.00,rawb,,-75,0
+2013-11-01 13:30:03,R919,Proto,166480,Dallas,23.56,C,,-76,0
+2013-11-01 13:30:03,R919,Proto,166480,Dallas-F,74.408,F,,-76,0
+2013-11-01 13:30:05,R929,Proto,168073,Dallas,23.56,C,,-18,0
+2013-11-01 13:30:05,R929,Proto,168073,Dallas-F,74.408,F,,-18,0
+2013-11-01 13:30:06,R941,Proto,169819,BATT-V,4.79,volts,,-74,0
+2013-11-01 13:30:07,R949,Proto,171251,Dallas,23.56,C,,-80,0
+2013-11-01 13:30:07,R949,Proto,171251,Dallas-F,74.408,F,,-80,0
+2013-11-01 13:30:07,R953,Proto,171504,LUX,177.00,lux,,-76,0
+2013-11-01 13:30:08,R954,Proto,171590,LUX-Broad,314.00,rawb,,-76,0
+2013-11-01 13:30:08,R961,Proto,172949,BATT-V,4.79,volts,,-77,0
+2013-11-01 13:30:09,R965,Proto,173264,LUX-Infra,92.00,rawi,,-72,0
+2013-11-01 13:30:11,2217,Gateway-Linux,1,Uptime,10640.30,seconds,,,
+2013-11-01 13:30:11,2218,Gateway-Linux,1,Idletime,10116.56,seconds,,,
+2013-11-01 13:30:11,2219,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 13:30:11,R969,Proto,174404,Dallas,23.56,C,,-80,0
+2013-11-01 13:30:11,R969,Proto,174404,Dallas-F,74.408,F,,-80,0
+2013-11-01 13:30:11,R979,Proto,176003,Dallas,23.56,C,,-19,0
+2013-11-01 13:30:11,R979,Proto,176003,Dallas-F,74.408,F,,-19,0
+2013-11-01 13:30:12,R982,Proto,176223,DUM,3.14,na,,-76,0
+2013-11-01 13:30:13,R987,Proto,176653,BMP-Pressure,99572.00,Pa,,-75,0
+2013-11-01 13:30:14,R993,Proto,178018,LUX,169.00,lux,,-79,0
+2013-11-01 13:30:15,R999,Proto,179318,Dallas,23.63,C,,-76,0
+2013-11-01 13:30:15,R999,Proto,179318,Dallas-F,74.534,F,,-76,0
+2013-11-01 13:30:17,R1009,Proto,180916,Dallas,23.56,C,,-78,0
+2013-11-01 13:30:17,R1009,Proto,180916,Dallas-F,74.408,F,,-78,0
+2013-11-01 13:30:19,R1019,Proto,182519,Dallas,23.56,C,,-77,0
+2013-11-01 13:30:19,R1019,Proto,182519,Dallas-F,74.408,F,,-77,0
+2013-11-01 13:30:22,R1029,Proto,184122,Dallas,23.56,C,,-80,0
+2013-11-01 13:30:22,R1029,Proto,184122,Dallas-F,74.408,F,,-80,0
+2013-11-01 13:30:23,R1049,Proto,187300,Dallas,23.56,C,,-75,0
+2013-11-01 13:30:23,R1049,Proto,187300,Dallas-F,74.408,F,,-75,0
+2013-11-01 13:30:23,R1057,Proto,187947,BMP-Pressure,99562.00,Pa,,-75,0
+2013-11-01 13:30:25,2220,Gateway-Linux,1,Uptime,10654.71,seconds,,,
+2013-11-01 13:30:25,2221,Gateway-Linux,1,Idletime,10129.53,seconds,,,
+2013-11-01 13:30:25,2222,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 13:30:25,R1059,Proto,188901,Dallas,23.56,C,,-76,0
+2013-11-01 13:30:25,R1059,Proto,188901,Dallas-F,74.408,F,,-76,0
+2013-11-01 13:30:27,R1069,Proto,190500,Dallas,23.56,C,,-80,0
+2013-11-01 13:30:27,R1069,Proto,190500,Dallas-F,74.408,F,,-80,0
+2013-11-01 13:30:28,R1079,Proto,192109,Dallas,23.56,C,,-76,0
+2013-11-01 13:30:28,R1079,Proto,192109,Dallas-F,74.408,F,,-76,0
+2013-11-01 13:30:30,R1089,Proto,193705,Dallas,23.56,C,,-78,0
+2013-11-01 13:30:30,R1089,Proto,193705,Dallas-F,74.408,F,,-78,0
+2013-11-01 13:30:32,R1099,Proto,195311,Dallas,23.63,C,,-19,99
+2013-11-01 13:30:32,R1099,Proto,195311,Dallas-F,74.534,F,,-19,99
+2013-11-01 13:30:32,R1110,Proto,197015,BATT-R,135.00,raw,,-22,0
+2013-11-01 13:30:32,R1111,Proto,197086,BATT-V,4.79,volts,,-24,0
+2013-11-01 13:30:33,R1113,Proto,197245,LUX,212.00,lux,,-75,0
+2013-11-01 13:30:34,R1119,Proto,198537,Dallas,23.56,C,,-77,0
+2013-11-01 13:30:34,R1119,Proto,198537,Dallas-F,74.408,F,,-77,0
+2013-11-01 13:30:35,R1129,Proto,200122,Dallas,23.56,C,,-78,0
+2013-11-01 13:30:35,R1129,Proto,200122,Dallas-F,74.408,F,,-78,0
+2013-11-01 13:30:36,R1130,Proto,200195,BATT-R,137.00,raw,,-78,0
+2013-11-01 13:30:36,R1133,Proto,200399,LUX,204.00,lux,,-23,0
+2013-11-01 13:30:37,R1137,Proto,200758,BMP-Pressure,99560.00,Pa,,-81,0
+2013-11-01 13:30:38,2223,Gateway-Linux,1,Uptime,10668.14,seconds,,,
+2013-11-01 13:30:39,2224,Gateway-Linux,1,Idletime,10141.77,seconds,,,
+2013-11-01 13:30:39,2225,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 13:30:39,R1139,Proto,201714,Dallas,23.56,C,,-73,0
+2013-11-01 13:30:39,R1139,Proto,201714,Dallas-F,74.408,F,,-73,0
+2013-11-01 13:30:39,R1155,Proto,203782,LUX-Infra,98.00,rawi,,-25,0
+2013-11-01 13:30:39,R1156,Proto,203859,BMP-Temp,23.56,C,,-77,0
+2013-11-01 13:30:39,R1156,Proto,203859,BMP-Temp-F,74.408,F,,-77,0
+2013-11-01 13:30:41,R1159,Proto,204917,Dallas,23.56,C,,-74,0
+2013-11-01 13:30:41,R1159,Proto,204917,Dallas-F,74.408,F,,-74,0
+2013-11-01 13:30:43,R1169,Proto,206492,Dallas,23.63,C,,-75,0
+2013-11-01 13:30:43,R1169,Proto,206492,Dallas-F,74.534,F,,-75,0
+2013-11-01 13:30:44,R1179,Proto,208071,Dallas,23.56,C,,-80,0
+2013-11-01 13:30:44,R1179,Proto,208071,Dallas-F,74.408,F,,-80,0
+2013-11-01 13:30:45,R1189,Proto,209671,Dallas,23.56,C,,-79,0
+2013-11-01 13:30:45,R1189,Proto,209671,Dallas-F,74.408,F,,-79,0
+2013-11-01 13:30:47,R1194,Proto,210036,LUX-Broad,366.00,rawb,,-74,0
+2013-11-01 13:30:47,R1203,Proto,211504,LUX,209.00,lux,,-19,0
+2013-11-01 13:30:47,R1207,Proto,211848,BMP-Pressure,99571.00,Pa,,-79,0
+2013-11-01 13:30:48,R1209,Proto,212801,Dallas,23.63,C,,-74,0
+2013-11-01 13:30:48,R1209,Proto,212801,Dallas-F,74.534,F,,-74,0
+2013-11-01 13:30:49,R1215,Proto,213235,LUX-Infra,102.00,rawi,,-75,0
+2013-11-01 13:30:50,R1219,Proto,214372,Dallas,23.63,C,,-80,0
+2013-11-01 13:30:50,R1219,Proto,214372,Dallas-F,74.534,F,,-80,0
+2013-11-01 13:30:52,R1229,Proto,215971,Dallas,23.63,C,,-73,0
+2013-11-01 13:30:52,R1229,Proto,215971,Dallas-F,74.534,F,,-73,0
+2013-11-01 13:30:52,R1237,Proto,216622,BMP-Pressure,99560.00,Pa,,-78,0
+2013-11-01 13:30:53,R1239,Proto,217579,Dallas,23.63,C,,-78,0
+2013-11-01 13:30:53,R1239,Proto,217579,Dallas-F,74.534,F,,-78,0
+2013-11-01 13:30:54,R1245,Proto,218037,LUX-Infra,102.00,rawi,,-78,0
+2013-11-01 13:30:55,2226,Gateway-Linux,1,Uptime,10684.99,seconds,,,
+2013-11-01 13:30:55,2227,Gateway-Linux,1,Idletime,10157.26,seconds,,,
+2013-11-01 13:30:55,2228,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 13:30:56,R1249,Proto,219174,Dallas,23.56,C,,-82,0
+2013-11-01 13:30:56,R1249,Proto,219174,Dallas-F,74.408,F,,-82,0
+2013-11-01 13:30:57,R1259,Proto,220775,Dallas,23.56,C,,-75,0
+2013-11-01 13:30:57,R1259,Proto,220775,Dallas-F,74.408,F,,-75,0
+2013-11-01 13:30:58,R1269,Proto,222377,Dallas,23.63,C,,-76,0
+2013-11-01 13:30:58,R1269,Proto,222377,Dallas-F,74.534,F,,-76,0
+2013-11-01 13:30:58,R1272,Proto,222612,DUM,3.14,na,,-80,0
+2013-11-01 13:31:00,R1279,Proto,223990,Dallas,23.63,C,,-76,0
+2013-11-01 13:31:00,R1279,Proto,223990,Dallas-F,74.534,F,,-76,0
+2013-11-01 13:31:02,R1289,Proto,225591,Dallas,23.56,C,,-80,0
+2013-11-01 13:31:02,R1289,Proto,225591,Dallas-F,74.408,F,,-80,0
+2013-11-01 13:31:02,R1299,Proto,227145,Dallas,23.63,C,,-82,0
+2013-11-01 13:31:02,R1299,Proto,227145,Dallas-F,74.534,F,,-82,0
+2013-11-01 13:31:03,R1302,Proto,227336,DUM,3.14,na,,-82,0
+2013-11-01 13:31:06,R1309,Proto,228721,Dallas,23.63,C,,-77,0
+2013-11-01 13:31:06,R1309,Proto,228721,Dallas-F,74.534,F,,-77,0
+2013-11-01 13:31:07,R1324,Proto,230661,LUX-Broad,359.00,rawb,,-79,0
+2013-11-01 13:31:08,R1329,Proto,231871,Dallas,23.63,C,,-77,0
+2013-11-01 13:31:08,R1329,Proto,231871,Dallas-F,74.534,F,,-77,0
+2013-11-01 13:31:10,R1339,Proto,233476,Dallas,23.63,C,,-76,0
+2013-11-01 13:31:10,R1339,Proto,233476,Dallas-F,74.534,F,,-76,0
+2013-11-01 13:31:10,R1349,Proto,235082,Dallas,23.63,C,,-74,0
+2013-11-01 13:31:10,R1349,Proto,235082,Dallas-F,74.534,F,,-74,0
+2013-11-01 13:31:11,2229,Gateway-Linux,1,Uptime,10701.09,seconds,,,
+2013-11-01 13:31:11,2230,Gateway-Linux,1,Idletime,10172.30,seconds,,,
+2013-11-01 13:31:11,2231,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 13:31:12,R1352,Proto,235246,DUM,3.14,na,,-81,0
+2013-11-01 13:31:14,R1367,Proto,237280,BMP-Pressure,99555.00,Pa,,-78,0
+2013-11-01 13:31:14,R1372,Proto,238451,DUM,3.14,na,,-79,0
+2013-11-01 13:31:14,R1375,Proto,238698,LUX-Infra,99.00,rawi,,-76,0
+2013-11-01 13:31:14,R1377,Proto,238880,BMP-Pressure,99563.00,Pa,,-75,0
+2013-11-01 13:31:16,R1379,Proto,239810,Dallas,23.63,C,,-75,0
+2013-11-01 13:31:16,R1379,Proto,239810,Dallas-F,74.534,F,,-75,0
+2013-11-01 13:31:17,R1388,Proto,240525,MDWIND,181.00,raw,,-78,0
+2013-11-01 13:31:19,R1389,Proto,242445,Dallas,23.63,C,,-74,0
+2013-11-01 13:31:19,R1389,Proto,242445,Dallas-F,74.534,F,,-74,0
+2013-11-01 13:31:25,R1423,Proto,247536,LUX,202.00,lux,,-73,0
+2013-11-01 13:31:26,R1439,Proto,250440,Dallas,23.63,C,,-83,0
+2013-11-01 13:31:26,R1439,Proto,250440,Dallas-F,74.534,F,,-83,0
+2013-11-01 14:14:45,0,Gateway-Linux,1,Uptime,13314.21,seconds,,,
+2013-11-01 14:14:45,1,Gateway-Linux,1,Idletime,12711.76,seconds,,,
+2013-11-01 14:14:45,2,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 14:14:45,R14538,Proto,2847315,MDWIND,178.00,raw,,-71,0
+2013-11-01 14:14:45,R14547,Proto,2849044,BMP-Pressure,99457.00,Pa,,-78,0
+2013-11-01 14:15:39,R14848,Proto,2900089,MDWIND,179.00,raw,,-80,0
+2013-11-01 14:15:40,R14849,Proto,2903433,Dallas,23.94,C,,-75,0
+2013-11-01 14:15:40,R14849,Proto,2903433,Dallas-F,75.092,F,,-75,0
+2013-11-01 14:15:40,R14855,Proto,2903873,LUX-Infra,123.00,rawi,,-81,0
+2013-11-01 14:15:40,R14857,Proto,2904055,BMP-Pressure,99480.00,Pa,,-75,0
+2013-11-01 14:15:42,0,Gateway-Linux,1,Uptime,13371.62,seconds,,,
+2013-11-01 14:15:42,1,Gateway-Linux,1,Idletime,12761.03,seconds,,,
+2013-11-01 14:15:42,2,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 14:15:42,R14859,Proto,2905015,Dallas,23.94,C,,-72,0
+2013-11-01 14:15:42,R14859,Proto,2905015,Dallas-F,75.092,F,,-72,0
+2013-11-01 14:15:45,R14869,Proto,2906632,Dallas,23.94,C,,-77,0
+2013-11-01 14:15:45,R14869,Proto,2906632,Dallas-F,75.092,F,,-77,0
+2013-11-01 14:15:46,R14888,Proto,2908988,MDWIND,179.00,raw,,-77,0
+2013-11-01 14:15:48,R14889,Proto,2911036,Dallas,23.94,C,,-75,0
+2013-11-01 14:15:48,R14889,Proto,2911036,Dallas-F,75.092,F,,-75,0
+2013-11-01 14:15:49,R14899,Proto,2912647,Dallas,23.94,C,,-76,0
+2013-11-01 14:15:49,R14899,Proto,2912647,Dallas-F,75.092,F,,-76,0
+2013-11-01 14:15:51,R14909,Proto,2914258,Dallas,23.88,C,,-20,0
+2013-11-01 14:15:51,R14909,Proto,2914258,Dallas-F,74.984,F,,-20,0
+2013-11-01 14:15:53,3,Gateway-Linux,1,Uptime,13382.61,seconds,,,
+2013-11-01 14:15:53,4,Gateway-Linux,1,Idletime,12771.58,seconds,,,
+2013-11-01 14:15:53,5,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 14:15:54,R14914,Proto,2914658,LUX-Broad,421.00,rawb,,-74,0
+2013-11-01 14:15:55,R14939,Proto,2919106,Dallas,23.94,C,,-83,0
+2013-11-01 14:15:55,R14939,Proto,2919106,Dallas-F,75.092,F,,-83,0
+2013-11-01 14:15:55,R14941,Proto,2919198,BATT-V,4.72,volts,,-24,0
+2013-11-01 14:15:59,R14943,Proto,2919357,LUX,238.00,lux,,-74,0
+2013-11-01 14:16:00,R14964,Proto,2922673,LUX-Broad,436.00,rawb,,-79,0
+2013-11-01 14:16:01,R14969,Proto,2924303,Dallas,23.94,C,,-77,0
+2013-11-01 14:16:01,R14969,Proto,2924303,Dallas-F,75.092,F,,-77,0
+2013-11-01 14:16:02,R14979,Proto,2925916,Dallas,23.88,C,,-18,0
+2013-11-01 14:16:02,R14979,Proto,2925916,Dallas-F,74.984,F,,-18,0
+2013-11-01 14:16:05,6,Gateway-Linux,1,Uptime,13394.16,seconds,,,
+2013-11-01 14:16:05,7,Gateway-Linux,1,Idletime,12782.50,seconds,,,
+2013-11-01 14:16:05,8,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 14:16:06,R14987,Proto,2926568,BMP-Pressure,99486.00,Pa,,-81,0
+2013-11-01 14:16:51,R15269,Proto,2973824,Dallas,23.88,C,,-76,0
+2013-11-01 14:16:51,R15269,Proto,2973824,Dallas-F,74.984,F,,-76,0
+2013-11-01 14:16:52,0,Gateway-Linux,1,Uptime,13442.02,seconds,,,
+2013-11-01 14:16:52,1,Gateway-Linux,1,Idletime,12826.10,seconds,,,
+2013-11-01 14:16:52,2,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 14:16:53,R15279,Proto,2975443,Dallas,23.88,C,,-75,0
+2013-11-01 14:16:53,R15279,Proto,2975443,Dallas-F,74.984,F,,-75,0
+2013-11-01 14:16:54,R15289,Proto,2977061,Dallas,23.88,C,,-78,0
+2013-11-01 14:16:54,R15289,Proto,2977061,Dallas-F,74.984,F,,-78,0
+2013-11-01 14:16:56,R15299,Proto,2978678,Dallas,23.88,C,,-74,0
+2013-11-01 14:16:56,R15299,Proto,2978678,Dallas-F,74.984,F,,-74,0
+2013-11-01 14:16:56,R15309,Proto,2980293,Dallas,23.88,C,,-79,0
+2013-11-01 14:16:56,R15309,Proto,2980293,Dallas-F,74.984,F,,-79,0
+2013-11-01 14:16:57,R15313,Proto,2980600,LUX,259.00,lux,,-76,0
+2013-11-01 14:17:00,R15319,Proto,2981880,Dallas,23.88,C,,-76,0
+2013-11-01 14:17:00,R15319,Proto,2981880,Dallas-F,74.984,F,,-76,0
+2013-11-01 14:17:01,R15338,Proto,2984189,MDWIND,178.00,raw,,-76,0
+2013-11-01 14:17:02,R15339,Proto,2985561,Dallas,23.88,C,,-74,0
+2013-11-01 14:17:02,R15339,Proto,2985561,Dallas-F,74.984,F,,-74,0
+2013-11-01 14:17:02,R15346,Proto,2986052,BMP-Temp,24.15,C,,-73,0
+2013-11-01 14:17:02,R15346,Proto,2986052,BMP-Temp-F,75.47,F,,-73,0
+2013-11-01 14:17:04,3,Gateway-Linux,1,Uptime,13453.66,seconds,,,
+2013-11-01 14:17:04,4,Gateway-Linux,1,Idletime,12836.80,seconds,,,
+2013-11-01 14:17:04,5,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 14:17:04,R15349,Proto,2987118,Dallas,23.88,C,,-80,0
+2013-11-01 14:17:04,R15349,Proto,2987118,Dallas-F,74.984,F,,-80,0
+2013-11-01 14:17:05,R15359,Proto,2988727,Dallas,23.88,C,,-80,0
+2013-11-01 14:17:05,R15359,Proto,2988727,Dallas-F,74.984,F,,-80,0
+2013-11-01 14:17:05,R15360,Proto,2988755,BATT-R,135.00,raw,,-75,0
+2013-11-01 14:17:08,R15369,Proto,2990267,Dallas,23.88,C,,-76,0
+2013-11-01 14:17:08,R15369,Proto,2990267,Dallas-F,74.984,F,,-76,0
+2013-11-01 14:17:09,R15379,Proto,2991879,Dallas,23.88,C,,-74,0
+2013-11-01 14:17:09,R15379,Proto,2991879,Dallas-F,74.984,F,,-74,0
+2013-11-01 14:17:11,R15389,Proto,2993494,Dallas,23.88,C,,-71,0
+2013-11-01 14:17:11,R15389,Proto,2993494,Dallas-F,74.984,F,,-71,0
+2013-11-01 14:17:14,R15399,Proto,2995110,Dallas,23.88,C,,-79,0
+2013-11-01 14:17:14,R15399,Proto,2995110,Dallas-F,74.984,F,,-79,0
+2013-11-01 14:17:15,6,Gateway-Linux,1,Uptime,13464.89,seconds,,,
+2013-11-01 14:17:15,7,Gateway-Linux,1,Idletime,12847.54,seconds,,,
+2013-11-01 14:17:15,8,Gateway-Linux,1,MPU Temp,49.2,C,,,
+2013-11-01 14:17:18,R15419,Proto,2998346,Dallas,23.88,C,,-78,0
+2013-11-01 14:17:18,R15419,Proto,2998346,Dallas-F,74.984,F,,-78,0
+2013-11-01 14:17:21,R15448,Proto,3002252,MDWIND,179.00,raw,,-72,0
+2013-11-01 14:17:22,R15459,Proto,3004751,Dallas,23.88,C,,-75,0
+2013-11-01 14:17:22,R15459,Proto,3004751,Dallas-F,74.984,F,,-75,0
+2013-11-01 14:17:22,R15469,Proto,3006368,Dallas,23.88,C,,-80,0
+2013-11-01 14:17:22,R15469,Proto,3006368,Dallas-F,74.984,F,,-80,0
+2013-11-01 14:17:26,9,Gateway-Linux,1,Uptime,13475.41,seconds,,,
+2013-11-01 14:17:26,10,Gateway-Linux,1,Idletime,12857.35,seconds,,,
+2013-11-01 14:17:26,11,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 14:17:26,R15471,Proto,3006516,BATT-V,4.72,volts,,-71,0
+2013-11-01 14:17:28,R15495,Proto,3010086,LUX-Infra,185.00,rawi,,-76,0
+2013-11-01 14:17:37,12,Gateway-Linux,1,Uptime,13486.57,seconds,,,
+2013-11-01 14:17:37,13,Gateway-Linux,1,Idletime,12868.04,seconds,,,
+2013-11-01 14:17:37,14,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 14:17:37,R15508,Proto,3011978,MDWIND,179.00,raw,,-19,0
+2013-11-01 14:17:43,R15560,Proto,3021024,BATT-R,133.00,raw,,-72,0
+2013-11-01 14:17:46,R15599,Proto,3027395,Dallas,23.81,C,,-76,0
+2013-11-01 14:17:46,R15599,Proto,3027395,Dallas-F,74.858,F,,-76,0
+2013-11-01 14:17:48,15,Gateway-Linux,1,Uptime,13497.23,seconds,,,
+2013-11-01 14:17:48,16,Gateway-Linux,1,Idletime,12878.11,seconds,,,
+2013-11-01 14:17:48,17,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 14:17:48,R15617,Proto,3029676,BMP-Pressure,99483.00,Pa,,-78,0
+2013-11-01 14:17:52,R15629,Proto,3032252,Dallas,23.81,C,,-75,0
+2013-11-01 14:17:52,R15629,Proto,3032252,Dallas-F,74.858,F,,-75,0
+2013-11-01 14:17:52,R15655,Proto,3035926,LUX-Infra,199.00,rawi,,-21,0
+2013-11-01 14:17:53,R15656,Proto,3036003,BMP-Temp,24.10,C,,-78,0
+2013-11-01 14:17:53,R15656,Proto,3036003,BMP-Temp-F,75.38,F,,-78,0
+2013-11-01 14:17:57,R15666,Proto,3037559,BMP-Temp,24.09,C,,-79,0
+2013-11-01 14:17:57,R15666,Proto,3037559,BMP-Temp-F,75.362,F,,-79,0
+2013-11-01 14:17:59,18,Gateway-Linux,1,Uptime,13508.30,seconds,,,
+2013-11-01 14:17:59,19,Gateway-Linux,1,Idletime,12888.80,seconds,,,
+2013-11-01 14:17:59,20,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 14:18:04,R15682,Proto,3040471,DUM,3.14,na,,-80,0
+2013-11-01 14:18:05,R15729,Proto,3048602,Dallas,23.81,C,,-78,0
+2013-11-01 14:18:05,R15729,Proto,3048602,Dallas-F,74.858,F,,-78,0
+2013-11-01 14:18:08,R15739,Proto,3050216,Dallas,23.81,C,,-72,0
+2013-11-01 14:18:08,R15739,Proto,3050216,Dallas-F,74.858,F,,-72,0
+2013-11-01 14:18:10,21,Gateway-Linux,1,Uptime,13519.78,seconds,,,
+2013-11-01 14:18:10,22,Gateway-Linux,1,Idletime,12899.88,seconds,,,
+2013-11-01 14:18:10,23,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 14:18:10,R15754,Proto,3052218,LUX-Broad,568.00,rawb,,-82,0
+2013-11-01 14:18:11,R15769,Proto,3055054,Dallas,23.81,C,,-75,0
+2013-11-01 14:18:11,R15769,Proto,3055054,Dallas-F,74.858,F,,-75,0
+2013-11-01 14:18:14,R15771,Proto,3055175,BATT-V,4.72,volts,,-70,0
+2013-11-01 14:18:16,R15794,Proto,3058639,LUX-Broad,558.00,rawb,,-77,0
+2013-11-01 14:18:18,R15801,Proto,3059949,BATT-V,4.72,volts,,-76,0
+2013-11-01 14:18:20,R15819,Proto,3063028,Dallas,23.81,C,,-75,0
+2013-11-01 14:18:20,R15819,Proto,3063028,Dallas-F,74.858,F,,-75,0
+2013-11-01 14:18:21,R15829,Proto,3064640,Dallas,23.81,C,,-78,0
+2013-11-01 14:18:21,R15829,Proto,3064640,Dallas-F,74.858,F,,-78,0
+2013-11-01 14:18:21,R15829,Proto,3064640,Dallas,23.81,C,,-78,0
+2013-11-01 14:18:21,R15829,Proto,3064640,Dallas-F,74.858,F,,-78,0
+2013-11-01 14:18:22,24,Gateway-Linux,1,Uptime,13531.50,seconds,,,
+2013-11-01 14:18:22,25,Gateway-Linux,1,Idletime,12911.03,seconds,,,
+2013-11-01 14:18:22,26,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 14:18:26,R15833,Proto,3064945,LUX,313.00,lux,,-75,0
+2013-11-01 14:18:27,R15859,Proto,3070766,Dallas,23.81,C,,-76,0
+2013-11-01 14:18:27,R15859,Proto,3070766,Dallas-F,74.858,F,,-76,0
+2013-11-01 14:18:28,R15864,Proto,3071108,LUX-Broad,571.00,rawb,,-76,0
+2013-11-01 14:18:29,R15869,Proto,3072327,Dallas,23.81,C,,-75,0
+2013-11-01 14:18:29,R15869,Proto,3072327,Dallas-F,74.858,F,,-75,0
+2013-11-01 14:18:32,R15877,Proto,3073039,BMP-Pressure,99447.00,Pa,,-75,0
+2013-11-01 14:18:33,R15899,Proto,3077233,Dallas,23.81,C,,-81,0
+2013-11-01 14:18:33,R15899,Proto,3077233,Dallas-F,74.858,F,,-81,0
+2013-11-01 14:18:34,27,Gateway-Linux,1,Uptime,13543.94,seconds,,,
+2013-11-01 14:18:34,28,Gateway-Linux,1,Idletime,12923.00,seconds,,,
+2013-11-01 14:18:34,29,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 14:18:36,R15901,Proto,3077357,BATT-V,4.72,volts,,-75,0
+2013-11-01 14:18:38,R15919,Proto,3080441,Dallas,23.81,C,,-79,0
+2013-11-01 14:18:38,R15919,Proto,3080441,Dallas-F,74.858,F,,-79,0
+2013-11-01 14:18:39,R15933,Proto,3082342,LUX,289.00,lux,,-81,0
+2013-11-01 14:18:44,R15939,Proto,3083646,Dallas,23.81,C,,-76,0
+2013-11-01 14:18:44,R15939,Proto,3083646,Dallas-F,74.858,F,,-76,0
+2013-11-01 14:18:45,R15969,Proto,3088508,Dallas,23.81,C,,-24,0
+2013-11-01 14:18:45,R15969,Proto,3088508,Dallas-F,74.858,F,,-24,0
+2013-11-01 14:18:46,30,Gateway-Linux,1,Uptime,13555.27,seconds,,,
+2013-11-01 14:18:46,31,Gateway-Linux,1,Idletime,12933.72,seconds,,,
+2013-11-01 14:18:46,32,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 14:18:46,R15971,Proto,3088657,BATT-V,4.72,volts,,-75,0
+2013-11-01 14:18:51,R15979,Proto,3090129,Dallas,23.75,C,,-74,0
+2013-11-01 14:18:51,R15979,Proto,3090129,Dallas-F,74.75,F,,-74,0
+2013-11-01 14:18:54,R16013,Proto,3095317,LUX,303.00,lux,,-80,0
+2013-11-01 14:18:54,R16029,Proto,3098246,Dallas,23.75,C,,-79,0
+2013-11-01 14:18:54,R16029,Proto,3098246,Dallas-F,74.75,F,,-79,0
+2013-11-01 14:18:57,33,Gateway-Linux,1,Uptime,13567.11,seconds,,,
+2013-11-01 14:18:57,34,Gateway-Linux,1,Idletime,12945.22,seconds,,,
+2013-11-01 14:18:58,35,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 14:19:02,R16033,Proto,3098554,LUX,337.00,lux,,-18,0
+2013-11-01 14:19:02,R16077,Proto,3105778,BMP-Pressure,99441.00,Pa,,-73,0
+2013-11-01 14:19:08,36,Gateway-Linux,1,Uptime,13577.32,seconds,,,
+2013-11-01 14:19:08,37,Gateway-Linux,1,Idletime,12955.04,seconds,,,
+2013-11-01 14:19:08,38,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 14:19:08,R16079,Proto,3106742,Dallas,23.75,C,,-79,0
+2013-11-01 14:19:08,R16079,Proto,3106742,Dallas-F,74.75,F,,-79,0
+2013-11-01 14:19:19,39,Gateway-Linux,1,Uptime,13588.87,seconds,,,
+2013-11-01 14:19:19,40,Gateway-Linux,1,Idletime,12966.23,seconds,,,
+2013-11-01 14:19:19,41,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 14:19:22,R16117,Proto,3112212,BMP-Pressure,99431.00,Pa,,-18,0
+2013-11-01 14:19:23,R16200,Proto,3126265,BATT-R,133.00,raw,,-74,0
+2013-11-01 14:19:26,R16205,Proto,3126605,LUX-Infra,146.00,rawi,,-76,0
+2013-11-01 14:19:31,42,Gateway-Linux,1,Uptime,13600.16,seconds,,,
+2013-11-01 14:19:31,43,Gateway-Linux,1,Idletime,12977.14,seconds,,,
+2013-11-01 14:19:31,44,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 14:19:34,R16226,Proto,3129951,BMP-Temp,24.09,C,,-72,0
+2013-11-01 14:19:34,R16226,Proto,3129951,BMP-Temp-F,75.362,F,,-72,0
+2013-11-01 14:19:36,R16269,Proto,3138336,Dallas,23.75,C,,-78,0
+2013-11-01 14:19:36,R16269,Proto,3138336,Dallas-F,74.75,F,,-78,0
+2013-11-01 14:19:36,R16281,Proto,3140109,BATT-V,4.72,volts,,-75,0
+2013-11-01 14:19:38,R16282,Proto,3140154,DUM,3.14,na,,-70,0
+2013-11-01 14:19:40,R16294,Proto,3141949,LUX-Broad,453.00,rawb,,-76,0
+2013-11-01 14:19:41,R16309,Proto,3144797,Dallas,23.75,C,,-74,0
+2013-11-01 14:19:41,R16309,Proto,3144797,Dallas-F,74.75,F,,-74,0
+2013-11-01 14:19:42,45,Gateway-Linux,1,Uptime,13611.60,seconds,,,
+2013-11-01 14:19:42,46,Gateway-Linux,1,Idletime,12987.97,seconds,,,
+2013-11-01 14:19:42,47,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 14:19:45,R16312,Proto,3144995,DUM,3.14,na,,-74,0
+2013-11-01 14:19:45,R16336,Proto,3148600,BMP-Temp,24.10,C,,-74,0
+2013-11-01 14:19:45,R16336,Proto,3148600,BMP-Temp-F,75.38,F,,-74,0
+2013-11-01 14:19:46,R16339,Proto,3149672,Dallas,23.75,C,,-80,0
+2013-11-01 14:19:46,R16339,Proto,3149672,Dallas-F,74.75,F,,-80,0
+2013-11-01 14:19:51,R16341,Proto,3149812,BATT-V,4.72,volts,,-76,0
+2013-11-01 14:19:53,R16372,Proto,3154784,DUM,3.14,na,,-79,0
+2013-11-01 14:19:54,48,Gateway-Linux,1,Uptime,13623.30,seconds,,,
+2013-11-01 14:19:54,49,Gateway-Linux,1,Idletime,12999.34,seconds,,,
+2013-11-01 14:19:54,50,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 14:20:01,R16386,Proto,3156710,BMP-Temp,24.10,C,,-78,0
+2013-11-01 14:20:01,R16386,Proto,3156710,BMP-Temp-F,75.38,F,,-78,0
+2013-11-01 14:20:04,R16439,Proto,3165948,Dallas,23.75,C,,-75,0
+2013-11-01 14:20:04,R16439,Proto,3165948,Dallas-F,74.75,F,,-75,0
+2013-11-01 14:20:05,R16449,Proto,3168535,Dallas,23.75,C,,-80,0
+2013-11-01 14:20:05,R16449,Proto,3168535,Dallas-F,74.75,F,,-80,0
+2013-11-01 14:20:06,51,Gateway-Linux,1,Uptime,13635.70,seconds,,,
+2013-11-01 14:20:06,52,Gateway-Linux,1,Idletime,13011.44,seconds,,,
+2013-11-01 14:20:06,53,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 14:20:09,R16456,Proto,3169093,BMP-Temp,24.08,C,,-76,0
+2013-11-01 14:20:09,R16456,Proto,3169093,BMP-Temp-F,75.344,F,,-76,0
+2013-11-01 14:20:12,R16459,Proto,3173288,Dallas,23.75,C,,-71,0
+2013-11-01 14:20:12,R16459,Proto,3173288,Dallas-F,74.75,F,,-71,0
+2013-11-01 14:20:13,R16479,Proto,3176528,Dallas,23.75,C,,-20,0
+2013-11-01 14:20:13,R16479,Proto,3176528,Dallas-F,74.75,F,,-20,0
+2013-11-01 14:20:13,R16480,Proto,3176603,BATT-R,133.00,raw,,-21,0
+2013-11-01 14:20:14,R16487,Proto,3177182,BMP-Pressure,99457.00,Pa,,-19,0
+2013-11-01 14:20:16,R16493,Proto,3178454,LUX,216.00,lux,,-80,0
+2013-11-01 14:20:18,54,Gateway-Linux,1,Uptime,13647.97,seconds,,,
+2013-11-01 14:20:18,55,Gateway-Linux,1,Idletime,13023.18,seconds,,,
+2013-11-01 14:20:18,56,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 14:20:22,R16509,Proto,3181338,Dallas,23.75,C,,-76,0
+2013-11-01 14:20:22,R16509,Proto,3181338,Dallas-F,74.75,F,,-76,0
+2013-11-01 14:20:29,57,Gateway-Linux,1,Uptime,13658.87,seconds,,,
+2013-11-01 14:20:29,58,Gateway-Linux,1,Idletime,13033.76,seconds,,,
+2013-11-01 14:20:29,59,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 14:20:29,R16539,Proto,3186191,Dallas,23.75,C,,-74,0
+2013-11-01 14:20:29,R16539,Proto,3186191,Dallas-F,74.75,F,,-74,0
+2013-11-01 14:20:32,R16589,Proto,3194281,Dallas,23.81,C,,-80,0
+2013-11-01 14:20:32,R16589,Proto,3194281,Dallas-F,74.858,F,,-80,0
+2013-11-01 14:20:32,R16599,Proto,3195902,Dallas,23.81,C,,-80,0
+2013-11-01 14:20:32,R16599,Proto,3195902,Dallas-F,74.858,F,,-80,0
+2013-11-01 14:20:40,60,Gateway-Linux,1,Uptime,13669.70,seconds,,,
+2013-11-01 14:20:40,61,Gateway-Linux,1,Idletime,13043.58,seconds,,,
+2013-11-01 14:20:40,62,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 14:20:44,R16604,Proto,3196304,LUX-Broad,383.00,rawb,,-74,0
+2013-11-01 14:20:51,R16666,Proto,3207552,BMP-Temp,24.08,C,,-75,0
+2013-11-01 14:20:51,R16666,Proto,3207552,BMP-Temp-F,75.344,F,,-75,0
+2013-11-01 14:20:51,R16679,Proto,3214846,Dallas,23.75,C,,-21,0
+2013-11-01 14:20:51,R16679,Proto,3214846,Dallas-F,74.75,F,,-21,0
+2013-11-01 14:20:53,63,Gateway-Linux,1,Uptime,13682.65,seconds,,,
+2013-11-01 14:20:53,64,Gateway-Linux,1,Idletime,13056.08,seconds,,,
+2013-11-01 14:20:53,65,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 14:20:53,R16688,Proto,3215577,MDWIND,182.00,raw,,-73,0
+2013-11-01 14:20:56,R16699,Proto,3218072,Dallas,23.75,C,,-79,0
+2013-11-01 14:20:56,R16699,Proto,3218072,Dallas-F,74.75,F,,-79,0
+2013-11-01 14:20:57,R16709,Proto,3219686,Dallas,23.75,C,,-79,0
+2013-11-01 14:20:57,R16709,Proto,3219686,Dallas-F,74.75,F,,-79,0
+2013-11-01 14:21:01,R16720,Proto,3221394,BATT-R,133.00,raw,,-71,0
+2013-11-01 14:21:04,66,Gateway-Linux,1,Uptime,13693.87,seconds,,,
+2013-11-01 14:21:04,67,Gateway-Linux,1,Idletime,13066.70,seconds,,,
+2013-11-01 14:21:04,68,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 14:21:05,R16747,Proto,3225210,BMP-Pressure,99461.00,Pa,,-75,0
+2013-11-01 14:21:07,R16769,Proto,3229414,Dallas,23.75,C,,-74,0
+2013-11-01 14:21:07,R16769,Proto,3229414,Dallas-F,74.75,F,,-74,0
+2013-11-01 14:34:29,0,Gateway-Linux,1,Uptime,14498.56,seconds,,,
+2013-11-01 14:34:29,1,Gateway-Linux,1,Idletime,13833.40,seconds,,,
+2013-11-01 14:34:29,2,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 14:34:29,R21427,Proto,4030723,BMP-Pressure,99431.00,Pa,,-77,0
+2013-11-01 14:34:30,R21428,Proto,4032806,MDWIND,176.00,raw,,-76,0
+2013-11-01 14:34:32,R21436,Proto,4034235,BMP-Temp,24.33,C,,-18,0
+2013-11-01 14:34:32,R21436,Proto,4034235,BMP-Temp-F,75.794,F,,-18,0
+2013-11-01 14:34:32,R21447,Proto,4035950,BMP-Pressure,99434.00,Pa,,-78,0
+2013-11-01 14:34:33,R21448,Proto,4036028,MDWIND,177.00,raw,,-79,0
+2013-11-01 14:34:34,R21449,Proto,4036911,Dallas,24.06,C,,-70,0
+2013-11-01 14:34:34,R21449,Proto,4036911,Dallas-F,75.308,F,,-70,0
+2013-11-01 14:34:35,R21459,Proto,4038524,Dallas,24.06,C,,-80,0
+2013-11-01 14:34:35,R21459,Proto,4038524,Dallas-F,75.308,F,,-80,0
+2013-11-01 14:34:37,R21464,Proto,4038916,LUX-Broad,707.00,rawb,,-77,0
+2013-11-01 14:34:41,3,Gateway-Linux,1,Uptime,14510.68,seconds,,,
+2013-11-01 14:34:41,4,Gateway-Linux,1,Idletime,13844.96,seconds,,,
+2013-11-01 14:34:41,5,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 14:34:42,R21476,Proto,4041100,BMP-Temp,24.33,C,,-77,0
+2013-11-01 14:34:42,R21476,Proto,4041100,BMP-Temp-F,75.794,F,,-77,0
+2013-11-01 14:34:43,R21499,Proto,4045414,Dallas,24.06,C,,-77,0
+2013-11-01 14:34:43,R21499,Proto,4045414,Dallas-F,75.308,F,,-77,0
+2013-11-01 14:34:44,R21509,Proto,4047022,Dallas,24.06,C,,-80,0
+2013-11-01 14:34:44,R21509,Proto,4047022,Dallas-F,75.308,F,,-80,0
+2013-11-01 14:34:52,R21518,Proto,4047753,MDWIND,176.00,raw,,-78,0
+2013-11-01 14:34:53,R21529,Proto,4056194,Dallas,24.00,C,,-76,0
+2013-11-01 14:34:53,R21529,Proto,4056194,Dallas-F,75.2,F,,-76,0
+2013-11-01 14:34:53,R21533,Proto,4056503,LUX,405.00,lux,,-77,0
+2013-11-01 14:34:54,R21535,Proto,4056664,LUX-Infra,228.00,rawi,,-77,0
+2013-11-01 14:34:56,6,Gateway-Linux,1,Uptime,14525.18,seconds,,,
+2013-11-01 14:34:56,7,Gateway-Linux,1,Idletime,13858.90,seconds,,,
+2013-11-01 14:34:56,8,Gateway-Linux,1,MPU Temp,50.3,C,,,
+2013-11-01 14:34:56,R21539,Proto,4058360,Dallas,24.00,C,,-78,0
+2013-11-01 14:34:56,R21539,Proto,4058360,Dallas-F,75.2,F,,-78,0
+2013-11-01 14:34:56,R21549,Proto,4059984,Dallas,24.00,C,,-83,0
+2013-11-01 14:34:56,R21549,Proto,4059984,Dallas-F,75.2,F,,-83,0
+2013-11-01 14:35:00,R21553,Proto,4060290,LUX,396.00,lux,,-74,0
+2013-11-01 14:35:00,R21571,Proto,4063361,BATT-V,4.72,volts,,-24,0
+2013-11-01 14:35:00,R21576,Proto,4063762,BMP-Temp,24.31,C,,-78,0
+2013-11-01 14:35:00,R21576,Proto,4063762,BMP-Temp-F,75.758,F,,-78,0
+2013-11-01 14:35:03,R21579,Proto,4064829,Dallas,24.00,C,,-74,0
+2013-11-01 14:35:03,R21579,Proto,4064829,Dallas-F,75.2,F,,-74,0
+2013-11-01 14:35:03,R21590,Proto,4066509,BATT-R,133.00,raw,,-78,0
+2013-11-01 14:35:03,R21595,Proto,4066846,LUX-Infra,231.00,rawi,,-77,0
+2013-11-01 14:35:03,R21597,Proto,4067030,BMP-Pressure,99434.00,Pa,,-74,0
+2013-11-01 14:35:04,R21599,Proto,4067938,Dallas,24.00,C,,-75,0
+2013-11-01 14:35:04,R21599,Proto,4067938,Dallas-F,75.2,F,,-75,0
+2013-11-01 14:35:05,R21602,Proto,4068154,DUM,3.14,na,,-75,0
+2013-11-01 14:35:07,R21608,Proto,4068610,MDWIND,174.00,raw,,-75,0
+2013-11-01 14:35:08,R21615,Proto,4069957,LUX-Infra,232.00,rawi,,-79,0
+2013-11-01 14:35:08,R21619,Proto,4071855,Dallas,24.00,C,,-81,0
+2013-11-01 14:35:08,R21619,Proto,4071855,Dallas-F,75.2,F,,-81,0
+2013-11-01 14:35:09,9,Gateway-Linux,1,Uptime,14539.12,seconds,,,
+2013-11-01 14:35:09,10,Gateway-Linux,1,Idletime,13872.13,seconds,,,
+2013-11-01 14:35:10,11,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 14:35:13,R21625,Proto,4072276,LUX-Infra,230.00,rawi,,-75,0
+2013-11-01 14:35:15,R21651,Proto,4076746,BATT-V,4.72,volts,,-79,0
+2013-11-01 14:35:16,R21663,Proto,4078519,LUX,403.00,lux,,-77,0
+2013-11-01 14:35:18,R21667,Proto,4079538,BMP-Pressure,99446.00,Pa,,-75,0
+2013-11-01 14:35:19,R21679,Proto,4082112,Dallas,24.00,C,,-24,0
+2013-11-01 14:35:19,R21679,Proto,4082112,Dallas-F,75.2,F,,-24,0
+2013-11-01 14:35:19,R21685,Proto,4082583,LUX-Infra,232.00,rawi,,-76,0
+2013-11-01 14:35:21,R21689,Proto,4083731,Dallas,24.00,C,,-75,0
+2013-11-01 14:35:21,R21689,Proto,4083731,Dallas-F,75.2,F,,-75,0
+2013-11-01 14:35:23,12,Gateway-Linux,1,Uptime,14552.21,seconds,,,
+2013-11-01 14:35:23,13,Gateway-Linux,1,Idletime,13884.67,seconds,,,
+2013-11-01 14:35:23,14,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 14:35:23,R21699,Proto,4085339,Dallas,24.00,C,,-78,0
+2013-11-01 14:35:23,R21699,Proto,4085339,Dallas-F,75.2,F,,-78,0
+2013-11-01 14:35:25,R21709,Proto,4086948,Dallas,24.00,C,,-77,0
+2013-11-01 14:35:25,R21709,Proto,4086948,Dallas-F,75.2,F,,-77,0
+2013-11-01 14:35:25,R21719,Proto,4088562,Dallas,24.00,C,,-74,0
+2013-11-01 14:35:25,R21719,Proto,4088562,Dallas-F,75.2,F,,-74,0
+2013-11-01 14:35:26,R21724,Proto,4088900,LUX-Broad,764.00,rawb,,-80,0
+2013-11-01 14:35:27,R21729,Proto,4090115,Dallas,24.00,C,,-82,0
+2013-11-01 14:35:27,R21729,Proto,4090115,Dallas-F,75.2,F,,-82,0
+2013-11-01 14:35:27,R21736,Proto,4090608,BMP-Temp,24.31,C,,-73,0
+2013-11-01 14:35:27,R21736,Proto,4090608,BMP-Temp-F,75.758,F,,-73,0
+2013-11-01 14:35:29,R21739,Proto,4091672,Dallas,24.00,C,,-83,0
+2013-11-01 14:35:29,R21739,Proto,4091672,Dallas-F,75.2,F,,-83,0
+2013-11-01 14:35:30,R21749,Proto,4093291,Dallas,24.00,C,,-76,0
+2013-11-01 14:35:30,R21749,Proto,4093291,Dallas-F,75.2,F,,-76,0
+2013-11-01 14:35:32,R21749,Proto,4093291,Dallas,24.00,C,,-73,0
+2013-11-01 14:35:32,R21749,Proto,4093291,Dallas-F,75.2,F,,-73,0
+2013-11-01 14:35:34,15,Gateway-Linux,1,Uptime,14563.25,seconds,,,
+2013-11-01 14:35:34,16,Gateway-Linux,1,Idletime,13895.14,seconds,,,
+2013-11-01 14:35:34,17,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 14:35:34,R21763,Proto,4095408,LUX,415.00,lux,,-76,0
+2013-11-01 14:35:38,R21765,Proto,4098041,LUX-Infra,237.00,rawi,,-76,0
+2013-11-01 14:35:40,R21769,Proto,4101716,Dallas,23.94,C,,-73,0
+2013-11-01 14:35:40,R21769,Proto,4101716,Dallas-F,75.092,F,,-73,0
+2013-11-01 14:35:41,R21781,Proto,4103471,BATT-V,4.72,volts,,-77,0
+2013-11-01 14:35:45,R21791,Proto,4105181,BATT-V,4.72,volts,,-77,0
+2013-11-01 14:35:47,R21819,Proto,4109904,Dallas,24.00,C,,-79,0
+2013-11-01 14:35:47,R21819,Proto,4109904,Dallas-F,75.2,F,,-79,0
+2013-11-01 14:35:48,R21829,Proto,4111523,Dallas,24.00,C,,-81,0
+2013-11-01 14:35:48,R21829,Proto,4111523,Dallas-F,75.2,F,,-81,0
+2013-11-01 14:35:50,18,Gateway-Linux,1,Uptime,14579.39,seconds,,,
+2013-11-01 14:35:50,19,Gateway-Linux,1,Idletime,13910.77,seconds,,,
+2013-11-01 14:35:50,20,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 14:35:50,R21837,Proto,4112189,BMP-Pressure,99435.00,Pa,,-79,0
+2013-11-01 14:35:53,R21841,Proto,4113647,BATT-V,4.72,volts,,-72,0
+2013-11-01 14:35:55,R21864,Proto,4117146,LUX-Broad,800.00,rawb,,-72,0
+2013-11-01 14:35:55,R21873,Proto,4118670,LUX,429.00,lux,,-76,0
+2013-11-01 14:35:57,R21878,Proto,4119099,MDWIND,175.00,raw,,-75,0
+2013-11-01 14:35:58,R21888,Proto,4120716,MDWIND,175.00,raw,,-78,0
+2013-11-01 14:35:59,R21889,Proto,4122380,Dallas,24.00,C,,-77,0
+2013-11-01 14:35:59,R21889,Proto,4122380,Dallas-F,75.2,F,,-77,0
+2013-11-01 14:36:01,R21892,Proto,4122601,DUM,3.14,na,,-72,0
+2013-11-01 14:36:02,21,Gateway-Linux,1,Uptime,14591.45,seconds,,,
+2013-11-01 14:36:02,22,Gateway-Linux,1,Idletime,13922.42,seconds,,,
+2013-11-01 14:36:02,23,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 14:36:04,R21904,Proto,4124388,LUX-Broad,765.00,rawb,,-75,0
+2013-11-01 14:36:05,R21923,Proto,4127726,LUX,405.00,lux,,-82,0
+2013-11-01 14:36:05,R21929,Proto,4129191,Dallas,24.00,C,,-74,0
+2013-11-01 14:36:05,R21929,Proto,4129191,Dallas-F,75.2,F,,-74,0
+2013-11-01 14:36:07,R21930,Proto,4129271,BATT-R,133.00,raw,,-75,0
+2013-11-01 14:36:08,R21945,Proto,4131225,LUX-Infra,223.00,rawi,,-82,0
+2013-11-01 14:36:08,R21947,Proto,4131407,BMP-Pressure,99420.00,Pa,,-75,0
+2013-11-01 14:36:09,R21949,Proto,4132369,Dallas,24.00,C,,-81,0
+2013-11-01 14:36:09,R21949,Proto,4132369,Dallas-F,75.2,F,,-81,0
+2013-11-01 14:36:10,R21959,Proto,4133947,Dallas,23.94,C,,-76,0
+2013-11-01 14:36:10,R21959,Proto,4133947,Dallas-F,75.092,F,,-76,0
+2013-11-01 14:36:12,R21960,Proto,4133991,BATT-R,135.00,raw,,-76,0
+2013-11-01 14:36:13,24,Gateway-Linux,1,Uptime,14602.79,seconds,,,
+2013-11-01 14:36:13,25,Gateway-Linux,1,Idletime,13933.16,seconds,,,
+2013-11-01 14:36:13,26,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 14:36:14,R21969,Proto,4135528,Dallas,24.00,C,,-79,0
+2013-11-01 14:36:14,R21969,Proto,4135528,Dallas-F,75.2,F,,-79,0
+2013-11-01 14:36:16,R21985,Proto,4137959,LUX-Infra,213.00,rawi,,-74,0
+2013-11-01 14:36:17,R21999,Proto,4140687,Dallas,23.94,C,,-74,0
+2013-11-01 14:36:17,R21999,Proto,4140687,Dallas-F,75.092,F,,-74,0
+2013-11-01 14:36:18,R22005,Proto,4141307,LUX-Infra,205.00,rawi,,-74,0
+2013-11-01 14:36:21,R22009,Proto,4142455,Dallas,24.00,C,,-78,0
+2013-11-01 14:36:21,R22009,Proto,4142455,Dallas-F,75.2,F,,-78,0
+2013-11-01 14:36:22,R22023,Proto,4144394,LUX,348.00,lux,,-80,0
+2013-11-01 14:36:23,R22029,Proto,4145703,Dallas,24.00,C,,-77,0
+2013-11-01 14:36:23,R22029,Proto,4145703,Dallas-F,75.2,F,,-77,0
+2013-11-01 14:36:25,27,Gateway-Linux,1,Uptime,14614.19,seconds,,,
+2013-11-01 14:36:25,28,Gateway-Linux,1,Idletime,13943.86,seconds,,,
+2013-11-01 14:36:25,29,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 14:36:25,R22039,Proto,4147319,Dallas,24.00,C,,-76,0
+2013-11-01 14:36:25,R22039,Proto,4147319,Dallas-F,75.2,F,,-76,0
+2013-11-01 14:36:28,R22049,Proto,4148928,Dallas,24.00,C,,-74,0
+2013-11-01 14:36:28,R22049,Proto,4148928,Dallas-F,75.2,F,,-74,0
+2013-11-01 14:36:28,R22062,Proto,4151593,DUM,3.14,na,,-74,0
+2013-11-01 14:36:29,R22064,Proto,4151763,LUX-Broad,636.00,rawb,,-79,0
+2013-11-01 14:36:30,R22069,Proto,4152978,Dallas,24.00,C,,-75,0
+2013-11-01 14:36:30,R22069,Proto,4152978,Dallas-F,75.2,F,,-75,0
+2013-11-01 14:36:31,R22079,Proto,4154589,Dallas,24.00,C,,-80,0
+2013-11-01 14:36:31,R22079,Proto,4154589,Dallas-F,75.2,F,,-80,0
+2013-11-01 14:36:34,R22082,Proto,4154752,DUM,3.14,na,,-78,0
+2013-11-01 14:36:34,R22099,Proto,4157766,Dallas,24.00,C,,-74,0
+2013-11-01 14:36:34,R22099,Proto,4157766,Dallas-F,75.2,F,,-74,0
+2013-11-01 14:36:35,R22104,Proto,4158157,LUX-Broad,618.00,rawb,,-80,0
+2013-11-01 14:36:36,30,Gateway-Linux,1,Uptime,14625.97,seconds,,,
+2013-11-01 14:36:36,31,Gateway-Linux,1,Idletime,13954.98,seconds,,,
+2013-11-01 14:36:36,32,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 14:36:36,R22105,Proto,4158588,LUX-Infra,193.00,rawi,,-75,0
+2013-11-01 14:36:38,R22109,Proto,4160225,Dallas,24.00,C,,-75,0
+2013-11-01 14:36:38,R22109,Proto,4160225,Dallas-F,75.2,F,,-75,0
+2013-11-01 14:36:38,R22119,Proto,4161840,Dallas,24.00,C,,-78,0
+2013-11-01 14:36:38,R22119,Proto,4161840,Dallas-F,75.2,F,,-78,0
+2013-11-01 14:36:40,R22121,Proto,4161939,BATT-V,4.72,volts,,-75,0
+2013-11-01 14:36:41,R22129,Proto,4163404,Dallas,24.00,C,,-76,0
+2013-11-01 14:36:42,R22129,Proto,4163404,Dallas-F,75.2,F,,-76,0
+2013-11-01 14:36:42,R22137,Proto,4165336,BMP-Pressure,99435.00,Pa,,-80,0
+2013-11-01 14:36:43,R22139,Proto,4166296,Dallas,24.00,C,,-80,0
+2013-11-01 14:36:43,R22139,Proto,4166296,Dallas-F,75.2,F,,-80,0
+2013-11-01 14:36:45,R22149,Proto,4167883,Dallas,24.00,C,,-73,0
+2013-11-01 14:36:45,R22149,Proto,4167883,Dallas-F,75.2,F,,-73,0
+2013-11-01 14:36:47,R22159,Proto,4169469,Dallas,24.00,C,,-79,0
+2013-11-01 14:36:47,R22159,Proto,4169469,Dallas-F,75.2,F,,-79,0
+2013-11-01 14:36:47,R22169,Proto,4171091,Dallas,24.00,C,,-80,0
+2013-11-01 14:36:47,R22169,Proto,4171091,Dallas-F,75.2,F,,-80,0
+2013-11-01 14:36:48,R22170,Proto,4171166,BATT-R,133.00,raw,,-74,0
+2013-11-01 14:36:49,R22179,Proto,4172672,Dallas,24.00,C,,-80,0
+2013-11-01 14:36:49,R22179,Proto,4172672,Dallas-F,75.2,F,,-80,0
+2013-11-01 14:36:49,R22181,Proto,4172796,BATT-V,4.72,volts,,-80,0
+2013-11-01 14:36:50,R22183,Proto,4172962,LUX,304.00,lux,,-74,0
+2013-11-01 14:36:51,R22189,Proto,4174298,Dallas,24.00,C,,-77,0
+2013-11-01 14:36:51,R22189,Proto,4174298,Dallas-F,75.2,F,,-77,0
+2013-11-01 14:36:51,R22192,Proto,4174522,DUM,3.14,na,,-23,0
+2013-11-01 14:36:53,33,Gateway-Linux,1,Uptime,14642.42,seconds,,,
+2013-11-01 14:36:53,34,Gateway-Linux,1,Idletime,13970.15,seconds,,,
+2013-11-01 14:36:53,35,Gateway-Linux,1,MPU Temp,50.8,C,,,
+2013-11-01 14:36:54,R22195,Proto,4174769,LUX-Infra,178.00,rawi,,-75,0
+2013-11-01 14:36:54,R22216,Proto,4178086,BMP-Temp,24.29,C,,-80,0
+2013-11-01 14:36:54,R22216,Proto,4178086,BMP-Temp-F,75.722,F,,-80,0
+2013-11-01 14:36:55,R22217,Proto,4178193,BMP-Pressure,99417.00,Pa,,-80,0
+2013-11-01 14:36:56,R22219,Proto,4179158,Dallas,24.00,C,,-75,0
+2013-11-01 14:36:56,R22219,Proto,4179158,Dallas-F,75.2,F,,-75,0
+2013-11-01 14:36:57,R22229,Proto,4180774,Dallas,24.00,C,,-81,0
+2013-11-01 14:36:57,R22229,Proto,4180774,Dallas-F,75.2,F,,-81,0
+2013-11-01 14:36:58,R22231,Proto,4180871,BATT-V,4.72,volts,,-80,0
+2013-11-01 14:37:02,R22239,Proto,4182334,Dallas,24.00,C,,-75,0
+2013-11-01 14:37:02,R22239,Proto,4182334,Dallas-F,75.2,F,,-75,0
+2013-11-01 14:37:02,R22259,Proto,4185561,Dallas,24.00,C,,-78,0
+2013-11-01 14:37:02,R22259,Proto,4185561,Dallas-F,75.2,F,,-78,0
+2013-11-01 14:37:02,R22263,Proto,4185817,LUX,291.00,lux,,-75,0
+2013-11-01 14:37:04,36,Gateway-Linux,1,Uptime,14653.84,seconds,,,
+2013-11-01 14:37:04,37,Gateway-Linux,1,Idletime,13980.80,seconds,,,
+2013-11-01 14:37:04,38,Gateway-Linux,1,MPU Temp,49.8,C,,,
+2013-11-01 14:37:09,R22265,Proto,4185980,LUX-Infra,172.00,rawi,,-77,0
+2013-11-01 14:37:10,R22306,Proto,4192543,BMP-Temp,24.29,C,,-77,0
+2013-11-01 14:37:10,R22306,Proto,4192543,BMP-Temp-F,75.722,F,,-77,0
+2013-11-01 14:37:11,R22309,Proto,4194168,Dallas,24.00,C,,-77,0
+2013-11-01 14:37:11,R22309,Proto,4194168,Dallas-F,75.2,F,,-77,0
+2013-11-01 14:37:12,R22317,Proto,4194824,BMP-Pressure,99413.00,Pa,,-73,0
+2013-11-01 14:37:13,R22319,Proto,4195784,Dallas,24.00,C,,-78,0
+2013-11-01 14:37:13,R22319,Proto,4195784,Dallas-F,75.2,F,,-78,0
+2013-11-01 14:37:14,R22329,Proto,4197401,Dallas,24.00,C,,-80,0
+2013-11-01 14:37:14,R22329,Proto,4197401,Dallas-F,75.2,F,,-80,0

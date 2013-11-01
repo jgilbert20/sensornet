@@ -19,7 +19,8 @@ use IO::Select;
 use IO::Socket; use IO::File;
 use IO::Handle;
 
-my $LOGFN = "mainlog.csv";
+my $LOGFN = "/home/pi/sensornet/mainlog.csv";
+my $DEBUGFN = "/home/pi/sensornet/debuglog.csv";
 
 my $needsHeader = 1 if ! -e $LOGFN;
 
@@ -60,7 +61,8 @@ else
     sysopen( $tty , "neep", O_RDWR) or die "Sysopen failed";    
 }
 
-open( LOGFILE, ">>$LOGFN" );
+open( LOGFILE, ">>$LOGFN" ) or die "Cannot open log";
+open( DEBUGFILE, ">>$DEBUGFN" ) or die "Cannot open debug log";
 
 if( $needsHeader )
 {
@@ -88,9 +90,18 @@ sub debug
 	
 my	$str = POSIX::strftime( "%Y/%m/%d %H:%M:%S", localtime $s );
 
+
 	print STDERR "$str.$ms: ";
 	print STDERR @arg;
 	print STDERR "\n";
+
+	print DEBUGFILE "$str.$ms: ";
+	print DEBUGFILE @arg;
+	print DEBUGFILE "\n";
+	
+	DEBUGFILE->flush();
+
+
 }
 
 #$dbh = DBI->connect("dbi:Pg:dbname=$DB_name","$DB_user","$DB_pwd");
