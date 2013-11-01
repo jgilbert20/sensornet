@@ -31,6 +31,7 @@ use Time::HiRes qw(gettimeofday);
 
 if( $RPI )
 {
+    # see "http://stackoverflow.com/questions/10362222/test-in-perl-if-data-is-available-on-deviceserialport" for example
 
     use Device::SerialPort qw( :PARAM :STAT 0.07 );
 
@@ -138,6 +139,8 @@ sub updateNodes
 registerTask( "uptime", 10, sub { logUptime() } ); 
 
 registerTask( "updatenodes", 10, sub { updateNodes() } ); 
+
+registerTask( "relay-readings", 10, sub { relayReadings() } ); 
 
 registerTask( "dumpps", 50, sub { `mkdir -p pslog`; 
 				  `date >> uplog.txt`;
@@ -290,16 +293,42 @@ sub logLocalSensor
     logSensor( $localSequence++, "Gateway-Linux", 1, $sensor, $reading, $readingUnits, $memo, "","" );
 }
 
+my %lastSensorValue;
+my %lastHeardNode;
+my %lastHeardSensor;
+
 sub logSensor
 {
     my ( $sequence, $node, $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId ) = @_;
     my $date = strftime("%Y-%m-%d %H:%M:%S", localtime(time));
     my $line = join ",", ($date, $sequence, $node, $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId);
-	print LOGFILE "$line\n";
-
-	flush LOGFILE; 
-
+    print LOGFILE "$line\n";
+    flush LOGFILE; 
     
+
+    $lastSensorValue{"$node-$sensor"} = $reading . $readingUnits;
+    $lastHeardNode{$node} = time();
+    $lastHeardSensor{"$node-$sensor"} = time();
+}
+
+
+sub relayReadings
+{
+    debug( "Dumping sensors" );
+    foreach my $k (keys %lastSensorValue )
+    {
+	my $l = time() - $lastHeardSensor{$k};
+	debug( "   $k -> $lastSensorValue{$k} ($l sec. ago)" );
+    }
+
+    debug( "Dumping nodes" );
+    foreach my $k (keys %lastHeardNode )
+    {
+	my $l = time() - $lastHeardNode{$k} ;
+	debug( "   $k -> $l seconds ago" );
+    }
+
+
 }
 
 sub  handleTTYDataPacket
