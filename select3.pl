@@ -235,7 +235,7 @@ sub handleTTYLine
     
     $runStats{"TTY_MSG_READ"} += 1;  
     
-    debug( "<<< TTY [$line]");
+    debug( "<<< TTY $line");
 
     if( $line =~ /^R/ )
     {
@@ -274,7 +274,7 @@ sub handleTTYLine
     }
     else
     {
-	debug( "<<< " . $line );
+#	debug( "<<< " . $line );
 
 
     }
@@ -315,14 +315,16 @@ sub logSensor
 sub relayReadings
 {
     debug( "Dumping sensors" );
-    foreach my $k (keys %lastSensorValue )
+    foreach my $k (sort keys %lastSensorValue )
     {
 	my $l = time() - $lastHeardSensor{$k};
-	debug( "   $k -> $lastSensorValue{$k} ($l sec. ago)" );
+#	debug( "   $k -> $lastSensorValue{$k} ($l sec. ago)" );
+	debug( sprintf( "%-30s %-20s (%4d ago)",   $k,$lastSensorValue{$k}, $l ));
+
     }
 
     debug( "Dumping nodes" );
-    foreach my $k (keys %lastHeardNode )
+    foreach my $k (sort keys %lastHeardNode )
     {
 	my $l = time() - $lastHeardNode{$k} ;
 	debug( "   $k -> $l seconds ago" );
