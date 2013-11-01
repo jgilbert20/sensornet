@@ -109,7 +109,21 @@ sub logUptime
     logLocalSensor( "MPU Temp", $1, "C", "" );
 }
 
+
+sub updateNodes
+{
+
+    debug( "Sending [gwup]" );
+    print $tty "gwup\n";
+
+
+
+
+}
+
 registerTask( "uptime", 10, sub { logUptime() } ); 
+
+registerTask( "updatenodes", 10, sub { updateNodes() } ); 
 
 registerTask( "dumpps", 50, sub { `mkdir -p pslog`; 
 				  `date >> uplog.txt`;
@@ -136,7 +150,7 @@ sub runScheduledTasks
     {
 	my $t = $taskRegistry{$n};
 	
-	debug( "Checking task $n -> @$t");
+	# debug( "Checking task $n -> @$t");
 	if( time() - $t->[1] >  $t->[0] )
 	{		
 	    debug( "Task $t has come due..");
