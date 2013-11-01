@@ -7,21 +7,16 @@ local $| = 1;
 
 use POSIX qw(strftime);
 
-print "Setting serial port to desired baud rate..\n";
 
-## Set up the serial port...
-my $port = Device::SerialPort->new("/dev/ttyAMA0");
-$port->baudrate(57600);
-$port->databits(8);
-$port->parity("none");
-$port->stopbits(1);
-$port->handshake("none");
-$port->stty_icrnl(1);
-$port->write_settings;
+use Device::SerialPort qw( :PARAM :STAT 0.07 );
 
-print "Opening port\n";
+my $PORT = "/dev/ttyAMA0";
 
-open( PORT, "/dev/ttyAMA0" );
+my $ob = Device::SerialPort->new($PORT)  || die "Can't open $PORT: $!\n";
+$ob->baudrate(57600);
+$ob->write_settings;
+
+open(PORT, "+>$PORT") or die "Cabnot open port $PORT";
 
 my $needsHeader = 1 if ! -e "mainlog.csv";
 

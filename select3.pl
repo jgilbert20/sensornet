@@ -23,7 +23,7 @@ my $LOGFN = "mainlog.csv";
 
 my $needsHeader = 1 if ! -e $LOGFN;
 
-my $tty = IO::Handle->new();
+my $tty = undef; # IO::Handle->new();
 
 my $RPI = 1;
 
@@ -31,31 +31,28 @@ use Time::HiRes qw(gettimeofday);
 
 if( $RPI )
 {
-    use Device::SerialPort;
 
-    print "Setting serial port to desired baud rate..\n";
-    
-## Set up the serial port...
-    my $port = Device::SerialPort->new("/dev/ttyAMA0");
-    $port->baudrate(57600);
-    $port->databits(8);
-    $port->parity("none");
-    $port->stopbits(1);
-    $port->handshake("none");
-    $port->stty_icrnl(1);
-    $port->write_settings;
-    
-    $port->close();
+    use Device::SerialPort qw( :PARAM :STAT 0.07 );
 
-    undef $port;
+    use Symbol qw( gensym );
+    my $PORT = "/dev/ttyAMA0";
+
+    $tty = gensym();
+    my $ob = tie( *$tty, "Device::SerialPort", $PORT );
 
 
+
+
+#    my $ob = Device::SerialPort->new($PORT)  || die "Can't open $PORT: $!\n";
+    $ob->baudrate(57600);
+    $ob->write_settings;
 
     print "Opening port\n";
 
     
 
-    open( $tty, "+</dev/ttyAMA0" ) or die "Cannot open tty";
+ #   open( TTY, "+</dev/ttyAMA0" ) or die "Cannot open tty";
+  #  $tty = *TTY;
 }
 else
 {
