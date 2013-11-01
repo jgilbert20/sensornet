@@ -27,6 +27,8 @@ my $tty = IO::Handle->new();
 
 my $RPI = 1;
 
+use Time::HiRes qw(gettimeofday);
+
 if( $RPI )
 {
     use Device::SerialPort;
@@ -53,7 +55,7 @@ if( $RPI )
 
     
 
-    open( $tty, "/dev/ttyAMA0" ) or die "Cannot open tty";
+    open( $tty, "+</dev/ttyAMA0" ) or die "Cannot open tty";
 }
 else
 {
@@ -81,7 +83,14 @@ sub debug
 {
 	my @arg = @_;
 
-	print STDERR "DEBUG: ";
+	my ($s,$ms) =
+	    gettimeofday();
+	
+	my $ts = localtime( $s ) ;
+	
+my	$str = POSIX::strftime( "%Y/%m/%d %H:%M:%S", localtime $s );
+
+	print STDERR "$str.$ms: ";
 	print STDERR @arg;
 	print STDERR "\n";
 }
@@ -110,12 +119,20 @@ sub logUptime
 }
 
 
+sub sendTTY
+{
+    my $cmd = shift;
+
+#    debug( "Sending [gw]" );
+    debug( ">>> $cmd" );
+    print $tty "$cmd\n";
+
+}
+
 sub updateNodes
 {
 
-    debug( "Sending [gwup]" );
-    print $tty "gwup\n";
-
+    sendTTY( "gwup");
 
 
 
@@ -139,7 +156,7 @@ sub registerTask
 	my $interval = shift;
 	my $code = shift;
 
-	$taskRegistry{$tName} = [$interval, 0, $code];
+	$taskRegistry{$tName} = [$interval, 0, $code, $tName];
 }
 
 sub runScheduledTasks
@@ -153,7 +170,7 @@ sub runScheduledTasks
 	# debug( "Checking task $n -> @$t");
 	if( time() - $t->[1] >  $t->[0] )
 	{		
-	    debug( "Task $t has come due..");
+	    debug( "Task [$t->[3]] has come due..");
 	    
 	    $t->[1] = time();
 	    &{$t->[2]};
@@ -218,8 +235,14 @@ sub handleTTYLine
     
     $runStats{"TTY_MSG_READ"} += 1;  
     
-    debug( "Received LINE: [$line]");
-    my @a = split( ',', $line);
+    debug( "<<< TTY [$line]");
+
+    if( $line =~ /^R/ )
+    {
+
+
+
+	my @a = split( ',', $line);
     
     my $fCount= 0 + @a;
     if( $fCount != 9 	)
@@ -248,6 +271,15 @@ sub handleTTYLine
 
 	logSensor( $sequence, $node,      $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId );
     }
+    }
+    else
+    {
+	debug( "<<< " . $line );
+
+
+    }
+
+
 
 
 }
@@ -282,7 +314,7 @@ sub  handleTTYDataPacket
 
 	while( (my $nextNL = index( $ttyBuffer, "\n",0 )) != -1 )
 	{
-		debug "Newine detected at position [$nextNL]"; # in [$ttyBuffer]";
+		# debug "Newline detected at position [$nextNL]"; # in [$ttyBuffer]";
 		my $nextline = substr( $ttyBuffer, 0, $nextNL + 1 );
 		substr( $ttyBuffer, 0, $nextNL + 1, "" );
 		chomp $nextline;
@@ -296,3 +328,7 @@ END:
 	debug "Shutting down...";
 	$lsn->close();
 } 
+
+
+
+
