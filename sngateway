@@ -16,11 +16,14 @@ my $timeout = 1;
 
 use POSIX qw(strftime);
 use IO::Select;
-use IO::Socket; use IO::File;
+use IO::Socket; 
+use IO::File;
 use IO::Handle;
 
 my $LOGFN = "/home/pi/sensornet/mainlog.csv";
 my $DEBUGFN = "/home/pi/sensornet/debuglog.csv";
+my $XIVELYFN = "/tmp/xively.csv";
+
 
 my $needsHeader = 1 if ! -e $LOGFN;
 
@@ -63,6 +66,7 @@ else
 
 open( LOGFILE, ">>$LOGFN" ) or die "Cannot open log";
 open( DEBUGFILE, ">>$DEBUGFN" ) or die "Cannot open debug log";
+open( XIVELY, ">$XIVELYFN" ) or die "Cannot open xively $!";
 
 if( $needsHeader )
 {
@@ -116,6 +120,9 @@ sub logUptime
     logLocalSensor( "Uptime", $upsec, "seconds", "" );
     logLocalSensor( "Idletime", $idlesec, "seconds", "" );
 
+    # note: discovered that /sys/class/thermal/thermal_zone0/temp is the same thing
+
+
     debug( "Query temp via vcgencmd - started" );
     
     my $temp = `vcgencmd measure_temp`;
@@ -151,6 +158,8 @@ registerTask( "uptime", 10, sub { logUptime() } );
 
 registerTask( "updatenodes", 10, sub { updateNodes() } ); 
 
+registerTask( "updatenodes", 30, sub { relayToXively() } ); 
+
 registerTask( "relay-readings", 10, sub { relayReadings() } ); 
 
 registerTask( "dumpps", 50, sub { `mkdir -p pslog`; 
@@ -172,7 +181,7 @@ sub registerTask
 
 sub runScheduledTasks
 {
-    debug "Housekeeping -- Event recv";	
+#    debug "Housekeeping -- Event recv";	
     
     foreach my $n (keys %taskRegistry)
     {
@@ -192,12 +201,14 @@ sub runScheduledTasks
 
 my %runStats;
 
-
+my $lastRun = [0,0];
 
 while(1)
 {
     while(my @ready = $sel->can_read( $timeout )) 
     {
+	
+
 	foreach my $fh (@ready) 
 	{
 	    if($fh == $lsn) 
@@ -228,9 +239,23 @@ while(1)
                 $fh->close;
             }
         }
+	
+
+	my $elapsed = Time::HiRes::tv_interval ( $lastRun, [Time::HiRes::gettimeofday]);
+#	print "Elapsed $elapsed\n"; 
+
+	if( $elapsed > 1.00 )
+	{
+    
+	
+	    runScheduledTasks();
+	    $lastRun = [Time::HiRes::gettimeofday];
+
+	}
+
     }
     
-    runScheduledTasks();
+
 }
 
 my $ttyBuffer = "";
@@ -304,6 +329,17 @@ sub logLocalSensor
     logSensor( $localSequence++, "Gateway-Linux", 1, $sensor, $reading, $readingUnits, $memo, "","" );
 }
 
+
+sub relayToXively
+{
+
+    `curl --request PUT --header "X-ApiKey: 2SZfjyyJOp1lguxlmD15ZCfPn0h1E7PO36HlPfJd0g8mCCyb" --data-binary @/tmp/xively.csv --verbose https://api.xively.com/v2/feeds/665513493.csv`;
+
+    close XIVELY;
+    open XIVELY, ">$XIVELYFN" or warn "Cannot reopen xively file: $!"; 
+
+}
+
 my %lastSensorValue;
 my %lastHeardNode;
 my %lastHeardSensor;
@@ -316,6 +352,18 @@ sub logSensor
     print LOGFILE "$line\n";
     flush LOGFILE; 
     
+    my $xively_date = strftime("%Y-%m-%dT%H:%M:%SZ", localtime(time));
+
+    my $xname ="$node-$sensor";
+
+    $xname =~ s/\s+/\-/g;
+
+    if( $xname =~ /BATT-V|Temp-F|LUX|-Pressure/ )
+{
+
+    print XIVELY "$xname,$xively_date,$reading\n";
+}
+
 
     $lastSensorValue{"$node-$sensor"} = $reading . $readingUnits;
     $lastHeardNode{$node} = time();
