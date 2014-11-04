@@ -283,7 +283,7 @@ sub handleTTYLine
     my $fCount= 0 + @a;
     if( $fCount != 9 	)
     {	
-	print "Error - [$fCount] wrong number of commas, skipping\n";
+	print "Error - [$fCount] wrong number of commas, skipping: offending line is [$line]\n";
 	$runStats{"TTY_MSG_READ_ERROR"} += 1; 
 	next;	
     }
