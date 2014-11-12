@@ -162,6 +162,9 @@ registerTask( "updatenodes", 30, sub { relayToXively() } );
 
 registerTask( "relay-readings", 10, sub { relayReadings() } ); 
 
+registerTask( "writehtml", 10, sub { updateHTML() } ); 
+
+
 registerTask( "dumpps", 50, sub { `mkdir -p pslog`; 
 				  `date >> uplog.txt`;
 				  `uptime >> uplog.txt`;
@@ -371,6 +374,35 @@ sub logSensor
 }
 
 
+sub updateHTML
+{
+    `mkdir -p www`;
+    open FILE ">www/sensors.txt" or die "cannot write to file";
+
+    foreach my $k (sort keys %lastSensorValue )
+    {
+    my $l = time() - $lastHeardSensor{$k};
+    print FILE sprintf( "%-30s %-20s (%4d ago)",   $k,$lastSensorValue{$k}, $l ));
+
+    }
+    close FILE:
+
+
+
+        open FILE ">www/nodes.txt" or die "cannot write to file";
+
+
+    foreach my $k (sort keys %lastHeardNode )
+    {
+       my $l = time() - $lastHeardNode{$k} ;
+       print FILE "$k -> $l seconds ago";
+    }
+    
+    close FILE:
+
+}
+
+
 sub relayReadings
 {
     debug( "Dumping sensors" );
@@ -385,8 +417,8 @@ sub relayReadings
     debug( "Dumping nodes" );
     foreach my $k (sort keys %lastHeardNode )
     {
-	my $l = time() - $lastHeardNode{$k} ;
-	debug( "   $k -> $l seconds ago" );
+	   my $l = time() - $lastHeardNode{$k} ;
+	   debug( "   $k -> $l seconds ago" );
     }
 
 
