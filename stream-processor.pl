@@ -14,6 +14,7 @@ use IO::Handle;
 
 my $BASEDIR = ".";
 
+my $WWWDIR = "$BASEDIR/www";
 my $LOGFN = "$BASEDIR/mainlog.csv";
 my $DEBUGFN = "$BASEDIR/streamlog.txt";
 my $PGSPOOL = "$BASEDIR/pgspool.csv";
@@ -140,6 +141,10 @@ sendSpoolToPG();
 sub generateWWW
 {
 
+		my $data = "<HTML><BODY><TABLE><TH><TD>Sensor</TD><TD>Last Reading</TD><TD>Average Reading</TD>";
+		$data .= "</TH>";
+
+
 	foreach my $i (keys %nodeDataHistories)
 	{
 		my( $node, $sensor ) = split /:/, $i; 
@@ -172,9 +177,22 @@ sub generateWWW
 		debug "$i --> Total = $total / $count = $avg - last $timeSince ($howLongHasItBeen - $nodeLastHeard{$node})";
 
 
+		my $lastReading = $nodeDataHistories{$i}->[-1f]->[1];
+
+		$data .= "<TR><TD>$i</TD><TD>$lastReading</TD><TD>$avg</TD><TD>$timeSince</TD></TR>";
+
+
+
 
 
 	}	
+
+	$data .= "</TABLE></BODY></HTML>";
+
+`mkdir -p $WWWDIR`;
+	open WWW, ">$WWWDIR/index.html";
+	print WWW $data;
+	close WWW;
 
 	return;
 }
