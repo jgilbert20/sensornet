@@ -195,7 +195,6 @@ sub logUptime
 
     logLocalSensor( "Disk-Avail", $avail/1000, "M", "" );
     logLocalSensor( "Disk-Percentage", $pct, "%", "" );
-
 }
 
 
@@ -211,11 +210,7 @@ sub sendTTY
 
 sub updateNodes
 {
-
     sendTTY( "gwup");
-
-
-
 }
 
 registerTask( "uptime", 60, sub { logUptime() } ); 
@@ -232,14 +227,11 @@ registerTask( "relay-readings", 10, sub { relayReadings() } );
 
 registerTask( "writehtml", 10, sub { updateHTML() } ); 
 
-
 #registerTask( "dumpps", 50, sub { `mkdir -p pslog`; 
 #				  `date >> uplog.txt`;
 #				  `uptime >> uplog.txt`;
 #				  `vcgencmd measure_temp >> uplog.txt`;
 #	      } );
-
-
 
 sub rotateLogs()
 {
@@ -257,10 +249,6 @@ sub rotateLogs()
 
 	$currentLogSuffix = getLogSuffix();
     }
-
-
-    
-
 }
 
 sub registerTask
