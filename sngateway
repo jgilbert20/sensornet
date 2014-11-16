@@ -33,6 +33,13 @@ my $RPI = 1;
 
 use Time::HiRes qw(gettimeofday);
 
+open( LOGFILE, ">>$LOGFN" ) or die "Cannot open log";
+open( DEBUGFILE, ">>$DEBUGFN" ) or die "Cannot open debug log";
+open( XIVELY, ">$XIVELYFN" ) or die "Cannot open xively $!";
+
+
+debug( "SNGateway restarted" );
+
 if( $RPI )
 {
     # see "http://stackoverflow.com/questions/10362222/test-in-perl-if-data-is-available-on-deviceserialport" for example
@@ -52,7 +59,7 @@ if( $RPI )
     $ob->baudrate(57600);
     $ob->write_settings;
 
-    print "Opening port\n";
+    debug( "Opening port" );
 
     
 
@@ -64,9 +71,7 @@ else
     sysopen( $tty , "neep", O_RDWR) or die "Sysopen failed";    
 }
 
-open( LOGFILE, ">>$LOGFN" ) or die "Cannot open log";
-open( DEBUGFILE, ">>$DEBUGFN" ) or die "Cannot open debug log";
-open( XIVELY, ">$XIVELYFN" ) or die "Cannot open xively $!";
+
 
 if( $needsHeader )
 {
@@ -74,9 +79,15 @@ if( $needsHeader )
 }
 
 
+    debug( "Starting listener" );
+
+
 my $lsn = IO::Socket::INET->new(Listen => 1, LocalPort => 8080) or die "Cannot bind";
 my $sel = IO::Select->new( $lsn );
 $sel->add( $tty );
+
+    debug( "Select loop setup completed" );
+
 
 my $DB_user    = 'postgres';
 my $DB_name    = 'sensor';
@@ -94,12 +105,12 @@ sub debug
 	
 my	$str = POSIX::strftime( "%Y/%m/%d %H:%M:%S", localtime $s );
 
-
-	print STDERR "$str.$ms: ";
+	my $msf = sprintf( "%06d", $ms );
+	print STDERR "$str.$msf: ";
 	print STDERR @arg;
 	print STDERR "\n";
 
-	print DEBUGFILE "$str.$ms: ";
+	print DEBUGFILE "$str.$msf: ";
 	print DEBUGFILE @arg;
 	print DEBUGFILE "\n";
 	
@@ -181,7 +192,7 @@ sub registerTask
 
 sub runScheduledTasks
 {
-#    debug "Housekeeping -- Event recv";	
+   # debug "Housekeeping -- Event recv";	
     
     foreach my $n (keys %taskRegistry)
     {
@@ -203,10 +214,12 @@ my %runStats;
 
 my $lastRun = [0,0];
 
+debug( "Beginning lisen loop:" );
+
 while(1)
 {
-    while(my @ready = $sel->can_read( $timeout )) 
-    {
+    my @ready = $sel->can_read( $timeout );
+    
 	
 
 	foreach my $fh (@ready) 
@@ -240,6 +253,7 @@ while(1)
             }
         }
 	
+    
 
 	my $elapsed = Time::HiRes::tv_interval ( $lastRun, [Time::HiRes::gettimeofday]);
 #	print "Elapsed $elapsed\n"; 
@@ -253,7 +267,6 @@ while(1)
 
 	}
 
-    }
     
 
 }
@@ -279,15 +292,15 @@ sub handleTTYLine
 
 
 	my @a = split( ',', $line);
-    
-    my $fCount= 0 + @a;
-    if( $fCount != 9 	)
-    {	
-	print "Error - [$fCount] wrong number of commas, skipping: offending line is [$line]\n";
-	$runStats{"TTY_MSG_READ_ERROR"} += 1; 
-	next;	
-    }
-
+	
+	my $fCount= 0 + @a;
+	if( $fCount != 9 	)
+	{	
+	    debug "Error - [$fCount] wrong number of commas, skipping: offending line is [$line]\n";
+	    $runStats{"TTY_MSG_READ_ERROR"} += 1; 
+	    return;	
+	}
+	
     $runStats{"TTY_MSG_READ_GOOD"} += 1; 
 
     
@@ -377,6 +390,10 @@ sub relayReadings
     foreach my $k (sort keys %lastSensorValue )
     {
 	my $l = time() - $lastHeardSensor{$k};
+      
+
+	next if $lastSensorValue{$k} =~ /C$/;
+
 #	debug( "   $k -> $lastSensorValue{$k} ($l sec. ago)" );
 	debug( sprintf( "%-30s %-20s (%4d ago)",   $k,$lastSensorValue{$k}, $l ));
 
