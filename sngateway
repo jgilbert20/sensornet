@@ -20,10 +20,19 @@ use IO::Socket;
 use IO::File;
 use IO::Handle;
 
-my $LOGFN = "/home/pi/sensornet/mainlog.csv";
-my $DEBUGFN = "/home/pi/sensornet/debuglog.csv";
+my $BASEDIR =  "/home/pi/sensornet";
+my $LOGFN =    "/home/pi/sensornet/mainlog.csv";
+my $DEBUGFN =  "/home/pi/sensornet/debuglog.csv";
+my $RAWFN =    "/home/pi/sensornet/raw.txt";
 my $XIVELYFN = "/tmp/xively.csv";
 
+sub getLogSuffix
+{
+    my $str = POSIX::strftime( "%Y%m%d-%H%M", localtime() );
+    return $str;
+}
+
+my $currentLogSuffix = getLogSuffix();
 
 my $needsHeader = 1 if ! -e $LOGFN;
 
@@ -37,6 +46,12 @@ open( LOGFILE, ">>$LOGFN" ) or die "Cannot open log";
 open( DEBUGFILE, ">>$DEBUGFN" ) or die "Cannot open debug log";
 open( XIVELY, ">$XIVELYFN" ) or die "Cannot open xively $!";
 
+my $saveRAW = 1;
+
+if( $saveRAW )
+{
+    open( RAWFILE, ">>$RAWFN" ) or die "Cannot open log: $!";
+}
 
 debug( "SNGateway restarted" );
 
@@ -103,7 +118,7 @@ sub debug
 	
 	my $ts = localtime( $s ) ;
 	
-my	$str = POSIX::strftime( "%Y/%m/%d %H:%M:%S", localtime $s );
+	my $str = POSIX::strftime( "%Y/%m/%d %H:%M:%S", localtime $s );
 
 	my $msf = sprintf( "%06d", $ms );
 	print STDERR "$str.$msf: ";
@@ -143,6 +158,25 @@ sub logUptime
     $temp =~ /temp=(\d+\.?\d?)/;
 
     logLocalSensor( "MPU Temp", $1, "C", "" );
+
+    debug( "Checking file system" );
+
+    open DFCMD, '/bin/df $BASE|' or warn "could not open DF command";
+    my $header = <DFCMD>;
+    my $fs = <DFCMD>;
+    close DFCMD or warn "Could not close DF command";
+    
+
+#Filesystem     1K-blocks    Used Available Use% Mounted on
+# rootfs           3749072 2667756    893576  75% /
+
+    my( $filesystem, $tot, $used, $avail, $pct, $tree ) = split /\s+/, $fs;
+
+    $pct =~ s/\%//;
+
+    logLocalSensor( "Disk-Avail", $avail/1000, "M", "" );
+    logLocalSensor( "Disk-Percentage", $pct, "%", "" );
+
 }
 
 
@@ -165,11 +199,13 @@ sub updateNodes
 
 }
 
-registerTask( "uptime", 10, sub { logUptime() } ); 
+registerTask( "uptime", 60, sub { logUptime() } ); 
+
+registerTask( "rotateLogs", 10, sub { rotateLogs() } ); 
 
 registerTask( "updatenodes", 10, sub { updateNodes() } ); 
 
-registerTask( "updatenodes", 30, sub { relayToXively() } ); 
+registerTask( "xively", 30, sub { relayToXively() } ); 
 
 registerTask( "relay-readings", 10, sub { relayReadings() } ); 
 
@@ -183,6 +219,28 @@ registerTask( "dumpps", 50, sub { `mkdir -p pslog`;
 	      } );
 
 
+
+sub rotateLogs()
+{
+    debug( "rotate: Checking for log rotation..." );
+
+    if( $currentLogSuffix ne getLogSuffix() )
+    {
+	debug( "rotate: verifying path" );
+	`mkdir $BASEDIR/log-archive`;
+	debug( "rotate: Closing existing logfile" );
+	close DEBUGFILE;
+	`mv $DEBUGFN $BASEDIR/log-archive/debuglog.csv-$currentLogSuffix`;
+	open( DEBUGFILE, ">>$DEBUGFN" ) or die "Cannot open debug log for rotate: $!";
+	debug( "rotate: New logfile started! old: $BASEDIR/log-archive/$DEBUGFN-$currentLogSuffix" );
+
+	$currentLogSuffix = getLogSuffix();
+    }
+
+
+    
+
+}
 
 sub registerTask
 {
@@ -289,6 +347,11 @@ sub handleTTYLine
     
     debug( "<<< TTY $line");
 
+    if( $saveRAW )
+{
+    print RAWFILE "$line\n";
+}
+
     if( $line =~ /^R/ )
     {
 
@@ -389,20 +452,22 @@ sub logSensor
 
 sub updateHTML
 {
-    `mkdir -p www`;
-    open FILE ">www/sensors.txt" or die "cannot write to file";
+    return();
+
+    `mkdir -p $BASEDIR/www`;
+    open FILE, ">$BASEDIR/www/sensors.txt" or die "cannot write to file";
 
     foreach my $k (sort keys %lastSensorValue )
     {
     my $l = time() - $lastHeardSensor{$k};
-    print FILE sprintf( "%-30s %-20s (%4d ago)",   $k,$lastSensorValue{$k}, $l ));
+    print FILE sprintf( "%-30s %-20s (%4d ago)",   $k,$lastSensorValue{$k}, $l );
 
     }
-    close FILE:
+close FILE;
 
 
 
-        open FILE ">www/nodes.txt" or die "cannot write to file";
+        open FILE, ">$BASEDIR/www/nodes.txt" or die "cannot write to file";
 
 
     foreach my $k (sort keys %lastHeardNode )
@@ -411,7 +476,7 @@ sub updateHTML
        print FILE "$k -> $l seconds ago";
     }
     
-    close FILE:
+close FILE;
 
 }
 
