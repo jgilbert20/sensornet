@@ -136,6 +136,25 @@ sub debug
 
 #$dbh = DBI->connect("dbi:Pg:dbname=$DB_name","$DB_user","$DB_pwd");
 
+sub logSysStatsLight
+{
+    open PROC, '</proc/loadavg' or warn "Cannot open loadavg";
+
+    my $line = <PROC>;
+    close PROC;
+
+    my( $iLoad, @allElse ) = split /\s+/, $line;
+
+    logLocalSensor( "LoadAverage", $iLoad, "load", "" );
+    
+
+
+
+
+
+
+
+}
 
 
 sub logUptime
@@ -201,7 +220,9 @@ sub updateNodes
 
 registerTask( "uptime", 60, sub { logUptime() } ); 
 
-registerTask( "rotateLogs", 10, sub { rotateLogs() } ); 
+registerTask( "lightStats", 10, sub { logSysStatsLight() } ); 
+
+registerTask( "rotateLogs", 60, sub { rotateLogs() } ); 
 
 registerTask( "updatenodes", 10, sub { updateNodes() } ); 
 
@@ -212,11 +233,11 @@ registerTask( "relay-readings", 10, sub { relayReadings() } );
 registerTask( "writehtml", 10, sub { updateHTML() } ); 
 
 
-registerTask( "dumpps", 50, sub { `mkdir -p pslog`; 
-				  `date >> uplog.txt`;
-				  `uptime >> uplog.txt`;
-				  `vcgencmd measure_temp >> uplog.txt`;
-	      } );
+#registerTask( "dumpps", 50, sub { `mkdir -p pslog`; 
+#				  `date >> uplog.txt`;
+#				  `uptime >> uplog.txt`;
+#				  `vcgencmd measure_temp >> uplog.txt`;
+#	      } );
 
 
 
