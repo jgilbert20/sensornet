@@ -22,13 +22,43 @@ use IO::Handle;
 
 my $BASEDIR =  "/home/pi/sensornet";
 my $LOGFN =    "/home/pi/sensornet/mainlog.csv";
+my $CONFIGFN =    "/home/pi/sensornet/configuration.txt";
 my $DEBUGFN =  "/home/pi/sensornet/debuglog.csv";
 my $RAWFN =    "/home/pi/sensornet/raw.txt";
 my $XIVELYFN = "/tmp/xively.csv";
 
+my %CONFIG;
+
+
+my %lastSensorValue;
+my %lastHeardNode;
+my %lastHeardSensor;
+my %lastSensorValueOnly;
+
+
+sub readConfiguration
+{
+    open C, "<$CONFIGFN" or return;
+
+    while( <C> )
+    {
+	my $line = $_;
+	chomp $line;
+	debug( "Parsing line from CONFIG: $line" );
+	next if /^\#/;
+	my $c = (my( $node, $sensor, $nicename, $varname ) = split( /\t+/, $line ));
+	debug( "Has $c elements" );
+	next unless $c == 4; 
+	$CONFIG{"$node-$sensor"} = [$nicename,$varname];
+    }
+    
+    close C;
+
+}
+
 sub getLogSuffix
 {
-    my $str = POSIX::strftime( "%Y%m%d-%H%M", localtime() );
+    my $str = POSIX::strftime( "%Y%m%d", localtime() );
     return $str;
 }
 
@@ -46,7 +76,7 @@ open( LOGFILE, ">>$LOGFN" ) or die "Cannot open log";
 open( DEBUGFILE, ">>$DEBUGFN" ) or die "Cannot open debug log";
 open( XIVELY, ">$XIVELYFN" ) or die "Cannot open xively $!";
 
-my $saveRAW = 1;
+my $saveRAW = 0;
 
 if( $saveRAW )
 {
@@ -54,6 +84,9 @@ if( $saveRAW )
 }
 
 debug( "SNGateway restarted" );
+
+readConfiguration();
+
 
 if( $RPI )
 {
@@ -90,7 +123,7 @@ else
 
 if( $needsHeader )
 {
-    print LOGFILE "TS,Sequence,Node,Millis,Sensor,Reading,ReadingUnits,Memo,RSSI,OriginId\n";
+    print LOGFILE "TS,Sequence,Node,Millis,Sensor,Reading,ReadingUnits,Memo,RSSI,OriginId,Nicename,Location\n";
 }
 
 
@@ -146,11 +179,19 @@ sub logSysStatsLight
     my( $iLoad, @allElse ) = split /\s+/, $line;
 
     logLocalSensor( "LoadAverage", $iLoad, "load", "" );
-    
 
+    open MEM, '</proc/meminfo' or warn "cannot open mem";
 
+    while( <MEM> )
+    {
+	my( $p, $v, $unit) = split /[\s\:]+/;
+	if( $p eq "MemFree" or $p eq "Active" or $p eq "Cached" )
+	{
+	    logLocalSensor( "Mem-$p", $v / 1024, "MB", "" );
+	}
+    }
 
-
+    close MEM;
 
 
 
@@ -167,7 +208,6 @@ sub logUptime
 
     # note: discovered that /sys/class/thermal/thermal_zone0/temp is the same thing
 
-
     debug( "Query temp via vcgencmd - started" );
     
     my $temp = `vcgencmd measure_temp`;
@@ -177,6 +217,7 @@ sub logUptime
     $temp =~ /temp=(\d+\.?\d?)/;
 
     logLocalSensor( "MPU Temp", $1, "C", "" );
+    logLocalSensor( "MPU Temp-F", $1 * 9.0 / 5 + 32 , "F", "" );
 
     debug( "Checking file system" );
 
@@ -185,7 +226,6 @@ sub logUptime
     my $fs = <DFCMD>;
     close DFCMD or warn "Could not close DF command";
     
-
 #Filesystem     1K-blocks    Used Available Use% Mounted on
 # rootfs           3749072 2667756    893576  75% /
 
@@ -205,8 +245,55 @@ sub sendTTY
 #    debug( "Sending [gw]" );
     debug( ">>> $cmd" );
     print $tty "$cmd\n";
+}
+
+
+my %sentToUbi;
+
+sub ubihack
+{
+# curl -XPOST -H 'Content-Type: application/json;' -H 'X-Auth-Token: MRGzWEagPVr2GH67mUD4DFMsEsjs63fVxTao1oP2km8njRT1kE5jsW1Wy3vK' -d '[{"variable": "5462b94a7625427b3e4bceb0", "value": 23}, {"variable": "5265608ef91b2878f05d75ba", "value": 22}]' http://things.ubidots.com/api/v1.6/collections/values
+#
+#curl -XPOST -H 'Content-Type: application/json;' -H 'X-Auth-Token: MRGzWEagPVr2GH67mUD4DFMsEsjs63fVxTao1oP2km8njRT1kE5jsW1Wy3vK' -d '{"value": 24}' http://app.ubidots.com/api/v1.6/variables/5462b94a7625427b3e4bceb0/values
+
+    debug( "UBI: Dumping sensors" );
+    foreach my $k (sort keys %lastSensorValueOnly )
+    {
+	if( exists $CONFIG{$k} )
+	{
+	    my $val = $lastSensorValueOnly{$k} ;
+	    my ($nice,$varkey) = @{$CONFIG{$k}};
+	    next unless defined $varkey;
+	    
+	    my $d = ( $lastHeardSensor{$k} - $sentToUbi{$k} );
+
+	    debug( "UBI: Found for $k - last sent $sentToUbi{$k} <> $lastHeardSensor{$k} --> [$d]" );
+	    my $g = 60;
+	    if( $d <= $g  )
+	    {
+		debug( "UBI: Skipping beacuse $d <= $g -- not enough new data" );
+		next;
+	    }
+	    
+	    my $cmd =  qq^curl -XPOST -H 'Content-Type: application/json;' -H 'X-Auth-Token: MRGzWEagPVr2GH67mUD4DFMsEsjs63fVxTao1oP2km8njRT1kE5jsW1Wy3vK' -d '[{"variable": "$varkey", "value": $val} ]' http://things.ubidots.com/api/v1.6/collections/values^;
+
+	    
+	    debug ("UBI: $cmd" );
+	    `$cmd`;
+	    debug( "Result: at:$@ q:$?" );
+	    
+	    $sentToUbi{$k} = time();
+	    
+	}
+    }
+
 
 }
+
+
+
+
+
 
 sub updateNodes
 {
@@ -215,17 +302,21 @@ sub updateNodes
 
 registerTask( "uptime", 60, sub { logUptime() } ); 
 
-registerTask( "lightStats", 10, sub { logSysStatsLight() } ); 
+registerTask( "ubihack", 30 , sub { ubihack() } ); 
 
-registerTask( "rotateLogs", 60, sub { rotateLogs() } ); 
+registerTask( "configuration", 120, sub { readConfiguration() } ); 
+
+registerTask( "lightStats", 20, sub { logSysStatsLight() } ); 
+
+registerTask( "rotateLogs", 300, sub { rotateLogs() } ); 
 
 registerTask( "updatenodes", 10, sub { updateNodes() } ); 
 
-registerTask( "xively", 30, sub { relayToXively() } ); 
+#registerTask( "xively", 30, sub { relayToXively() } ); 
 
 registerTask( "relay-readings", 10, sub { relayReadings() } ); 
 
-registerTask( "writehtml", 10, sub { updateHTML() } ); 
+registerTask( "writehtml", 60, sub { updateHTML() } ); 
 
 #registerTask( "dumpps", 50, sub { `mkdir -p pslog`; 
 #				  `date >> uplog.txt`;
@@ -354,7 +445,7 @@ sub handleTTYLine
     
     $runStats{"TTY_MSG_READ"} += 1;  
     
-    debug( "<<< TTY $line");
+    #debug( "<<< TTY $line");
 
     if( $saveRAW )
 {
@@ -428,15 +519,15 @@ sub relayToXively
 
 }
 
-my %lastSensorValue;
-my %lastHeardNode;
-my %lastHeardSensor;
+
 
 sub logSensor
 {
     my ( $sequence, $node, $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId ) = @_;
     my $date = strftime("%Y-%m-%d %H:%M:%S", localtime(time));
-    my $line = join ",", ($date, $sequence, $node, $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId);
+    my $nice = "";
+    my $loc = "";
+    my $line = join ",", ($date, $sequence, $node, $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId, $nice, $loc);
     print LOGFILE "$line\n";
     flush LOGFILE; 
     
@@ -454,6 +545,7 @@ sub logSensor
 
 
     $lastSensorValue{"$node-$sensor"} = $reading . $readingUnits;
+    $lastSensorValueOnly{"$node-$sensor"} = $reading;
     $lastHeardNode{$node} = time();
     $lastHeardSensor{"$node-$sensor"} = time();
 }
