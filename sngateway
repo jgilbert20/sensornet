@@ -445,7 +445,7 @@ sub handleTTYLine
     
     $runStats{"TTY_MSG_READ"} += 1;  
     
-    #debug( "<<< TTY $line");
+    debug( "<<< TTY $line");
 
     if( $saveRAW )
 {
