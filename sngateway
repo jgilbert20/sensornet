@@ -25,6 +25,7 @@ my $LOGFN =    "/home/pi/sensornet/mainlog.csv";
 my $CONFIGFN =    "/home/pi/sensornet/configuration.txt";
 my $DEBUGFN =  "/home/pi/sensornet/debuglog.csv";
 my $RAWFN =    "/home/pi/sensornet/raw.txt";
+my $NODELOGFN =    "/home/pi/sensornet/nodelog.txt";
 my $XIVELYFN = "/tmp/xively.csv";
 
 my %CONFIG;
@@ -64,6 +65,8 @@ sub getLogSuffix
 
 my $currentLogSuffix = getLogSuffix();
 
+my $lastNodeLogLine = "";
+
 my $needsHeader = 1 if ! -e $LOGFN;
 
 my $tty = undef; # IO::Handle->new();
@@ -82,6 +85,8 @@ if( $saveRAW )
 {
     open( RAWFILE, ">>$RAWFN" ) or die "Cannot open log: $!";
 }
+
+open( NODELOGFILE, ">>$NODELOGFN" ) or die "Cannot open log: $!";
 
 debug( "SNGateway restarted" );
 
@@ -446,17 +451,16 @@ sub handleTTYLine
     $runStats{"TTY_MSG_READ"} += 1;  
     
     debug( "<<< TTY $line");
-
+    
     if( $saveRAW )
-{
-    print RAWFILE "$line\n";
-}
-
+    {
+	print RAWFILE "$line\n";
+    }
+    
+    $line =~ s/[\r\n]+\Z//;
+    
     if( $line =~ /^R/ )
     {
-
-
-
 	my @a = split( ',', $line);
 	
 	my $fCount= 0 + @a;
@@ -467,29 +471,47 @@ sub handleTTYLine
 	    return;	
 	}
 	
-    $runStats{"TTY_MSG_READ_GOOD"} += 1; 
-
-    
-    my ( $sequence, $node,	$millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId ) = @a;
-    
-    logSensor( @a );
-    
-    $runStats{"NODE_$(node)_MSG_CNT"} += 1; 
-    
-    # Automatically add extra lines converting a C reading to F 
-
-    if( $readingUnits eq 'C' )
-    {
-	$sensor .= "-F";
-	$readingUnits = "F";
-	$reading =  9/5 *($reading) +32;
-
-	logSensor( $sequence, $node,      $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId );
+	$runStats{"TTY_MSG_READ_GOOD"} += 1; 
+	
+	
+	my ( $sequence, $node,	$millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId ) = @a;
+	
+	logSensor( @a );
+	
+	$runStats{"NODE_$(node)_MSG_CNT"} += 1; 
+	
+	# Automatically add extra lines converting a C reading to F 
+	
+	if( $readingUnits eq 'C' )
+	{
+	    $sensor .= "-F";
+	    $readingUnits = "F";
+	    $reading =  9/5 *($reading) +32;
+	    
+	    logSensor( $sequence, $node,      $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId );
+	}
     }
+    elsif( $line =~ /^L/ )
+    {
+	my $date = strftime("%Y-%m-%d %H:%M:%S", localtime(time));
+	my $m = $line;
+	$m =~ s/^L//;
+	if( $m ne $lastNodeLogLine )
+	{
+	    print NODELOGFILE join(',', ($date,$m));
+	    print NODELOGFILE "\n";
+	    flush NODELOGFILE;
+	    $lastNodeLogLine = $m;
+	}
+    }
+    elsif( $line =~ /^D/ )
+    {
+
+
     }
     else
     {
-#	debug( "<<< " . $line );
+	debug( "<<< UNPROCESSED:" . $line );
 
 
     }
@@ -527,6 +549,7 @@ sub logSensor
     my $date = strftime("%Y-%m-%d %H:%M:%S", localtime(time));
     my $nice = "";
     my $loc = "";
+    chomp $originId;
     my $line = join ",", ($date, $sequence, $node, $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId, $nice, $loc);
     print LOGFILE "$line\n";
     flush LOGFILE; 
