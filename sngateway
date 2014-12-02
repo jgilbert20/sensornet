@@ -273,7 +273,7 @@ sub ubihack
 	    my $d = ( $lastHeardSensor{$k} - $sentToUbi{$k} );
 
 	    debug( "UBI: Found for $k - last sent $sentToUbi{$k} <> $lastHeardSensor{$k} --> [$d]" );
-	    my $g = 60;
+	    my $g = 60*5;
 	    if( $d <= $g  )
 	    {
 		debug( "UBI: Skipping beacuse $d <= $g -- not enough new data" );
@@ -561,11 +561,9 @@ sub logSensor
     $xname =~ s/\s+/\-/g;
 
     if( $xname =~ /BATT-V|Temp-F|LUX|-Pressure/ )
-{
-
-    print XIVELY "$xname,$xively_date,$reading\n";
-}
-
+    {
+	print XIVELY "$xname,$xively_date,$reading\n";
+    }
 
     $lastSensorValue{"$node-$sensor"} = $reading . $readingUnits;
     $lastSensorValueOnly{"$node-$sensor"} = $reading;
