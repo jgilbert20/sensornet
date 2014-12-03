@@ -501,16 +501,13 @@ sub logLocalSensor
 
 sub relayToXively
 {
-
     `curl --request PUT --header "X-ApiKey: 2SZfjyyJOp1lguxlmD15ZCfPn0h1E7PO36HlPfJd0g8mCCyb" --data-binary @/tmp/xively.csv --verbose https://api.xively.com/v2/feeds/665513493.csv`;
 
     close XIVELY;
     open XIVELY, ">$XIVELYFN" or warn "Cannot reopen xively file: $!"; 
-
 }
 
 my %lastPlacedInSlowLog;
-
 
 sub logSensor
 {
