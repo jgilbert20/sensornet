@@ -31,12 +31,10 @@ my $XIVELYFN  = "/tmp/xively.csv";
 
 my %CONFIG;
 
-
 my %lastSensorValue;
 my %lastHeardNode;
 my %lastHeardSensor;
 my %lastSensorValueOnly;
-
 
 sub readConfiguration
 {
@@ -44,15 +42,15 @@ sub readConfiguration
 
     while( <C> )
     {
-	my $line = $_;
-	chomp $line;
-	debug( "Parsing line from CONFIG: $line" );
-	next if /^\#/;
-	my $c = (my( $node, $sensor, $nicename, $varname ) = split( /\t+/, $line ));
-	debug( "Has $c elements" );
-	next unless $c == 4; 
-	debug( "$node-$sensor -> [$nicename,$varname]" );
-	$CONFIG{"$node-$sensor"} = [$nicename,$varname];
+    	my $line = $_;
+    	chomp $line;
+    	debug( "Parsing line from CONFIG: $line" );
+    	next if /^\#/;
+    	my $c = (my( $node, $sensor, $nicename, $varname ) = split( /\t+/, $line ));
+    	debug( "Has $c elements" );
+    	next unless $c == 4; 
+    	debug( "$node-$sensor -> [$nicename,$varname]" );
+    	$CONFIG{"$node-$sensor"} = [$nicename,$varname];
     }
     
     close C;
@@ -81,7 +79,6 @@ open( DEBUGFILE, ">>$DEBUGFN" ) or die "Cannot open debug log";
 open( XIVELY, ">$XIVELYFN" ) or die "Cannot open xively $!";
 open( SLOWLOGFILE, ">$SLOWLOGFN" ) or die "Cannot open slow log $!";
 
-
 my $saveRAW = 0;
 
 if( $saveRAW )
@@ -95,7 +92,6 @@ debug( "SNGateway restarted" );
 
 readConfiguration();
 
-
 if( $RPI )
 {
     # see "http://stackoverflow.com/questions/10362222/test-in-perl-if-data-is-available-on-deviceserialport" for example
@@ -108,14 +104,14 @@ if( $RPI )
     $tty = gensym();
     my $ob = tie( *$tty, "Device::SerialPort", $PORT );
 
-#    my $ob = Device::SerialPort->new($PORT)  || die "Can't open $PORT: $!\n";
+    #    my $ob = Device::SerialPort->new($PORT)  || die "Can't open $PORT: $!\n";
     $ob->baudrate(57600);
     $ob->write_settings;
 
     debug( "Opening port" );
-    
- #   open( TTY, "+</dev/ttyAMA0" ) or die "Cannot open tty";
-  #  $tty = *TTY;
+
+    #   open( TTY, "+</dev/ttyAMA0" ) or die "Cannot open tty";
+    #  $tty = *TTY;
 }
 else
 {
@@ -265,8 +261,8 @@ sub ubihack
     	    my $g = 60*5;
     	    if( $d <= $g  )
     	    {
-    		debug( "UBI: Skipping beacuse $d <= $g -- not enough new data" );
-    		next;
+        		debug( "UBI: Skipping beacuse $d <= $g -- not enough new data" );
+        		next;
     	    }
     	    
     	    my $cmd =  qq^curl -XPOST -H 'Content-Type: application/json;' -H 'X-Auth-Token: MRGzWEagPVr2GH67mUD4DFMsEsjs63fVxTao1oP2km8njRT1kE5jsW1Wy3vK' -d '[{"variable": "$varkey", "value": $val} ]' http://things.ubidots.com/api/v1.6/collections/values^;
@@ -553,16 +549,13 @@ sub updateHTML
 
     foreach my $k (sort keys %lastSensorValue )
     {
-    my $l = time() - $lastHeardSensor{$k};
-    print FILE sprintf( "%-30s %-20s (%4d ago)",   $k,$lastSensorValue{$k}, $l );
+        my $l = time() - $lastHeardSensor{$k};
+        print FILE sprintf( "%-30s %-20s (%4d ago)",   $k,$lastSensorValue{$k}, $l );
 
     }
-close FILE;
+    close FILE;
 
-
-
-        open FILE, ">$BASEDIR/www/nodes.txt" or die "cannot write to file";
-
+    open FILE, ">$BASEDIR/www/nodes.txt" or die "cannot write to file";
 
     foreach my $k (sort keys %lastHeardNode )
     {
@@ -570,8 +563,7 @@ close FILE;
        print FILE "$k -> $l seconds ago";
     }
     
-close FILE;
-
+    close FILE;
 }
 
 
@@ -580,24 +572,21 @@ sub relayReadings
     debug( "Dumping sensors" );
     foreach my $k (sort keys %lastSensorValue )
     {
-	my $l = time() - $lastHeardSensor{$k};
-      
+    	my $l = time() - $lastHeardSensor{$k};
 
-	next if $lastSensorValue{$k} =~ /C$/;
+    	next if $lastSensorValue{$k} =~ /C$/;
 
-#	debug( "   $k -> $lastSensorValue{$k} ($l sec. ago)" );
-	debug( sprintf( "%-30s %-20s (%4d ago)",   $k,$lastSensorValue{$k}, $l ));
-
+    #	debug( "   $k -> $lastSensorValue{$k} ($l sec. ago)" );
+    	debug( sprintf( "%-30s %-20s (%4d ago)",   $k,$lastSensorValue{$k}, $l ));
     }
 
     debug( "Dumping nodes" );
+
     foreach my $k (sort keys %lastHeardNode )
     {
 	   my $l = time() - $lastHeardNode{$k} ;
 	   debug( "   $k -> $l seconds ago" );
     }
-
-
 }
 
 sub  handleTTYDataPacket
