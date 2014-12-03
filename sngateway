@@ -20,13 +20,14 @@ use IO::Socket;
 use IO::File;
 use IO::Handle;
 
-my $BASEDIR =  "/home/pi/sensornet";
-my $LOGFN =    "/home/pi/sensornet/mainlog.csv";
-my $CONFIGFN =    "/home/pi/sensornet/configuration.txt";
-my $DEBUGFN =  "/home/pi/sensornet/debuglog.csv";
-my $RAWFN =    "/home/pi/sensornet/raw.txt";
-my $NODELOGFN =    "/home/pi/sensornet/nodelog.txt";
-my $XIVELYFN = "/tmp/xively.csv";
+my $BASEDIR   = "/home/pi/sensornet";
+my $LOGFN     = "/home/pi/sensornet/mainlog.csv";
+my $SLOWLOGFN = "/home/pi/sensornet/slowlog.csv";
+my $CONFIGFN  = "/home/pi/sensornet/configuration.txt";
+my $DEBUGFN   = "/home/pi/sensornet/debuglog.csv";
+my $RAWFN     = "/home/pi/sensornet/raw.txt";
+my $NODELOGFN = "/home/pi/sensornet/nodelog.txt";
+my $XIVELYFN  = "/tmp/xively.csv";
 
 my %CONFIG;
 
@@ -78,6 +79,8 @@ use Time::HiRes qw(gettimeofday);
 open( LOGFILE, ">>$LOGFN" ) or die "Cannot open log";
 open( DEBUGFILE, ">>$DEBUGFN" ) or die "Cannot open debug log";
 open( XIVELY, ">$XIVELYFN" ) or die "Cannot open xively $!";
+open( SLOWLOGFILE, ">$SLOWLOGFN" ) or die "Cannot open slow log $!";
+
 
 my $saveRAW = 0;
 
@@ -259,32 +262,32 @@ sub ubihack
     debug( "UBI: Dumping sensors" );
     foreach my $k (sort keys %lastSensorValueOnly )
     {
-	if( exists $CONFIG{$k} )
-	{
-	    my $val = $lastSensorValueOnly{$k} ;
-	    my ($nice,$varkey) = @{$CONFIG{$k}};
-	    next unless defined $varkey;
-	    
-	    my $d = ( $lastHeardSensor{$k} - $sentToUbi{$k} );
+    	if( exists $CONFIG{$k} )
+    	{
+    	    my $val = $lastSensorValueOnly{$k} ;
+    	    my ($nice,$varkey) = @{$CONFIG{$k}};
+    	    next unless defined $varkey;
+    	    
+    	    my $d = ( $lastHeardSensor{$k} - $sentToUbi{$k} );
 
-	    debug( "UBI: Found for $k - last sent $sentToUbi{$k} <> $lastHeardSensor{$k} --> [$d]" );
-	    my $g = 60*5;
-	    if( $d <= $g  )
-	    {
-		debug( "UBI: Skipping beacuse $d <= $g -- not enough new data" );
-		next;
-	    }
-	    
-	    my $cmd =  qq^curl -XPOST -H 'Content-Type: application/json;' -H 'X-Auth-Token: MRGzWEagPVr2GH67mUD4DFMsEsjs63fVxTao1oP2km8njRT1kE5jsW1Wy3vK' -d '[{"variable": "$varkey", "value": $val} ]' http://things.ubidots.com/api/v1.6/collections/values^;
+    	    debug( "UBI: Found for $k - last sent $sentToUbi{$k} <> $lastHeardSensor{$k} --> [$d]" );
+    	    my $g = 60*5;
+    	    if( $d <= $g  )
+    	    {
+    		debug( "UBI: Skipping beacuse $d <= $g -- not enough new data" );
+    		next;
+    	    }
+    	    
+    	    my $cmd =  qq^curl -XPOST -H 'Content-Type: application/json;' -H 'X-Auth-Token: MRGzWEagPVr2GH67mUD4DFMsEsjs63fVxTao1oP2km8njRT1kE5jsW1Wy3vK' -d '[{"variable": "$varkey", "value": $val} ]' http://things.ubidots.com/api/v1.6/collections/values^;
 
-	    
-	    debug ("UBI: $cmd" );
-	    `$cmd`;
-	    debug( "Result: at:$@ q:$?" );
-	    
-	    $sentToUbi{$k} = time();
-	    
-	}
+    	    
+    	    debug ("UBI: $cmd" );
+    	    `$cmd`;
+    	    debug( "Result: at:$@ q:$?" );
+    	    
+    	    $sentToUbi{$k} = time();
+    	    
+    	}
     }
 }
 
@@ -442,7 +445,7 @@ sub handleTTYLine
     
     if( $saveRAW )
     {
-	print RAWFILE "$line\n";
+	   print RAWFILE "$line\n";
     }
     
     $line =~ s/[\r\n]+\Z//;
@@ -529,6 +532,7 @@ sub relayToXively
 
 }
 
+my %lastPlacedInSlowLog;
 
 
 sub logSensor
@@ -551,6 +555,12 @@ sub logSensor
     if( $xname =~ /BATT-V|Temp-F|LUX|-Pressure/ )
     {
 	print XIVELY "$xname,$xively_date,$reading\n";
+    }
+
+    if( time() - $lastPlacedInSlowLog{$xname} > 5*60 )
+    {
+        print SLOWLOGFILE "$line\n";
+        $lastPlacedInSlowLog{$xname} = time();
     }
 
     $lastSensorValue{"$node-$sensor"} = $reading . $readingUnits;
