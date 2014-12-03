@@ -364,38 +364,37 @@ while(1)
 {
     my @ready = $sel->can_read( $timeout );
     
-	
-
 	foreach my $fh (@ready) 
 	{
 	    if($fh == $lsn) 
 	    {
-                # Create a new socket
-                my $new = $lsn->accept;
-                $sel->add($new);
-                print STDOUT "Accepted new connection from XXX\n";
-                syswrite( $new, "Welcome to SensorMonitor");
-            }
-            elsif( $fh == $tty )
-            {	
-            	my $in;		
-            	my $b = sysread( $fh, $in, 1000);
-            	$runStats{"TTY_BYTES_READ"} += $b;  
-            	handleTTYDataPacket( $in );	
-            }
-            else {
-                # Process socket
-                # Maybe we have finished with the socket
-                my $in;
-                sysread( $fh, $in, 1000);
-
-                debug "Got data from socket: [$in]";
-
-                syswrite( $fh, "Bye");
-                $sel->remove($fh);
-                $fh->close;
-            }
+            # Create a new socket
+            my $new = $lsn->accept;
+            $sel->add($new);
+            print STDOUT "Accepted new connection from XXX\n";
+            syswrite( $new, "Welcome to SensorMonitor");
         }
+        elsif( $fh == $tty )
+        {	
+        	my $in;		
+        	my $b = sysread( $fh, $in, 1000);
+        	$runStats{"TTY_BYTES_READ"} += $b;  
+        	handleTTYDataPacket( $in );	
+        }
+        else 
+        {
+            # Process socket
+            # Maybe we have finished with the socket
+            my $in;
+            sysread( $fh, $in, 1000);
+
+            debug "Got data from socket: [$in]";
+
+            syswrite( $fh, "Bye");
+            $sel->remove($fh);
+            $fh->close;
+        }
+    }
 	
 	my $elapsed = Time::HiRes::tv_interval ( $lastRun, [Time::HiRes::gettimeofday]);
 #	print "Elapsed $elapsed\n"; 
