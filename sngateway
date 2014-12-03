@@ -122,23 +122,18 @@ else
     sysopen( $tty , "neep", O_RDWR) or die "Sysopen failed";    
 }
 
-
-
 if( $needsHeader )
 {
     print LOGFILE "TS,Sequence,Node,Millis,Sensor,Reading,ReadingUnits,Memo,RSSI,OriginId,Nicename,Location\n";
 }
 
-
-    debug( "Starting listener" );
-
+debug( "Starting listener" );
 
 my $lsn = IO::Socket::INET->new(Listen => 1, LocalPort => 8080) or die "Cannot bind";
 my $sel = IO::Select->new( $lsn );
 $sel->add( $tty );
 
-    debug( "Select loop setup completed" );
-
+debug( "Select loop setup completed" );
 
 my $DB_user    = 'postgres';
 my $DB_name    = 'sensor';
@@ -187,17 +182,14 @@ sub logSysStatsLight
 
     while( <MEM> )
     {
-	my( $p, $v, $unit) = split /[\s\:]+/;
-	if( $p eq "MemFree" or $p eq "Active" or $p eq "Cached" )
-	{
-	    logLocalSensor( "Mem-$p", $v / 1024, "MB", "" );
-	}
+    	my( $p, $v, $unit) = split /[\s\:]+/;
+    	if( $p eq "MemFree" or $p eq "Active" or $p eq "Cached" )
+    	{
+    	    logLocalSensor( "Mem-$p", $v / 1024, "MB", "" );
+    	}
     }
 
     close MEM;
-
-
-
 }
 
 
@@ -256,7 +248,6 @@ my %sentToUbi;
 sub ubihack
 {
 # curl -XPOST -H 'Content-Type: application/json;' -H 'X-Auth-Token: MRGzWEagPVr2GH67mUD4DFMsEsjs63fVxTao1oP2km8njRT1kE5jsW1Wy3vK' -d '[{"variable": "5462b94a7625427b3e4bceb0", "value": 23}, {"variable": "5265608ef91b2878f05d75ba", "value": 22}]' http://things.ubidots.com/api/v1.6/collections/values
-#
 #curl -XPOST -H 'Content-Type: application/json;' -H 'X-Auth-Token: MRGzWEagPVr2GH67mUD4DFMsEsjs63fVxTao1oP2km8njRT1kE5jsW1Wy3vK' -d '{"value": 24}' http://app.ubidots.com/api/v1.6/variables/5462b94a7625427b3e4bceb0/values
 
     debug( "UBI: Dumping sensors" );
@@ -326,15 +317,15 @@ sub rotateLogs()
 
     if( $currentLogSuffix ne getLogSuffix() )
     {
-	debug( "rotate: verifying path" );
-	`mkdir $BASEDIR/log-archive`;
-	debug( "rotate: Closing existing logfile" );
-	close DEBUGFILE;
-	`mv $DEBUGFN $BASEDIR/log-archive/debuglog.csv-$currentLogSuffix`;
-	open( DEBUGFILE, ">>$DEBUGFN" ) or die "Cannot open debug log for rotate: $!";
-	debug( "rotate: New logfile started! old: $BASEDIR/log-archive/$DEBUGFN-$currentLogSuffix" );
+    	debug( "rotate: verifying path" );
+    	`mkdir $BASEDIR/log-archive`;
+    	debug( "rotate: Closing existing logfile" );
+    	close DEBUGFILE;
+    	`mv $DEBUGFN $BASEDIR/log-archive/debuglog.csv-$currentLogSuffix`;
+    	open( DEBUGFILE, ">>$DEBUGFN" ) or die "Cannot open debug log for rotate: $!";
+    	debug( "rotate: New logfile started! old: $BASEDIR/log-archive/$DEBUGFN-$currentLogSuffix" );
 
-	$currentLogSuffix = getLogSuffix();
+    	$currentLogSuffix = getLogSuffix();
     }
 }
 
@@ -353,16 +344,16 @@ sub runScheduledTasks
     
     foreach my $n (keys %taskRegistry)
     {
-	my $t = $taskRegistry{$n};
-	
-	# debug( "Checking task $n -> @$t");
-	if( time() - $t->[1] >  $t->[0] )
-	{		
-	    debug( "Task [$t->[3]] has come due..");
-	    
-	    $t->[1] = time();
-	    &{$t->[2]};
-	}
+    	my $t = $taskRegistry{$n};
+    	
+    	# debug( "Checking task $n -> @$t");
+    	if( time() - $t->[1] >  $t->[0] )
+    	{		
+    	    debug( "Task [$t->[3]] has come due..");
+    	    
+    	    $t->[1] = time();
+    	    &{$t->[2]};
+    	}
     }
 }
 
@@ -410,22 +401,14 @@ while(1)
             }
         }
 	
-    
-
 	my $elapsed = Time::HiRes::tv_interval ( $lastRun, [Time::HiRes::gettimeofday]);
 #	print "Elapsed $elapsed\n"; 
 
 	if( $elapsed > 1.00 )
 	{
-    
-	
-	    runScheduledTasks();
+        runScheduledTasks();
 	    $lastRun = [Time::HiRes::gettimeofday];
-
 	}
-
-    
-
 }
 
 my $ttyBuffer = "";
@@ -450,66 +433,60 @@ sub handleTTYLine
     
     $line =~ s/[\r\n]+\Z//;
     
+    # Handle regular "R" data lines
+
     if( $line =~ /^R/ )
     {
-	my @a = split( ',', $line);
-	
-	my $fCount= 0 + @a;
-	if( $fCount != 9 	)
-	{	
-	    debug "Error - [$fCount] wrong number of commas, skipping: offending line is [$line]\n";
-	    $runStats{"TTY_MSG_READ_ERROR"} += 1; 
-	    return;	
-	}
-	
-	$runStats{"TTY_MSG_READ_GOOD"} += 1; 
-	
-	
-	my ( $sequence, $node,	$millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId ) = @a;
-	
-	logSensor( @a );
-	
-	$runStats{"NODE_$(node)_MSG_CNT"} += 1; 
-	
-	# Automatically add extra lines converting a C reading to F 
-	
-	if( $readingUnits eq 'C' )
-	{
-	    $sensor .= "-F";
-	    $readingUnits = "F";
-	    $reading =  9/5 *($reading) +32;
-	    
-	    logSensor( $sequence, $node,      $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId );
-	}
+    	my @a = split( ',', $line);
+    	
+    	my $fCount= 0 + @a;
+    	if( $fCount != 9 	)
+    	{	
+    	    debug "Error - [$fCount] wrong number of commas, skipping: offending line is [$line]\n";
+    	    $runStats{"TTY_MSG_READ_ERROR"} += 1; 
+    	    return;	
+    	}
+    	
+    	$runStats{"TTY_MSG_READ_GOOD"} += 1; 
+    	
+    	my ( $sequence, $node,	$millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId ) = @a;
+    	
+    	logSensor( @a );
+    	
+    	$runStats{"NODE_$(node)_MSG_CNT"} += 1; 
+    	
+    	# Automatically add extra lines converting a C reading to F 
+    	
+    	if( $readingUnits eq 'C' )
+    	{
+    	    $sensor .= "-F";
+    	    $readingUnits = "F";
+    	    $reading =  9/5 *($reading) +32;
+    	    
+    	    logSensor( $sequence, $node,      $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId );
+    	}
     }
     elsif( $line =~ /^L/ )
     {
-	my $date = strftime("%Y-%m-%d %H:%M:%S", localtime(time));
-	my $m = $line;
-	$m =~ s/^L//;
-	if( $m ne $lastNodeLogLine )
-	{
-	    print NODELOGFILE join(',', ($date,$m));
-	    print NODELOGFILE "\n";
-	    flush NODELOGFILE;
-	    $lastNodeLogLine = $m;
-	}
+    	my $date = strftime("%Y-%m-%d %H:%M:%S", localtime(time));
+    	my $m = $line;
+    	$m =~ s/^L//;
+    	if( $m ne $lastNodeLogLine )
+    	{
+    	    print NODELOGFILE join(',', ($date,$m));
+    	    print NODELOGFILE "\n";
+    	    flush NODELOGFILE;
+    	    $lastNodeLogLine = $m;
+    	}
     }
     elsif( $line =~ /^D/ )
     {
-
-
+        # skip debug lines
     }
     else
     {
-	debug( "<<< UNPROCESSED:" . $line );
-
-
+    	debug( "<<< UNPROCESSED:" . $line );
     }
-
-
-
-
 }
 
 my $localSequence = 0;
