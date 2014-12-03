@@ -50,11 +50,11 @@ sub readConfiguration
 	my $c = (my( $node, $sensor, $nicename, $varname ) = split( /\t+/, $line ));
 	debug( "Has $c elements" );
 	next unless $c == 4; 
+	debug( "$node-$sensor -> [$nicename,$varname]" );
 	$CONFIG{"$node-$sensor"} = [$nicename,$varname];
     }
     
     close C;
-
 }
 
 sub getLogSuffix
@@ -105,17 +105,12 @@ if( $RPI )
     $tty = gensym();
     my $ob = tie( *$tty, "Device::SerialPort", $PORT );
 
-
-
-
 #    my $ob = Device::SerialPort->new($PORT)  || die "Can't open $PORT: $!\n";
     $ob->baudrate(57600);
     $ob->write_settings;
 
     debug( "Opening port" );
-
     
-
  #   open( TTY, "+</dev/ttyAMA0" ) or die "Cannot open tty";
   #  $tty = *TTY;
 }
@@ -291,14 +286,7 @@ sub ubihack
 	    
 	}
     }
-
-
 }
-
-
-
-
-
 
 sub updateNodes
 {
@@ -319,7 +307,7 @@ registerTask( "updatenodes", 10, sub { updateNodes() } );
 
 #registerTask( "xively", 30, sub { relayToXively() } ); 
 
-registerTask( "relay-readings", 10, sub { relayReadings() } ); 
+registerTask( "relay-readings", 60, sub { relayReadings() } ); 
 
 registerTask( "writehtml", 60, sub { updateHTML() } ); 
 
@@ -450,7 +438,7 @@ sub handleTTYLine
     
     $runStats{"TTY_MSG_READ"} += 1;  
     
-    debug( "<<< TTY $line");
+    # debug( "<<< TTY $line");
     
     if( $saveRAW )
     {
