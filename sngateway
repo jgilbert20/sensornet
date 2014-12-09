@@ -95,7 +95,7 @@ use Time::HiRes qw(gettimeofday);
 open( LOGFILE, ">>$LOGFN" ) or die "Cannot open log";
 open( DEBUGFILE, ">>$DEBUGFN" ) or die "Cannot open debug log";
 open( XIVELY, ">$XIVELYFN" ) or die "Cannot open xively $!";
-open( SLOWLOGFILE, ">$SLOWLOGFN" ) or die "Cannot open slow log $!";
+open( SLOWLOGFILE, ">>$SLOWLOGFN" ) or die "Cannot open slow log $!";
 
 my $saveRAW = 0;
 
