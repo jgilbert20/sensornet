@@ -36,6 +36,8 @@ my %lastHeardNode;
 my %lastHeardSensor;
 my %lastSensorValueOnly;
 
+my %nodeLocation; 
+
 sub readConfiguration
 {
     open C, "<$CONFIGFN" or return;
@@ -44,13 +46,28 @@ sub readConfiguration
     {
     	my $line = $_;
     	chomp $line;
-    	debug( "Parsing line from CONFIG: $line" );
+    	debug( "CONFIG: Parsing line from CONFIG: $line" );
     	next if /^\#/;
-    	my $c = (my( $node, $sensor, $nicename, $varname ) = split( /\t+/, $line ));
-    	debug( "Has $c elements" );
-    	next unless $c == 4; 
-    	debug( "$node-$sensor -> [$nicename,$varname]" );
-    	$CONFIG{"$node-$sensor"} = [$nicename,$varname];
+
+	my @parsedLine = split( /\t+/, $line );
+	my $cmd = shift @parsedLine;
+	if( $cmd eq 'sensor' )
+	{
+	    my $c = @parsedLine;
+	    my( $node, $sensor, $nicename, $varname ) = @parsedLine;
+	    debug( "CONFIG: Sensorline: Has $c elements" );
+	    next unless $c == 4; 
+	    debug( "CONFIG: Sensorline: $node-$sensor -> [$nicename,$varname]" );
+	    $CONFIG{"$node-$sensor"} = [$nicename,$varname];
+	}
+
+	if( $cmd eq 'node' )
+	{
+	    my( $node, $location ) = @parsedLine;
+	    debug( "CONFIG: Nodeline: $node -> loc:[$location]" );
+	    $nodeLocation{$node} = $location;
+	} 
+
     }
     
     close C;
@@ -67,6 +84,7 @@ my $currentLogSuffix = getLogSuffix();
 my $lastNodeLogLine = "";
 
 my $needsHeader = 1 if ! -e $LOGFN;
+my $slowNeedsHeader = 1 if ! -e $SLOWLOGFN;
 
 my $tty = undef; # IO::Handle->new();
 
@@ -77,7 +95,7 @@ use Time::HiRes qw(gettimeofday);
 open( LOGFILE, ">>$LOGFN" ) or die "Cannot open log";
 open( DEBUGFILE, ">>$DEBUGFN" ) or die "Cannot open debug log";
 open( XIVELY, ">$XIVELYFN" ) or die "Cannot open xively $!";
-open( SLOWLOGFILE, ">$SLOWLOGFN" ) or die "Cannot open slow log $!";
+open( SLOWLOGFILE, ">>$SLOWLOGFN" ) or die "Cannot open slow log $!";
 
 my $saveRAW = 0;
 
@@ -121,6 +139,11 @@ else
 if( $needsHeader )
 {
     print LOGFILE "TS,Sequence,Node,Millis,Sensor,Reading,ReadingUnits,Memo,RSSI,OriginId,Nicename,Location\n";
+}
+
+if( $slowNeedsHeader )
+{
+    print SLOWLOGFILE "TS,Sequence,Node,Millis,Sensor,Reading,ReadingUnits,Memo,RSSI,OriginId,Nicename,Location\n";
 }
 
 debug( "Starting listener" );
@@ -258,7 +281,7 @@ sub ubihack
     	    my $d = ( $lastHeardSensor{$k} - $sentToUbi{$k} );
 
     	    debug( "UBI: Found for $k - last sent $sentToUbi{$k} <> $lastHeardSensor{$k} --> [$d]" );
-    	    my $g = 60*5;
+    	    my $g = 60*10;
     	    if( $d <= $g  )
     	    {
         		debug( "UBI: Skipping beacuse $d <= $g -- not enough new data" );
@@ -509,8 +532,9 @@ sub logSensor
     my ( $sequence, $node, $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId ) = @_;
     my $date = strftime("%Y-%m-%d %H:%M:%S", localtime(time));
     my $nice = "";
-    my $loc = "";
+    my $loc = $nodeLocation{$node};
     chomp $originId;
+
     my $line = join ",", ($date, $sequence, $node, $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId, $nice, $loc);
     print LOGFILE "$line\n";
     flush LOGFILE; 
@@ -526,7 +550,7 @@ sub logSensor
 	print XIVELY "$xname,$xively_date,$reading\n";
     }
 
-    if( time() - $lastPlacedInSlowLog{$xname} > 5*60 )
+    if( (time()) - $lastPlacedInSlowLog{$xname} > 5*60 )
     {
         print SLOWLOGFILE "$line\n";
         $lastPlacedInSlowLog{$xname} = time();
