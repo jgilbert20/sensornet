@@ -1,0 +1,21 @@
+#command	#Nodename	#Sensor		#Prettyname		#UBI variable name              #Location Override
+sensor		Outside		AM2315-Temp-F	Outside Temperature	54694f217625425344bfc0df 	Outside
+sensor 		Outside		AM2315-RH	Outside RH		54694f4b76254254fcb8f8f2	Outside
+sensor		Proto4		Therm0-Temp-F	Hot Water Pipes		54694fa176254253a58f19e1 	Hot Water Pipes
+sensor		Proto4		Therm1-Temp-F	HVAC Outbound 		54694fa176254253a58f19e1  	HVAC Outbound
+sensor		PowerMon	Current-A	Current Left		547214b2762542178814eb1e  	Current Left
+sensor		PowerMon	Current-B	Current Right		547214d176254216e4a4bc8e  	Current Right
+
+
+#command	#Nodename	#Default Location
+node		Outside		Downstairs Windowsill
+node		Proto4		Utility Closet
+node		Proto1		Top of stairs
+node		Proto2		Downstairs Desk
+node		Proto3		Master BR
+node		PowerMon	Powerline Monitor
+node		Main		Isabella's Room
+node		IsaRoom		Living Room mantle
+
+
+

@@ -32,6 +32,7 @@ my $XIVELYFN  = "/tmp/xively.csv";
 my %CONFIG;
 
 my %lastSensorValue;
+my %lastSensorValueStructured;
 my %lastHeardNode;
 my %lastHeardSensor;
 my %lastSensorValueOnly;
@@ -49,16 +50,20 @@ sub readConfiguration
     	debug( "CONFIG: Parsing line from CONFIG: $line" );
     	next if /^\#/;
 
-	my @parsedLine = split( /\t+/, $line );
+	my @parsedLine = split( /\s*\t+\s*/, $line );
+	
+
 	my $cmd = shift @parsedLine;
 	if( $cmd eq 'sensor' )
 	{
 	    my $c = @parsedLine;
-	    my( $node, $sensor, $nicename, $varname ) = @parsedLine;
 	    debug( "CONFIG: Sensorline: Has $c elements" );
-	    next unless $c == 4; 
-	    debug( "CONFIG: Sensorline: $node-$sensor -> [$nicename,$varname]" );
-	    $CONFIG{"$node-$sensor"} = [$nicename,$varname];
+
+	    next unless $c == 5; 
+	    my( $node, $sensor, $nicename, $varname, $locOverride ) = @parsedLine;
+
+	    debug( "CONFIG: Sensorline: $node-$sensor -> [$nicename,$varname,$locOverride]" );
+	    $CONFIG{"$node-$sensor"} = [$nicename,$varname,$locOverride];
 	}
 
 	if( $cmd eq 'node' )
@@ -275,7 +280,7 @@ sub ubihack
     	if( exists $CONFIG{$k} )
     	{
     	    my $val = $lastSensorValueOnly{$k} ;
-    	    my ($nice,$varkey) = @{$CONFIG{$k}};
+    	    my ($nice,$varkey,$locOverride) = @{$CONFIG{$k}};
     	    next unless defined $varkey;
     	    
     	    my $d = ( $lastHeardSensor{$k} - $sentToUbi{$k} );
@@ -322,7 +327,7 @@ registerTask( "updatenodes", 10, sub { updateNodes() } );
 
 registerTask( "relay-readings", 60, sub { relayReadings() } ); 
 
-registerTask( "writehtml", 60, sub { updateHTML() } ); 
+registerTask( "writehtml", 10, sub { updateHTML() } ); 
 
 #registerTask( "dumpps", 50, sub { `mkdir -p pslog`; 
 #				  `date >> uplog.txt`;
@@ -442,7 +447,7 @@ sub handleTTYLine
     
     $runStats{"TTY_MSG_READ"} += 1;  
     
-    # debug( "<<< TTY $line");
+    debug( "<<< TTY $line");
     
     if( $saveRAW )
     {
@@ -531,9 +536,16 @@ sub logSensor
 {
     my ( $sequence, $node, $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId ) = @_;
     my $date = strftime("%Y-%m-%d %H:%M:%S", localtime(time));
-    my $nice = "";
-    my $loc = $nodeLocation{$node};
+#    my $nice = "";
+ 
     chomp $originId;
+
+
+    my $xname ="$node-$sensor";
+    
+    my ($nice,$varkey,$locOverride) = exists $CONFIG{$xname} ? @{$CONFIG{$xname}} : ("",undef,undef);
+
+    my $loc = $locOverride || $nodeLocation{$node} || "";
 
     my $line = join ",", ($date, $sequence, $node, $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId, $nice, $loc);
     print LOGFILE "$line\n";
@@ -541,21 +553,25 @@ sub logSensor
     
     my $xively_date = strftime("%Y-%m-%dT%H:%M:%SZ", localtime(time));
 
-    my $xname ="$node-$sensor";
 
     $xname =~ s/\s+/\-/g;
+
+
 
     if( $xname =~ /BATT-V|Temp-F|LUX|-Pressure/ )
     {
 	print XIVELY "$xname,$xively_date,$reading\n";
     }
 
-    if( (time()) - $lastPlacedInSlowLog{$xname} > 5*60 )
+    my $lu = $lastPlacedInSlowLog{$xname} || 0; 
+
+    if( (time()) - $lu > 5*60 )
     {
         print SLOWLOGFILE "$line\n";
         $lastPlacedInSlowLog{$xname} = time();
     }
-
+    
+    $lastSensorValueStructured{$node}->{$sensor} = [$reading,$readingUnits,time(),$loc,$readingUnits];
     $lastSensorValue{"$node-$sensor"} = $reading . $readingUnits;
     $lastSensorValueOnly{"$node-$sensor"} = $reading;
     $lastHeardNode{$node} = time();
@@ -565,7 +581,7 @@ sub logSensor
 
 sub updateHTML
 {
-    return();
+    # return();
 
     `mkdir -p $BASEDIR/www`;
     open FILE, ">$BASEDIR/www/sensors.txt" or die "cannot write to file";
@@ -573,7 +589,7 @@ sub updateHTML
     foreach my $k (sort keys %lastSensorValue )
     {
         my $l = time() - $lastHeardSensor{$k};
-        print FILE sprintf( "%-30s %-20s (%4d ago)",   $k,$lastSensorValue{$k}, $l );
+        print FILE sprintf( "%-30s %-20s (%4d ago)\n",   $k,$lastSensorValue{$k}, $l );
 
     }
     close FILE;
@@ -583,10 +599,105 @@ sub updateHTML
     foreach my $k (sort keys %lastHeardNode )
     {
        my $l = time() - $lastHeardNode{$k} ;
-       print FILE "$k -> $l seconds ago";
+       print FILE "$k -> $l seconds ago\n";
     }
     
     close FILE;
+
+
+
+    open FILE, ">$BASEDIR/www/index.html" or die "cannot write to file";
+
+    print FILE <<HTML;
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Christma-hanu-kwanzaa</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="static/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="static/css/main.css'" type="text/css"/>
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron col-sm-12">
+                <h1>Sensornet</h1>
+                <p>Key sensors</p>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table table-condensed">
+                        <th>Location</th><th>Temp</th><th>%RH</th>
+HTML
+
+
+
+    my %keyFindings;
+
+    foreach my $node (sort keys %lastSensorValueStructured)
+    {
+	foreach my $sensor (sort keys %{$lastSensorValueStructured{$node}} )
+	{
+	    my ($reading,$readingUnits,$lastUpdated,$loc,$unit) = @{$lastSensorValueStructured{$node}->{$sensor}};
+
+
+	    my $place = $loc || $node;
+
+	    if( $sensor eq 'HTU21D-RH' )
+	    {
+		$keyFindings{$place}->{RH} = $reading;
+	    }
+
+	    if( $sensor eq 'HTU21D-Temp-F' )
+	    {
+		$keyFindings{$place}->{Temp} = $reading;
+	    }
+
+	    if( $unit eq 'F' )
+	    {
+		$keyFindings{$place}->{Temp} = $reading if not exists $keyFindings{$place}->{Temp};
+	    }
+
+	    if( $unit eq '%RH' )
+	    {
+		$keyFindings{$place}->{RH} = $reading if not exists $keyFindings{$place}->{RH};
+	    }
+	  
+	}
+    }
+
+
+    foreach my $place (keys %keyFindings)
+    {
+	my $rh = $keyFindings{$place}->{RH} || "n/a";
+	my $t = $keyFindings{$place}->{Temp} || "n/a";
+	debug( "Finding $place - rh=$rh t=$t" ); 
+	my @line = ($place, $t,$rh);
+
+	print FILE "<TR><TD>";
+	print FILE join "</TD><TD>", @line;
+	print FILE "</TR></TD>";
+	
+    }
+    
+
+
+
+print FILE <<HTML;
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+HTML
+
+
+
+    
+    close FILE;
+
 }
 
 
