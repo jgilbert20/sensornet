@@ -263,7 +263,18 @@ sub sendTTY
 
 #    debug( "Sending [gw]" );
     debug( ">>> $cmd" );
-    print $tty "$cmd\n";
+
+    my @arr = split '', $cmd;
+
+    while( @arr )
+{
+    print $tty shift @arr;
+    $tty->flush();
+}
+
+    print $tty "\n";
+$tty->flush();
+#    print $tty "$cmd\n";
 }
 
 
@@ -305,10 +316,13 @@ sub ubihack
     	}
     }
 }
-
+my $foo = 0;
 sub updateNodes
 {
-    sendTTY( "gwup");
+##    sendTTY( "gwup");
+
+    $foo=$lastSensorValueOnly{"Xmas-Sensor-ETAPE-DIST"};
+    sendTTY( "T104Xmas Tree:$foo in. of H2O");
 }
 
 registerTask( "uptime", 60, sub { logUptime() } ); 
@@ -614,7 +628,7 @@ sub updateHTML
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Christma-hanu-kwanzaa</title>
+        <title>Sensornet</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="static/css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="static/css/main.css'" type="text/css"/>
@@ -628,7 +642,7 @@ sub updateHTML
             <div class="row">
                 <div class="col-sm-12">
                     <table class="table table-condensed">
-                        <th>Location</th><th>Temp</th><th>%RH</th>
+                        <th>Location</th><th>Temp</th><th>%RH</th><th>Updated</th>
 HTML
 
 
@@ -641,39 +655,88 @@ HTML
 	{
 	    my ($reading,$readingUnits,$lastUpdated,$loc,$unit) = @{$lastSensorValueStructured{$node}->{$sensor}};
 
-
+	    my $xname = [$node,$sensor];
 	    my $place = $loc || $node;
 
 	    if( $sensor eq 'HTU21D-RH' )
 	    {
-		$keyFindings{$place}->{RH} = $reading;
+		$keyFindings{$place}->{RH} = $xname;
 	    }
 
 	    if( $sensor eq 'HTU21D-Temp-F' )
 	    {
-		$keyFindings{$place}->{Temp} = $reading;
+		$keyFindings{$place}->{Temp} = $xname;
 	    }
 
 	    if( $unit eq 'F' )
 	    {
-		$keyFindings{$place}->{Temp} = $reading if not exists $keyFindings{$place}->{Temp};
+		$keyFindings{$place}->{Temp} = $xname if not exists $keyFindings{$place}->{Temp};
 	    }
 
 	    if( $unit eq '%RH' )
 	    {
-		$keyFindings{$place}->{RH} = $reading if not exists $keyFindings{$place}->{RH};
-	    }
-	  
+		$keyFindings{$place}->{RH} = $xname if not exists $keyFindings{$place}->{RH};
+	    }	  
 	}
     }
 
-
-    foreach my $place (keys %keyFindings)
+    foreach my $place (sort keys %keyFindings)
     {
-	my $rh = $keyFindings{$place}->{RH} || "n/a";
-	my $t = $keyFindings{$place}->{Temp} || "n/a";
+	my $rh = $keyFindings{$place}->{RH};
+	my $t = $keyFindings{$place}->{Temp};
 	debug( "Finding $place - rh=$rh t=$t" ); 
-	my @line = ($place, $t,$rh);
+
+	my @line;
+	push( @line, $place );
+	my $x;
+	my $age;
+
+	if( ref $t )
+	{
+	    $x = $t;
+	    my ($node, $sensor) = @{$x};
+	    my ($reading,$readingUnits,$lastUpdated,$loc,$unit) = @{$lastSensorValueStructured{$node}->{$sensor}};
+	    push @line, "$reading $readingUnits";
+	    $age = $lastUpdated if $lastUpdated < $age || not defined $age;
+	}
+	else
+	{
+	    push @line, "";
+	}
+
+	if( ref $rh )
+	{
+	    $x = $rh;
+	    my ($node, $sensor) = @{$x};
+	    my ($reading,$readingUnits,$lastUpdated,$loc,$unit) = @{$lastSensorValueStructured{$node}->{$sensor}};
+	    push @line, "$reading $readingUnits";
+	    $age = $lastUpdated if $lastUpdated < $age || not defined $age;
+	}
+	else
+	{
+	    push @line, "";
+	}
+	
+	my $howLongHasItBeen =  time() - $age;
+
+	my $timeSince;
+	
+	if( $howLongHasItBeen > 24*60*60 )
+	{
+	    my $r = $howLongHasItBeen / (24*60*60);
+	    $r = sprintf( "%.1f", $r);
+	    $timeSince = "$r days"
+		
+	}
+	else
+	{
+	    my $r = $howLongHasItBeen / (60);
+	    $r = sprintf( "%.1f", $r);
+	    $timeSince = "$r minutes"
+	}
+
+	push @line, $timeSince;
+
 
 	print FILE "<TR><TD>";
 	print FILE join "</TD><TD>", @line;
