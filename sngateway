@@ -15,18 +15,27 @@ $| = 0;
 my $timeout = 1;
 
 use POSIX qw(strftime);
+use Cwd;
 use IO::Select;
 use IO::Socket; 
 use IO::File;
 use IO::Handle;
 
-my $BASEDIR   = "/home/pi/sensornet";
-my $LOGFN     = "/home/pi/sensornet/mainlog.csv";
-my $SLOWLOGFN = "/home/pi/sensornet/slowlog.csv";
-my $CONFIGFN  = "/home/pi/sensornet/configuration.txt";
-my $DEBUGFN   = "/home/pi/sensornet/debuglog.csv";
-my $RAWFN     = "/home/pi/sensornet/raw.txt";
-my $NODELOGFN = "/home/pi/sensornet/nodelog.txt";
+# Causes system to read a file called simulation.csv which is a "mainlog" formatted file
+my $SIMULATION_MODE = 1;   
+
+# Causes system to assume that its running on a raspberry PU
+my $RPI = 0;
+
+my $BASEDIR   = $RPI ? "/home/pi/sensornet" : getcwd();
+my $LOGFN     = "${BASEDIR}/mainlog.csv";
+my $SLOWLOGFN = "${BASEDIR}/slowlog.csv";
+my $CONFIGFN  = "${BASEDIR}/configuration.txt";
+my $DEBUGFN   = "${BASEDIR}/debuglog.csv";
+my $RAWFN     = "${BASEDIR}/raw.txt";
+my $NODELOGFN = "${BASEDIR}/nodelog.txt";
+my $SIMFN     = "${BASEDIR}/simulation.txt";
+my $SIMOUTFN  = "${BASEDIR}/simu-out.txt";
 my $XIVELYFN  = "/tmp/xively.csv";
 
 my %CONFIG;
@@ -38,6 +47,7 @@ my %lastHeardSensor;
 my %lastSensorValueOnly;
 
 my %nodeLocation; 
+
 
 sub readConfiguration
 {
@@ -93,11 +103,9 @@ my $slowNeedsHeader = 1 if ! -e $SLOWLOGFN;
 
 my $tty = undef; # IO::Handle->new();
 
-my $RPI = 1;
-
 use Time::HiRes qw(gettimeofday);
 
-open( LOGFILE, ">>$LOGFN" ) or die "Cannot open log";
+open( LOGFILE, ">>$LOGFN" ) or die "Cannot open log: $LOGFN";
 open( DEBUGFILE, ">>$DEBUGFN" ) or die "Cannot open debug log";
 open( XIVELY, ">$XIVELYFN" ) or die "Cannot open xively $!";
 open( SLOWLOGFILE, ">>$SLOWLOGFN" ) or die "Cannot open slow log $!";
@@ -115,31 +123,44 @@ debug( "SNGateway restarted" );
 
 readConfiguration();
 
-if( $RPI )
+# Set up our serial interface
+
+if( not $SIMULATION_MODE )
 {
-    # see "http://stackoverflow.com/questions/10362222/test-in-perl-if-data-is-available-on-deviceserialport" for example
+    if( $RPI )
+    {
+        # see "http://stackoverflow.com/questions/10362222/test-in-perl-if-data-is-available-on-deviceserialport" for example
 
-    use Device::SerialPort qw( :PARAM :STAT 0.07 );
+        #use Device::SerialPort qw( :PARAM :STAT 0.07 );
 
-    use Symbol qw( gensym );
-    my $PORT = "/dev/ttyAMA0";
+        use Symbol qw( gensym );
+        my $PORT = "/dev/ttyAMA0";
 
-    $tty = gensym();
-    my $ob = tie( *$tty, "Device::SerialPort", $PORT );
+        $tty = gensym();
+        my $ob = tie( *$tty, "Device::SerialPort", $PORT );
 
-    #    my $ob = Device::SerialPort->new($PORT)  || die "Can't open $PORT: $!\n";
-    $ob->baudrate(57600);
-    $ob->write_settings;
+        #    my $ob = Device::SerialPort->new($PORT)  || die "Can't open $PORT: $!\n";
+        $ob->baudrate(57600);
+        $ob->write_settings;
 
-    debug( "Opening port" );
+        debug( "Opening port" );
 
-    #   open( TTY, "+</dev/ttyAMA0" ) or die "Cannot open tty";
-    #  $tty = *TTY;
+        #   open( TTY, "+</dev/ttyAMA0" ) or die "Cannot open tty";
+        #  $tty = *TTY;
+    }
+    else
+    {
+    #    sysopen( $tty , "neep", O_RDWR) or die "Sysopen failed";    
+    }
 }
 else
 {
-    sysopen( $tty , "neep", O_RDWR) or die "Sysopen failed";    
+    $tty = gensym();
+    open( $tty, ">>$SIMOUTFN") or die "Cannot open simulation outfile SIMOUTFN";
+
+
 }
+
 
 if( $needsHeader )
 {
@@ -402,50 +423,85 @@ my $lastRun = [0,0];
 
 debug( "Beginning lisen loop:" );
 
-while(1)
+if( $SIMULATION_MODE )
 {
-    my @ready = $sel->can_read( $timeout );
-    
-	foreach my $fh (@ready) 
-	{
-	    if($fh == $lsn) 
-	    {
-            # Create a new socket
-            my $new = $lsn->accept;
-            $sel->add($new);
-            print STDOUT "Accepted new connection from XXX\n";
-            syswrite( $new, "Welcome to SensorMonitor");
-        }
-        elsif( $fh == $tty )
-        {	
-        	my $in;		
-        	my $b = sysread( $fh, $in, 1000);
-        	$runStats{"TTY_BYTES_READ"} += $b;  
-        	handleTTYDataPacket( $in );	
-        }
-        else 
+    runSimulatedLoop();
+}
+else
+{
+    runMainLoop();
+}
+
+
+sub runSimulatedLoop()
+{
+    debug( "Starting simulated loop");
+
+    while( 1 )
+    {
+
+
+
+        my $elapsed = Time::HiRes::tv_interval ( $lastRun, [Time::HiRes::gettimeofday]);
+    #   print "Elapsed $elapsed\n"; 
+
+        if( $elapsed > 1.00 )
         {
-            # Process socket
-            # Maybe we have finished with the socket
-            my $in;
-            sysread( $fh, $in, 1000);
-
-            debug "Got data from socket: [$in]";
-
-            syswrite( $fh, "Bye");
-            $sel->remove($fh);
-            $fh->close;
+            runScheduledTasks();
+            $lastRun = [Time::HiRes::gettimeofday];
         }
-    }
-	
-	my $elapsed = Time::HiRes::tv_interval ( $lastRun, [Time::HiRes::gettimeofday]);
-#	print "Elapsed $elapsed\n"; 
 
-	if( $elapsed > 1.00 )
-	{
-        runScheduledTasks();
-	    $lastRun = [Time::HiRes::gettimeofday];
-	}
+    }
+
+}
+
+sub runMainLoop
+{
+    while(1)
+    {
+        my @ready = $sel->can_read( $timeout );
+        
+    	foreach my $fh (@ready) 
+    	{
+    	    if($fh == $lsn) 
+    	    {
+                # Create a new socket
+                my $new = $lsn->accept;
+                $sel->add($new);
+                print STDOUT "Accepted new connection from XXX\n";
+                syswrite( $new, "Welcome to SensorMonitor");
+            }
+            elsif( $fh == $tty )
+            {	
+            	my $in;		
+            	my $b = sysread( $fh, $in, 1000);
+            	$runStats{"TTY_BYTES_READ"} += $b;  
+            	handleTTYDataPacket( $in );	
+            }
+            else 
+            {
+                # Process socket
+                # Maybe we have finished with the socket
+                my $in;
+                sysread( $fh, $in, 1000);
+
+                debug "Got data from socket: [$in]";
+
+                syswrite( $fh, "Bye");
+                $sel->remove($fh);
+                $fh->close;
+            }
+        }
+    	
+    	my $elapsed = Time::HiRes::tv_interval ( $lastRun, [Time::HiRes::gettimeofday]);
+    #	print "Elapsed $elapsed\n"; 
+
+    	if( $elapsed > 1.00 )
+    	{
+            runScheduledTasks();
+    	    $lastRun = [Time::HiRes::gettimeofday];
+    	}
+    }
 }
 
 my $ttyBuffer = "";
@@ -554,7 +610,6 @@ sub logSensor
  
     chomp $originId;
 
-
     my $xname ="$node-$sensor";
     
     my ($nice,$varkey,$locOverride) = exists $CONFIG{$xname} ? @{$CONFIG{$xname}} : ("",undef,undef);
@@ -567,10 +622,7 @@ sub logSensor
     
     my $xively_date = strftime("%Y-%m-%dT%H:%M:%SZ", localtime(time));
 
-
     $xname =~ s/\s+/\-/g;
-
-
 
     if( $xname =~ /BATT-V|Temp-F|LUX|-Pressure/ )
     {
