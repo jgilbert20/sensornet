@@ -8,7 +8,7 @@
 # http://www.felixgers.de/teaching/perl/perl_DBI.html
 
 use strict;
-use warnings;
+#use warnings;
 
 $| = 0;
 
@@ -20,12 +20,17 @@ use IO::Select;
 use IO::Socket; 
 use IO::File;
 use IO::Handle;
+use Getopt::Long;
 
 # Causes system to read a file called simulation.csv which is a "mainlog" formatted file
-my $SIMULATION_MODE = 1;   
+my $SIMULATION_MODE = 0;   
 
 # Causes system to assume that its running on a raspberry PU
-my $RPI = 0;
+my $RPI = 1;
+
+&GetOptions( 'S|simulation' => \$SIMULATION_MODE );
+
+$RPI = 0 if( $SIMULATION_MODE );
 
 my $BASEDIR   = $RPI ? "/home/pi/sensornet" : getcwd();
 my $LOGFN     = "${BASEDIR}/mainlog.csv";
@@ -109,6 +114,11 @@ open( LOGFILE, ">>$LOGFN" ) or die "Cannot open log: $LOGFN";
 open( DEBUGFILE, ">>$DEBUGFN" ) or die "Cannot open debug log";
 open( XIVELY, ">$XIVELYFN" ) or die "Cannot open xively $!";
 open( SLOWLOGFILE, ">>$SLOWLOGFN" ) or die "Cannot open slow log $!";
+
+if( $SIMULATION_MODE )
+{ 
+    open( SIMFN, "<$SIMFN" ) or die "Cannot open simulation log $!";
+}
 
 my $saveRAW = 0;
 
@@ -420,8 +430,9 @@ sub runScheduledTasks
 my %runStats;
 
 my $lastRun = [0,0];
+my $lastSimmed = [0,0];
 
-debug( "Beginning lisen loop:" );
+debug( "Beginning listen loop:" );
 
 if( $SIMULATION_MODE )
 {
@@ -432,6 +443,32 @@ else
     runMainLoop();
 }
 
+sub sendFakeTTY
+{
+    my $c = shift;
+    #debug( "Generating [$c] of fake data from log");
+    for( my $i = 0 ; $i < $c ; $i++ )
+    {
+        sendSingleFakeTTY();
+    }
+}
+
+sub sendSingleFakeTTY
+{
+
+    my $line = <SIMFN>;
+    my @parts = split ',', $line;
+    my @important = @parts[1..9];
+    my $fakeline = join ',', @important;
+
+    debug( "<<< $fakeline" );
+
+
+
+
+
+}
+
 
 sub runSimulatedLoop()
 {
@@ -439,6 +476,16 @@ sub runSimulatedLoop()
 
     while( 1 )
     {
+
+        my $elapsed = Time::HiRes::tv_interval ( $lastSimmed, [Time::HiRes::gettimeofday]);
+    #   print "Elapsed $elapsed\n"; 
+
+        if( $elapsed > 0.2*(rand(3)+1) )
+        {
+            sendFakeTTY( int(rand(4)) );
+
+            $lastSimmed = [Time::HiRes::gettimeofday];
+        }
 
 
 
@@ -450,8 +497,10 @@ sub runSimulatedLoop()
             runScheduledTasks();
             $lastRun = [Time::HiRes::gettimeofday];
         }
+    sleep(0.2);
 
     }
+
 
 }
 
