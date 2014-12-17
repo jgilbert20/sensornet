@@ -316,6 +316,8 @@ sub ubihack
 # curl -XPOST -H 'Content-Type: application/json;' -H 'X-Auth-Token: MRGzWEagPVr2GH67mUD4DFMsEsjs63fVxTao1oP2km8njRT1kE5jsW1Wy3vK' -d '[{"variable": "5462b94a7625427b3e4bceb0", "value": 23}, {"variable": "5265608ef91b2878f05d75ba", "value": 22}]' http://things.ubidots.com/api/v1.6/collections/values
 #curl -XPOST -H 'Content-Type: application/json;' -H 'X-Auth-Token: MRGzWEagPVr2GH67mUD4DFMsEsjs63fVxTao1oP2km8njRT1kE5jsW1Wy3vK' -d '{"value": 24}' http://app.ubidots.com/api/v1.6/variables/5462b94a7625427b3e4bceb0/values
 
+    next if $SIMULATION_MODE;
+    
     debug( "UBI: Dumping sensors" );
     foreach my $k (sort keys %lastSensorValueOnly )
     {
@@ -461,12 +463,8 @@ sub sendSingleFakeTTY
     my @important = @parts[1..9];
     my $fakeline = join ',', @important;
 
-    debug( "<<< $fakeline" );
-
-
-
-
-
+    # debug( "<<< $fakeline" );
+    handleTTYLine( $fakeline );
 }
 
 
@@ -497,11 +495,8 @@ sub runSimulatedLoop()
             runScheduledTasks();
             $lastRun = [Time::HiRes::gettimeofday];
         }
-    sleep(0.2);
-
+        sleep(0.2);
     }
-
-
 }
 
 sub runMainLoop
@@ -857,9 +852,6 @@ print FILE <<HTML;
 </html>
 HTML
 
-
-
-    
     close FILE;
 
 }
@@ -867,7 +859,7 @@ HTML
 
 sub relayReadings
 {
-    debug( "Dumping sensors" );
+    debug( "Dumping sensors to debuglog" );
     foreach my $k (sort keys %lastSensorValue )
     {
     	my $l = time() - $lastHeardSensor{$k};
