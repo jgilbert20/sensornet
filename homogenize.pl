@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+# A tool that automatically generates crosstabs from raw data
+
 my $firstline = <>;
 
 my %fields; 
