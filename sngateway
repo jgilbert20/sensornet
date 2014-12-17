@@ -745,98 +745,102 @@ HTML
 
     my %keyFindings;
 
+    # First, batch up the data that we've accumulated into key findings by location
+
     foreach my $node (sort keys %lastSensorValueStructured)
     {
-	foreach my $sensor (sort keys %{$lastSensorValueStructured{$node}} )
-	{
-	    my ($reading,$readingUnits,$lastUpdated,$loc,$unit) = @{$lastSensorValueStructured{$node}->{$sensor}};
+    	foreach my $sensor (sort keys %{$lastSensorValueStructured{$node}} )
+    	{
+    	    my ($reading,$readingUnits,$lastUpdated,$loc,$unit) = @{$lastSensorValueStructured{$node}->{$sensor}};
 
-	    my $xname = [$node,$sensor];
-	    my $place = $loc || $node;
+    	    my $xname = [$node,$sensor];
+    	    my $place = $loc || $node;
 
-	    if( $sensor eq 'HTU21D-RH' )
-	    {
-		$keyFindings{$place}->{RH} = $xname;
-	    }
+    	    if( $sensor eq 'HTU21D-RH' )
+    	    {
+    		  $keyFindings{$place}->{RH} = $xname;
+    	    }
 
-	    if( $sensor eq 'HTU21D-Temp-F' )
-	    {
-		$keyFindings{$place}->{Temp} = $xname;
-	    }
+    	    if( $sensor eq 'HTU21D-Temp-F' )
+    	    {
+    		  $keyFindings{$place}->{Temp} = $xname;
+    	    }
 
-	    if( $unit eq 'F' )
-	    {
-		$keyFindings{$place}->{Temp} = $xname if not exists $keyFindings{$place}->{Temp};
-	    }
+    	    if( $unit eq 'F' )
+    	    {
+    		  $keyFindings{$place}->{Temp} = $xname if not exists $keyFindings{$place}->{Temp};
+    	    }
 
-	    if( $unit eq '%RH' )
-	    {
-		$keyFindings{$place}->{RH} = $xname if not exists $keyFindings{$place}->{RH};
-	    }	  
-	}
+    	    if( $unit eq '%RH' )
+    	    {
+    		  $keyFindings{$place}->{RH} = $xname if not exists $keyFindings{$place}->{RH};
+    	    }	  
+    	}
     }
+
+    # Next, iterate over key findings and generate HTML
 
     foreach my $place (sort keys %keyFindings)
     {
-	my $rh = $keyFindings{$place}->{RH};
-	my $t = $keyFindings{$place}->{Temp};
-	debug( "Finding $place - rh=$rh t=$t" ); 
+    	my $rh = $keyFindings{$place}->{RH};
+    	my $t = $keyFindings{$place}->{Temp};
+    	debug( "Finding $place - rh=$rh t=$t" ); 
 
-	my @line;
-	push( @line, $place );
-	my $x;
-	my $age;
+    	my @line;
+    	push( @line, $place );
+    	my $x;
+    	my $age;
 
-	if( ref $t )
-	{
-	    $x = $t;
-	    my ($node, $sensor) = @{$x};
-	    my ($reading,$readingUnits,$lastUpdated,$loc,$unit) = @{$lastSensorValueStructured{$node}->{$sensor}};
-	    push @line, "$reading $readingUnits";
-	    $age = $lastUpdated if $lastUpdated < $age || not defined $age;
-	}
-	else
-	{
-	    push @line, "";
-	}
+    	if( ref $t )
+    	{
+    	    $x = $t;
+    	    my ($node, $sensor) = @{$x};
+    	    my ($reading,$readingUnits,$lastUpdated,$loc,$unit) = @{$lastSensorValueStructured{$node}->{$sensor}};
+    	    push @line, "$reading $readingUnits";
+    	    $age = $lastUpdated if $lastUpdated < $age || not defined $age;
+    	}
+    	else
+    	{
+    	    push @line, "";
+    	}
 
-	if( ref $rh )
-	{
-	    $x = $rh;
-	    my ($node, $sensor) = @{$x};
-	    my ($reading,$readingUnits,$lastUpdated,$loc,$unit) = @{$lastSensorValueStructured{$node}->{$sensor}};
-	    push @line, "$reading $readingUnits";
-	    $age = $lastUpdated if $lastUpdated < $age || not defined $age;
-	}
-	else
-	{
-	    push @line, "";
-	}
-	
-	my $howLongHasItBeen =  time() - $age;
+    	if( ref $rh )
+    	{
+    	    $x = $rh;
+    	    my ($node, $sensor) = @{$x};
+    	    my ($reading,$readingUnits,$lastUpdated,$loc,$unit) = @{$lastSensorValueStructured{$node}->{$sensor}};
+    	    push @line, "$reading $readingUnits";
+    	    $age = $lastUpdated if $lastUpdated < $age || not defined $age;
+    	}
+    	else
+    	{
+    	    push @line, "";
+    	}
+    	
+    	my $howLongHasItBeen =  time() - $age;
 
-	my $timeSince;
-	
-	if( $howLongHasItBeen > 24*60*60 )
-	{
-	    my $r = $howLongHasItBeen / (24*60*60);
-	    $r = sprintf( "%.1f", $r);
-	    $timeSince = "$r days"
-		
-	}
-	else
-	{
-	    my $r = $howLongHasItBeen / (60);
-	    $r = sprintf( "%.1f", $r);
-	    $timeSince = "$r minutes"
-	}
+    	my $timeSince;
+    	
+    	if( $howLongHasItBeen > 24*60*60 )
+    	{
+    	    my $r = $howLongHasItBeen / (24*60*60);
+    	    $r = sprintf( "%.1f", $r);
+    	    $timeSince = "$r days"
+    		
+    	}
+    	else
+    	{
+    	    my $r = $howLongHasItBeen / (60);
+    	    $r = sprintf( "%.1f", $r);
+    	    $timeSince = "$r minutes"
+    	}
 
-	push @line, $timeSince;
+    	push @line, $timeSince;
 
 
-	print FILE "<TR><TD>";
-	print FILE join "</TD><TD>", @line;
-	print FILE "</TR></TD>";
+    	print FILE "<TR><TD>";
+    	print FILE join "</TD><TD>", @line;
+    	print FILE "</TR></TD>";
 	
     }
     
