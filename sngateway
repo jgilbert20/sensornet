@@ -15,18 +15,26 @@ $| = 0;
 my $timeout = 1;
 
 use POSIX qw(strftime);
+use Cwd;
 use IO::Select;
 use IO::Socket; 
 use IO::File;
 use IO::Handle;
 
-my $BASEDIR   = "/home/pi/sensornet";
-my $LOGFN     = "/home/pi/sensornet/mainlog.csv";
-my $SLOWLOGFN = "/home/pi/sensornet/slowlog.csv";
-my $CONFIGFN  = "/home/pi/sensornet/configuration.txt";
-my $DEBUGFN   = "/home/pi/sensornet/debuglog.csv";
-my $RAWFN     = "/home/pi/sensornet/raw.txt";
-my $NODELOGFN = "/home/pi/sensornet/nodelog.txt";
+# Causes system to read a file called simulation.csv which is a "mainlog" formatted file
+my $SIMULATION_MODE = 1;   
+
+# Causes system to assume that its running on a raspberry PU
+my $RPI = 0;
+
+my $BASEDIR   = $RPI ? "/home/pi/sensornet" : getcwd();
+my $LOGFN     = "${BASEDIR}/mainlog.csv";
+my $SLOWLOGFN = "${BASEDIR}/slowlog.csv";
+my $CONFIGFN  = "${BASEDIR}/configuration.txt";
+my $DEBUGFN   = "${BASEDIR}/debuglog.csv";
+my $RAWFN     = "${BASEDIR}/raw.txt";
+my $NODELOGFN = "${BASEDIR}/nodelog.txt";
+my $SIMFN     = "${BASEDIR}/simulation.txt";
 my $XIVELYFN  = "/tmp/xively.csv";
 
 my %CONFIG;
@@ -93,11 +101,9 @@ my $slowNeedsHeader = 1 if ! -e $SLOWLOGFN;
 
 my $tty = undef; # IO::Handle->new();
 
-my $RPI = 1;
-
 use Time::HiRes qw(gettimeofday);
 
-open( LOGFILE, ">>$LOGFN" ) or die "Cannot open log";
+open( LOGFILE, ">>$LOGFN" ) or die "Cannot open log: $LOGFN";
 open( DEBUGFILE, ">>$DEBUGFN" ) or die "Cannot open debug log";
 open( XIVELY, ">$XIVELYFN" ) or die "Cannot open xively $!";
 open( SLOWLOGFILE, ">>$SLOWLOGFN" ) or die "Cannot open slow log $!";
@@ -115,11 +121,14 @@ debug( "SNGateway restarted" );
 
 readConfiguration();
 
+if( $SIMULATION_MODE )
+{exit(0);}
+
 if( $RPI )
 {
     # see "http://stackoverflow.com/questions/10362222/test-in-perl-if-data-is-available-on-deviceserialport" for example
 
-    use Device::SerialPort qw( :PARAM :STAT 0.07 );
+    #use Device::SerialPort qw( :PARAM :STAT 0.07 );
 
     use Symbol qw( gensym );
     my $PORT = "/dev/ttyAMA0";
