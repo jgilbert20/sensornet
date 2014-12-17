@@ -53,7 +53,6 @@ my %lastSensorValueOnly;
 
 my %nodeLocation; 
 
-
 sub readConfiguration
 {
     open C, "<$CONFIGFN" or return;
@@ -600,7 +599,7 @@ sub handleTTYLine
     	    $readingUnits = "F";
     	    $reading =  9/5 *($reading) +32;
     	    
-    	    logSensor( $sequence, $node,      $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId );
+    	    logSensor( $sequence, $node, $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId );
     	}
     }
     elsif( $line =~ /^L/ )
