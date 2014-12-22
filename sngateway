@@ -140,7 +140,7 @@ if( not $SIMULATION_MODE )
     {
         # see "http://stackoverflow.com/questions/10362222/test-in-perl-if-data-is-available-on-deviceserialport" for example
 
-        #use Device::SerialPort qw( :PARAM :STAT 0.07 );
+        use Device::SerialPort qw( :PARAM :STAT 0.07 );
 
         use Symbol qw( gensym );
         my $PORT = "/dev/ttyAMA0";
