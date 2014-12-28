@@ -14,7 +14,7 @@ node		Proto1		Top of stairs
 node		Proto2		Downstairs Desk
 node		Proto3		Master BR
 node		PowerMon	Powerline Monitor
-node		Main		Isabella's Room
+node		Bread1		Isabella's Room
 node		IsaRoom		Living Room mantle
 
 
