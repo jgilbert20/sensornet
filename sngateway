@@ -371,7 +371,8 @@ registerTask( "updatenodes", 10, sub { updateNodes() } );
 
 #registerTask( "xively", 30, sub { relayToXively() } ); 
 
-registerTask( "relay-readings", 15, sub { relayReadings() } ); 
+# this task sends a chart of most recent readings for all sensors to debuglog.csv
+registerTask( "relay-readings", 10, sub { relayReadings() } ); 
 
 registerTask( "writehtml", 10, sub { updateHTML() } ); 
 
