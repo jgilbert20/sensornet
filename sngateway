@@ -379,7 +379,8 @@ registerTask( "updatenodes", 10, sub { updateNodes() } );
 
 #registerTask( "xively", 30, sub { relayToXively() } ); 
 
-registerTask( "relay-readings", 60, sub { relayReadings() } ); 
+# this task sends a chart of most recent readings for all sensors to debuglog.csv
+registerTask( "relay-readings", 10, sub { relayReadings() } ); 
 
 registerTask( "writehtml", 10, sub { updateHTML() } ); 
 
@@ -580,9 +581,9 @@ sub handleTTYLine
     
     $line =~ s/[\r\n]+\Z//;
     
-    # Handle regular "R" data lines
+    # Handle regular "R" data lines, and "C" lines (same format, but C lines came from a compressed codebook)
 
-    if( $line =~ /^R/ )
+    if( $line =~ /^(R|C)/ )
     {
     	my @a = split( ',', $line);
     	
