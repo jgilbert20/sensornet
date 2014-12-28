@@ -92,9 +92,22 @@ sub readConfiguration
     close C;
 }
 
+my $simulatedTime = 0;
+
+sub getNow
+{
+
+    if ($SIMULATION_MODE) 
+    {
+        return $simulatedTime;
+    }
+
+    return time();
+}
+
 sub getLogSuffix
 {
-    my $str = POSIX::strftime( "%Y%m%d", localtime() );
+    my $str = POSIX::strftime( "%Y%m%d", localtime(getNow()) );
     return $str;
 }
 
@@ -140,7 +153,7 @@ if( not $SIMULATION_MODE )
     {
         # see "http://stackoverflow.com/questions/10362222/test-in-perl-if-data-is-available-on-deviceserialport" for example
 
-        use Device::SerialPort qw( :PARAM :STAT 0.07 );
+        # use Device::SerialPort qw( :PARAM :STAT 0.07 );
 
         use Symbol qw( gensym );
         my $PORT = "/dev/ttyAMA0";
@@ -166,10 +179,7 @@ else
 {
     $tty = gensym();
     open( $tty, ">>$SIMOUTFN") or die "Cannot open simulation outfile SIMOUTFN";
-
-
 }
-
 
 if( $needsHeader )
 {
@@ -291,20 +301,18 @@ sub sendTTY
 {
     my $cmd = shift;
 
-#    debug( "Sending [gw]" );
     debug( ">>> $cmd" );
 
     my @arr = split '', $cmd;
 
     while( @arr )
-{
-    print $tty shift @arr;
-    $tty->flush();
-}
+    {
+        print $tty shift @arr;
+        $tty->flush();
+    }
 
     print $tty "\n";
-$tty->flush();
-#    print $tty "$cmd\n";
+    $tty->flush();
 }
 
 
@@ -348,11 +356,11 @@ sub ubihack
     	}
     }
 }
+
 my $foo = 0;
+
 sub updateNodes
 {
-##    sendTTY( "gwup");
-
     $foo=$lastSensorValueOnly{"Xmas-Sensor-ETAPE-DIST"};
     sendTTY( "T104Xmas Tree:$foo in. of H2O");
 }
@@ -454,11 +462,17 @@ sub sendFakeTTY
     }
 }
 
+use Date::Parse;
+
 sub sendSingleFakeTTY
 {
 
     my $line = <SIMFN>;
+
     my @parts = split ',', $line;
+
+    $simulatedTime = Date::Parse::str2time( $parts[0] );
+
     my @important = @parts[1..9];
     my $fakeline = join ',', @important;
 
@@ -473,7 +487,6 @@ sub runSimulatedLoop()
 
     while( 1 )
     {
-
         my $elapsed = Time::HiRes::tv_interval ( $lastSimmed, [Time::HiRes::gettimeofday]);
     #   print "Elapsed $elapsed\n"; 
 
@@ -483,8 +496,6 @@ sub runSimulatedLoop()
 
             $lastSimmed = [Time::HiRes::gettimeofday];
         }
-
-
 
         my $elapsed = Time::HiRes::tv_interval ( $lastRun, [Time::HiRes::gettimeofday]);
     #   print "Elapsed $elapsed\n"; 
@@ -556,7 +567,7 @@ sub handleTTYLine
 {
     my $line = shift;
     
-    my $date = strftime("%Y-%m-%d %H:%M:%S", localtime(time));
+    my $date = strftime("%Y-%m-%d %H:%M:%S", localtime( getNow() ) );
     
     $runStats{"TTY_MSG_READ"} += 1;  
     
@@ -604,7 +615,7 @@ sub handleTTYLine
     }
     elsif( $line =~ /^L/ )
     {
-    	my $date = strftime("%Y-%m-%d %H:%M:%S", localtime(time));
+    	my $date = strftime("%Y-%m-%d %H:%M:%S", localtime(getNow()));
     	my $m = $line;
     	$m =~ s/^L//;
     	if( $m ne $lastNodeLogLine )
@@ -648,7 +659,7 @@ my %lastPlacedInSlowLog;
 sub logSensor
 {
     my ( $sequence, $node, $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId ) = @_;
-    my $date = strftime("%Y-%m-%d %H:%M:%S", localtime(time));
+    my $date = strftime("%Y-%m-%d %H:%M:%S", localtime(getNow()));
 #    my $nice = "";
  
     chomp $originId;
@@ -663,7 +674,7 @@ sub logSensor
     print LOGFILE "$line\n";
     flush LOGFILE; 
     
-    my $xively_date = strftime("%Y-%m-%dT%H:%M:%SZ", localtime(time));
+    my $xively_date = strftime("%Y-%m-%dT%H:%M:%SZ", localtime(getNow()));
 
     $xname =~ s/\s+/\-/g;
 
