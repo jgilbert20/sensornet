@@ -153,7 +153,7 @@ if( not $SIMULATION_MODE )
     {
         # see "http://stackoverflow.com/questions/10362222/test-in-perl-if-data-is-available-on-deviceserialport" for example
 
-        # use Device::SerialPort qw( :PARAM :STAT 0.07 );
+        use Device::SerialPort qw( :PARAM :STAT 0.07 );
 
         use Symbol qw( gensym );
         my $PORT = "/dev/ttyAMA0";
@@ -849,7 +849,7 @@ HTML
     	push @line, $timeSince;
 
 
-    	print FILE "<TR><TD>";
+    	print FILE "<TR>";
     	print FILE join "</TD><TD>", @line;
     	print FILE "</TR></TD>";
 	
@@ -857,6 +857,282 @@ HTML
     
 
 
+
+
+print FILE <<HTML;
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+HTML
+
+    close FILE;
+
+
+
+
+
+
+
+
+
+
+
+
+
+    open FILE, ">$BASEDIR/www/sparks.html" or die "cannot write to file";
+
+    print FILE <<HTML;
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Sensornet</title>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="static/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="static/css/main.css'" type="text/css" />
+HTML
+
+
+    my %keyFindings;
+
+    # First, batch up the data that we've accumulated into key findings by location
+
+    foreach my $node (sort keys %lastSensorValueStructured)
+    {
+    	foreach my $sensor (sort keys %{$lastSensorValueStructured{$node}} )
+    	{
+    	    my ($reading,$readingUnits,$lastUpdated,$loc,$unit) = @{$lastSensorValueStructured{$node}->{$sensor}};
+
+    	    my $xname = [$node,$sensor];
+    	    my $place = $loc || $node;
+
+    	    if( $sensor eq 'HTU21D-RH' )
+    	    {
+    		  $keyFindings{$place}->{RH} = $xname;
+    	    }
+
+    	    if( $sensor eq 'HTU21D-Temp-F' )
+    	    {
+    		  $keyFindings{$place}->{Temp} = $xname;
+    	    }
+
+    	    if( $unit eq 'F' )
+    	    {
+    		  $keyFindings{$place}->{Temp} = $xname if not exists $keyFindings{$place}->{Temp};
+    	    }
+
+    	    if( $unit eq '%RH' )
+    	    {
+    		  $keyFindings{$place}->{RH} = $xname if not exists $keyFindings{$place}->{RH};
+    	    }	  
+    	}
+    }
+
+
+    my $highChartId = 0;
+
+
+    foreach my $place (sort keys %keyFindings)
+    {
+
+
+print FILE <<HTML;
+
+        <script type="text/javascript">
+	\$(function() {
+	   \$('#spark_${highChartId}').highcharts({
+	      chart: {
+		backgroundColor: null,
+		borderWidth: 0,
+		type: 'area',
+		margin: [2, 0, 2, 0],
+		width: 120,
+		height: 20,
+		style: {
+		  overflow: 'visible'
+		  },
+		    skipClone: true
+		},
+		  title: {
+		    text: ''
+		},
+		      credits: {
+                        enabled: false
+                    },
+			  xAxis: {
+			    labels: {
+			      enabled: false
+			      },
+				title: {
+				  text: null
+			      },
+				    startOnTick: false,
+				    endOnTick: false,
+				    tickPositions: []
+			},
+				  yAxis: {
+				    endOnTick: false,
+				    startOnTick: false,
+				    labels: {
+				      enabled: false
+				      },
+					title: {
+					  text: null
+				      },
+					    tickPositions: [0]
+				},
+					  legend: {
+					    enabled: false
+					},
+					      tooltip: {
+						backgroundColor: '#ffffff',
+						borderWidth: 0,
+						shadow: false,
+						useHTML: true,
+						hideDelay: 0,
+						shared: true,
+						padding: 0,
+						positioner: function (w, h, point) {
+						    return { x: point.plotX - w / 2, y: point.plotY - h};
+                        }
+                    },
+                    plotOptions: {
+                        series: {
+                            animation: false,
+                            lineWidth: 1,
+                            shadow: false,
+                            states: {
+                                hover: {
+                                    lineWidth: 1
+                                }
+			      },
+                            marker: {
+			      radius: 1,
+			      states: {
+				hover: {
+				  radius: 2
+				  }
+                                }
+			      },
+                            fillOpacity: 0.25
+						      },
+			      column: {
+				negativeColor: '#910000',
+				borderColor: 'silver'
+			    }
+						    },
+			   series: [{
+			     		    name: 'Tokyo',
+	       			data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+		      			   }]
+						})
+					     });
+        </script>
+
+HTML
+
+$highChartId++;
+	   }
+	   
+	   
+	   print FILE <<HTML;
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="jumbotron col-sm-12">
+                <h1>Sensornet</h1>
+                <p>Key sensors</p>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table table-condensed">
+                        <th>Location</th><th>Temp</th><th>%RH</th><th>Updated</th>
+
+HTML
+
+
+
+
+
+
+    # Next, iterate over key findings and generate HTML
+
+	   my $curSparkId = 0;
+
+    foreach my $place (sort keys %keyFindings)
+    {
+    	my $rh = $keyFindings{$place}->{RH};
+    	my $t = $keyFindings{$place}->{Temp};
+    	debug( "Finding $place - rh=$rh t=$t" ); 
+
+	my $line = "";
+    	$line .= "<td>$place</td>";
+
+    	my $x;
+    	my $age;
+
+    	if( ref $t )
+    	{
+    	    $x = $t;
+    	    my ($node, $sensor) = @{$x};
+    	    my ($reading,$readingUnits,$lastUpdated,$loc,$unit) = @{$lastSensorValueStructured{$node}->{$sensor}};
+    	$line .= "<td><div id=\"spark_${curSparkId}\"></div>$reading $readingUnits<br/><br/><br/><br/><br/></td>";
+#    	    push @line, "$reading $readingUnits";
+    	    $age = $lastUpdated if $lastUpdated < $age || not defined $age;
+    	}
+    	else
+    	{
+	    $line .= "<td></td>";
+    	}
+
+    	if( ref $rh )
+    	{
+    	    $x = $rh;
+    	    my ($node, $sensor) = @{$x};
+    	    my ($reading,$readingUnits,$lastUpdated,$loc,$unit) = @{$lastSensorValueStructured{$node}->{$sensor}};
+	    $line .= "<td>$reading $readingUnits</td>";
+    	    $age = $lastUpdated if $lastUpdated < $age || not defined $age;
+    	}
+    	else
+    	{
+	    $line .= "<td></td>";
+    	}
+    	
+    	my $howLongHasItBeen =  time() - $age;
+
+    	my $timeSince;
+    	
+    	if( $howLongHasItBeen > 24*60*60 )
+    	{
+    	    my $r = $howLongHasItBeen / (24*60*60);
+    	    $r = sprintf( "%.1f", $r);
+    	    $timeSince = "$r days"
+    		
+    	}
+    	else
+    	{
+    	    my $r = $howLongHasItBeen / (60);
+    	    $r = sprintf( "%.1f", $r);
+    	    $timeSince = "$r minutes"
+    	}
+
+    	    $line .= "<td>$timeSince</td>";
+
+    	print FILE "<TR>\n";
+    	print FILE $line;
+    	print FILE "\n</TR>\n";
+	
+	$curSparkId++;
+    }
+    
 
 print FILE <<HTML;
                     </table>
