@@ -47,6 +47,7 @@ my %CONFIG;
 
 my %lastSensorValue;
 my %lastSensorValueStructured;
+my %sensorValueHistory;
 my %lastHeardNode;
 my %lastHeardSensor;
 my %lastSensorValueOnly;
@@ -359,10 +360,12 @@ sub ubihack
 
 my $foo = 0;
 
+
+# etap distance calculator, no longer in use
 sub updateNodes
 {
-    $foo=$lastSensorValueOnly{"Xmas-Sensor-ETAPE-DIST"};
-    sendTTY( "T104Xmas Tree:$foo in. of H2O");
+    #$foo=$lastSensorValueOnly{"Xmas-Sensor-ETAPE-DIST"};
+    #sendTTY( "T104Xmas Tree:$foo in. of H2O");
 }
 
 registerTask( "uptime", 60, sub { logUptime() } ); 
@@ -697,6 +700,18 @@ sub logSensor
     $lastSensorValueOnly{"$node-$sensor"} = $reading;
     $lastHeardNode{$node} = time();
     $lastHeardSensor{"$node-$sensor"} = time();
+
+
+    push @{$sensorValueHistory{$node}->{$sensor}}, [time(), $reading];
+
+    my $sizeOfHistory = scalar @{$sensorValueHistory{$node}->{$sensor}};
+
+    if( $sizeOfHistory+0 > 1000 )
+    {
+	debug( "Purging.. ($sizeOfHistory)");
+	shift @{sensorValueHistory{$node}->{$sensor}};
+    }
+
 }
 
 
@@ -872,14 +887,7 @@ HTML
 
 
 
-
-
-
-
-
-
-
-
+########################################### Sparkline handling code
 
 
     open FILE, ">$BASEDIR/www/sparks.html" or die "cannot write to file";
@@ -937,11 +945,50 @@ HTML
 
     my $highChartId = 0;
 
+	# This loop runs for every row of the final table generating chart javascript
 
     foreach my $place (sort keys %keyFindings)
     {
 
+	my $xname = $keyFindings{$place}->{Temp};
+	my ($node,$sensor) = @$xname;
+	
+	my $seriesName = jsescape($place);
 
+	# Accumulator for the JS array we ultimately will pass to highcharts
+	my $data = "";
+
+	
+	debug( "Iterating over tuples to generate $node, $sensor highcart ($place)" ); 
+
+	my $y_axis_min = 99999999;	
+	my $y_axis_max = -99999999;
+
+	foreach my $tuple (@{$sensorValueHistory{$node}->{$sensor}})
+	{
+
+	    my( $time, $value ) = @$tuple;
+	    my $relativeTime = $time - time();
+	    $data .= "[$relativeTime,$value],";
+	    # debug( $data );
+
+	    if( $y_axis_min > $value )
+{
+		$y_axis_min = $value;
+}
+	    if( $y_axis_max < $value )
+{
+		$y_axis_max = $value;
+}
+
+
+
+	}
+
+$y_axis_min = int( $y_axis_min );
+$y_axis_max = int( $y_axis_max ) + 1;
+
+	
 print FILE <<HTML;
 
         <script type="text/javascript">
@@ -953,7 +1000,7 @@ print FILE <<HTML;
 		type: 'area',
 		margin: [2, 0, 2, 0],
 		width: 120,
-		height: 20,
+		height: 40,
 		style: {
 		  overflow: 'visible'
 		  },
@@ -977,6 +1024,8 @@ print FILE <<HTML;
 				    tickPositions: []
 			},
 				  yAxis: {
+				    min: $y_axis_min,
+				    max: $y_axis_max,
 				    endOnTick: false,
 				    startOnTick: false,
 				    labels: {
@@ -1028,8 +1077,8 @@ print FILE <<HTML;
 			    }
 						    },
 			   series: [{
-			     		    name: 'Tokyo',
-	       			data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+			     		    name: '$seriesName',
+	       			data: [$data]
 		      			   }]
 						})
 					     });
@@ -1084,7 +1133,7 @@ HTML
     	    $x = $t;
     	    my ($node, $sensor) = @{$x};
     	    my ($reading,$readingUnits,$lastUpdated,$loc,$unit) = @{$lastSensorValueStructured{$node}->{$sensor}};
-    	$line .= "<td><div id=\"spark_${curSparkId}\"></div>$reading $readingUnits<br/><br/><br/><br/><br/></td>";
+    	$line .= "<td><div id=\"spark_${curSparkId}\"></div>$reading $readingUnits<br/></td>";
 #    	    push @line, "$reading $readingUnits";
     	    $age = $lastUpdated if $lastUpdated < $age || not defined $age;
     	}
@@ -1197,3 +1246,11 @@ END:
 
 
 
+
+sub jsescape
+{
+    my $v = $_;
+    $v =~ s/\'|\\//g;
+    return $v;
+
+}
