@@ -752,7 +752,7 @@ sub logSensor
 
     if( $sizeOfHistory + 0 > 1000 )
     {
-        debug("Purging.. ($sizeOfHistory)");
+        # debug("Purging.. ($sizeOfHistory)");
         shift @{ sensorValueHistory {$node}->{$sensor} };
     }
 
@@ -761,6 +761,12 @@ sub logSensor
 sub updateHTML
 {
     # return();
+
+    my $LINKBAR = <<HTML;
+ <a href="index.html">home</a> 
+ <a href="temps.html">temp chart</a> 
+ <a href="sparks.html">sparlines</a> 
+HTML
 
     `mkdir -p $BASEDIR/www`;
     open FILE, ">$BASEDIR/www/sensors.txt" or die "cannot write to file";
@@ -803,11 +809,14 @@ sub updateHTML
             <div class="jumbotron col-sm-12">
                 <h1>Sensornet</h1>
                 <p>Key sensors</p>
+                <p>$LINKBAR</p>
             </div>
             <div class="row">
                 <div class="col-sm-12">
                     <table class="table table-condensed">
-                        <th>Location</th><th>Temp</th><th>%RH</th><th>Updated</th>
+                        <tr><th>Location</th><th>Temp</th><th>%RH</th><th>Updated</th></tr>
+
+
 HTML
 
     my %keyFindings;
@@ -910,9 +919,9 @@ HTML
 
         push @line, $timeSince;
 
-        print FILE "<TR>";
-        print FILE join "</TD><TD>", @line;
-        print FILE "</TR></TD>";
+        print FILE "\n\n<TR>\n<td>";
+        print FILE join "</TD>\n<TD>", @line;
+        print FILE "</TD></TR>\n";
 
     }
 
@@ -1150,6 +1159,7 @@ HTML
             <div class="jumbotron col-sm-12">
                 <h1>Sensornet</h1>
                 <p>Key sensors</p>
+                <p>$LINKBAR</p>
             </div>
             <div class="row">
                 <div class="col-sm-12">
@@ -1325,6 +1335,7 @@ HTML
             <div class="jumbotron col-sm-12">
                 <h1>Sensornet</h1>
                 <p>Key sensors</p>
+                <p>$LINKBAR</p>
             </div>
             <div class="row">
       <div id="chart" style="height: 400px; min-width: 310px"></div>
