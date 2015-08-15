@@ -7,7 +7,20 @@
 
 # http://www.felixgers.de/teaching/perl/perl_DBI.html
 
+
+# here is my .perltidyRC
+# -bl # jeremy favorite
+# -pt=2 # sorta light tighter parens
+# -bbt=2
+# -nolq
+# -nsak="*" # don't add those stupid spaces after keywords(
+
+
+
+
+
 use strict;
+
 #use warnings;
 
 $| = 0;
@@ -17,20 +30,20 @@ my $timeout = 1;
 use POSIX qw(strftime);
 use Cwd;
 use IO::Select;
-use IO::Socket; 
+use IO::Socket;
 use IO::File;
 use IO::Handle;
 use Getopt::Long;
 
 # Causes system to read a file called simulation.csv which is a "mainlog" formatted file
-my $SIMULATION_MODE = 0;   
+my $SIMULATION_MODE = 0;
 
 # Causes system to assume that its running on a raspberry PU
 my $RPI = 1;
 
 &GetOptions( 'S|simulation' => \$SIMULATION_MODE );
 
-$RPI = 0 if( $SIMULATION_MODE );
+$RPI = 0 if($SIMULATION_MODE);
 
 my $BASEDIR   = $RPI ? "/home/pi/sensornet" : getcwd();
 my $LOGFN     = "${BASEDIR}/mainlog.csv";
@@ -52,44 +65,46 @@ my %lastHeardNode;
 my %lastHeardSensor;
 my %lastSensorValueOnly;
 
-my %nodeLocation; 
+my %nodeLocation;
 
 sub readConfiguration
 {
     open C, "<$CONFIGFN" or return;
 
-    while( <C> )
+    while(<C>)
     {
-    	my $line = $_;
-    	chomp $line;
-    	debug( "CONFIG: Parsing line from CONFIG: $line" );
-    	next if /^\#/;
+        my $line = $_;
+        chomp $line;
+        debug("CONFIG: Parsing line from CONFIG: $line");
+        next if /^\#/;
 
-	my @parsedLine = split( /\s*\t+\s*/, $line );
-	
+        my @parsedLine = split( /\s*\t+\s*/, $line );
 
-	my $cmd = shift @parsedLine;
-	if( $cmd eq 'sensor' )
-	{
-	    my $c = @parsedLine;
-	    debug( "CONFIG: Sensorline: Has $c elements" );
+        my $cmd = shift @parsedLine;
+        if( $cmd eq 'sensor' )
+        {
+            my $c = @parsedLine;
+            debug("CONFIG: Sensorline: Has $c elements");
 
-	    next unless $c == 5; 
-	    my( $node, $sensor, $nicename, $varname, $locOverride ) = @parsedLine;
+            next unless $c == 5;
+            my( $node, $sensor, $nicename, $varname, $locOverride )
+                = @parsedLine;
 
-	    debug( "CONFIG: Sensorline: $node-$sensor -> [$nicename,$varname,$locOverride]" );
-	    $CONFIG{"$node-$sensor"} = [$nicename,$varname,$locOverride];
-	}
+            debug(
+                "CONFIG: Sensorline: $node-$sensor -> [$nicename,$varname,$locOverride]"
+            );
+            $CONFIG{"$node-$sensor"} = [ $nicename, $varname, $locOverride ];
+        }
 
-	if( $cmd eq 'node' )
-	{
-	    my( $node, $location ) = @parsedLine;
-	    debug( "CONFIG: Nodeline: $node -> loc:[$location]" );
-	    $nodeLocation{$node} = $location;
-	} 
+        if( $cmd eq 'node' )
+        {
+            my( $node, $location ) = @parsedLine;
+            debug("CONFIG: Nodeline: $node -> loc:[$location]");
+            $nodeLocation{$node} = $location;
+        }
 
     }
-    
+
     close C;
 }
 
@@ -98,7 +113,7 @@ my $simulatedTime = 0;
 sub getNow
 {
 
-    if ($SIMULATION_MODE) 
+    if($SIMULATION_MODE)
     {
         return $simulatedTime;
     }
@@ -108,7 +123,7 @@ sub getNow
 
 sub getLogSuffix
 {
-    my $str = POSIX::strftime( "%Y%m%d", localtime(getNow()) );
+    my $str = POSIX::strftime( "%Y%m%d", localtime( getNow() ) );
     return $str;
 }
 
@@ -116,33 +131,33 @@ my $currentLogSuffix = getLogSuffix();
 
 my $lastNodeLogLine = "";
 
-my $needsHeader = 1 if ! -e $LOGFN;
-my $slowNeedsHeader = 1 if ! -e $SLOWLOGFN;
+my $needsHeader     = 1 if !-e $LOGFN;
+my $slowNeedsHeader = 1 if !-e $SLOWLOGFN;
 
-my $tty = undef; # IO::Handle->new();
+my $tty = undef;    # IO::Handle->new();
 
 use Time::HiRes qw(gettimeofday);
 
-open( LOGFILE, ">>$LOGFN" ) or die "Cannot open log: $LOGFN";
-open( DEBUGFILE, ">>$DEBUGFN" ) or die "Cannot open debug log";
-open( XIVELY, ">$XIVELYFN" ) or die "Cannot open xively $!";
+open( LOGFILE,     ">>$LOGFN" )     or die "Cannot open log: $LOGFN";
+open( DEBUGFILE,   ">>$DEBUGFN" )   or die "Cannot open debug log";
+open( XIVELY,      ">$XIVELYFN" )   or die "Cannot open xively $!";
 open( SLOWLOGFILE, ">>$SLOWLOGFN" ) or die "Cannot open slow log $!";
 
-if( $SIMULATION_MODE )
-{ 
+if($SIMULATION_MODE)
+{
     open( SIMFN, "<$SIMFN" ) or die "Cannot open simulation log $!";
 }
 
 my $saveRAW = 0;
 
-if( $saveRAW )
+if($saveRAW)
 {
     open( RAWFILE, ">>$RAWFN" ) or die "Cannot open log: $!";
 }
 
 open( NODELOGFILE, ">>$NODELOGFN" ) or die "Cannot open log: $!";
 
-debug( "SNGateway restarted" );
+debug("SNGateway restarted");
 
 readConfiguration();
 
@@ -150,9 +165,9 @@ readConfiguration();
 
 if( not $SIMULATION_MODE )
 {
-    if( $RPI )
+    if($RPI)
     {
-        # see "http://stackoverflow.com/questions/10362222/test-in-perl-if-data-is-available-on-deviceserialport" for example
+# see "http://stackoverflow.com/questions/10362222/test-in-perl-if-data-is-available-on-deviceserialport" for example
 
         use Device::SerialPort qw( :PARAM :STAT 0.07 );
 
@@ -162,71 +177,74 @@ if( not $SIMULATION_MODE )
         $tty = gensym();
         my $ob = tie( *$tty, "Device::SerialPort", $PORT );
 
-        #    my $ob = Device::SerialPort->new($PORT)  || die "Can't open $PORT: $!\n";
+#    my $ob = Device::SerialPort->new($PORT)  || die "Can't open $PORT: $!\n";
         $ob->baudrate(57600);
         $ob->write_settings;
 
-        debug( "Opening port" );
+        debug("Opening port");
 
         #   open( TTY, "+</dev/ttyAMA0" ) or die "Cannot open tty";
         #  $tty = *TTY;
     }
     else
     {
-    #    sysopen( $tty , "neep", O_RDWR) or die "Sysopen failed";    
+        #    sysopen( $tty , "neep", O_RDWR) or die "Sysopen failed";
     }
 }
 else
 {
     $tty = gensym();
-    open( $tty, ">>$SIMOUTFN") or die "Cannot open simulation outfile SIMOUTFN";
+    open( $tty, ">>$SIMOUTFN" )
+        or die "Cannot open simulation outfile SIMOUTFN";
 }
 
-if( $needsHeader )
+if($needsHeader)
 {
-    print LOGFILE "TS,Sequence,Node,Millis,Sensor,Reading,ReadingUnits,Memo,RSSI,OriginId,Nicename,Location\n";
+    print LOGFILE
+        "TS,Sequence,Node,Millis,Sensor,Reading,ReadingUnits,Memo,RSSI,OriginId,Nicename,Location\n";
 }
 
-if( $slowNeedsHeader )
+if($slowNeedsHeader)
 {
-    print SLOWLOGFILE "TS,Sequence,Node,Millis,Sensor,Reading,ReadingUnits,Memo,RSSI,OriginId,Nicename,Location\n";
+    print SLOWLOGFILE
+        "TS,Sequence,Node,Millis,Sensor,Reading,ReadingUnits,Memo,RSSI,OriginId,Nicename,Location\n";
 }
 
-debug( "Starting listener" );
+debug("Starting listener");
 
-my $lsn = IO::Socket::INET->new(Listen => 1, LocalPort => 8080) or die "Cannot bind";
-my $sel = IO::Select->new( $lsn );
-$sel->add( $tty );
+my $lsn = IO::Socket::INET->new( Listen => 1, LocalPort => 8080 )
+    or die "Cannot bind";
+my $sel = IO::Select->new($lsn);
+$sel->add($tty);
 
-debug( "Select loop setup completed" );
+debug("Select loop setup completed");
 
-my $DB_user    = 'postgres';
-my $DB_name    = 'sensor';
-my $DB_pwd     = '';
+my $DB_user = 'postgres';
+my $DB_name = 'sensor';
+my $DB_pwd  = '';
 
 my %taskRegistry;
+
 sub debug
 {
-	my @arg = @_;
+    my @arg = @_;
 
-	my ($s,$ms) =
-	    gettimeofday();
-	
-	my $ts = localtime( $s ) ;
-	
-	my $str = POSIX::strftime( "%Y/%m/%d %H:%M:%S", localtime $s );
+    my( $s, $ms ) = gettimeofday();
 
-	my $msf = sprintf( "%06d", $ms );
-	print STDERR "$str.$msf: ";
-	print STDERR @arg;
-	print STDERR "\n";
+    my $ts = localtime($s);
 
-	print DEBUGFILE "$str.$msf: ";
-	print DEBUGFILE @arg;
-	print DEBUGFILE "\n";
-	
-	DEBUGFILE->flush();
+    my $str = POSIX::strftime( "%Y/%m/%d %H:%M:%S", localtime $s );
 
+    my $msf = sprintf( "%06d", $ms );
+    print STDERR "$str.$msf: ";
+    print STDERR @arg;
+    print STDERR "\n";
+
+    print DEBUGFILE "$str.$msf: ";
+    print DEBUGFILE @arg;
+    print DEBUGFILE "\n";
+
+    DEBUGFILE->flush();
 
 }
 
@@ -245,68 +263,66 @@ sub logSysStatsLight
 
     open MEM, '</proc/meminfo' or warn "cannot open mem";
 
-    while( <MEM> )
+    while(<MEM>)
     {
-    	my( $p, $v, $unit) = split /[\s\:]+/;
-    	if( $p eq "MemFree" or $p eq "Active" or $p eq "Cached" )
-    	{
-    	    logLocalSensor( "Mem-$p", $v / 1024, "MB", "" );
-    	}
+        my( $p, $v, $unit ) = split /[\s\:]+/;
+        if( $p eq "MemFree" or $p eq "Active" or $p eq "Cached" )
+        {
+            logLocalSensor( "Mem-$p", $v / 1024, "MB", "" );
+        }
     }
 
     close MEM;
 }
 
-
 sub logUptime
 {
     my $uptime = `cat /proc/uptime`;
-    my ($upsec, $idlesec) = split /\s+/, $uptime;
+    my( $upsec, $idlesec ) = split /\s+/, $uptime;
 
-    logLocalSensor( "Uptime", $upsec, "seconds", "" );
+    logLocalSensor( "Uptime",   $upsec,   "seconds", "" );
     logLocalSensor( "Idletime", $idlesec, "seconds", "" );
 
-    # note: discovered that /sys/class/thermal/thermal_zone0/temp is the same thing
+# note: discovered that /sys/class/thermal/thermal_zone0/temp is the same thing
 
-    debug( "Query temp via vcgencmd - started" );
-    
+    debug("Query temp via vcgencmd - started");
+
     my $temp = `vcgencmd measure_temp`;
 
-    debug( "Query temp via vcgencmd - completed" );
+    debug("Query temp via vcgencmd - completed");
 
     $temp =~ /temp=(\d+\.?\d?)/;
 
     logLocalSensor( "MPU Temp", $1, "C", "" );
-    logLocalSensor( "MPU Temp-F", $1 * 9.0 / 5 + 32 , "F", "" );
+    logLocalSensor( "MPU Temp-F", $1 * 9.0 / 5 + 32, "F", "" );
 
-    debug( "Checking file system" );
+    debug("Checking file system");
 
     open DFCMD, '/bin/df $BASE|' or warn "could not open DF command";
     my $header = <DFCMD>;
-    my $fs = <DFCMD>;
+    my $fs     = <DFCMD>;
     close DFCMD or warn "Could not close DF command";
-    
-#Filesystem     1K-blocks    Used Available Use% Mounted on
-# rootfs           3749072 2667756    893576  75% /
+
+    #Filesystem     1K-blocks    Used Available Use% Mounted on
+    # rootfs           3749072 2667756    893576  75% /
 
     my( $filesystem, $tot, $used, $avail, $pct, $tree ) = split /\s+/, $fs;
 
     $pct =~ s/\%//;
 
-    logLocalSensor( "Disk-Avail", $avail/1000, "M", "" );
-    logLocalSensor( "Disk-Percentage", $pct, "%", "" );
+    logLocalSensor( "Disk-Avail",      $avail / 1000, "M", "" );
+    logLocalSensor( "Disk-Percentage", $pct,          "%", "" );
 }
-
 
 sub sendTTY
 {
     my $cmd = shift;
 
-    debug( ">>> $cmd" );
+    debug(">>> $cmd");
 
     my @arr = split '', $cmd;
 
-    while( @arr )
+    while(@arr)
     {
         print $tty shift @arr;
         $tty->flush();
@@ -316,7 +332,6 @@ sub sendTTY
     $tty->flush();
 }
 
-
 my %sentToUbi;
 
 sub ubihack
@@ -325,41 +340,43 @@ sub ubihack
 #curl -XPOST -H 'Content-Type: application/json;' -H 'X-Auth-Token: MRGzWEagPVr2GH67mUD4DFMsEsjs63fVxTao1oP2km8njRT1kE5jsW1Wy3vK' -d '{"value": 24}' http://app.ubidots.com/api/v1.6/variables/5462b94a7625427b3e4bceb0/values
 
     next if $SIMULATION_MODE;
-    
-    debug( "UBI: Dumping sensors" );
-    foreach my $k (sort keys %lastSensorValueOnly )
+
+    debug("UBI: Dumping sensors");
+    foreach my $k ( sort keys %lastSensorValueOnly )
     {
-    	if( exists $CONFIG{$k} )
-    	{
-    	    my $val = $lastSensorValueOnly{$k} ;
-    	    my ($nice,$varkey,$locOverride) = @{$CONFIG{$k}};
-    	    next unless defined $varkey;
-    	    
-    	    my $d = ( $lastHeardSensor{$k} - $sentToUbi{$k} );
+        if( exists $CONFIG{$k} )
+        {
+            my $val = $lastSensorValueOnly{$k};
+            my( $nice, $varkey, $locOverride ) = @{ $CONFIG{$k} };
+            next unless defined $varkey;
 
-    	    debug( "UBI: Found for $k - last sent $sentToUbi{$k} <> $lastHeardSensor{$k} --> [$d]" );
-    	    my $g = 60*10;
-    	    if( $d <= $g  )
-    	    {
-        		debug( "UBI: Skipping beacuse $d <= $g -- not enough new data" );
-        		next;
-    	    }
-    	    
-    	    my $cmd =  qq^curl -XPOST -H 'Content-Type: application/json;' -H 'X-Auth-Token: MRGzWEagPVr2GH67mUD4DFMsEsjs63fVxTao1oP2km8njRT1kE5jsW1Wy3vK' -d '[{"variable": "$varkey", "value": $val} ]' http://things.ubidots.com/api/v1.6/collections/values^;
+            my $d = ( $lastHeardSensor{$k} - $sentToUbi{$k} );
 
-    	    
-    	    debug ("UBI: $cmd" );
-    	    `$cmd`;
-    	    debug( "Result: at:$@ q:$?" );
-    	    
-    	    $sentToUbi{$k} = time();
-    	    
-    	}
+            debug(
+                "UBI: Found for $k - last sent $sentToUbi{$k} <> $lastHeardSensor{$k} --> [$d]"
+            );
+            my $g = 60 * 10;
+            if( $d <= $g )
+            {
+                debug(
+                    "UBI: Skipping beacuse $d <= $g -- not enough new data");
+                next;
+            }
+
+            my $cmd
+                = qq^curl -XPOST -H 'Content-Type: application/json;' -H 'X-Auth-Token: MRGzWEagPVr2GH67mUD4DFMsEsjs63fVxTao1oP2km8njRT1kE5jsW1Wy3vK' -d '[{"variable": "$varkey", "value": $val} ]' http://things.ubidots.com/api/v1.6/collections/values^;
+
+            debug("UBI: $cmd");
+            `$cmd`;
+            debug("Result: at:$@ q:$?");
+
+            $sentToUbi{$k} = time();
+
+        }
     }
 }
 
 my $foo = 0;
-
 
 # etap distance calculator, no longer in use
 sub updateNodes
@@ -368,26 +385,26 @@ sub updateNodes
     #sendTTY( "T104Xmas Tree:$foo in. of H2O");
 }
 
-registerTask( "uptime", 60, sub { logUptime() } ); 
+registerTask( "uptime", 60, sub { logUptime() } );
 
-registerTask( "ubihack", 30 , sub { ubihack() } ); 
+registerTask( "ubihack", 30, sub { ubihack() } );
 
-registerTask( "configuration", 120, sub { readConfiguration() } ); 
+registerTask( "configuration", 120, sub { readConfiguration() } );
 
-registerTask( "lightStats", 20, sub { logSysStatsLight() } ); 
+registerTask( "lightStats", 20, sub { logSysStatsLight() } );
 
-registerTask( "rotateLogs", 300, sub { rotateLogs() } ); 
+registerTask( "rotateLogs", 300, sub { rotateLogs() } );
 
-registerTask( "updatenodes", 10, sub { updateNodes() } ); 
+registerTask( "updatenodes", 10, sub { updateNodes() } );
 
-#registerTask( "xively", 30, sub { relayToXively() } ); 
+#registerTask( "xively", 30, sub { relayToXively() } );
 
 # this task sends a chart of most recent readings for all sensors to debuglog.csv
-registerTask( "relay-readings", 10, sub { relayReadings() } ); 
+registerTask( "relay-readings", 10, sub { relayReadings() } );
 
-registerTask( "writehtml", 10, sub { updateHTML() } ); 
+registerTask( "writehtml", 10, sub { updateHTML() } );
 
-#registerTask( "dumpps", 50, sub { `mkdir -p pslog`; 
+#registerTask( "dumpps", 50, sub { `mkdir -p pslog`;
 #				  `date >> uplog.txt`;
 #				  `uptime >> uplog.txt`;
 #				  `vcgencmd measure_temp >> uplog.txt`;
@@ -395,59 +412,61 @@ registerTask( "writehtml", 10, sub { updateHTML() } );
 
 sub rotateLogs()
 {
-    debug( "rotate: Checking for log rotation..." );
+    debug("rotate: Checking for log rotation...");
 
     if( $currentLogSuffix ne getLogSuffix() )
     {
-    	debug( "rotate: verifying path" );
-    	`mkdir $BASEDIR/log-archive`;
-    	debug( "rotate: Closing existing logfile" );
-    	close DEBUGFILE;
-    	`mv $DEBUGFN $BASEDIR/log-archive/debuglog.csv-$currentLogSuffix`;
-    	open( DEBUGFILE, ">>$DEBUGFN" ) or die "Cannot open debug log for rotate: $!";
-    	debug( "rotate: New logfile started! old: $BASEDIR/log-archive/$DEBUGFN-$currentLogSuffix" );
+        debug("rotate: verifying path");
+        `mkdir $BASEDIR/log-archive`;
+        debug("rotate: Closing existing logfile");
+        close DEBUGFILE;
+        `mv $DEBUGFN $BASEDIR/log-archive/debuglog.csv-$currentLogSuffix`;
+        open( DEBUGFILE, ">>$DEBUGFN" )
+            or die "Cannot open debug log for rotate: $!";
+        debug(
+            "rotate: New logfile started! old: $BASEDIR/log-archive/$DEBUGFN-$currentLogSuffix"
+        );
 
-    	$currentLogSuffix = getLogSuffix();
+        $currentLogSuffix = getLogSuffix();
     }
 }
 
 sub registerTask
 {
-	my $tName = shift;
-	my $interval = shift;
-	my $code = shift;
+    my $tName    = shift;
+    my $interval = shift;
+    my $code     = shift;
 
-	$taskRegistry{$tName} = [$interval, 0, $code, $tName];
+    $taskRegistry{$tName} = [ $interval, 0, $code, $tName ];
 }
 
 sub runScheduledTasks
 {
-   # debug "Housekeeping -- Event recv";	
-    
-    foreach my $n (keys %taskRegistry)
+    # debug "Housekeeping -- Event recv";
+
+    foreach my $n ( keys %taskRegistry )
     {
-    	my $t = $taskRegistry{$n};
-    	
-    	# debug( "Checking task $n -> @$t");
-    	if( time() - $t->[1] >  $t->[0] )
-    	{		
-    	    debug( "Task [$t->[3]] has come due..");
-    	    
-    	    $t->[1] = time();
-    	    &{$t->[2]};
-    	}
+        my $t = $taskRegistry{$n};
+
+        # debug( "Checking task $n -> @$t");
+        if( time() - $t->[1] > $t->[0] )
+        {
+            debug("Task [$t->[3]] has come due..");
+
+            $t->[1] = time();
+            &{ $t->[2] };
+        }
     }
 }
 
-
 my %runStats;
 
-my $lastRun = [0,0];
-my $lastSimmed = [0,0];
+my $lastRun    = [ 0, 0 ];
+my $lastSimmed = [ 0, 0 ];
 
-debug( "Beginning listen loop:" );
+debug("Beginning listen loop:");
 
-if( $SIMULATION_MODE )
+if($SIMULATION_MODE)
 {
     runSimulatedLoop();
 }
@@ -459,8 +478,9 @@ else
 sub sendFakeTTY
 {
     my $c = shift;
+
     #debug( "Generating [$c] of fake data from log");
-    for( my $i = 0 ; $i < $c ; $i++ )
+    for( my $i = 0; $i < $c; $i++ )
     {
         sendSingleFakeTTY();
     }
@@ -477,32 +497,35 @@ sub sendSingleFakeTTY
 
     $simulatedTime = Date::Parse::str2time( $parts[0] );
 
-    my @important = @parts[1..9];
+    my @important = @parts[ 1 .. 9 ];
     my $fakeline = join ',', @important;
 
     # debug( "<<< $fakeline" );
-    handleTTYLine( $fakeline );
+    handleTTYLine($fakeline);
 }
-
 
 sub runSimulatedLoop()
 {
-    debug( "Starting simulated loop");
+    debug("Starting simulated loop");
 
-    while( 1 )
+    while(1)
     {
-        my $elapsed = Time::HiRes::tv_interval ( $lastSimmed, [Time::HiRes::gettimeofday]);
-    #   print "Elapsed $elapsed\n"; 
+        my $elapsed = Time::HiRes::tv_interval( $lastSimmed,
+            [Time::HiRes::gettimeofday] );
 
-        if( $elapsed > 0.2*(rand(3)+1) )
+        #   print "Elapsed $elapsed\n";
+
+        if( $elapsed > 0.2 * ( rand(3) + 1 ) )
         {
-            sendFakeTTY( int(rand(4)) );
+            sendFakeTTY( int( rand(4) ) );
 
             $lastSimmed = [Time::HiRes::gettimeofday];
         }
 
-        my $elapsed = Time::HiRes::tv_interval ( $lastRun, [Time::HiRes::gettimeofday]);
-    #   print "Elapsed $elapsed\n"; 
+        my $elapsed = Time::HiRes::tv_interval( $lastRun,
+            [Time::HiRes::gettimeofday] );
+
+        #   print "Elapsed $elapsed\n";
 
         if( $elapsed > 1.00 )
         {
@@ -517,48 +540,50 @@ sub runMainLoop
 {
     while(1)
     {
-        my @ready = $sel->can_read( $timeout );
-        
-    	foreach my $fh (@ready) 
-    	{
-    	    if($fh == $lsn) 
-    	    {
+        my @ready = $sel->can_read($timeout);
+
+        foreach my $fh (@ready)
+        {
+            if( $fh == $lsn )
+            {
                 # Create a new socket
                 my $new = $lsn->accept;
                 $sel->add($new);
                 print STDOUT "Accepted new connection from XXX\n";
-                syswrite( $new, "Welcome to SensorMonitor");
+                syswrite( $new, "Welcome to SensorMonitor" );
             }
             elsif( $fh == $tty )
-            {	
-            	my $in;		
-            	my $b = sysread( $fh, $in, 1000);
-            	$runStats{"TTY_BYTES_READ"} += $b;  
-            	handleTTYDataPacket( $in );	
+            {
+                my $in;
+                my $b = sysread( $fh, $in, 1000 );
+                $runStats{"TTY_BYTES_READ"} += $b;
+                handleTTYDataPacket($in);
             }
-            else 
+            else
             {
                 # Process socket
                 # Maybe we have finished with the socket
                 my $in;
-                sysread( $fh, $in, 1000);
+                sysread( $fh, $in, 1000 );
 
                 debug "Got data from socket: [$in]";
 
-                syswrite( $fh, "Bye");
+                syswrite( $fh, "Bye" );
                 $sel->remove($fh);
                 $fh->close;
             }
         }
-    	
-    	my $elapsed = Time::HiRes::tv_interval ( $lastRun, [Time::HiRes::gettimeofday]);
-    #	print "Elapsed $elapsed\n"; 
 
-    	if( $elapsed > 1.00 )
-    	{
+        my $elapsed = Time::HiRes::tv_interval( $lastRun,
+            [Time::HiRes::gettimeofday] );
+
+        #	print "Elapsed $elapsed\n";
+
+        if( $elapsed > 1.00 )
+        {
             runScheduledTasks();
-    	    $lastRun = [Time::HiRes::gettimeofday];
-    	}
+            $lastRun = [Time::HiRes::gettimeofday];
+        }
     }
 }
 
@@ -570,65 +595,73 @@ my $ttyBuffer = "";
 sub handleTTYLine
 {
     my $line = shift;
-    
-    my $date = strftime("%Y-%m-%d %H:%M:%S", localtime( getNow() ) );
-    
-    $runStats{"TTY_MSG_READ"} += 1;  
-    
-    debug( "<<< TTY $line");
-    
-    if( $saveRAW )
+
+    my $date = strftime( "%Y-%m-%d %H:%M:%S", localtime( getNow() ) );
+
+    $runStats{"TTY_MSG_READ"} += 1;
+
+    debug("<<< TTY $line");
+
+    if($saveRAW)
     {
-	   print RAWFILE "$line\n";
+        print RAWFILE "$line\n";
     }
-    
+
     $line =~ s/[\r\n]+\Z//;
-    
-    # Handle regular "R" data lines, and "C" lines (same format, but C lines came from a compressed codebook)
+
+# Handle regular "R" data lines, and "C" lines (same format, but C lines came from a compressed codebook)
 
     if( $line =~ /^(R|C)/ )
     {
-    	my @a = split( ',', $line);
-    	
-    	my $fCount= 0 + @a;
-    	if( $fCount != 9 	)
-    	{	
-    	    debug "Error - [$fCount] wrong number of commas, skipping: offending line is [$line]\n";
-    	    $runStats{"TTY_MSG_READ_ERROR"} += 1; 
-    	    return;	
-    	}
-    	
-    	$runStats{"TTY_MSG_READ_GOOD"} += 1; 
-    	
-    	my ( $sequence, $node,	$millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId ) = @a;
-    	
-    	logSensor( @a );
-    	
-    	$runStats{"NODE_$(node)_MSG_CNT"} += 1; 
-    	
-    	# Automatically add extra lines converting a C reading to F 
-    	
-    	if( $readingUnits eq 'C' )
-    	{
-    	    $sensor .= "-F";
-    	    $readingUnits = "F";
-    	    $reading =  9/5 *($reading) +32;
-    	    
-    	    logSensor( $sequence, $node, $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId );
-    	}
+        my @a = split( ',', $line );
+
+        my $fCount = 0 + @a;
+        if( $fCount != 9 )
+        {
+            debug
+                "Error - [$fCount] wrong number of commas, skipping: offending line is [$line]\n";
+            $runStats{"TTY_MSG_READ_ERROR"} += 1;
+            return;
+        }
+
+        $runStats{"TTY_MSG_READ_GOOD"} += 1;
+
+        my( $sequence, $node,    $millis,
+            $sensor,   $reading, $readingUnits,
+            $memo,     $RSSI,    $originId
+        ) = @a;
+
+        logSensor(@a);
+
+        $runStats{"NODE_$(node)_MSG_CNT"} += 1;
+
+        # Automatically add extra lines converting a C reading to F
+
+        if( $readingUnits eq 'C' )
+        {
+            $sensor .= "-F";
+            $readingUnits = "F";
+            $reading = 9 / 5 * ($reading) + 32;
+
+            logSensor(
+                $sequence, $node,    $millis,
+                $sensor,   $reading, $readingUnits,
+                $memo,     $RSSI,    $originId
+            );
+        }
     }
     elsif( $line =~ /^L/ )
     {
-    	my $date = strftime("%Y-%m-%d %H:%M:%S", localtime(getNow()));
-    	my $m = $line;
-    	$m =~ s/^L//;
-    	if( $m ne $lastNodeLogLine )
-    	{
-    	    print NODELOGFILE join(',', ($date,$m));
-    	    print NODELOGFILE "\n";
-    	    flush NODELOGFILE;
-    	    $lastNodeLogLine = $m;
-    	}
+        my $date = strftime( "%Y-%m-%d %H:%M:%S", localtime( getNow() ) );
+        my $m = $line;
+        $m =~ s/^L//;
+        if( $m ne $lastNodeLogLine )
+        {
+            print NODELOGFILE join( ',', ( $date, $m ) );
+            print NODELOGFILE "\n";
+            flush NODELOGFILE;
+            $lastNodeLogLine = $m;
+        }
     }
     elsif( $line =~ /^D/ )
     {
@@ -636,7 +669,7 @@ sub handleTTYLine
     }
     else
     {
-    	debug( "<<< UNPROCESSED:" . $line );
+        debug( "<<< UNPROCESSED:" . $line );
     }
 }
 
@@ -644,76 +677,86 @@ my $localSequence = 0;
 
 sub logLocalSensor
 {
-    my ($sensor, $reading, $readingUnits, $memo ) = @_;
+    my( $sensor, $reading, $readingUnits, $memo ) = @_;
 
-    logSensor( $localSequence++, "Gateway-Linux", 1, $sensor, $reading, $readingUnits, $memo, "","" );
+    logSensor( $localSequence++, "Gateway-Linux", 1, $sensor, $reading,
+        $readingUnits, $memo, "", "" );
 }
-
 
 sub relayToXively
 {
     `curl --request PUT --header "X-ApiKey: 2SZfjyyJOp1lguxlmD15ZCfPn0h1E7PO36HlPfJd0g8mCCyb" --data-binary @/tmp/xively.csv --verbose https://api.xively.com/v2/feeds/665513493.csv`;
 
     close XIVELY;
-    open XIVELY, ">$XIVELYFN" or warn "Cannot reopen xively file: $!"; 
+    open XIVELY, ">$XIVELYFN" or warn "Cannot reopen xively file: $!";
 }
 
 my %lastPlacedInSlowLog;
 
 sub logSensor
 {
-    my ( $sequence, $node, $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId ) = @_;
-    my $date = strftime("%Y-%m-%d %H:%M:%S", localtime(getNow()));
-#    my $nice = "";
- 
+    my( $sequence,     $node, $millis, $sensor, $reading,
+        $readingUnits, $memo, $RSSI,   $originId
+    ) = @_;
+    my $date = strftime( "%Y-%m-%d %H:%M:%S", localtime( getNow() ) );
+
+    #    my $nice = "";
+
     chomp $originId;
 
-    my $xname ="$node-$sensor";
-    
-    my ($nice,$varkey,$locOverride) = exists $CONFIG{$xname} ? @{$CONFIG{$xname}} : ("",undef,undef);
+    my $xname = "$node-$sensor";
+
+    my( $nice, $varkey, $locOverride )
+        = exists $CONFIG{$xname}
+        ? @{ $CONFIG{$xname} }
+        : ( "", undef, undef );
 
     my $loc = $locOverride || $nodeLocation{$node} || "";
 
-    my $line = join ",", ($date, $sequence, $node, $millis, $sensor, $reading, $readingUnits, $memo, $RSSI, $originId, $nice, $loc);
+    my $line = join ",",
+        (
+        $date,   $sequence, $node,         $millis,
+        $sensor, $reading,  $readingUnits, $memo,
+        $RSSI,   $originId, $nice,         $loc
+        );
     print LOGFILE "$line\n";
-    flush LOGFILE; 
-    
-    my $xively_date = strftime("%Y-%m-%dT%H:%M:%SZ", localtime(getNow()));
+    flush LOGFILE;
+
+    my $xively_date = strftime( "%Y-%m-%dT%H:%M:%SZ", localtime( getNow() ) );
 
     $xname =~ s/\s+/\-/g;
 
     if( $xname =~ /BATT-V|Temp-F|LUX|-Pressure/ )
     {
-	print XIVELY "$xname,$xively_date,$reading\n";
+        print XIVELY "$xname,$xively_date,$reading\n";
     }
 
-    my $lu = $lastPlacedInSlowLog{$xname} || 0; 
+    my $lu = $lastPlacedInSlowLog{$xname} || 0;
 
-    if( (time()) - $lu > 5*60 )
+    if( ( time() ) - $lu > 5 * 60 )
     {
         print SLOWLOGFILE "$line\n";
         $lastPlacedInSlowLog{$xname} = time();
     }
-    
-    $lastSensorValueStructured{$node}->{$sensor} = [$reading,$readingUnits,time(),$loc,$readingUnits];
-    $lastSensorValue{"$node-$sensor"} = $reading . $readingUnits;
+
+    $lastSensorValueStructured{$node}->{$sensor}
+        = [ $reading, $readingUnits, time(), $loc, $readingUnits ];
+    $lastSensorValue{"$node-$sensor"}     = $reading . $readingUnits;
     $lastSensorValueOnly{"$node-$sensor"} = $reading;
-    $lastHeardNode{$node} = time();
-    $lastHeardSensor{"$node-$sensor"} = time();
+    $lastHeardNode{$node}                 = time();
+    $lastHeardSensor{"$node-$sensor"}     = time();
 
+    push @{ $sensorValueHistory{$node}->{$sensor} }, [ time(), $reading ];
 
-    push @{$sensorValueHistory{$node}->{$sensor}}, [time(), $reading];
+    my $sizeOfHistory = scalar @{ $sensorValueHistory{$node}->{$sensor} };
 
-    my $sizeOfHistory = scalar @{$sensorValueHistory{$node}->{$sensor}};
-
-    if( $sizeOfHistory+0 > 1000 )
+    if( $sizeOfHistory + 0 > 1000 )
     {
-	debug( "Purging.. ($sizeOfHistory)");
-	shift @{sensorValueHistory{$node}->{$sensor}};
+        debug("Purging.. ($sizeOfHistory)");
+        shift @{ sensorValueHistory {$node}->{$sensor} };
     }
 
 }
-
 
 sub updateHTML
 {
@@ -722,25 +765,25 @@ sub updateHTML
     `mkdir -p $BASEDIR/www`;
     open FILE, ">$BASEDIR/www/sensors.txt" or die "cannot write to file";
 
-    foreach my $k (sort keys %lastSensorValue )
+    foreach my $k ( sort keys %lastSensorValue )
     {
         my $l = time() - $lastHeardSensor{$k};
-        print FILE sprintf( "%-30s %-20s (%4d ago)\n",   $k,$lastSensorValue{$k}, $l );
+        print FILE
+            sprintf( "%-30s %-20s (%4d ago)\n", $k, $lastSensorValue{$k},
+            $l );
 
     }
     close FILE;
 
     open FILE, ">$BASEDIR/www/nodes.txt" or die "cannot write to file";
 
-    foreach my $k (sort keys %lastHeardNode )
+    foreach my $k ( sort keys %lastHeardNode )
     {
-       my $l = time() - $lastHeardNode{$k} ;
-       print FILE "$k -> $l seconds ago\n";
+        my $l = time() - $lastHeardNode{$k};
+        print FILE "$k -> $l seconds ago\n";
     }
-    
+
     close FILE;
-
-
 
     open FILE, ">$BASEDIR/www/index.html" or die "cannot write to file";
 
@@ -767,114 +810,113 @@ sub updateHTML
                         <th>Location</th><th>Temp</th><th>%RH</th><th>Updated</th>
 HTML
 
-
-
     my %keyFindings;
 
-    # First, batch up the data that we've accumulated into key findings by location
+# First, batch up the data that we've accumulated into key findings by location
 
-    foreach my $node (sort keys %lastSensorValueStructured)
+    foreach my $node ( sort keys %lastSensorValueStructured )
     {
-    	foreach my $sensor (sort keys %{$lastSensorValueStructured{$node}} )
-    	{
-    	    my ($reading,$readingUnits,$lastUpdated,$loc,$unit) = @{$lastSensorValueStructured{$node}->{$sensor}};
+        foreach
+            my $sensor ( sort keys %{ $lastSensorValueStructured{$node} } )
+        {
+            my( $reading, $readingUnits, $lastUpdated, $loc, $unit )
+                = @{ $lastSensorValueStructured{$node}->{$sensor} };
 
-    	    my $xname = [$node,$sensor];
-    	    my $place = $loc || $node;
+            my $xname = [ $node, $sensor ];
+            my $place = $loc || $node;
 
-    	    if( $sensor eq 'HTU21D-RH' )
-    	    {
-    		  $keyFindings{$place}->{RH} = $xname;
-    	    }
+            if( $sensor eq 'HTU21D-RH' )
+            {
+                $keyFindings{$place}->{RH} = $xname;
+            }
 
-    	    if( $sensor eq 'HTU21D-Temp-F' )
-    	    {
-    		  $keyFindings{$place}->{Temp} = $xname;
-    	    }
+            if( $sensor eq 'HTU21D-Temp-F' )
+            {
+                $keyFindings{$place}->{Temp} = $xname;
+            }
 
-    	    if( $unit eq 'F' )
-    	    {
-    		  $keyFindings{$place}->{Temp} = $xname if not exists $keyFindings{$place}->{Temp};
-    	    }
+            if( $unit eq 'F' )
+            {
+                $keyFindings{$place}->{Temp} = $xname
+                    if not exists $keyFindings{$place}->{Temp};
+            }
 
-    	    if( $unit eq '%RH' )
-    	    {
-    		  $keyFindings{$place}->{RH} = $xname if not exists $keyFindings{$place}->{RH};
-    	    }	  
-    	}
+            if( $unit eq '%RH' )
+            {
+                $keyFindings{$place}->{RH} = $xname
+                    if not exists $keyFindings{$place}->{RH};
+            }
+        }
     }
 
     # Next, iterate over key findings and generate HTML
 
-    foreach my $place (sort keys %keyFindings)
+    foreach my $place ( sort keys %keyFindings )
     {
-    	my $rh = $keyFindings{$place}->{RH};
-    	my $t = $keyFindings{$place}->{Temp};
-    	debug( "Finding $place - rh=$rh t=$t" ); 
+        my $rh = $keyFindings{$place}->{RH};
+        my $t  = $keyFindings{$place}->{Temp};
+        debug("Finding $place - rh=$rh t=$t");
 
-    	my @line;
-    	push( @line, $place );
-    	my $x;
-    	my $age;
+        my @line;
+        push( @line, $place );
+        my $x;
+        my $age;
 
-    	if( ref $t )
-    	{
-    	    $x = $t;
-    	    my ($node, $sensor) = @{$x};
-    	    my ($reading,$readingUnits,$lastUpdated,$loc,$unit) = @{$lastSensorValueStructured{$node}->{$sensor}};
-    	    push @line, "$reading $readingUnits";
-    	    $age = $lastUpdated if $lastUpdated < $age || not defined $age;
-    	}
-    	else
-    	{
-    	    push @line, "";
-    	}
+        if( ref $t )
+        {
+            $x = $t;
+            my( $node, $sensor ) = @{$x};
+            my( $reading, $readingUnits, $lastUpdated, $loc, $unit )
+                = @{ $lastSensorValueStructured{$node}->{$sensor} };
+            push @line, "$reading $readingUnits";
+            $age = $lastUpdated if $lastUpdated < $age || not defined $age;
+        }
+        else
+        {
+            push @line, "";
+        }
 
-    	if( ref $rh )
-    	{
-    	    $x = $rh;
-    	    my ($node, $sensor) = @{$x};
-    	    my ($reading,$readingUnits,$lastUpdated,$loc,$unit) = @{$lastSensorValueStructured{$node}->{$sensor}};
-    	    push @line, "$reading $readingUnits";
-    	    $age = $lastUpdated if $lastUpdated < $age || not defined $age;
-    	}
-    	else
-    	{
-    	    push @line, "";
-    	}
-    	
-    	my $howLongHasItBeen =  time() - $age;
+        if( ref $rh )
+        {
+            $x = $rh;
+            my( $node, $sensor ) = @{$x};
+            my( $reading, $readingUnits, $lastUpdated, $loc, $unit )
+                = @{ $lastSensorValueStructured{$node}->{$sensor} };
+            push @line, "$reading $readingUnits";
+            $age = $lastUpdated if $lastUpdated < $age || not defined $age;
+        }
+        else
+        {
+            push @line, "";
+        }
 
-    	my $timeSince;
-    	
-    	if( $howLongHasItBeen > 24*60*60 )
-    	{
-    	    my $r = $howLongHasItBeen / (24*60*60);
-    	    $r = sprintf( "%.1f", $r);
-    	    $timeSince = "$r days"
-    		
-    	}
-    	else
-    	{
-    	    my $r = $howLongHasItBeen / (60);
-    	    $r = sprintf( "%.1f", $r);
-    	    $timeSince = "$r minutes"
-    	}
+        my $howLongHasItBeen = time() - $age;
 
-    	push @line, $timeSince;
+        my $timeSince;
 
+        if( $howLongHasItBeen > 24 * 60 * 60 )
+        {
+            my $r = $howLongHasItBeen / ( 24 * 60 * 60 );
+            $r = sprintf( "%.1f", $r );
+            $timeSince = "$r days"
 
-    	print FILE "<TR>";
-    	print FILE join "</TD><TD>", @line;
-    	print FILE "</TR></TD>";
-	
+        }
+        else
+        {
+            my $r = $howLongHasItBeen / (60);
+            $r = sprintf( "%.1f", $r );
+            $timeSince = "$r minutes";
+        }
+
+        push @line, $timeSince;
+
+        print FILE "<TR>";
+        print FILE join "</TD><TD>", @line;
+        print FILE "</TR></TD>";
+
     }
-    
 
-
-
-
-print FILE <<HTML;
+    print FILE <<HTML;
                     </table>
                 </div>
             </div>
@@ -885,10 +927,7 @@ HTML
 
     close FILE;
 
-
-
 ########################################### Sparkline handling code
-
 
     open FILE, ">$BASEDIR/www/sparks.html" or die "cannot write to file";
 
@@ -906,102 +945,100 @@ HTML
         <link rel="stylesheet" href="static/css/main.css'" type="text/css" />
 HTML
 
-
     my %keyFindings;
 
-    # First, batch up the data that we've accumulated into key findings by location
+# First, batch up the data that we've accumulated into key findings by location
 
-    foreach my $node (sort keys %lastSensorValueStructured)
+    foreach my $node ( sort keys %lastSensorValueStructured )
     {
-    	foreach my $sensor (sort keys %{$lastSensorValueStructured{$node}} )
-    	{
-    	    my ($reading,$readingUnits,$lastUpdated,$loc,$unit) = @{$lastSensorValueStructured{$node}->{$sensor}};
+        foreach
+            my $sensor ( sort keys %{ $lastSensorValueStructured{$node} } )
+        {
+            my( $reading, $readingUnits, $lastUpdated, $loc, $unit )
+                = @{ $lastSensorValueStructured{$node}->{$sensor} };
 
-    	    my $xname = [$node,$sensor];
-    	    my $place = $loc || $node;
+            my $xname = [ $node, $sensor ];
+            my $place = $loc || $node;
 
-    	    if( $sensor eq 'HTU21D-RH' )
-    	    {
-    		  $keyFindings{$place}->{RH} = $xname;
-    	    }
+            if( $sensor eq 'HTU21D-RH' )
+            {
+                $keyFindings{$place}->{RH} = $xname;
+            }
 
-    	    if( $sensor eq 'HTU21D-Temp-F' )
-    	    {
-    		  $keyFindings{$place}->{Temp} = $xname;
-    	    }
+            if( $sensor eq 'HTU21D-Temp-F' )
+            {
+                $keyFindings{$place}->{Temp} = $xname;
+            }
 
-    	    if( $unit eq 'F' )
-    	    {
-    		  $keyFindings{$place}->{Temp} = $xname if not exists $keyFindings{$place}->{Temp};
-    	    }
+            if( $unit eq 'F' )
+            {
+                $keyFindings{$place}->{Temp} = $xname
+                    if not exists $keyFindings{$place}->{Temp};
+            }
 
-    	    if( $unit eq '%RH' )
-    	    {
-    		  $keyFindings{$place}->{RH} = $xname if not exists $keyFindings{$place}->{RH};
-    	    }	  
-    	}
+            if( $unit eq '%RH' )
+            {
+                $keyFindings{$place}->{RH} = $xname
+                    if not exists $keyFindings{$place}->{RH};
+            }
+        }
     }
-
 
     my $highChartId = 0;
 
-	# This loop runs for every row of the final table generating chart javascript
+ # This loop runs for every row of the final table generating chart javascript
 
-    foreach my $place (sort keys %keyFindings)
+    foreach my $place ( sort keys %keyFindings )
     {
 
-	my $xname = $keyFindings{$place}->{Temp};
+        my $xname = $keyFindings{$place}->{Temp};
 
-	next if not defined $xname;
+        next if not defined $xname;
 
-	my ($node,$sensor) = @$xname;
-	
-	my $seriesName = jsescape($place);
+        my( $node, $sensor ) = @$xname;
 
-	# Accumulator for the JS array we ultimately will pass to highcharts
-	my $data = "";
+        my $seriesName = jsescape($place);
 
-	
-	debug( "Iterating over tuples to generate $node, $sensor highcart ($place)" ); 
+        # Accumulator for the JS array we ultimately will pass to highcharts
+        my $data = "";
 
-	my $y_axis_min = 99999999;	
-	my $y_axis_max = -99999999;
+        debug(
+            "Iterating over tuples to generate $node, $sensor highcart ($place)"
+        );
 
-	foreach my $tuple (@{$sensorValueHistory{$node}->{$sensor}})
-	{
+        my $y_axis_min = 99999999;
+        my $y_axis_max = -99999999;
 
-	    my( $time, $value ) = @$tuple;
-	    my $relativeTime = $time - time();
-	 	
-	 	# highcharts seems to accept just a UNIX time value so strftime not needed
-	   #	my $formattedTime = POSIX::strftime( "%Y%m%d", 
+        foreach my $tuple ( @{ $sensorValueHistory{$node}->{$sensor} } )
+        {
 
+            my( $time, $value ) = @$tuple;
+            my $relativeTime = $time - time();
 
-	   	my $mstime = $time * 1000;
-	    $data .= "[$mstime,$value],";
+    # highcharts seems to accept just a UNIX time value so strftime not needed
+    #	my $formattedTime = POSIX::strftime( "%Y%m%d",
 
-	    # debug( $data );
+            my $mstime = $time * 1000;
+            $data .= "[$mstime,$value],";
 
-	    if( $y_axis_min > $value )
-{
-		$y_axis_min = $value;
-}
-	    if( $y_axis_max < $value )
-{
-		$y_axis_max = $value;
-}
+            # debug( $data );
 
-	
+            if( $y_axis_min > $value )
+            {
+                $y_axis_min = $value;
+            }
+            if( $y_axis_max < $value )
+            {
+                $y_axis_max = $value;
+            }
 
+        }
 
-	}
+        $y_axis_min = int($y_axis_min);
+        $y_axis_max = int($y_axis_max) + 1;
+        my $tickrange = join ',', $y_axis_min .. $y_axis_max;
 
-$y_axis_min = int( $y_axis_min );
-$y_axis_max = int( $y_axis_max ) + 1;
-my $tickrange = join ',', $y_axis_min..$y_axis_max;
-
-	
-print FILE <<HTML;
+        print FILE <<HTML;
 
         <script type="text/javascript">
 	\$(function() {
@@ -1099,11 +1136,12 @@ print FILE <<HTML;
 
 HTML
 
-$highChartId++;
-	   }
-	   # end of looping once per chart
-	   
-	   print FILE <<HTML;
+        $highChartId++;
+    }
+
+    # end of looping once per chart
+
+    print FILE <<HTML;
 
     </head>
 
@@ -1120,83 +1158,81 @@ $highChartId++;
 
 HTML
 
-
-
-
-
-
     # Next, iterate over key findings and generate HTML
 
-	   my $curSparkId = 0;
+    my $curSparkId = 0;
 
-    foreach my $place (sort keys %keyFindings)
+    foreach my $place ( sort keys %keyFindings )
     {
-    	my $rh = $keyFindings{$place}->{RH};
-    	my $t = $keyFindings{$place}->{Temp};
-    	debug( "Finding $place - rh=$rh t=$t" ); 
+        my $rh = $keyFindings{$place}->{RH};
+        my $t  = $keyFindings{$place}->{Temp};
+        debug("Finding $place - rh=$rh t=$t");
 
-	my $line = "";
-    	$line .= "<td>$place</td>";
+        my $line = "";
+        $line .= "<td>$place</td>";
 
-    	my $x;
-    	my $age;
+        my $x;
+        my $age;
 
-    	if( ref $t )
-    	{
-    	    $x = $t;
-    	    my ($node, $sensor) = @{$x};
-    	    my ($reading,$readingUnits,$lastUpdated,$loc,$unit) = @{$lastSensorValueStructured{$node}->{$sensor}};
-    	$line .= "<td><div id=\"spark_${curSparkId}\"></div>$reading $readingUnits<br/></td>";
-#    	    push @line, "$reading $readingUnits";
-    	    $age = $lastUpdated if $lastUpdated < $age || not defined $age;
-    	}
-    	else
-    	{
-	    $line .= "<td></td>";
-    	}
+        if( ref $t )
+        {
+            $x = $t;
+            my( $node, $sensor ) = @{$x};
+            my( $reading, $readingUnits, $lastUpdated, $loc, $unit )
+                = @{ $lastSensorValueStructured{$node}->{$sensor} };
+            $line
+                .= "<td><div id=\"spark_${curSparkId}\"></div>$reading $readingUnits<br/></td>";
 
-    	if( ref $rh )
-    	{
-    	    $x = $rh;
-    	    my ($node, $sensor) = @{$x};
-    	    my ($reading,$readingUnits,$lastUpdated,$loc,$unit) = @{$lastSensorValueStructured{$node}->{$sensor}};
-	    $line .= "<td>$reading $readingUnits</td>";
-    	    $age = $lastUpdated if $lastUpdated < $age || not defined $age;
-    	}
-    	else
-    	{
-	    $line .= "<td></td>";
-    	}
-    	
-    	my $howLongHasItBeen =  time() - $age;
+            #    	    push @line, "$reading $readingUnits";
+            $age = $lastUpdated if $lastUpdated < $age || not defined $age;
+        }
+        else
+        {
+            $line .= "<td></td>";
+        }
 
-    	my $timeSince;
-    	
-    	if( $howLongHasItBeen > 24*60*60 )
-    	{
-    	    my $r = $howLongHasItBeen / (24*60*60);
-    	    $r = sprintf( "%.1f", $r);
-    	    $timeSince = "$r days"
-    		
-    	}
-    	else
-    	{
-    	    my $r = $howLongHasItBeen / (60);
-    	    $r = sprintf( "%.1f", $r);
-    	    $timeSince = "$r minutes"
-    	}
+        if( ref $rh )
+        {
+            $x = $rh;
+            my( $node, $sensor ) = @{$x};
+            my( $reading, $readingUnits, $lastUpdated, $loc, $unit )
+                = @{ $lastSensorValueStructured{$node}->{$sensor} };
+            $line .= "<td>$reading $readingUnits</td>";
+            $age = $lastUpdated if $lastUpdated < $age || not defined $age;
+        }
+        else
+        {
+            $line .= "<td></td>";
+        }
 
-    	    $line .= "<td>$timeSince</td>";
+        my $howLongHasItBeen = time() - $age;
 
-    	print FILE "<TR>\n";
-    	print FILE $line;
-    	print FILE "\n</TR>\n";
-	
-	$curSparkId++;
+        my $timeSince;
+
+        if( $howLongHasItBeen > 24 * 60 * 60 )
+        {
+            my $r = $howLongHasItBeen / ( 24 * 60 * 60 );
+            $r = sprintf( "%.1f", $r );
+            $timeSince = "$r days"
+
+        }
+        else
+        {
+            my $r = $howLongHasItBeen / (60);
+            $r = sprintf( "%.1f", $r );
+            $timeSince = "$r minutes";
+        }
+
+        $line .= "<td>$timeSince</td>";
+
+        print FILE "<TR>\n";
+        print FILE $line;
+        print FILE "\n</TR>\n";
+
+        $curSparkId++;
     }
-    
 
-print FILE <<HTML;
+    print FILE <<HTML;
                     </table>
                 </div>
             </div>
@@ -1206,7 +1242,6 @@ print FILE <<HTML;
 HTML
 
     close FILE;
-
 
     open FILE, ">$BASEDIR/www/temps.html" or die "cannot write to file";
 
@@ -1238,36 +1273,33 @@ HTML
             series : [
 HTML
 
-    foreach my $place (sort keys %keyFindings)
+    foreach my $place ( sort keys %keyFindings )
     {
 
-    	my $data;
+        my $data;
 
-	my $xname = $keyFindings{$place}->{Temp};
-	next if not defined $xname;
+        my $xname = $keyFindings{$place}->{Temp};
+        next if not defined $xname;
 
-	my ($node,$sensor) = @$xname;
-	my $seriesName = jsescape($place);
+        my( $node, $sensor ) = @$xname;
+        my $seriesName = jsescape($place);
 
+        foreach my $tuple ( @{ $sensorValueHistory{$node}->{$sensor} } )
+        {
 
-foreach my $tuple (@{$sensorValueHistory{$node}->{$sensor}})
-	{
+            my( $time, $value ) = @$tuple;
+            my $relativeTime = $time - time();
 
+# highcharts seems to accept just a UNIX time value * 1000 so strftime not needed
+#	my $formattedTime = POSIX::strftime( "%Y%m%d",
 
+            my $mstime = $time * 1000;
+            $data .= "[$mstime,$value],";
 
-	    my( $time, $value ) = @$tuple;
-	    my $relativeTime = $time - time();
-	 	
-	 	# highcharts seems to accept just a UNIX time value * 1000 so strftime not needed
-	   #	my $formattedTime = POSIX::strftime( "%Y%m%d", 
+            # debug( $data );
+        }
 
-
-	   	my $mstime = $time * 1000;
-	    $data .= "[$mstime,$value],";
-	    # debug( $data );
-	}
-
-print FILE <<HTML;
+        print FILE <<HTML;
 			{
                 name : '$seriesName', // sn = $seriesName, p=$place
                 data : [$data ],
@@ -1277,9 +1309,9 @@ print FILE <<HTML;
             },
 HTML
 
-}
+    }
 
-print FILE <<HTML;
+    print FILE <<HTML;
             ]
         });
     });
@@ -1302,63 +1334,57 @@ print FILE <<HTML;
    </html>
 HTML
 
-
-
     close FILE;
 
-
 }
-
 
 sub relayReadings
 {
-    debug( "Dumping sensors to debuglog" );
-    foreach my $k (sort keys %lastSensorValue )
+    debug("Dumping sensors to debuglog");
+    foreach my $k ( sort keys %lastSensorValue )
     {
-    	my $l = time() - $lastHeardSensor{$k};
+        my $l = time() - $lastHeardSensor{$k};
 
-    	next if $lastSensorValue{$k} =~ /C$/;
+        next if $lastSensorValue{$k} =~ /C$/;
 
-    #	debug( "   $k -> $lastSensorValue{$k} ($l sec. ago)" );
-    	debug( sprintf( "%-30s %-20s (%4d ago)",   $k,$lastSensorValue{$k}, $l ));
+        #	debug( "   $k -> $lastSensorValue{$k} ($l sec. ago)" );
+        debug(
+            sprintf( "%-30s %-20s (%4d ago)", $k, $lastSensorValue{$k}, $l )
+        );
     }
 
-    debug( "Dumping nodes" );
+    debug("Dumping nodes");
 
-    foreach my $k (sort keys %lastHeardNode )
+    foreach my $k ( sort keys %lastHeardNode )
     {
-	   my $l = time() - $lastHeardNode{$k} ;
-	   debug( "   $k -> $l seconds ago" );
+        my $l = time() - $lastHeardNode{$k};
+        debug("   $k -> $l seconds ago");
     }
 }
 
-sub  handleTTYDataPacket
+sub handleTTYDataPacket
 {
-	my $data = shift;
+    my $data = shift;
 
-	# debug( "Adding to TTY buffer:[$data]");
-	$ttyBuffer .= $data;
+    # debug( "Adding to TTY buffer:[$data]");
+    $ttyBuffer .= $data;
 
-	while( (my $nextNL = index( $ttyBuffer, "\n",0 )) != -1 )
-	{
-		# debug "Newline detected at position [$nextNL]"; # in [$ttyBuffer]";
-		my $nextline = substr( $ttyBuffer, 0, $nextNL + 1 );
-		substr( $ttyBuffer, 0, $nextNL + 1, "" );
-		chomp $nextline;
+    while( ( my $nextNL = index( $ttyBuffer, "\n", 0 ) ) != -1 )
+    {
+        # debug "Newline detected at position [$nextNL]"; # in [$ttyBuffer]";
+        my $nextline = substr( $ttyBuffer, 0, $nextNL + 1 );
+        substr( $ttyBuffer, 0, $nextNL + 1, "" );
+        chomp $nextline;
 
-		handleTTYLine( $nextline ) if( length $nextline > 0 );
-	}
+        handleTTYLine($nextline) if( length $nextline > 0 );
+    }
 }
 
-END: 
+END:
 {
-	debug "Shutting down...";
-	$lsn->close();
-} 
-
-
-
-
+    debug "Shutting down...";
+    $lsn->close();
+}
 
 sub jsescape
 {
