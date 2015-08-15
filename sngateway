@@ -1276,6 +1276,13 @@ HTML
                 selected : 1
             },
 
+
+		  yAxis: {
+
+				    min: 60,
+				    max: 85
+		},
+
             title : {
                 text : 'Temperatures - 29 Hews'
             },
