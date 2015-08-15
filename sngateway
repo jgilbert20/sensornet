@@ -951,6 +951,8 @@ HTML
     {
 
 	my $xname = $keyFindings{$place}->{Temp};
+	next if not defined $xname;
+	
 	my ($node,$sensor) = @$xname;
 	
 	my $seriesName = jsescape($place);
