@@ -1279,8 +1279,8 @@ HTML
 
 		  yAxis: {
 
-				    min: 60,
-				    max: 85
+				    min: 65,
+				    max: 80
 		},
 
             title : {
@@ -1406,7 +1406,7 @@ END:
 
 sub jsescape
 {
-    my $v = $_;
+    my $v = shift;
     $v =~ s/\'|\\//g;
     return $v;
 
