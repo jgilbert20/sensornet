@@ -395,12 +395,12 @@ registerTask( "lightStats", 20, sub { logSysStatsLight() } );
 
 registerTask( "rotateLogs", 300, sub { rotateLogs() } );
 
-registerTask( "updatenodes", 10, sub { updateNodes() } );
+registerTask( "updatenodes", 300, sub { updateNodes() } );
 
 #registerTask( "xively", 30, sub { relayToXively() } );
 
 # this task sends a chart of most recent readings for all sensors to debuglog.csv
-registerTask( "relay-readings", 10, sub { relayReadings() } );
+registerTask( "relay-readings", 30, sub { relayReadings() } );
 
 registerTask( "writehtml", 10, sub { updateHTML() } );
 
@@ -750,7 +750,7 @@ sub logSensor
 
     my $sizeOfHistory = scalar @{ $sensorValueHistory{$node}->{$sensor} };
 
-    if( $sizeOfHistory + 0 > 1000 )
+    if( $sizeOfHistory + 0 > 5000 )
     {
         # debug("Purging.. ($sizeOfHistory)");
         shift @{ sensorValueHistory {$node}->{$sensor} };
@@ -864,7 +864,7 @@ HTML
     {
         my $rh = $keyFindings{$place}->{RH};
         my $t  = $keyFindings{$place}->{Temp};
-        debug("Finding $place - rh=$rh t=$t");
+        # debug("Finding $place - rh=$rh t=$t");
 
         my @line;
         push( @line, $place );
@@ -1011,9 +1011,9 @@ HTML
         # Accumulator for the JS array we ultimately will pass to highcharts
         my $data = "";
 
-        debug(
-            "Iterating over tuples to generate $node, $sensor highcart ($place)"
-        );
+#        debug(
+ #           "Iterating over tuples to generate $node, $sensor highcart ($place)"
+ #       );
 
         my $y_axis_min = 99999999;
         my $y_axis_max = -99999999;
@@ -1176,7 +1176,7 @@ HTML
     {
         my $rh = $keyFindings{$place}->{RH};
         my $t  = $keyFindings{$place}->{Temp};
-        debug("Finding $place - rh=$rh t=$t");
+       # debug("Finding $place - rh=$rh t=$t");
 
         my $line = "";
         $line .= "<td>$place</td>";

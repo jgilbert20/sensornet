@@ -10,12 +10,13 @@ sensor		PowerMon	Current-B	Current Right		547214d176254216e4a4bc8e  	Current Rig
 #command	#Nodename	#Default Location
 node		Outside		Downstairs Windowsill
 node		Proto4		Utility Closet
-node		Proto1		Living Room
-node		Proto2		Downstairs Desk
-node		Proto3		TBD
+node		Proto1		Top of Stairs
+node		Proto2		Living Room
+node		Proto3		Isabella's Room
 node		PowerMon	Powerline Monitor
-node		Bread1		Isabella's Room
+node		Bread1		Unallocated
 node		Bread2		Master BR
+node		Bread3		Downstairs
 
 
 
