@@ -7,17 +7,12 @@
 
 # http://www.felixgers.de/teaching/perl/perl_DBI.html
 
-
 # here is my .perltidyRC
 # -bl # jeremy favorite
 # -pt=2 # sorta light tighter parens
 # -bbt=2
 # -nolq
 # -nsak="*" # don't add those stupid spaces after keywords(
-
-
-
-
 
 use strict;
 
@@ -54,7 +49,17 @@ my $RAWFN     = "${BASEDIR}/raw.txt";
 my $NODELOGFN = "${BASEDIR}/nodelog.txt";
 my $SIMFN     = "${BASEDIR}/simulation.txt";
 my $SIMOUTFN  = "${BASEDIR}/simu-out.txt";
-my $XIVELYFN  = "/tmp/xively.csv";
+
+my $RUNDIR = "/run/sensornet";
+my $WWWDIR = "/run/sensornet/www";
+my $WWWSTATICDIR = "${BASEDIR}/www";
+
+
+
+
+
+
+my $XIVELYFN  = "${RUNDIR}/xively.csv";
 
 my %CONFIG;
 
@@ -102,7 +107,6 @@ sub readConfiguration
             debug("CONFIG: Nodeline: $node -> loc:[$location]");
             $nodeLocation{$node} = $location;
         }
-
     }
 
     close C;
@@ -112,7 +116,6 @@ my $simulatedTime = 0;
 
 sub getNow
 {
-
     if($SIMULATION_MODE)
     {
         return $simulatedTime;
@@ -156,6 +159,11 @@ if($saveRAW)
 }
 
 open( NODELOGFILE, ">>$NODELOGFN" ) or die "Cannot open log: $!";
+
+
+debug("Preparing tmp dir");
+
+system( '/usr/bin/rsync', '-rv', "$WWWSTATICDIR/", "${WWWDIR}" );
 
 debug("SNGateway restarted");
 
@@ -466,6 +474,8 @@ my $lastSimmed = [ 0, 0 ];
 
 debug("Beginning listen loop:");
 
+
+
 if($SIMULATION_MODE)
 {
     runSimulatedLoop();
@@ -768,8 +778,8 @@ sub updateHTML
  <a href="sparks.html">sparlines</a> 
 HTML
 
-    `mkdir -p $BASEDIR/www`;
-    open FILE, ">$BASEDIR/www/sensors.txt" or die "cannot write to file";
+    `mkdir -p $WWWDIR`;
+    open FILE, ">$WWWDIR/sensors.txt" or die "cannot write to WWW file";
 
     foreach my $k ( sort keys %lastSensorValue )
     {
@@ -781,7 +791,7 @@ HTML
     }
     close FILE;
 
-    open FILE, ">$BASEDIR/www/nodes.txt" or die "cannot write to file";
+    open FILE, ">$WWWDIR/nodes.txt" or die "cannot write to file";
 
     foreach my $k ( sort keys %lastHeardNode )
     {
@@ -791,7 +801,7 @@ HTML
 
     close FILE;
 
-    open FILE, ">$BASEDIR/www/index.html" or die "cannot write to file";
+    open FILE, ">$WWWDIR/index.html" or die "cannot write to file";
 
     print FILE <<HTML;
 <!DOCTYPE html>
@@ -938,7 +948,7 @@ HTML
 
 ########################################### Sparkline handling code
 
-    open FILE, ">$BASEDIR/www/sparks.html" or die "cannot write to file";
+    open FILE, ">$WWWDIR/sparks.html" or die "cannot write to file";
 
     print FILE <<HTML;
 <!DOCTYPE html>
@@ -1253,7 +1263,7 @@ HTML
 
     close FILE;
 
-    open FILE, ">$BASEDIR/www/temps.html" or die "cannot write to file";
+    open FILE, ">$WWWDIR/temps.html" or die "cannot write to file";
 
     print FILE <<HTML;
 <!DOCTYPE html>
@@ -1275,14 +1285,10 @@ HTML
             rangeSelector : {
                 selected : 1
             },
-
-
 		  yAxis: {
-
 				    min: 65,
 				    max: 80
 		},
-
             title : {
                 text : 'Temperatures - 29 Hews'
             },

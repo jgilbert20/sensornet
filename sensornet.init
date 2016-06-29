@@ -51,6 +51,17 @@ VERBOSE=yes
 # and status_of_proc is working.
 . /lib/lsb/init-functions
 
+
+check_privsep_dir() {
+    # Create the PrivSep empty dir if necessary
+    if [ ! -d /var/run/sensornet ]; then
+	mkdir /var/run/sensornet
+	chown pi /var/run/sensornet
+	chmod 0755 /var/run/sensornet
+    fi
+}
+
+
 #
 # Function that starts the daemon/service
 #
@@ -112,6 +123,7 @@ do_stop()
 case "$1" in
   start)
         [ "$VERBOSE" != no ] && log_daemon_msg "Starting $DESC" "$NAME"
+	check_privsep_dir
         do_start
         case "$?" in
                 0) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
