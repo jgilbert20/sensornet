@@ -172,7 +172,7 @@ if( not $SIMULATION_MODE )
         use Device::SerialPort qw( :PARAM :STAT 0.07 );
 
         use Symbol qw( gensym );
-        my $PORT = "/dev/ttyAMA0";
+        my $PORT = "/dev/ttyS0";
 
         $tty = gensym();
         my $ob = tie( *$tty, "Device::SerialPort", $PORT );
