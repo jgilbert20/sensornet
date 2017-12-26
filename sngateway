@@ -186,7 +186,7 @@ if( not $SIMULATION_MODE )
         my $ob = tie( *$tty, "Device::SerialPort", $PORT );
 
 #    my $ob = Device::SerialPort->new($PORT)  || die "Can't open $PORT: $!\n";
-        $ob->baudrate(57600);
+        $ob->baudrate(115200);
         $ob->write_settings;
 
         debug("Opening port");
@@ -773,9 +773,9 @@ sub updateHTML
     # return();
 
     my $LINKBAR = <<HTML;
- <a href="index.html">home</a> 
- <a href="temps.html">temp chart</a> 
- <a href="sparks.html">sparlines</a> 
+ <a href="index.html">Home</a> 
+ <a href="temps.html">Temp chart</a> 
+ <a href="sparks.html">Sparklines</a> 
 HTML
 
     `mkdir -p $WWWDIR`;
@@ -935,8 +935,11 @@ HTML
 
     }
 
+my    $thisTime = `date`;
+    
     print FILE <<HTML;
-                    </table>
+    </table>
+	As of $thisTime
                 </div>
             </div>
         </div>
