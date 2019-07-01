@@ -14,6 +14,8 @@
 # -nolq
 # -nsak="*" # don't add those stupid spaces after keywords(
 
+use Net::MQTT::Simple;
+
 use strict;
 
 #use warnings;
@@ -37,6 +39,8 @@ my $SIMULATION_MODE = 0;
 my $RPI = 1;
 
 &GetOptions( 'S|simulation' => \$SIMULATION_MODE );
+
+my $mqtt = Net::MQTT::Simple->new("localhost");
 
 $RPI = 0 if($SIMULATION_MODE);
 
@@ -763,8 +767,12 @@ sub logSensor
     if( $sizeOfHistory + 0 > 5000 )
     {
         # debug("Purging.. ($sizeOfHistory)");
-        shift @{ sensorValueHistory {$node}->{$sensor} };
+        shift @{ $sensorValueHistory {$node}->{$sensor} };
     }
+
+    my $mqttLocation = $locOverride || $nodeLocation{$node} || "NotSpecified";
+    
+    $mqtt->publish("Sensornet/$mqttLocation/$node/$sensor/$readingUnits" => $reading);
 
 }
 
