@@ -1,0 +1,15 @@
+[Unit]
+Description=Dylos Sensornet Service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=pi
+ExecStart=/usr/bin/perl /home/pi/sensornet/rpi-mon/rpi-monitor-mqtt.pl
+
+[Install]
+WantedBy=multi-user.target
+

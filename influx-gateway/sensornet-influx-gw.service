@@ -1,0 +1,16 @@
+[Unit]
+Description=Sensornet Influx Gateway Service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+StandardOutput=journal
+Type=simple
+Restart=always
+RestartSec=1
+User=pi
+ExecStart=/usr/bin/python /home/pi/sensornet/influx-gateway/subscriber_influxdb.py
+
+[Install]
+WantedBy=multi-user.target
+

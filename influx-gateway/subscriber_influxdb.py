@@ -12,8 +12,6 @@ def on_connect(client, userdata, rc, sparearg):
     client.subscribe("Sensornet/#")
 
 def on_message(client, userdata, msg):
-    print "Here"
-
     # Use utc as timestamp
     receiveTime=datetime.datetime.utcnow()
     message=msg.payload.decode("utf-8")
@@ -50,7 +48,7 @@ client.on_message = on_message
 connOK=False
 while(connOK == False):
     try:
-        client.connect('localhost', 1883, 60)
+        client.connect('sensornet.local', 1883, 60)
         connOK = True
     except:
         connOK = False

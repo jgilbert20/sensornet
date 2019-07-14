@@ -63,7 +63,7 @@ my $WWWSTATICDIR = "${BASEDIR}/www";
 
 
 
-my $XIVELYFN  = "${RUNDIR}/xively.csv";
+#my $XIVELYFN  = "${RUNDIR}/xively.csv";
 
 my %CONFIG;
 
@@ -147,7 +147,7 @@ use Time::HiRes qw(gettimeofday);
 
 open( LOGFILE,     ">>$LOGFN" )     or die "Cannot open log: $LOGFN";
 open( DEBUGFILE,   ">>$DEBUGFN" )   or die "Cannot open debug log";
-open( XIVELY,      ">$XIVELYFN" )   or die "Cannot open xively $!";
+#open( XIVELY,      ">$XIVELYFN" )   or die "Cannot open xively $!";
 open( SLOWLOGFILE, ">>$SLOWLOGFN" ) or die "Cannot open slow log $!";
 
 if($SIMULATION_MODE)
@@ -187,7 +187,7 @@ if( not $SIMULATION_MODE )
         my $PORT = "/dev/ttyS0";
 
         $tty = gensym();
-        my $ob = tie( *$tty, "Device::SerialPort", $PORT );
+        my $ob = tie( *$tty, "Device::SerialPort", $PORT ) or die "Failed to open serial port $PORT $!";
 
 #    my $ob = Device::SerialPort->new($PORT)  || die "Can't open $PORT: $!\n";
         $ob->baudrate(115200);
@@ -697,13 +697,7 @@ sub logLocalSensor
         $readingUnits, $memo, "", "" );
 }
 
-sub relayToXively
-{
-    `curl --request PUT --header "X-ApiKey: 2SZfjyyJOp1lguxlmD15ZCfPn0h1E7PO36HlPfJd0g8mCCyb" --data-binary @/tmp/xively.csv --verbose https://api.xively.com/v2/feeds/665513493.csv`;
 
-    close XIVELY;
-    open XIVELY, ">$XIVELYFN" or warn "Cannot reopen xively file: $!";
-}
 
 my %lastPlacedInSlowLog;
 
