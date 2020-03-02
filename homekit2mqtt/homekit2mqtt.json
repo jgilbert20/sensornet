@@ -1,0 +1,147 @@
+{
+  "hue//lights/Hobbyraum": {
+    "name": "DMX1",
+    "manufacturer": "DMX Controller",
+    "model": "Dimmable Light",
+    "services": [
+      {
+        "name": "DMX1",
+        "service": "Lightbulb",
+        "topic": {
+            "setOn": "DMX/001/set",
+            "setBrightness": "DMX/001/brightness",
+            "statusOn": "DMX/001/status",
+            "statusBrightness": "DMX/001/brightness"
+        },
+        "payload": {
+          "onTrue": true,
+          "onFalse": false,
+          "brightnessFactor": 2.54
+        },
+        "config": {},
+        "props": {},
+        "json": {}
+      }
+    ],
+    "topicIdentify": "hue/set/lights/Hobbyraum/alert",
+    "payloadIdentify": "select",
+    "id": "hue//lights/Hobbyraum",
+    "payload": {},
+    "config": {}
+  },
+  "hue//lights/Bad": {
+    "name": "JG Licht Bad LED",
+    "manufacturer": "hue2mqtt - Hue",
+    "model": "color light",
+    "services": [
+      {
+        "name": "Licht Bad LED",
+        "service": "Lightbulb",
+        "topic": {
+          "setOn": "hue/set/lights/Bad",
+          "setBrightness": "hue/set/lights/Bad",
+          "setHue": "hue/set/lights/Bad/hue",
+          "setSaturation": "hue/set/lights/Bad/sat",
+          "statusOn": "hue/status/lights/Bad",
+          "statusBrightness": "hue/status/lights/Bad",
+          "statusHue": "hue/status/lights/Bad/hue",
+          "statusSaturation": "hue/status/lights/Bad/sat"
+        },
+        "payload": {
+          "onTrue": 254,
+          "onFalse": 0,
+          "brightnessFactor": 2.54,
+          "hueFactor": 181.327,
+          "saturationFactor": 2.54
+        },
+        "config": {},
+        "props": {},
+        "json": {}
+      },
+      {
+        "name": "DMX 1",
+        "service": "Lightbulb",
+        "topic": {
+          "setOn": "",
+          "statusOn": "",
+          "setBrightness": "DMX/001",
+          "statusBrightness": "DMX/001",
+          "setHue": "",
+          "statusHue": "",
+          "setSaturation": "",
+          "statusSaturation": "",
+          "setColorTemperature": "",
+          "statusColorTemperature": "",
+          "statusRGB": "",
+          "setRGB": ""
+        },
+        "json": {
+          "statusOn": "",
+          "statusBrightness": "",
+          "statusHue": "",
+          "statusSaturation": "",
+          "statusColorTemperature": "",
+          "statusRGB": ""
+        },
+        "payload": {
+          "brightnessFactor": null,
+          "hueFactor": null,
+          "saturationFactor": null
+        },
+        "config": {},
+        "props": {}
+      }
+    ],
+    "topicIdentify": "hue/set/lights/Bad/alert",
+    "payloadIdentify": "select",
+    "id": "hue//lights/Bad",
+    "payload": {},
+    "config": {},
+    "category": 5
+  },
+  "JG1": {
+    "id": "JG1",
+    "name": "Jeremy1",
+    "manufacturer": "JeremyManuf",
+    "model": "JeremyModel",
+    "serial": "JeremySerial",
+    "topicIdentify": "DMX/001",
+    "category": 5,
+    "payloadIdentify": 0,
+    "services": [
+      {
+        "name": "Bulb",
+        "service": "Lightbulb",
+        "topic": {
+          "setOn": "",
+          "statusOn": "",
+          "setBrightness": "DMX/001",
+          "statusBrightness": "",
+          "setHue": "",
+          "statusHue": "",
+          "setSaturation": "",
+          "statusSaturation": "",
+          "setColorTemperature": "",
+          "statusColorTemperature": "",
+          "statusRGB": "",
+          "setRGB": ""
+        },
+        "json": {
+          "statusOn": "",
+          "statusBrightness": "",
+          "statusHue": "",
+          "statusSaturation": "",
+          "statusColorTemperature": "",
+          "statusRGB": ""
+        },
+        "payload": {
+          "brightnessFactor": null,
+          "hueFactor": null,
+          "saturationFactor": null
+        },
+        "config": {},
+        "props": {}
+      }
+    ]
+  }
+}

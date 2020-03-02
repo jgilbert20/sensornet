@@ -1,0 +1,16 @@
+[Unit]
+Description=Sensornet Influx Gateway Service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+StandardOutput=journal
+Type=simple
+Restart=always
+RestartSec=1
+User=pi
+ExecStart=/usr/bin/python3 /home/pi/sensornet/mqtt-to-dmx-enttec/dmx-gateway.py
+
+[Install]
+WantedBy=multi-user.target
+
