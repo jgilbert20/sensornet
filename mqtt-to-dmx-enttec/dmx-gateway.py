@@ -4,6 +4,7 @@
 
 
 # mosquitto_pub -h sensornet.local -t "DMX/008" -m "100"
+from array import *
 
 import sys, traceback
 import re
@@ -23,6 +24,9 @@ def num(s):
         return int(s)
     except ValueError:
         return float(s)
+
+
+levels = array( 'L', [128] * 255 );
     
 def on_message(client, userdata, msg):
     try:
@@ -31,15 +35,38 @@ def on_message(client, userdata, msg):
         receiveTime=datetime.datetime.utcnow()
         message=msg.payload.decode("utf-8")
         tmp=msg.topic
-        channel=re.sub("DMX/", "", tmp )
+
         print( "Received topic=" + msg.topic + " payload=" + message )
+
+        args=re.split( "/", tmp );
+        channel=args[1]
+        operation=args[2]
         chnum=int(channel)
-        level=num(message)
+        
+        print( "      Channel:" + str(chnum) + "   operation:" + operation );
+        
 
-        print( "      Setting: ch=" + str(chnum) + " -> " + str(level) )
+        if( operation == "brightness" ):
+            level=num(message)
+            print( "      Brightness: ch=" + str(chnum) + " -> " + str(level) )
+            dmx.set_channel(int(channel), int(level))
+            dmx.submit()
+            levels[chnum]=int(level)
 
-        dmx.set_channel(int(channel), int(level))
-        dmx.submit()
+
+        if( operation == "set" ):
+            print( "      Setting: ch=" + str(chnum) + " -> " + str(message) )
+                        
+            if( message == "on" or message == "true" ):
+                dmx.set_channel(int(channel), int(levels[int(channel)]))
+            else:
+                dmx.set_channel(int(channel), 0 )
+            dmx.submit()
+
+
+
+
+            
     except:
         print ("Exception in user code:")
         print ('-'*60)

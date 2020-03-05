@@ -1,0 +1,16 @@
+[Unit]
+Description=Sensornet MQTT/DMX Gateway Service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+StandardOutput=journal
+Type=simple
+Restart=always
+RestartSec=1
+User=pi
+ExecStart=/usr/local/bin/homekit2mqtt -u mqtt://sensornet.local --storagedir /home/pi/sensornet/homekit2mqtt/storage --mapfile /home/pi/sensornet/homekit2mqtt/homekit2mqtt.json
+
+[Install]
+WantedBy=multi-user.target
+

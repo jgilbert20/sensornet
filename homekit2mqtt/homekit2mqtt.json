@@ -29,119 +29,356 @@
     "payload": {},
     "config": {}
   },
-  "hue//lights/Bad": {
-    "name": "JG Licht Bad LED",
-    "manufacturer": "hue2mqtt - Hue",
-    "model": "color light",
+
+    "hue//lights/Hobbyraum2": {
+    "name": "DMX2",
+    "manufacturer": "DMX Controller",
+    "model": "Dimmable Light",
     "services": [
       {
-        "name": "Licht Bad LED",
+        "name": "DMX2",
         "service": "Lightbulb",
         "topic": {
-          "setOn": "hue/set/lights/Bad",
-          "setBrightness": "hue/set/lights/Bad",
-          "setHue": "hue/set/lights/Bad/hue",
-          "setSaturation": "hue/set/lights/Bad/sat",
-          "statusOn": "hue/status/lights/Bad",
-          "statusBrightness": "hue/status/lights/Bad",
-          "statusHue": "hue/status/lights/Bad/hue",
-          "statusSaturation": "hue/status/lights/Bad/sat"
+            "setOn": "DMX/002/set",
+            "setBrightness": "DMX/002/brightness",
+            "statusOn": "DMX/002/status",
+            "statusBrightness": "DMX/002/brightness"
         },
         "payload": {
-          "onTrue": 254,
-          "onFalse": 0,
-          "brightnessFactor": 2.54,
-          "hueFactor": 181.327,
-          "saturationFactor": 2.54
+          "onTrue": true,
+          "onFalse": false,
+          "brightnessFactor": 2.54
         },
         "config": {},
         "props": {},
         "json": {}
-      },
-      {
-        "name": "DMX 1",
-        "service": "Lightbulb",
-        "topic": {
-          "setOn": "",
-          "statusOn": "",
-          "setBrightness": "DMX/001",
-          "statusBrightness": "DMX/001",
-          "setHue": "",
-          "statusHue": "",
-          "setSaturation": "",
-          "statusSaturation": "",
-          "setColorTemperature": "",
-          "statusColorTemperature": "",
-          "statusRGB": "",
-          "setRGB": ""
-        },
-        "json": {
-          "statusOn": "",
-          "statusBrightness": "",
-          "statusHue": "",
-          "statusSaturation": "",
-          "statusColorTemperature": "",
-          "statusRGB": ""
-        },
-        "payload": {
-          "brightnessFactor": null,
-          "hueFactor": null,
-          "saturationFactor": null
-        },
-        "config": {},
-        "props": {}
       }
     ],
-    "topicIdentify": "hue/set/lights/Bad/alert",
+    "topicIdentify": "hue/set/lights/Hobbyraum/alert",
     "payloadIdentify": "select",
-    "id": "hue//lights/Bad",
+    "id": "hue//lights/Hobbyraum2",
     "payload": {},
-    "config": {},
-    "category": 5
-  },
-  "JG1": {
-    "id": "JG1",
-    "name": "Jeremy1",
-    "manufacturer": "JeremyManuf",
-    "model": "JeremyModel",
-    "serial": "JeremySerial",
-    "topicIdentify": "DMX/001",
-    "category": 5,
-    "payloadIdentify": 0,
+    "config": {}
+    },
+        "hue//lights/Hobbyraum3": {
+    "name": "DMX3",
+    "manufacturer": "DMX Controller",
+    "model": "Dimmable Light",
     "services": [
       {
-        "name": "Bulb",
+        "name": "DMX3",
         "service": "Lightbulb",
         "topic": {
-          "setOn": "",
-          "statusOn": "",
-          "setBrightness": "DMX/001",
-          "statusBrightness": "",
-          "setHue": "",
-          "statusHue": "",
-          "setSaturation": "",
-          "statusSaturation": "",
-          "setColorTemperature": "",
-          "statusColorTemperature": "",
-          "statusRGB": "",
-          "setRGB": ""
-        },
-        "json": {
-          "statusOn": "",
-          "statusBrightness": "",
-          "statusHue": "",
-          "statusSaturation": "",
-          "statusColorTemperature": "",
-          "statusRGB": ""
+            "setOn": "DMX/003/set",
+            "setBrightness": "DMX/003/brightness",
+            "statusOn": "DMX/003/status",
+            "statusBrightness": "DMX/003/brightness"
         },
         "payload": {
-          "brightnessFactor": null,
-          "hueFactor": null,
-          "saturationFactor": null
+          "onTrue": true,
+          "onFalse": false,
+          "brightnessFactor": 2.54
         },
         "config": {},
-        "props": {}
+        "props": {},
+        "json": {}
       }
-    ]
-  }
+    ],
+    "topicIdentify": "hue/set/lights/Hobbyraum/alert",
+    "payloadIdentify": "select",
+    "id": "hue//lights/Hobbyraum3",
+    "payload": {},
+    "config": {}
+	},
+
+        "hue//lights/Hobbyraum4": {
+    "name": "DMX4",
+    "manufacturer": "DMX Controller",
+    "model": "Dimmable Light",
+    "services": [
+      {
+        "name": "DMX4",
+        "service": "Lightbulb",
+        "topic": {
+            "setOn": "DMX/004/set",
+            "setBrightness": "DMX/004/brightness",
+            "statusOn": "DMX/004/status",
+            "statusBrightness": "DMX/004/brightness"
+        },
+        "payload": {
+          "onTrue": true,
+          "onFalse": false,
+          "brightnessFactor": 2.54
+        },
+        "config": {},
+        "props": {},
+        "json": {}
+      }
+    ],
+    "topicIdentify": "hue/set/lights/Hobbyraum/alert",
+    "payloadIdentify": "select",
+    "id": "hue//lights/Hobbyraum4",
+    "payload": {},
+    "config": {}
+	},
+
+        "hue//lights/Hobbyraum5": {
+    "name": "DMX5",
+    "manufacturer": "DMX Controller",
+    "model": "Dimmable Light",
+    "services": [
+      {
+        "name": "DMX5",
+        "service": "Lightbulb",
+        "topic": {
+            "setOn": "DMX/005/set",
+            "setBrightness": "DMX/005/brightness",
+            "statusOn": "DMX/005/status",
+            "statusBrightness": "DMX/005/brightness"
+        },
+        "payload": {
+          "onTrue": true,
+          "onFalse": false,
+          "brightnessFactor": 2.54
+        },
+        "config": {},
+        "props": {},
+        "json": {}
+      }
+    ],
+    "topicIdentify": "hue/set/lights/Hobbyraum/alert",
+    "payloadIdentify": "select",
+    "id": "hue//lights/Hobbyraum5",
+    "payload": {},
+    "config": {}
+	},
+
+
+    "hue//lights/Hobbyraum6": {
+    "name": "DMX6",
+    "manufacturer": "DMX Controller",
+    "model": "Dimmable Light",
+    "services": [
+      {
+        "name": "DMX6",
+        "service": "Lightbulb",
+        "topic": {
+            "setOn": "DMX/006/set",
+            "setBrightness": "DMX/006/brightness",
+            "statusOn": "DMX/006/status",
+            "statusBrightness": "DMX/006/brightness"
+        },
+        "payload": {
+          "onTrue": true,
+          "onFalse": false,
+          "brightnessFactor": 2.54
+        },
+        "config": {},
+        "props": {},
+        "json": {}
+      }
+    ],
+    "topicIdentify": "hue/set/lights/Hobbyraum/alert",
+    "payloadIdentify": "select",
+    "id": "hue//lights/Hobbyraum6",
+    "payload": {},
+    "config": {}
+    },
+
+        "hue//lights/Hobbyraum7": {
+    "name": "DMX7",
+    "manufacturer": "DMX Controller",
+    "model": "Dimmable Light",
+    "services": [
+      {
+        "name": "DMX7",
+        "service": "Lightbulb",
+        "topic": {
+            "setOn": "DMX/007/set",
+            "setBrightness": "DMX/007/brightness",
+            "statusOn": "DMX/007/status",
+            "statusBrightness": "DMX/007/brightness"
+        },
+        "payload": {
+          "onTrue": true,
+          "onFalse": false,
+          "brightnessFactor": 2.54
+        },
+        "config": {},
+        "props": {},
+        "json": {}
+      }
+    ],
+    "topicIdentify": "hue/set/lights/Hobbyraum/alert",
+    "payloadIdentify": "select",
+    "id": "hue//lights/Hobbyraum7",
+    "payload": {},
+    "config": {}
+	},
+
+    "hue//lights/Hobbyraum8": {
+    "name": "DMX8",
+    "manufacturer": "DMX Controller",
+    "model": "Dimmable Light",
+    "services": [
+      {
+        "name": "DMX8",
+        "service": "Lightbulb",
+        "topic": {
+            "setOn": "DMX/008/set",
+            "setBrightness": "DMX/008/brightness",
+            "statusOn": "DMX/008/status",
+            "statusBrightness": "DMX/008/brightness"
+        },
+        "payload": {
+          "onTrue": true,
+          "onFalse": false,
+          "brightnessFactor": 2.54
+        },
+        "config": {},
+        "props": {},
+        "json": {}
+      }
+    ],
+    "topicIdentify": "hue/set/lights/Hobbyraum/alert",
+    "payloadIdentify": "select",
+    "id": "hue//lights/Hobbyraum8",
+    "payload": {},
+    "config": {}
+    },
+
+
+
+        "hue//lights/Hobbyraum9": {
+    "name": "DMX9",
+    "manufacturer": "DMX Controller",
+    "model": "Dimmable Light",
+    "services": [
+      {
+        "name": "DMX9",
+        "service": "Lightbulb",
+        "topic": {
+            "setOn": "DMX/009/set",
+            "setBrightness": "DMX/009/brightness",
+            "statusOn": "DMX/009/status",
+            "statusBrightness": "DMX/009/brightness"
+        },
+        "payload": {
+          "onTrue": true,
+          "onFalse": false,
+          "brightnessFactor": 2.54
+        },
+        "config": {},
+        "props": {},
+        "json": {}
+      }
+    ],
+    "topicIdentify": "hue/set/lights/Hobbyraum/alert",
+    "payloadIdentify": "select",
+    "id": "hue//lights/Hobbyraum9",
+    "payload": {},
+    "config": {}
+	},
+
+
+        "hue//lights/Hobbyraum10": {
+    "name": "DMX10",
+    "manufacturer": "DMX Controller",
+    "model": "Dimmable Light",
+    "services": [
+      {
+        "name": "DMX10",
+        "service": "Lightbulb",
+        "topic": {
+            "setOn": "DMX/010/set",
+            "setBrightness": "DMX/010/brightness",
+            "statusOn": "DMX/010/status",
+            "statusBrightness": "DMX/010/brightness"
+        },
+        "payload": {
+          "onTrue": true,
+          "onFalse": false,
+          "brightnessFactor": 2.54
+        },
+        "config": {},
+        "props": {},
+        "json": {}
+      }
+    ],
+    "topicIdentify": "hue/set/lights/Hobbyraum/alert",
+    "payloadIdentify": "select",
+    "id": "hue//lights/Hobbyraum10",
+    "payload": {},
+    "config": {}
+	},
+
+
+            "hue//lights/Hobbyraum11": {
+    "name": "DMX11",
+    "manufacturer": "DMX Controller",
+    "model": "Dimmable Light",
+    "services": [
+      {
+        "name": "DMX11",
+        "service": "Lightbulb",
+        "topic": {
+            "setOn": "DMX/011/set",
+            "setBrightness": "DMX/011/brightness",
+            "statusOn": "DMX/011/status",
+            "statusBrightness": "DMX/011/brightness"
+        },
+        "payload": {
+          "onTrue": true,
+          "onFalse": false,
+          "brightnessFactor": 2.54
+        },
+        "config": {},
+        "props": {},
+        "json": {}
+      }
+    ],
+    "topicIdentify": "hue/set/lights/Hobbyraum/alert",
+    "payloadIdentify": "select",
+    "id": "hue//lights/Hobbyraum11",
+    "payload": {},
+    "config": {}
+	    },
+
+
+
+            "hue//lights/Hobbyraum12": {
+    "name": "DMX12",
+    "manufacturer": "DMX Controller",
+    "model": "Dimmable Light",
+    "services": [
+      {
+        "name": "DMX12",
+        "service": "Lightbulb",
+        "topic": {
+            "setOn": "DMX/012/set",
+            "setBrightness": "DMX/012/brightness",
+            "statusOn": "DMX/012/status",
+            "statusBrightness": "DMX/012/brightness"
+        },
+        "payload": {
+          "onTrue": true,
+          "onFalse": false,
+          "brightnessFactor": 2.54
+        },
+        "config": {},
+        "props": {},
+        "json": {}
+      }
+    ],
+    "topicIdentify": "hue/set/lights/Hobbyraum/alert",
+    "payloadIdentify": "select",
+    "id": "hue//lights/Hobbyraum12",
+    "payload": {},
+    "config": {}
+	}
+    
+
+    
+
+    
 }
