@@ -19,6 +19,9 @@ use strict;
 
 
 my $SOURCENAME = $ARGV[0];
+
+`rm /tmp/foo`;
+
 system("convert -trim -resize 200 -monochrome $SOURCENAME /tmp/foo.png");
 
 my $im = GD::Image->new('/tmp/foo.png');
